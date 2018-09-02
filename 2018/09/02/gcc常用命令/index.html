@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: 1.1.0
+    -->
+    <script>
+window.lsVersion = "1.1.0",
+window.oldVersion = [
+    
+        
+            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1"
+        
+    
+]
+</script>
+
+    <!-- ### DNS Prefetch ### -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<title>gcc常用命令 | 邵晨峰的个人网站</title>
+
+<!-- favicon -->
+<!-- Favicons -->
+
+    <link rel="shortcut icon" type="image/ico" href="/img/favicon.ico">
+
+
+
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+
+
+
+<!-- Android Chrome Color -->
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<meta name="description" content="gcc常用命令编译过程预处理，编译，汇编，链接
+gcc的选项（必须分开给出）
+-x 语言名    指出后面文件的语言
+-c         编译，汇编源文件，生成目标文件
+-S        编译不汇编，生成汇编文件
+-E        预处理，输出送到标准输出
+-o        指定输出的文件名
+-pipe    编译时使用管道而不是文件传递">
+
+<!-- Keywords -->
+<meta name="keywords" content="机器学习,爬虫,操作系统,底层原理">
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!-- ### Import File ### -->
+    
+        <!-- spectre.css -->
+
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css">
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style>
+
+<!-- style.css -->
+
+    <link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    
+        <link rel="stylesheet" href="/css/highlight/github.min.css">
+    
+
+
+
+    
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <!-- ### RSS ### -->
+    
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="邵晨峰的个人网站">
+<meta name="msapplication-starturl" content="http://zoollcar.github.io">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="邵晨峰的个人网站">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Manifest Import -->
+
+<!-- Open Search -->
+
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    
+
+
+<meta property="og:title" content="gcc常用命令 | 邵晨峰的个人网站">
+
+<meta property="og:type" content="blog">
+<meta property="og:url" content="http://zoollcar.github.io/2018/09/02/gcc常用命令/">
+<meta property="og:image" content="http://zoollcar.github.io/img/favicon.png">
+
+<meta property="og:description" content="gcc常用命令编译过程预处理，编译，汇编，链接
+gcc的选项（必须分开给出）
+-x 语言名    指出后面文件的语言
+-c         编译，汇编源文件，生成目标文件
+-S        编译不汇编，生成汇编文件
+-E        预处理，输出送到标准输出
+-o        指定输出的文件名
+-pipe    编译时使用管道而不是文件传递">
+
+
+    <meta property="og:article:tag" content="机器学习,爬虫,操作系统,底层原理">
+
+
+<meta name="twitter:card" content="summary">
+
+
+    <meta property="article:published_time" content="2018-09-02T13:19:59.520Z">
+    <meta property="article:modified_time" content="2018-09-02T13:19:59.520Z">
+
+
+<meta property="og:locale" content="zh-CN">
+
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://zoollcar.github.io/2018/09/02/gcc常用命令/">
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://zoollcar.github.io"
+    },
+    "headline": "gcc常用命令",
+    
+    "datePublished": "2018-09-02T13:19:59.520Z",
+    "dateModified": "2018-09-02T13:26:54.829Z",
+    "author": {
+        "@type": "Person",
+        "name": "邵晨峰",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://zoollcar.github.io/img/avatar.png"
+        },
+        "description": ""
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "邵晨峰的个人网站",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://zoollcar.github.io/img/favicon.png"
+        }
+    },
+    "keywords": "机器学习,爬虫,操作系统,底层原理",
+    "description": "gcc常用命令编译过程预处理，编译，汇编，链接
+gcc的选项（必须分开给出）
+-x 语言名    指出后面文件的语言
+-c         编译，汇编源文件，生成目标文件
+-S        编译不汇编，生成汇编文件
+-E        预处理，输出送到标准输出
+-o        指定输出的文件名
+-pipe    编译时使用管道而不是文件传递"
+}
+</script>
+
+
+    <!-- ### Custom Head ### -->
+    
+
+
+</head>
+
+    <body>
+        
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">邵晨峰的个人网站</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                你好，很高兴遇到你
+            
+        
+    </p>
+
+    <section class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">首页</a>
+    
+    
+        <a href="/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/search" class="navbar-link">搜索</a>
+    
+    
+        <a href="/about/" class="navbar-link">关于</a>
+    
+    
+        
+<div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=邵晨峰的个人网站&url=http://zoollcar.github.io&pic=http://zoollcar.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">分享到微博</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=邵晨峰的个人网站&url=http://zoollcar.github.io&via=邵晨峰" target="_blank" rel="noopener noreferrer nofollow">分享到 Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://zoollcar.github.io" target="_blank" rel="noopener noreferrer nofollow">分享到 Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://zoollcar.github.io" target="_blank" rel="noopener noreferrer nofollow">分享到 Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://zoollcar.github.io/2018/09/02/正则表达式简明语法/index.html&title=正则表达式简明语法" target="_blank" rel="noopener noreferrer nofollow">分享到 LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=邵晨峰的个人网站&title=正则表达式简明语法&summary=我热爱计算机科学，这是我的个人网站&pics=http://zoollcar.github.io/img/favicon.png&url=http://zoollcar.github.io/2018/09/02/正则表达式简明语法/index.html" target="_blank" rel="noopener noreferrer nofollow"> 分享到 QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://telegram.me/share/url?url=http://zoollcar.github.io/2018/09/02/正则表达式简明语法/index.html&text=正则表达式简明语法" target="_blank" rel="noopener noreferrer nofollow">分享到 Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAACkCAAAAAA83tqdAAACL0lEQVR42u2b0VLDMAwE8/8/Da8diHUrB4ZibV46pa29nomU00lcH//guoQUUkgh3wDyKi682Mv3X3+X/pb2FXIu5Grj1WZfF6Qwq/WX+wo5GjJtfPf5txsdBB89sJBCkmCoEvgqOFLgCCnk08AhCZocVEghdwUGFQfpACsB8iMqSMjjIKuC6Ddff6xaFPIoyE7hf3fDkwDpGA1brpqQR0FWN/JdcFWwVVG2gi+Tv5DjIYkgvXtfBR0xwVbiWMi5kB1jiSTwlNCJ4SDkbMiUtOkhksmQhC+qFoUcAVkldNroJEZ/ekCg6BbyeEhieu4YBuTwqUATUshVEicJmTSiOg8LIedC0s06w04kgSOxLKSQjSZnvOkb4mIpaIQUsrjBuwKXDp2UwyRCjoYkYqDTME0NrGSKCTkXMokMWrClBN35XMjZkDvDccQMrcwoEqBCCkka7dS4T4BVsAgpZCrIdozU1OCn4kTI2ZCdQKmaolXSpoaEkLMhqwVo0Z+a9+lgyLASchzkriHQHbgjzXwhhUyilST86n1qzGNXTciRkBS2ehhU320FrJCjIbuDmHQIqfMgiMlcyBGQTxpDVXA9GTwRcjYkGUbaSd4kIKPZIORYSBIwdEApDsld+Z8yhRSSNJG6ptWuuY+VuZDjIWmRnxqhJLkLKSQNnJXBlIZMiJkVRa+Q4yDTYpUwIMFCGlnbKkjI4yBJA6lqBJAmZzIQHpkDQh4F+c6XkEIKKeQfXp8/S/dGT92D7wAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</section>
+</header>
+
+            
+    <!-- ## Post ## -->
+    
+    
+
+
+<div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    <h2 class="card-title h3 mb-2">gcc常用命令</h2>
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <span>2018-09-02</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            
+<div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">分享本文</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=gcc常用命令&url=http://zoollcar.github.io/2018/09/02/gcc常用命令/index.html&pic=http://zoollcar.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">分享到微博</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=gcc常用命令&url=http://zoollcar.github.io/2018/09/02/gcc常用命令/index.html&via=邵晨峰" target="_blank" rel="noopener noreferrer nofollow">分享到 Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://zoollcar.github.io/2018/09/02/gcc常用命令/index.html" target="_blank" rel="noopener noreferrer nofollow">分享到 Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://zoollcar.github.io/2018/09/02/gcc常用命令/index.html" target="_blank" rel="noopener noreferrer nofollow">分享到 Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://zoollcar.github.io&title=邵晨峰的个人网站" target="_blank" rel="noopener noreferrer nofollow">分享到 LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=邵晨峰的个人网站&title=邵晨峰的个人网站&summary=我热爱计算机科学，这是我的个人网站&pics=http://zoollcar.github.io/img/favicon.png&url=http://zoollcar.github.io" target="_blank" rel="noopener noreferrer nofollow"> 分享到 QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://telegram.me/share/url?url=http://zoollcar.github.io&text=邵晨峰的个人网站" target="_blank" rel="noopener noreferrer nofollow">分享到 Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAACkCAAAAAA83tqdAAACN0lEQVR42u2ay27DMAwE/f8/nZ4KBIa1D6dGY3N8KZAI0qTwUuSS2+sGzwYkkEAC+QWQm3h+v39f9/7Z6vv93vt1yblAzoY8fGnN5kdr94dLUZhzgQRSCeZIDOqQI2glpKUogQRysXgF4gIzkEBeJRwnErdWXQBAAtkmGAqoDdjqkvgoCwLycZBpIfbXfy+pFoG8PWRlIJnAfXjQAuAyVw3I20OqDdWBaeBuDS974wD5eEhX8DfJgdqrSZ6BBFIV+yrBbQqtlZm1EhKQQCrTVJn4ThSVkZ8EcyAfD5mKJTmsEkVyFpAjIZ35eca8Uk0n17gHEkj1witw18BPG0wy4QZyLGSTUKRDSkpQ8b5AjoVMTHYVfJNCzZpTrgEK5BjIpMBKjFQniERctvsA5BjIZmA4+WFKYK4RJTNzIEdAJmZVGuRT08AJEcjZkKuiXwVrJYhmMMQ2oYAcD9maBUlgVsmEG3QGcjZkkhCcacK7QC4vAiBHQiogF4Dd57bB6YwGIEdCKpM+MVid+ZQMzS/3B3IkZGKYOoMgaVCdKuKAHA+ZXv5pYXamYVDdOEA+FtIZos44TS6DpikFJJCucHfJa9okSA1ZIGdDuscZTi24EwuQQLokoEkUmia8GrgDEsjEJEhMgHYY2YoRyNGQrpGZNojUoElTmAEJpIJMXnwHrAz85d5AAhkMMiUGgEoemgIPyNmQrnhyxmkyGFKbWkCOhXSFWNs8SgHtPwfIkZDf/AAJJJBA/uPzA9ytdPOE+thNAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                            <div id="post-toc">
+                                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#gcc常用命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">gcc常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#编译过程"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">编译过程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#gcc的选项（必须分开给出）"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">gcc的选项（必须分开给出）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#警告选项"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">警告选项</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#调试选项"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">调试选项</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#优化选项"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">优化选项</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#预处理器选项-gcc-E预处理"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">预处理器选项 gcc -E预处理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#编译器选项"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">编译器选项</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#连接器选项"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">连接器选项</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#附录：常见的文件格式，扩展名"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">附录：常见的文件格式，扩展名</span></a></li></ol></li></ol>
+                            </div>
+                        
+                    
+                    <article id="post-content">
+                        <h1 id="gcc常用命令"><a href="#gcc常用命令" class="headerlink" title="gcc常用命令"></a>gcc常用命令</h1><h2 id="编译过程"><a href="#编译过程" class="headerlink" title="编译过程"></a>编译过程</h2><p>预处理，编译，汇编，链接</p>
+<h2 id="gcc的选项（必须分开给出）"><a href="#gcc的选项（必须分开给出）" class="headerlink" title="gcc的选项（必须分开给出）"></a>gcc的选项（必须分开给出）</h2><ul>
+<li>-x 语言名    指出后面文件的语言</li>
+<li>-c         编译，汇编源文件，生成目标文件</li>
+<li>-S        编译不汇编，生成汇编文件</li>
+<li>-E        预处理，输出送到标准输出</li>
+<li>-o        指定输出的文件名</li>
+<li>-pipe    编译时使用管道而不是文件传递<a id="more"></a>
+<h2 id="警告选项"><a href="#警告选项" class="headerlink" title="警告选项"></a>警告选项</h2></li>
+<li>-Wall    警告不被推荐的做法</li>
+<li>-w        禁止一切警告</li>
+<li>-pedantic    完全服从ANSI C标准（不推荐）<h2 id="调试选项"><a href="#调试选项" class="headerlink" title="调试选项"></a>调试选项</h2></li>
+<li>-g        产生调试信息</li>
+<li>-ggdb    更好的符合gdb</li>
+<li>-gstabs    支持其他调试器<h2 id="优化选项"><a href="#优化选项" class="headerlink" title="优化选项"></a>优化选项</h2></li>
+<li>-O 0~3    四个程度的优化<h2 id="预处理器选项-gcc-E预处理"><a href="#预处理器选项-gcc-E预处理" class="headerlink" title="预处理器选项 gcc -E预处理"></a>预处理器选项 gcc -E预处理</h2></li>
+<li>-C        不要丢弃注释</li>
+<li>-M        输出一个make的规则，描述依赖关系</li>
+<li>-MM        输出一个make的规则，只涉及用户头文件<h2 id="编译器选项"><a href="#编译器选项" class="headerlink" title="编译器选项"></a>编译器选项</h2></li>
+<li>-Wa 选项    把选项传递给编译器<h2 id="连接器选项"><a href="#连接器选项" class="headerlink" title="连接器选项"></a>连接器选项</h2></li>
+<li>-Wl 选项    把选项传递给连接器<h2 id="附录：常见的文件格式，扩展名"><a href="#附录：常见的文件格式，扩展名" class="headerlink" title="附录：常见的文件格式，扩展名"></a>附录：常见的文件格式，扩展名</h2></li>
+<li>.c        c源文件，预处理，汇编，编译</li>
+<li>.C        c++源文件，预处理，汇编，编译</li>
+<li>.cc        c++源文件，预处理，汇编，编译</li>
+<li>.cxx        c++源文件，预处理，汇编，编译</li>
+<li>.m        object-c源文件，预处理，汇编，编译</li>
+<li>.i        预处理后的c，编译，汇编</li>
+<li>.ii        预处理后的c++，编译，汇编</li>
+<li>.s        汇编文件；汇编</li>
+<li>.S        汇编文件；预处理，汇编</li>
+<li>.h        预处理文件</li>
+<li>.o        目标文件</li>
+<li>.a        归档库文件</li>
+</ul>
+
+                    </article>
+                    
+    <blockquote class="post-license">
+        <p>
+            <strong>本文作者&nbsp;:&nbsp;邵晨峰</strong>
+            <br>
+            <strong>
+            
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。
+            </strong>
+            <br>
+            <strong>本文链接&nbsp;:&nbsp;</strong><a href="http://zoollcar.github.io/2018/09/02/gcc常用命令/">http://zoollcar.github.io/2018/09/02/gcc常用命令/</a>
+        </p>
+    </blockquote>
+
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">本文最后更新于 <span id="date-expire-num"></span> 天前，文中所描述的信息可能已发生改变</blockquote>
+    <script>
+        var dateUpdate = Date.parse("2018-09-02");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2018-09-02T13:19:59.520Z" itemprop="datePublished">2018-09-02</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+
+</p>
+
+                </div>
+                
+<div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2018/09/02/GDB程序调试常用命令/">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">GDB程序调试常用命令</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2018/09/02/C语言标准库stdlib.h学习/">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">C语言标准库stdlib.h学习</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
+        <a class="footer-copyright-a" href="http://zoollcar.github.io">邵晨峰的个人网站</a>
+    </p>
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+        
+            <a href="http://www.miitbeian.gov.cn" rel="nofollow">某ICP备xxxxxxxx号-x</a>
+        
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+            
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+        
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="noopener">Suka</a>
+    </p>
+</footer>
+
+        
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    
+        copyrightSince = 2018;
+        if (copyrightSince === copyrightNow) {
+            copyrightContent.textContent = copyrightNow
+        } else {
+            copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow
+        }
+    
+
+
+
+/* Cnosole Log */
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.1.0 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+</script>
+
+<!-- vanilla-lazyload -->
+
+    <script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+
+
+
+    <!-- Busuanzi -->
+    
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+
+
+
+<!-- gallery.js -->
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+
+    </body>
+
+</html>

@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: 1.1.0
+    -->
+    <script>
+window.lsVersion = "1.1.0",
+window.oldVersion = [
+    
+        
+            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1"
+        
+    
+]
+</script>
+
+    <!-- ### DNS Prefetch ### -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<title>邵晨峰的个人网站</title>
+
+<!-- favicon -->
+<!-- Favicons -->
+
+    <link rel="shortcut icon" type="image/ico" href="/img/favicon.ico">
+
+
+
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+
+
+
+<!-- Android Chrome Color -->
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<meta name="description" content="我热爱计算机科学，这是我的个人网站">
+
+<!-- Keywords -->
+<meta name="keywords" content="机器学习,爬虫,操作系统,底层原理">
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!-- ### Import File ### -->
+    
+        <!-- spectre.css -->
+
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css">
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style>
+
+<!-- style.css -->
+
+    <link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+
+
+    
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <!-- ### RSS ### -->
+    
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="邵晨峰的个人网站">
+<meta name="msapplication-starturl" content="http://zoollcar.github.io">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="邵晨峰的个人网站">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Manifest Import -->
+
+<!-- Open Search -->
+
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    
+
+
+<meta property="og:title" content="邵晨峰的个人网站">
+
+<meta property="og:type" content="blog">
+<meta property="og:url" content="http://zoollcar.github.io/">
+<meta property="og:image" content="http://zoollcar.github.io/img/favicon.png">
+
+<meta property="og:description" content="我热爱计算机科学，这是我的个人网站">
+
+
+    <meta property="og:article:tag" content="机器学习,爬虫,操作系统,底层原理">
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+<meta property="og:locale" content="zh-CN">
+
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://zoollcar.github.io/">
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Blog",
+    "author": {
+        "@type": "Person",
+        "name": "邵晨峰",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://zoollcar.github.io/img/avatar.png"
+        },
+        "description": ""
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "邵晨峰的个人网站",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://zoollcar.github.io/img/favicon.png"
+        }
+    },
+    "url": "http://zoollcar.github.io",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://zoollcar.github.io/img/favicon.png"
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://zoollcar.github.io"
+    },
+    "keywords": "机器学习,爬虫,操作系统,底层原理",
+    "description": "我热爱计算机科学，这是我的个人网站"
+}
+</script>
+
+
+
+
+    <!-- ### Custom Head ### -->
+    
+
+
+</head>
+
+    <body>
+        
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">邵晨峰的个人网站</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                你好，很高兴遇到你
+            
+        
+    </p>
+
+    <section class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">首页</a>
+    
+    
+        <a href="/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/search" class="navbar-link">搜索</a>
+    
+    
+        <a href="/about/" class="navbar-link">关于</a>
+    
+    
+        
+<div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=邵晨峰的个人网站&url=http://zoollcar.github.io&pic=http://zoollcar.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">分享到微博</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=邵晨峰的个人网站&url=http://zoollcar.github.io&via=邵晨峰" target="_blank" rel="noopener noreferrer nofollow">分享到 Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://zoollcar.github.io" target="_blank" rel="noopener noreferrer nofollow">分享到 Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://zoollcar.github.io" target="_blank" rel="noopener noreferrer nofollow">分享到 Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://zoollcar.github.io/2018/09/02/正则表达式简明语法/index.html&title=正则表达式简明语法" target="_blank" rel="noopener noreferrer nofollow">分享到 LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=邵晨峰的个人网站&title=正则表达式简明语法&summary=我热爱计算机科学，这是我的个人网站&pics=http://zoollcar.github.io/img/favicon.png&url=http://zoollcar.github.io/2018/09/02/正则表达式简明语法/index.html" target="_blank" rel="noopener noreferrer nofollow"> 分享到 QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://telegram.me/share/url?url=http://zoollcar.github.io/2018/09/02/正则表达式简明语法/index.html&text=正则表达式简明语法" target="_blank" rel="noopener noreferrer nofollow">分享到 Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAACkCAAAAAA83tqdAAACL0lEQVR42u2b0VLDMAwE8/8/Da8diHUrB4ZibV46pa29nomU00lcH//guoQUUkgh3wDyKi682Mv3X3+X/pb2FXIu5Grj1WZfF6Qwq/WX+wo5GjJtfPf5txsdBB89sJBCkmCoEvgqOFLgCCnk08AhCZocVEghdwUGFQfpACsB8iMqSMjjIKuC6Ddff6xaFPIoyE7hf3fDkwDpGA1brpqQR0FWN/JdcFWwVVG2gi+Tv5DjIYkgvXtfBR0xwVbiWMi5kB1jiSTwlNCJ4SDkbMiUtOkhksmQhC+qFoUcAVkldNroJEZ/ekCg6BbyeEhieu4YBuTwqUATUshVEicJmTSiOg8LIedC0s06w04kgSOxLKSQjSZnvOkb4mIpaIQUsrjBuwKXDp2UwyRCjoYkYqDTME0NrGSKCTkXMokMWrClBN35XMjZkDvDccQMrcwoEqBCCkka7dS4T4BVsAgpZCrIdozU1OCn4kTI2ZCdQKmaolXSpoaEkLMhqwVo0Z+a9+lgyLASchzkriHQHbgjzXwhhUyilST86n1qzGNXTciRkBS2ehhU320FrJCjIbuDmHQIqfMgiMlcyBGQTxpDVXA9GTwRcjYkGUbaSd4kIKPZIORYSBIwdEApDsld+Z8yhRSSNJG6ptWuuY+VuZDjIWmRnxqhJLkLKSQNnJXBlIZMiJkVRa+Q4yDTYpUwIMFCGlnbKkjI4yBJA6lqBJAmZzIQHpkDQh4F+c6XkEIKKeQfXp8/S/dGT92D7wAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</section>
+</header>
+
+            <div class="container">
+    <div class="main-container">
+        <main>
+            <div class="post-stream-container">
+                <!-- # Post List # -->
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/正则表达式简明语法/">正则表达式简明语法</a></h2>
+</div>
+<div class="card-body">
+    
+        字符组[ ] 与 任意字符 “.”[ABC]表示A或B或C字符组支持由连字符“ - ”来表示一个范围，如[a-z] [1-5][^ABC] 排除型字符组。排除后面的字符，也可以是[^a-z]表示除小写字母之外“.”可以匹配任意一个字符
+查找“tast”或者“test”两个字符串。1# grep -n 't[ae]st' test.txt
+查找不包含“Q”的字符串1# grep -n '[^Q]' test.txt
+    <a href="/2018/09/02/正则表达式简明语法/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/线性代数笔记：向量组/">线性代数笔记：向量组</a></h2>
+</div>
+<div class="card-body">
+    
+        线性代数的基础是 行列式 和 矩阵，运用这两个工具可以解决向量组、方程组、特征值、二次型等问题。由此可以得到这张表
+
+
+
+基础
+应用
+
+
+
+
+行列式 矩阵
+向量组 方程组 特征值 二次型
+
+
+
+向量相关概念向量是一个有序数组，也是矩阵的特殊情况，它分为行向量和列向量，这里只讨论列向量
+
+线性组合$$k_1a_1+k_2a_2+…+k_ma_m$$为$$a_1,a_2,a_3,…,a_m$$的一个线性组合
+    <a href="/2018/09/02/线性代数笔记：向量组/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/线性代数笔记：线性方程组/">线性代数笔记：线性方程组</a></h2>
+</div>
+<div class="card-body">
+    
+        线性代数的基础是 行列式 和 矩阵，运用这两个工具可以解决向量组、方程组、特征值、二次型等问题。由此可以得到这张表
+
+
+
+基础
+应用
+
+
+
+
+行列式 矩阵
+向量组 方程组 特征值 二次型
+
+
+
+齐次线性方程组齐次线性方程组是常数项都为0的方程组
+矩阵形式表示一个齐次线性方程组1234\begin&#123;cases&#125;\ a_&#123;11&#125;x_1+a_&#123;12&#125;x_2+a_&#123;13&#125;x_3= 0\\\ a_&#123;21&#125;x_1+a_&#123;22&#125;x_2+a_&#123;23&#125;x_3= 0\\\end&#123;cases&#125;
+    <a href="/2018/09/02/线性代数笔记：线性方程组/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/线性代数笔记：矩阵/">线性代数笔记：矩阵</a></h2>
+</div>
+<div class="card-body">
+    
+        线性代数的基础是 行列式 和 矩阵，运用这两个工具可以解决向量组、方程组、特征值、二次型等问题。由此可以得到这张表
+
+
+
+基础
+应用
+
+
+
+
+行列式 矩阵
+向量组 方程组 特征值 二次型
+
+
+
+矩阵定义矩阵就是由 $$ m×n $$ 个数排列成的一个表格
+1234567\left[    \begin&#123;array&#125;&#123;ccc&#125;      1 &amp; 2 &amp; 3 \\      4 &amp; 5 &amp; 6    \end&#123;array&#125;\right]
+同型矩阵：两个矩阵宽和高相等零矩阵：元素全为零单位阵：主对角线为1，其他都为0对角阵：非主对角元素均为零的矩阵
+    <a href="/2018/09/02/线性代数笔记：矩阵/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/线性代数笔记：行列式/">线性代数笔记：行列式</a></h2>
+</div>
+<div class="card-body">
+    
+        线性代数的基础是 行列式 和 矩阵，运用这两个工具可以解决向量组、方程组、特征值、二次型等问题。由此可以得到这张表
+
+
+
+基础
+应用
+
+
+
+
+行列式 矩阵
+向量组 方程组 特征值 二次型
+
+
+
+行列式的定义行列式是一个工具，是对一个方阵的进行特定计算得到一个数在几何上，它代表了组成这个方阵的向量所围成的平行图形的面积在代数上，它代表了多元线性方程组的相关运算总之，在数学研究中，行列式是十分有力的工具
+    <a href="/2018/09/02/线性代数笔记：行列式/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/机器学习新手笔记整理（一）/">机器学习新手笔记整理（一）</a></h2>
+</div>
+<div class="card-body">
+    
+        机器学习的理论步骤：
+收集数据
+确定模型
+根据数据训练模型
+
+机器学习的实际步骤
+数据收集
+数据预处理
+设计假设函数
+设计损失函数
+设计训练算法
+进行训练，观察训练过程
+用模型做出预测
+    <a href="/2018/09/02/机器学习新手笔记整理（一）/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/机器学习笔记整理/">机器学习笔记整理</a></h2>
+</div>
+<div class="card-body">
+    
+        机器学习笔记整理
+    <a href="/2018/09/02/机器学习笔记整理/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/高等数学笔记：向量与空间解析几何/">高等数学笔记：向量与空间解析几何</a></h2>
+</div>
+<div class="card-body">
+    
+        向量有大小有方向的量是向量
+向量的基本运算设向量 $$r = (x,y,z)$$
+向量模
+$$|r| = \sqrt{x^2+y^2+z^2}$$
+    <a href="/2018/09/02/高等数学笔记：向量与空间解析几何/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/高等数学笔记：二重积分/">高等数学笔记：二重积分</a></h2>
+</div>
+<div class="card-body">
+    
+        二重积分的概念
+    <a href="/2018/09/02/高等数学笔记：二重积分/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/高等数学笔记：多元函数微分学/">高等数学笔记：多元函数微分学</a></h2>
+</div>
+<div class="card-body">
+    
+        四个基础定义和关系极限定义$$f(x,y)$$在$$D$$中有定义
+对于任意$$ \varepsilon &gt; 0$$，$$\exists \delta &gt;0$$，使得
+$$0&lt;\sqrt{(x-x_0)^2+(y-y_0)^2}&lt;\delta $$ 时
+$$|f(x,y)-A|&lt;\varepsilon$$
+则 $$\lim_{y\rightarrow y_0}^{x\rightarrow x_0} f(x,y)=A$$
+    <a href="/2018/09/02/高等数学笔记：多元函数微分学/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+            </div>
+        </main>
+        
+<nav>
+<ul class="pagination -nav">
+    
+    
+        <li class="page-item page-next">
+            <a href="/page/2/">
+                <span class="page-item-title">下一页</span>
+                <span class="page-item-subtitle"><i class="icon icon-forward" aria-hidden="true"></i></span>
+            </a>
+        </li>
+    
+</ul>
+</nav>
+
+
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
+        <a class="footer-copyright-a" href="http://zoollcar.github.io">邵晨峰的个人网站</a>
+    </p>
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+        
+            <a href="http://www.miitbeian.gov.cn" rel="nofollow">某ICP备xxxxxxxx号-x</a>
+        
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+            
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+        
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="noopener">Suka</a>
+    </p>
+</footer>
+
+        
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    
+        copyrightSince = 2018;
+        if (copyrightSince === copyrightNow) {
+            copyrightContent.textContent = copyrightNow
+        } else {
+            copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow
+        }
+    
+
+
+
+/* Cnosole Log */
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.1.0 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+</script>
+
+<!-- vanilla-lazyload -->
+
+    <script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+
+
+
+    <!-- Busuanzi -->
+    
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+
+
+
+<!-- gallery.js -->
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+
+    </body>
+
+</html>

@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: 1.1.0
+    -->
+    <script>
+window.lsVersion = "1.1.0",
+window.oldVersion = [
+    
+        
+            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1"
+        
+    
+]
+</script>
+
+    <!-- ### DNS Prefetch ### -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<title>机器学习新手笔记整理（一） | 邵晨峰的个人网站</title>
+
+<!-- favicon -->
+<!-- Favicons -->
+
+    <link rel="shortcut icon" type="image/ico" href="/img/favicon.ico">
+
+
+
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+
+
+
+<!-- Android Chrome Color -->
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<meta name="description" content="机器学习的理论步骤：
+收集数据
+确定模型
+根据数据训练模型
+
+机器学习的实际步骤
+数据收集
+数据预处理
+设计假设函数
+设计损失函数
+设计训练算法
+进行训练，观察训练过程
+用模型做出预测">
+
+<!-- Keywords -->
+<meta name="keywords" content="机器学习,爬虫,操作系统,底层原理">
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!-- ### Import File ### -->
+    
+        <!-- spectre.css -->
+
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css">
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style>
+
+<!-- style.css -->
+
+    <link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    
+        <link rel="stylesheet" href="/css/highlight/github.min.css">
+    
+
+
+
+    
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <!-- ### RSS ### -->
+    
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="邵晨峰的个人网站">
+<meta name="msapplication-starturl" content="http://zoollcar.github.io">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="邵晨峰的个人网站">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Manifest Import -->
+
+<!-- Open Search -->
+
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    
+
+
+<meta property="og:title" content="机器学习新手笔记整理（一） | 邵晨峰的个人网站">
+
+<meta property="og:type" content="blog">
+<meta property="og:url" content="http://zoollcar.github.io/2018/09/02/机器学习新手笔记整理（一）/">
+<meta property="og:image" content="http://zoollcar.github.io/img/favicon.png">
+
+<meta property="og:description" content="机器学习的理论步骤：
+收集数据
+确定模型
+根据数据训练模型
+
+机器学习的实际步骤
+数据收集
+数据预处理
+设计假设函数
+设计损失函数
+设计训练算法
+进行训练，观察训练过程
+用模型做出预测">
+
+
+    <meta property="og:article:tag" content="机器学习,爬虫,操作系统,底层原理">
+
+
+<meta name="twitter:card" content="summary">
+
+
+    <meta property="article:published_time" content="2018-09-02T13:19:59.552Z">
+    <meta property="article:modified_time" content="2018-09-02T13:19:59.552Z">
+
+
+<meta property="og:locale" content="zh-CN">
+
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://zoollcar.github.io/2018/09/02/机器学习新手笔记整理（一）/">
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://zoollcar.github.io"
+    },
+    "headline": "机器学习新手笔记整理（一）",
+    
+    "datePublished": "2018-09-02T13:19:59.552Z",
+    "dateModified": "2018-09-02T13:26:54.805Z",
+    "author": {
+        "@type": "Person",
+        "name": "邵晨峰",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://zoollcar.github.io/img/avatar.png"
+        },
+        "description": ""
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "邵晨峰的个人网站",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://zoollcar.github.io/img/favicon.png"
+        }
+    },
+    "keywords": "机器学习,爬虫,操作系统,底层原理",
+    "description": "机器学习的理论步骤：
+收集数据
+确定模型
+根据数据训练模型
+
+机器学习的实际步骤
+数据收集
+数据预处理
+设计假设函数
+设计损失函数
+设计训练算法
+进行训练，观察训练过程
+用模型做出预测"
+}
+</script>
+
+
+    <!-- ### Custom Head ### -->
+    
+
+
+</head>
+
+    <body>
+        
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">邵晨峰的个人网站</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                你好，很高兴遇到你
+            
+        
+    </p>
+
+    <section class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">首页</a>
+    
+    
+        <a href="/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/search" class="navbar-link">搜索</a>
+    
+    
+        <a href="/about/" class="navbar-link">关于</a>
+    
+    
+        
+<div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=邵晨峰的个人网站&url=http://zoollcar.github.io&pic=http://zoollcar.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">分享到微博</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=邵晨峰的个人网站&url=http://zoollcar.github.io&via=邵晨峰" target="_blank" rel="noopener noreferrer nofollow">分享到 Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://zoollcar.github.io" target="_blank" rel="noopener noreferrer nofollow">分享到 Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://zoollcar.github.io" target="_blank" rel="noopener noreferrer nofollow">分享到 Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://zoollcar.github.io/2018/09/02/正则表达式简明语法/index.html&title=正则表达式简明语法" target="_blank" rel="noopener noreferrer nofollow">分享到 LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=邵晨峰的个人网站&title=正则表达式简明语法&summary=我热爱计算机科学，这是我的个人网站&pics=http://zoollcar.github.io/img/favicon.png&url=http://zoollcar.github.io/2018/09/02/正则表达式简明语法/index.html" target="_blank" rel="noopener noreferrer nofollow"> 分享到 QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://telegram.me/share/url?url=http://zoollcar.github.io/2018/09/02/正则表达式简明语法/index.html&text=正则表达式简明语法" target="_blank" rel="noopener noreferrer nofollow">分享到 Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAACkCAAAAAA83tqdAAACL0lEQVR42u2b0VLDMAwE8/8/Da8diHUrB4ZibV46pa29nomU00lcH//guoQUUkgh3wDyKi682Mv3X3+X/pb2FXIu5Grj1WZfF6Qwq/WX+wo5GjJtfPf5txsdBB89sJBCkmCoEvgqOFLgCCnk08AhCZocVEghdwUGFQfpACsB8iMqSMjjIKuC6Ddff6xaFPIoyE7hf3fDkwDpGA1brpqQR0FWN/JdcFWwVVG2gi+Tv5DjIYkgvXtfBR0xwVbiWMi5kB1jiSTwlNCJ4SDkbMiUtOkhksmQhC+qFoUcAVkldNroJEZ/ekCg6BbyeEhieu4YBuTwqUATUshVEicJmTSiOg8LIedC0s06w04kgSOxLKSQjSZnvOkb4mIpaIQUsrjBuwKXDp2UwyRCjoYkYqDTME0NrGSKCTkXMokMWrClBN35XMjZkDvDccQMrcwoEqBCCkka7dS4T4BVsAgpZCrIdozU1OCn4kTI2ZCdQKmaolXSpoaEkLMhqwVo0Z+a9+lgyLASchzkriHQHbgjzXwhhUyilST86n1qzGNXTciRkBS2ehhU320FrJCjIbuDmHQIqfMgiMlcyBGQTxpDVXA9GTwRcjYkGUbaSd4kIKPZIORYSBIwdEApDsld+Z8yhRSSNJG6ptWuuY+VuZDjIWmRnxqhJLkLKSQNnJXBlIZMiJkVRa+Q4yDTYpUwIMFCGlnbKkjI4yBJA6lqBJAmZzIQHpkDQh4F+c6XkEIKKeQfXp8/S/dGT92D7wAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</section>
+</header>
+
+            
+    <!-- ## Post ## -->
+    
+    
+
+
+<div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    <h2 class="card-title h3 mb-2">机器学习新手笔记整理（一）</h2>
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <span>2018-09-02</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            
+<div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">分享本文</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=机器学习新手笔记整理（一）&url=http://zoollcar.github.io/2018/09/02/机器学习新手笔记整理（一）/index.html&pic=http://zoollcar.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">分享到微博</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=机器学习新手笔记整理（一）&url=http://zoollcar.github.io/2018/09/02/机器学习新手笔记整理（一）/index.html&via=邵晨峰" target="_blank" rel="noopener noreferrer nofollow">分享到 Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://zoollcar.github.io/2018/09/02/机器学习新手笔记整理（一）/index.html" target="_blank" rel="noopener noreferrer nofollow">分享到 Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://zoollcar.github.io/2018/09/02/机器学习新手笔记整理（一）/index.html" target="_blank" rel="noopener noreferrer nofollow">分享到 Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://zoollcar.github.io&title=邵晨峰的个人网站" target="_blank" rel="noopener noreferrer nofollow">分享到 LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=邵晨峰的个人网站&title=邵晨峰的个人网站&summary=我热爱计算机科学，这是我的个人网站&pics=http://zoollcar.github.io/img/favicon.png&url=http://zoollcar.github.io" target="_blank" rel="noopener noreferrer nofollow"> 分享到 QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://telegram.me/share/url?url=http://zoollcar.github.io&text=邵晨峰的个人网站" target="_blank" rel="noopener noreferrer nofollow">分享到 Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAAAAAAYplnuAAACrElEQVR42u3cQU4DMRBE0dz/0mHFBuyuX54BgeZng0jC8AZh3K5u8Xr/w8dLtGjRoh+Ifg2Pr+/Zvf/z+d01V6+T635ziBYN0ctf+sXFdu9bgaYbTF+3cogW3aJ3C2f1fIKl9+8W+OQQLfpO9G6B7jaNaQGT64oW/ZPo041iQpMiSrToq+ipUGm+2e5GpkV4e5Un+vHoVPD81sfbTuOiH42OoR88HOwWH3nt9tRU9KPRNKzZFfrTZkGukQou0aJbdCqSphsj33hb/ITXl5+LFg3RpDGUwPQQQUJ6tCOKFg16423xNBXvKbiZgpxtYCRa9AGahOEpUJ8WIAnnq7BGtGgY1pBhErIh0DCSFGeiRVM0XTxN85JuPGnx406AaNEhXGkDyemG02AKHQgQLbpBx/Cv3FxSs4m+Llr0Cbr9I08b/u3Qd/zhiBYN0CkwQcHgEPjcOtAlWnSBpgNUJHBPz5HGP56AFC16WIgpICQLKm0qzZAimkIQLXpYiGRzoEVP01SijVbRok974+lip8O0JJQRLfoqOm0yzeGWPGjhhEN10aJBWEOHS0hTlDQ306FDtOgT9HSxtvCnhRQZeBEtukWfNOhTg5/+EC4PqYgWDcMaclBtD6xpgaOwR7RoiCbD12QYhRT+ZNFtF7Jo0QfoNOxHb3AqpE5uRLTo94Wh71Tw0wCHDBM2jVXRoik6HSzTYFa6+VR4pQa/aNGn6Hb4pA0X002kIky0aIImjR3ShD8ZhG0PF6JFEzRZCGR4qg15yPOiRZ+im4CFBoZtKD8dpkWLPkGT0DzhmxsiDVFc5YkWfeGfZpOBlOlGSfMeby6iRV9YiFOQToovGvCMh2TRogs0HfAjh9g07EIan3gKQbTo8mDbFFRkcIU28lFDX7TogwDyLz1EixYt+kHoD3swWbdT5mm1AAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                            <div id="post-toc">
+                                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#机器学习的理论步骤："><span class="post-toc-number">1.</span> <span class="post-toc-text">机器学习的理论步骤：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#机器学习的实际步骤"><span class="post-toc-number">2.</span> <span class="post-toc-text">机器学习的实际步骤</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#综述"><span class="post-toc-number"></span> <span class="post-toc-text">综述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模型（假设函数）"><span class="post-toc-number">2.</span> <span class="post-toc-text">模型（假设函数）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#模型的主要特点是"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">模型的主要特点是</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#学习"><span class="post-toc-number">3.</span> <span class="post-toc-text">学习</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#假设函数"><span class="post-toc-number"></span> <span class="post-toc-text">假设函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#人工神经网络"><span class="post-toc-number"></span> <span class="post-toc-text">人工神经网络</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一个神经元（感知器）的数学模型"><span class="post-toc-number"></span> <span class="post-toc-text">一个神经元（感知器）的数学模型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前向型神经网络"><span class="post-toc-number"></span> <span class="post-toc-text">前向型神经网络</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#单层感知器"><span class="post-toc-number"></span> <span class="post-toc-text">单层感知器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#感知器网络"><span class="post-toc-number">1.</span> <span class="post-toc-text">感知器网络</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线性神经网络"><span class="post-toc-number">2.</span> <span class="post-toc-text">线性神经网络</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多层感知器"><span class="post-toc-number"></span> <span class="post-toc-text">多层感知器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#BP神经网络"><span class="post-toc-number">1.</span> <span class="post-toc-text">BP神经网络</span></a></li></ol>
+                            </div>
+                        
+                    
+                    <article id="post-content">
+                        <h3 id="机器学习的理论步骤："><a href="#机器学习的理论步骤：" class="headerlink" title="机器学习的理论步骤："></a>机器学习的理论步骤：</h3><ol>
+<li>收集<strong>数据</strong></li>
+<li>确定<strong>模型</strong></li>
+<li>根据数据<strong>训练</strong>模型</li>
+</ol>
+<h3 id="机器学习的实际步骤"><a href="#机器学习的实际步骤" class="headerlink" title="机器学习的实际步骤"></a>机器学习的实际步骤</h3><ol>
+<li>数据收集</li>
+<li>数据预处理</li>
+<li>设计假设函数</li>
+<li>设计损失函数</li>
+<li>设计训练算法</li>
+<li>进行训练，观察训练过程</li>
+<li>用模型做出预测<a id="more"></a>
+<h2 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h2></li>
+</ol>
+<h3 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h3><p>数据是一系列从定义<strong>向量组</strong>到值域<strong>向量组</strong>的<strong>映射</strong></p>
+<h3 id="模型（假设函数）"><a href="#模型（假设函数）" class="headerlink" title="模型（假设函数）"></a>模型（假设函数）</h3><p>模型是用来拟合上面那条映射的模型</p>
+<h4 id="模型的主要特点是"><a href="#模型的主要特点是" class="headerlink" title="模型的主要特点是"></a>模型的主要特点是</h4><ol>
+<li><strong>拟合</strong>：模型可以拟合已有的数据之间的映射关系</li>
+<li><strong>预测（泛化）</strong>：对未知数据具有预测的能力<h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3></li>
+</ol>
+<p>机器学习的重点就是从数据中得到模型的过程，这个过程叫做<strong>学习（训练）</strong></p>
+<h2 id="假设函数"><a href="#假设函数" class="headerlink" title="假设函数"></a>假设函数</h2><blockquote>
+<p>从数学上经常用<strong>假设函数</strong></p>
+<p>计算机尤其是人工神经网络上经常用<strong>模型</strong></p>
+</blockquote>
+<p>假设函数使用数学方法描述自变量与因变量之间的关系</p>
+<p>假设函数可分为线性和非线性，而实现方式我只学过人工神经网络（惭愧）</p>
+<h2 id="人工神经网络"><a href="#人工神经网络" class="headerlink" title="人工神经网络"></a>人工神经网络</h2><p>人工神经网络早期受到生物学的影响，但现在已发展成为完全的数学模型，不过模仿生物有时也能产生不错的效果</p>
+<h2 id="一个神经元（感知器）的数学模型"><a href="#一个神经元（感知器）的数学模型" class="headerlink" title="一个神经元（感知器）的数学模型"></a>一个神经元（感知器）的数学模型</h2><p>对生物上的神经元进行简化可以得到神经元的数学模型</p>
+<p>一个神经元只有一个输出，可以有多个输入。输出取决于<strong>输入</strong>、<strong>输入权重</strong>、<strong>阈值</strong>和<strong>神经元变换函数</strong></p>
+<p>数学模型如下：</p>
+<p>$$O_{j}(t+1) = f(\sum_{i=1}^{n}w_{ij}x_{i}(t)-T_{j})$$</p>
+<p>其中</p>
+<ol>
+<li><p>j是一个神经元</p>
+</li>
+<li><p>$$O_{j}(t)$$ 是t时刻j的输出</p>
+</li>
+<li><p>$$w_{ij}$$ 是i到j的权重（i是另一个上层的另一个神经元)</p>
+</li>
+<li><p>$$T_{j}$$是j的阈值</p>
+</li>
+<li><p>$$f()$$是神经元变换函数</p>
+</li>
+</ol>
+<h2 id="前向型神经网络"><a href="#前向型神经网络" class="headerlink" title="前向型神经网络"></a>前向型神经网络</h2><p>前向型神经网络是从输入层经过隐含层传递到输出层，下一层与上一层相连，层中间不相连</p>
+<p>除此之外还有<strong>反馈性网络</strong>（主要用于序列型数据）、<strong>竞争性网络</strong>（主要用于非监督学习），这些我暂时还没有研究</p>
+<p>下面介绍的都是<strong>前向型神经网络</strong>！</p>
+<h2 id="单层感知器"><a href="#单层感知器" class="headerlink" title="单层感知器"></a>单层感知器</h2><p>单层感知器是由一层感知器组建的网络，能描述输入到输出向量的任意线性关系</p>
+<p>误差曲面是一个是一个具有抛物面性质的曲面，只有一个极小值，因此使用梯度下降算法就一定能找到最小值</p>
+<p>常见的单层网络有两种<strong>感知器网络</strong>，<strong>线性神经网络</strong>，它们的区别是算法不同</p>
+<h3 id="感知器网络"><a href="#感知器网络" class="headerlink" title="感知器网络"></a>感知器网络</h3><p>感知器网络有单层感知器<br>训练的步骤如下（t表示训练遍数）</p>
+<ol>
+<li><p>对个个权值 $$W^{t}$$ 赋予较小的非零初值</p>
+</li>
+<li><p>引入 $$[  X^T,D^P  ]$$ , $$p$$ 代表样本的模式序号，$$D^p$$是期望的输出</p>
+</li>
+<li><p>计算各节点的世界输出 $$ O_{j}^{P} = sgn(W_j^T(T)X^P) $$</p>
+</li>
+<li><p>调整各节点对应的权值 $$ W_j(t+1) = W_j(t) + \mu [d_j^p-O_j^P(t)]X^P $$</p>
+</li>
+<li><p>返回第2步</p>
+</li>
+</ol>
+<p>如果输入样本是线性可分的，那么在有限次训练后，会得到一个趋于稳定的权向量，这个权向量会确定一个超平面将样本分开，（只能分成两类？？）</p>
+<h3 id="线性神经网络"><a href="#线性神经网络" class="headerlink" title="线性神经网络"></a>线性神经网络</h3><p>线性神经网络的典型代表是<strong>自适应线性神经元</strong>，它的学习算法被称为 <strong>LMS 算法</strong>、<strong>W-H 学习规则</strong>或<strong>最小均方差算法</strong><br>线性神经网络有单层感知器<br>训练的步骤如下：</p>
+<ol>
+<li><p>计算网络的实际输出 $$ d_k = [d_1(k),d_2(k),d_3(k),…..,d_s(k)] $$</p>
+</li>
+<li><p>令输出向量与期望输出之间的误差为 $$ e(k)  = d(k)-y(k) $$</p>
+</li>
+<li><p>检查误差函数（均方差）$$mse = \frac{1}{m} \sum_{k=1}^m e^2(k) $$ 是否小于期望误差，，如果小于则退出，否则进入4</p>
+</li>
+<li><p>进行网络权值和阈值的修正<br>$$ W(k+1) = W(k) + 2 \eta e(k) p^T(k) $$<br>$$ B(k+1) = B(k) + 2 \eta e(k)$$</p>
+</li>
+<li><p>进入第3步</p>
+</li>
+</ol>
+<h2 id="多层感知器"><a href="#多层感知器" class="headerlink" title="多层感知器"></a>多层感知器</h2><p>单层传感器最大的缺点是，它只能解决线性可分的问题，为了增强分类能力，方法是在输入层和输出层之间增加隐藏层。这种增加隐层的感知器网络称为<strong>多层感知器</strong></p>
+<h3 id="BP神经网络"><a href="#BP神经网络" class="headerlink" title="BP神经网络"></a>BP神经网络</h3><p>BP神经网络是一种多层感知器，它的特点是权值的调整采用的是<strong>反向传播的学习算法</strong>(Back Propagation)，因此被称为BP神经网络。</p>
+<p>由于BP神经网络的内容较多，在后面的文章中我会再介绍</p>
+
+                    </article>
+                    
+    <blockquote class="post-license">
+        <p>
+            <strong>本文作者&nbsp;:&nbsp;邵晨峰</strong>
+            <br>
+            <strong>
+            
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。
+            </strong>
+            <br>
+            <strong>本文链接&nbsp;:&nbsp;</strong><a href="http://zoollcar.github.io/2018/09/02/机器学习新手笔记整理（一）/">http://zoollcar.github.io/2018/09/02/机器学习新手笔记整理（一）/</a>
+        </p>
+    </blockquote>
+
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">本文最后更新于 <span id="date-expire-num"></span> 天前，文中所描述的信息可能已发生改变</blockquote>
+    <script>
+        var dateUpdate = Date.parse("2018-09-02");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2018-09-02T13:19:59.552Z" itemprop="datePublished">2018-09-02</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+
+</p>
+
+                </div>
+                
+<div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2018/09/02/线性代数笔记：行列式/">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">线性代数笔记：行列式</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2018/09/02/机器学习笔记整理/">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">机器学习笔记整理</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
+        <a class="footer-copyright-a" href="http://zoollcar.github.io">邵晨峰的个人网站</a>
+    </p>
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+        
+            <a href="http://www.miitbeian.gov.cn" rel="nofollow">某ICP备xxxxxxxx号-x</a>
+        
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+            
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+        
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="noopener">Suka</a>
+    </p>
+</footer>
+
+        
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    
+        copyrightSince = 2018;
+        if (copyrightSince === copyrightNow) {
+            copyrightContent.textContent = copyrightNow
+        } else {
+            copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow
+        }
+    
+
+
+
+/* Cnosole Log */
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.1.0 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+</script>
+
+<!-- vanilla-lazyload -->
+
+    <script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+
+
+
+    <!-- Busuanzi -->
+    
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+
+
+
+<!-- gallery.js -->
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+
+    </body>
+
+</html>

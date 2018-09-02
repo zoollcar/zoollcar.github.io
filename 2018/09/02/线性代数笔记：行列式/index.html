@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: 1.1.0
+    -->
+    <script>
+window.lsVersion = "1.1.0",
+window.oldVersion = [
+    
+        
+            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1"
+        
+    
+]
+</script>
+
+    <!-- ### DNS Prefetch ### -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<title>线性代数笔记：行列式 | 邵晨峰的个人网站</title>
+
+<!-- favicon -->
+<!-- Favicons -->
+
+    <link rel="shortcut icon" type="image/ico" href="/img/favicon.ico">
+
+
+
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+
+
+
+<!-- Android Chrome Color -->
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<meta name="description" content="线性代数的基础是 行列式 和 矩阵，运用这两个工具可以解决向量组、方程组、特征值、二次型等问题。由此可以得到这张表
+
+
+
+基础
+应用
+
+
+
+
+行列式 矩阵
+向量组 方程组 特征值 二次型
+
+
+
+行列式的定义行列式是一个工具，是对一个方阵的进行特定计算得到一个数在几何上，它代表了组成这个方阵的向量所围成的平行图形的面积在代数上，它代表了多元线性方程组的相关运算总之，在数学研究中，行列式是十分有力的工具">
+
+<!-- Keywords -->
+<meta name="keywords" content="机器学习,爬虫,操作系统,底层原理">
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!-- ### Import File ### -->
+    
+        <!-- spectre.css -->
+
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css">
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style>
+
+<!-- style.css -->
+
+    <link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    
+        <link rel="stylesheet" href="/css/highlight/github.min.css">
+    
+
+
+
+    
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <!-- ### RSS ### -->
+    
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="邵晨峰的个人网站">
+<meta name="msapplication-starturl" content="http://zoollcar.github.io">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="邵晨峰的个人网站">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Manifest Import -->
+
+<!-- Open Search -->
+
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    
+
+
+<meta property="og:title" content="线性代数笔记：行列式 | 邵晨峰的个人网站">
+
+<meta property="og:type" content="blog">
+<meta property="og:url" content="http://zoollcar.github.io/2018/09/02/线性代数笔记：行列式/">
+<meta property="og:image" content="http://zoollcar.github.io/img/favicon.png">
+
+<meta property="og:description" content="线性代数的基础是 行列式 和 矩阵，运用这两个工具可以解决向量组、方程组、特征值、二次型等问题。由此可以得到这张表
+
+
+
+基础
+应用
+
+
+
+
+行列式 矩阵
+向量组 方程组 特征值 二次型
+
+
+
+行列式的定义行列式是一个工具，是对一个方阵的进行特定计算得到一个数在几何上，它代表了组成这个方阵的向量所围成的平行图形的面积在代数上，它代表了多元线性方程组的相关运算总之，在数学研究中，行列式是十分有力的工具">
+
+
+    <meta property="og:article:tag" content="机器学习,爬虫,操作系统,底层原理">
+
+
+<meta name="twitter:card" content="summary">
+
+
+    <meta property="article:published_time" content="2018-09-02T13:19:59.557Z">
+    <meta property="article:modified_time" content="2018-09-02T13:19:59.557Z">
+
+
+<meta property="og:locale" content="zh-CN">
+
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://zoollcar.github.io/2018/09/02/线性代数笔记：行列式/">
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://zoollcar.github.io"
+    },
+    "headline": "线性代数笔记：行列式",
+    
+    "datePublished": "2018-09-02T13:19:59.557Z",
+    "dateModified": "2018-09-02T13:26:54.816Z",
+    "author": {
+        "@type": "Person",
+        "name": "邵晨峰",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://zoollcar.github.io/img/avatar.png"
+        },
+        "description": ""
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "邵晨峰的个人网站",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://zoollcar.github.io/img/favicon.png"
+        }
+    },
+    "keywords": "机器学习,爬虫,操作系统,底层原理",
+    "description": "线性代数的基础是 行列式 和 矩阵，运用这两个工具可以解决向量组、方程组、特征值、二次型等问题。由此可以得到这张表
+
+
+
+基础
+应用
+
+
+
+
+行列式 矩阵
+向量组 方程组 特征值 二次型
+
+
+
+行列式的定义行列式是一个工具，是对一个方阵的进行特定计算得到一个数在几何上，它代表了组成这个方阵的向量所围成的平行图形的面积在代数上，它代表了多元线性方程组的相关运算总之，在数学研究中，行列式是十分有力的工具"
+}
+</script>
+
+
+    <!-- ### Custom Head ### -->
+    
+
+
+</head>
+
+    <body>
+        
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">邵晨峰的个人网站</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                你好，很高兴遇到你
+            
+        
+    </p>
+
+    <section class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">首页</a>
+    
+    
+        <a href="/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/search" class="navbar-link">搜索</a>
+    
+    
+        <a href="/about/" class="navbar-link">关于</a>
+    
+    
+        
+<div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=邵晨峰的个人网站&url=http://zoollcar.github.io&pic=http://zoollcar.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">分享到微博</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=邵晨峰的个人网站&url=http://zoollcar.github.io&via=邵晨峰" target="_blank" rel="noopener noreferrer nofollow">分享到 Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://zoollcar.github.io" target="_blank" rel="noopener noreferrer nofollow">分享到 Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://zoollcar.github.io" target="_blank" rel="noopener noreferrer nofollow">分享到 Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://zoollcar.github.io/2018/09/02/正则表达式简明语法/index.html&title=正则表达式简明语法" target="_blank" rel="noopener noreferrer nofollow">分享到 LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=邵晨峰的个人网站&title=正则表达式简明语法&summary=我热爱计算机科学，这是我的个人网站&pics=http://zoollcar.github.io/img/favicon.png&url=http://zoollcar.github.io/2018/09/02/正则表达式简明语法/index.html" target="_blank" rel="noopener noreferrer nofollow"> 分享到 QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://telegram.me/share/url?url=http://zoollcar.github.io/2018/09/02/正则表达式简明语法/index.html&text=正则表达式简明语法" target="_blank" rel="noopener noreferrer nofollow">分享到 Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAACkCAAAAAA83tqdAAACL0lEQVR42u2b0VLDMAwE8/8/Da8diHUrB4ZibV46pa29nomU00lcH//guoQUUkgh3wDyKi682Mv3X3+X/pb2FXIu5Grj1WZfF6Qwq/WX+wo5GjJtfPf5txsdBB89sJBCkmCoEvgqOFLgCCnk08AhCZocVEghdwUGFQfpACsB8iMqSMjjIKuC6Ddff6xaFPIoyE7hf3fDkwDpGA1brpqQR0FWN/JdcFWwVVG2gi+Tv5DjIYkgvXtfBR0xwVbiWMi5kB1jiSTwlNCJ4SDkbMiUtOkhksmQhC+qFoUcAVkldNroJEZ/ekCg6BbyeEhieu4YBuTwqUATUshVEicJmTSiOg8LIedC0s06w04kgSOxLKSQjSZnvOkb4mIpaIQUsrjBuwKXDp2UwyRCjoYkYqDTME0NrGSKCTkXMokMWrClBN35XMjZkDvDccQMrcwoEqBCCkka7dS4T4BVsAgpZCrIdozU1OCn4kTI2ZCdQKmaolXSpoaEkLMhqwVo0Z+a9+lgyLASchzkriHQHbgjzXwhhUyilST86n1qzGNXTciRkBS2ehhU320FrJCjIbuDmHQIqfMgiMlcyBGQTxpDVXA9GTwRcjYkGUbaSd4kIKPZIORYSBIwdEApDsld+Z8yhRSSNJG6ptWuuY+VuZDjIWmRnxqhJLkLKSQNnJXBlIZMiJkVRa+Q4yDTYpUwIMFCGlnbKkjI4yBJA6lqBJAmZzIQHpkDQh4F+c6XkEIKKeQfXp8/S/dGT92D7wAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</section>
+</header>
+
+            
+    <!-- ## Post ## -->
+    
+    
+
+
+<div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    <h2 class="card-title h3 mb-2">线性代数笔记：行列式</h2>
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <span>2018-09-02</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            
+<div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">分享本文</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=线性代数笔记：行列式&url=http://zoollcar.github.io/2018/09/02/线性代数笔记：行列式/index.html&pic=http://zoollcar.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">分享到微博</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=线性代数笔记：行列式&url=http://zoollcar.github.io/2018/09/02/线性代数笔记：行列式/index.html&via=邵晨峰" target="_blank" rel="noopener noreferrer nofollow">分享到 Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://zoollcar.github.io/2018/09/02/线性代数笔记：行列式/index.html" target="_blank" rel="noopener noreferrer nofollow">分享到 Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://zoollcar.github.io/2018/09/02/线性代数笔记：行列式/index.html" target="_blank" rel="noopener noreferrer nofollow">分享到 Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://zoollcar.github.io&title=邵晨峰的个人网站" target="_blank" rel="noopener noreferrer nofollow">分享到 LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=邵晨峰的个人网站&title=邵晨峰的个人网站&summary=我热爱计算机科学，这是我的个人网站&pics=http://zoollcar.github.io/img/favicon.png&url=http://zoollcar.github.io" target="_blank" rel="noopener noreferrer nofollow"> 分享到 QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://telegram.me/share/url?url=http://zoollcar.github.io&text=邵晨峰的个人网站" target="_blank" rel="noopener noreferrer nofollow">分享到 Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAACkCAAAAAA83tqdAAACMklEQVR42u2b0U7DQAwE8/8/DU9IVZXzjq9FlPPkBUqSywTFrr3rXF//YLuEFFJIIT8A8iq2x/0/v1fnPK55d+7q83IdIcdC3j60xUUT1PP+as3yGCFHQ9492HfHPC9YBdrqHHxdIYVcJO6XA6BYV0ghdyFXQUKAqoASUshugVElY7qvOvYtVZCQx0GmRuy3fr61WxTyGMgoGi2aqrubrArbFDAvqWpCHgWZEvJdUiaJugpAInYJOReSNPSdpn9V7G7drJBCAlGAHruzfvmNI+RIyJUo3wmKZDaRhC+kkJ0LkeafgsUEL+R4SHIyCaxkwKdEL+RsyDQUQo2kTpLH/yAhx0K2htyCIZoCiSZ+IedCdovVCowO5RFzVUghqZFJjVJys/GzkGMhqyAgQdEx9VMRIqSQpdkThtkrgyqKUSSQhBwLSY3QNPRBRFcKKORsyM7DTQvcjoHfSuZCHg/ZEUNpodz5YkCDx0KOgkzBUg0zpYDqwgopJB3koC9dpOI4iRDYpRXyaMiOuEmDgUKkIkPImZApae82X/RFDSGFrCCJcE9M/PR3Migl5FxIMjBHCgoiyraFViFHQpKmv/PCRifAooEq5EjIq9iqixORvluoxGQu5BjIJKimYpcMvSfzYGvqT8ijIVPAJEE1FRlJcEBKr5BCNkX7jgmVRC4hhaTDSVQ8IKbU1jSLkGMgidhOGypqNLUUDCFHQXaGkXaaN3rzL3WLQh4D+cmbkEIKKeQfbt9ckZTTZVw0gQAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                            <div id="post-toc">
+                                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#行列式的定义"><span class="post-toc-number">1.</span> <span class="post-toc-text">行列式的定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#定义的计算方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">定义的计算方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代数余子式的计算方法"><span class="post-toc-number">3.</span> <span class="post-toc-text">代数余子式的计算方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#初等变换对行列式值的影响"><span class="post-toc-number">4.</span> <span class="post-toc-text">初等变换对行列式值的影响</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常见行列式的计算"><span class="post-toc-number">5.</span> <span class="post-toc-text">常见行列式的计算</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#上（下）三角行列式"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">上（下）三角行列式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#拉普拉斯展开式"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">拉普拉斯展开式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#范特蒙德行列式"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">范特蒙德行列式</span></a></li></ol></li></ol>
+                            </div>
+                        
+                    
+                    <article id="post-content">
+                        <p>线性代数的基础是 行列式 和 矩阵，运用这两个工具可以解决向量组、方程组、特征值、二次型等问题。<br>由此可以得到这张表</p>
+<table>
+<thead>
+<tr>
+<th>基础</th>
+<th>应用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://zoollcar.top/2018/06/线性代数笔记：行列式/" target="_blank" rel="noopener">行列式</a> <a href="https://zoollcar.top/2018/06/线性代数笔记：矩阵" target="_blank" rel="noopener">矩阵</a></td>
+<td><a href="https://zoollcar.top/2018/06/线性代数笔记：向量组" target="_blank" rel="noopener">向量组</a> <a href="https://zoollcar.top/2018/06/线性代数笔记：方程组" target="_blank" rel="noopener">方程组</a> 特征值 二次型</td>
+</tr>
+</tbody>
+</table>
+<h2 id="行列式的定义"><a href="#行列式的定义" class="headerlink" title="行列式的定义"></a>行列式的定义</h2><p>行列式是一个工具，是<strong>对一个方阵的进行特定计算得到一个数</strong><br>在几何上，它代表了组成这个方阵的向量所围成的平行图形的面积<br>在代数上，它代表了多元线性方程组的相关运算<br>总之，在数学研究中，行列式是十分有力的工具<br><a id="more"></a></p>
+<h2 id="定义的计算方法"><a href="#定义的计算方法" class="headerlink" title="定义的计算方法"></a>定义的计算方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\left|</span><br><span class="line">    \begin&#123;array&#125;&#123;ccc&#125;</span><br><span class="line">      a_&#123;11&#125; &amp; a_&#123;12&#125; &amp; a_&#123;13&#125; \\</span><br><span class="line">	  a_&#123;21&#125; &amp; a_&#123;22&#125; &amp; a_&#123;23&#125; \\</span><br><span class="line">	  a_&#123;31&#125; &amp; a_&#123;32&#125; &amp; a_&#123;33&#125;</span><br><span class="line">    \end&#123;array&#125;</span><br><span class="line">\right|</span><br></pre></td></tr></table></figure>
+<p>计算公式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\sum_&#123;j_1,j_2,...,j_n&#125;(-1)^&#123;r(j_1,j_2,...,j_n)&#125;a_&#123;1j_1&#125;a_&#123;2j_2&#125;...a_&#123;nj_n&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="代数余子式的计算方法"><a href="#代数余子式的计算方法" class="headerlink" title="代数余子式的计算方法"></a>代数余子式的计算方法</h2><p>n阶行列式的值等于他的任何一行（列）的元素，与其代数余子式乘积之和<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">\left|</span><br><span class="line">    \begin&#123;array&#125;&#123;ccc&#125;</span><br><span class="line">     1 &amp; a_&#123;12&#125; &amp; a_&#123;13&#125; \\</span><br><span class="line">	 0 &amp; a_&#123;22&#125; &amp; a_&#123;23&#125; \\</span><br><span class="line">	 0 &amp; a_&#123;32&#125; &amp; a_&#123;33&#125;</span><br><span class="line">    \end&#123;array&#125;</span><br><span class="line">\right|</span><br><span class="line">=1×</span><br><span class="line">\left|</span><br><span class="line">    \begin&#123;array&#125;&#123;ccc&#125;</span><br><span class="line">	 a_&#123;22&#125; &amp; a_&#123;23&#125; \\</span><br><span class="line">	 a_&#123;32&#125; &amp; a_&#123;33&#125;</span><br><span class="line">    \end&#123;array&#125;</span><br><span class="line">\right|</span><br></pre></td></tr></table></figure></p>
+<h2 id="初等变换对行列式值的影响"><a href="#初等变换对行列式值的影响" class="headerlink" title="初等变换对行列式值的影响"></a>初等变换对行列式值的影响</h2><ol>
+<li>如果过某行（列）是两个元素的和，则可以拆成两个行列式相加 ※</li>
+<li>两行（列）交换位置，行列式变号 ※</li>
+<li>公因子可以提到行列式之前</li>
+<li>转置后行列式值不变</li>
+<li>某行的k倍加到另一行上去，行列式值不变 （常用）</li>
+</ol>
+<h2 id="常见行列式的计算"><a href="#常见行列式的计算" class="headerlink" title="常见行列式的计算"></a>常见行列式的计算</h2><h3 id="上（下）三角行列式"><a href="#上（下）三角行列式" class="headerlink" title="上（下）三角行列式"></a>上（下）三角行列式</h3><p><strong>主对角线行列式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\left|</span><br><span class="line">\setminus</span><br><span class="line">\right|=a_&#123;11&#125;a_&#123;22&#125;a_&#123;33&#125;...a_&#123;nn&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>副对角线行列式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\left|</span><br><span class="line">/</span><br><span class="line">\right|=(-1)^&#123;\frac&#123;n(n-1)&#125;&#123;2&#125;&#125;a_&#123;11&#125;a_&#123;22&#125;a_&#123;33&#125;...a_&#123;nn&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="拉普拉斯展开式"><a href="#拉普拉斯展开式" class="headerlink" title="拉普拉斯展开式"></a>拉普拉斯展开式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">\left|</span><br><span class="line">    \begin&#123;array&#125;&#123;ccc&#125;</span><br><span class="line">	 A &amp; * \\</span><br><span class="line">	 0 &amp; B</span><br><span class="line">    \end&#123;array&#125;</span><br><span class="line">\right|</span><br><span class="line">=</span><br><span class="line">\left|</span><br><span class="line">    \begin&#123;array&#125;&#123;ccc&#125;</span><br><span class="line">	 A &amp; 0 \\</span><br><span class="line">	 * &amp; B</span><br><span class="line">    \end&#123;array&#125;</span><br><span class="line">\right|</span><br><span class="line">=</span><br><span class="line">|A|·|B|</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">\left|</span><br><span class="line">    \begin&#123;array&#125;&#123;ccc&#125;</span><br><span class="line">	 0 &amp; A_&#123;mn&#125; \\</span><br><span class="line">	 B_&#123;mn&#125; &amp; *</span><br><span class="line">    \end&#123;array&#125;</span><br><span class="line">\right|</span><br><span class="line">=</span><br><span class="line">\left|</span><br><span class="line">    \begin&#123;array&#125;&#123;ccc&#125;</span><br><span class="line">	 * &amp; A_&#123;mn&#125; \\</span><br><span class="line">	 B_&#123;mn&#125; &amp; 0</span><br><span class="line">    \end&#123;array&#125;</span><br><span class="line">\right|</span><br><span class="line">=</span><br><span class="line">(-1)^&#123;mn&#125;|A|·|B|</span><br></pre></td></tr></table></figure>
+<h3 id="范特蒙德行列式"><a href="#范特蒙德行列式" class="headerlink" title="范特蒙德行列式"></a>范特蒙德行列式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">\left|</span><br><span class="line">    \begin&#123;array&#125;&#123;ccc&#125;</span><br><span class="line">	 1&amp;1&amp;\cdots&amp;1\\</span><br><span class="line">	 x_1&amp;x_2&amp;\cdots&amp;x_n\\</span><br><span class="line">	 x_1^2&amp;x_2^2&amp;\cdots&amp;x_n^2\\</span><br><span class="line">	 x_1^3&amp;x_2^3&amp;\cdots&amp;x_n^3\\</span><br><span class="line">	 \vdots &amp;\vdots &amp;&amp;\vdots\\</span><br><span class="line">	 x_1^&#123;n-1&#125;&amp;x_2^&#123;n-1&#125;&amp;\cdots&amp;x_n^&#123;n-1&#125;</span><br><span class="line">    \end&#123;array&#125;</span><br><span class="line">\right|</span><br><span class="line">=</span><br><span class="line">\prod_&#123;1\leqslant j \leqslant i \leqslant n&#125;(x_i-x_j)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\left|</span><br><span class="line">    \begin&#123;array&#125;&#123;ccc&#125;</span><br><span class="line">	 1 &amp; 1 &amp; 1 \\</span><br><span class="line">	 a_1&amp;a_2 &amp;a_3\\</span><br><span class="line">	 a_1^2&amp;a_2^2&amp;a_3^2</span><br><span class="line">    \end&#123;array&#125;</span><br><span class="line">\right|</span><br><span class="line">=</span><br><span class="line">(a_3-a_2)(a_3-a_1)(a_2-a_1)</span><br></pre></td></tr></table></figure>
+                    </article>
+                    
+    <blockquote class="post-license">
+        <p>
+            <strong>本文作者&nbsp;:&nbsp;邵晨峰</strong>
+            <br>
+            <strong>
+            
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。
+            </strong>
+            <br>
+            <strong>本文链接&nbsp;:&nbsp;</strong><a href="http://zoollcar.github.io/2018/09/02/线性代数笔记：行列式/">http://zoollcar.github.io/2018/09/02/线性代数笔记：行列式/</a>
+        </p>
+    </blockquote>
+
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">本文最后更新于 <span id="date-expire-num"></span> 天前，文中所描述的信息可能已发生改变</blockquote>
+    <script>
+        var dateUpdate = Date.parse("2018-09-02");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2018-09-02T13:19:59.557Z" itemprop="datePublished">2018-09-02</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+
+</p>
+
+                </div>
+                
+<div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2018/09/02/线性代数笔记：矩阵/">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">线性代数笔记：矩阵</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2018/09/02/机器学习新手笔记整理（一）/">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">机器学习新手笔记整理（一）</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
+        <a class="footer-copyright-a" href="http://zoollcar.github.io">邵晨峰的个人网站</a>
+    </p>
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+        
+            <a href="http://www.miitbeian.gov.cn" rel="nofollow">某ICP备xxxxxxxx号-x</a>
+        
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+            
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+        
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="noopener">Suka</a>
+    </p>
+</footer>
+
+        
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    
+        copyrightSince = 2018;
+        if (copyrightSince === copyrightNow) {
+            copyrightContent.textContent = copyrightNow
+        } else {
+            copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow
+        }
+    
+
+
+
+/* Cnosole Log */
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.1.0 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+</script>
+
+<!-- vanilla-lazyload -->
+
+    <script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+
+
+
+    <!-- Busuanzi -->
+    
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+
+
+
+<!-- gallery.js -->
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+
+    </body>
+
+</html>

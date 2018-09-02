@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: 1.1.0
+    -->
+    <script>
+window.lsVersion = "1.1.0",
+window.oldVersion = [
+    
+        
+            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1"
+        
+    
+]
+</script>
+
+    <!-- ### DNS Prefetch ### -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<title>C语言标准库stdlib.h学习 | 邵晨峰的个人网站</title>
+
+<!-- favicon -->
+<!-- Favicons -->
+
+    <link rel="shortcut icon" type="image/ico" href="/img/favicon.ico">
+
+
+
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+
+
+
+<!-- Android Chrome Color -->
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<meta name="description" content="数据类型size_t是sizeof关键词的值，无符号整形wchar_t 宽字符类型div_t与ldiv_t结构体 作为 div 的返回值123456789typedef struct &amp;#123;    int quot; // 商    int rem;  // 余数&amp;#125; div_t;//-------------------------------typedef struct &amp;#123;    long int quot; // 商    long int rem;  // 余数&amp;#125; ldiv_t;
+宏">
+
+<!-- Keywords -->
+<meta name="keywords" content="机器学习,爬虫,操作系统,底层原理">
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!-- ### Import File ### -->
+    
+        <!-- spectre.css -->
+
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css">
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style>
+
+<!-- style.css -->
+
+    <link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    
+        <link rel="stylesheet" href="/css/highlight/github.min.css">
+    
+
+
+
+    
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <!-- ### RSS ### -->
+    
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="邵晨峰的个人网站">
+<meta name="msapplication-starturl" content="http://zoollcar.github.io">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="邵晨峰的个人网站">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Manifest Import -->
+
+<!-- Open Search -->
+
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    
+
+
+<meta property="og:title" content="C语言标准库stdlib.h学习 | 邵晨峰的个人网站">
+
+<meta property="og:type" content="blog">
+<meta property="og:url" content="http://zoollcar.github.io/2018/09/02/C语言标准库stdlib.h学习/">
+<meta property="og:image" content="http://zoollcar.github.io/img/favicon.png">
+
+<meta property="og:description" content="数据类型size_t是sizeof关键词的值，无符号整形wchar_t 宽字符类型div_t与ldiv_t结构体 作为 div 的返回值123456789typedef struct &amp;#123;    int quot; // 商    int rem;  // 余数&amp;#125; div_t;//-------------------------------typedef struct &amp;#123;    long int quot; // 商    long int rem;  // 余数&amp;#125; ldiv_t;
+宏">
+
+
+    <meta property="og:article:tag" content="机器学习,爬虫,操作系统,底层原理">
+
+
+<meta name="twitter:card" content="summary">
+
+
+    <meta property="article:published_time" content="2018-09-02T13:15:01.605Z">
+    <meta property="article:modified_time" content="2018-09-02T13:15:01.605Z">
+
+
+<meta property="og:locale" content="zh-CN">
+
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://zoollcar.github.io/2018/09/02/C语言标准库stdlib.h学习/">
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://zoollcar.github.io"
+    },
+    "headline": "C语言标准库stdlib.h学习",
+    
+    "datePublished": "2018-09-02T13:15:01.605Z",
+    "dateModified": "2018-09-02T13:19:33.629Z",
+    "author": {
+        "@type": "Person",
+        "name": "邵晨峰",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://zoollcar.github.io/img/avatar.png"
+        },
+        "description": ""
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "邵晨峰的个人网站",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://zoollcar.github.io/img/favicon.png"
+        }
+    },
+    "keywords": "机器学习,爬虫,操作系统,底层原理",
+    "description": "数据类型size_t是sizeof关键词的值，无符号整形wchar_t 宽字符类型div_t与ldiv_t结构体 作为 div 的返回值123456789typedef struct &amp;#123;    int quot; // 商    int rem;  // 余数&amp;#125; div_t;//-------------------------------typedef struct &amp;#123;    long int quot; // 商    long int rem;  // 余数&amp;#125; ldiv_t;
+宏"
+}
+</script>
+
+
+    <!-- ### Custom Head ### -->
+    
+
+
+</head>
+
+    <body>
+        
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">邵晨峰的个人网站</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                你好，很高兴遇到你
+            
+        
+    </p>
+
+    <section class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">首页</a>
+    
+    
+        <a href="/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/search" class="navbar-link">搜索</a>
+    
+    
+        <a href="/about/" class="navbar-link">关于</a>
+    
+    
+        
+<div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=邵晨峰的个人网站&url=http://zoollcar.github.io&pic=http://zoollcar.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">分享到微博</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=邵晨峰的个人网站&url=http://zoollcar.github.io&via=邵晨峰" target="_blank" rel="noopener noreferrer nofollow">分享到 Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://zoollcar.github.io" target="_blank" rel="noopener noreferrer nofollow">分享到 Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://zoollcar.github.io" target="_blank" rel="noopener noreferrer nofollow">分享到 Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://zoollcar.github.io/2018/09/02/正则表达式简明语法/index.html&title=正则表达式简明语法" target="_blank" rel="noopener noreferrer nofollow">分享到 LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=邵晨峰的个人网站&title=正则表达式简明语法&summary=我热爱计算机科学，这是我的个人网站&pics=http://zoollcar.github.io/img/favicon.png&url=http://zoollcar.github.io/2018/09/02/正则表达式简明语法/index.html" target="_blank" rel="noopener noreferrer nofollow"> 分享到 QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://telegram.me/share/url?url=http://zoollcar.github.io/2018/09/02/正则表达式简明语法/index.html&text=正则表达式简明语法" target="_blank" rel="noopener noreferrer nofollow">分享到 Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAACkCAAAAAA83tqdAAACL0lEQVR42u2b0VLDMAwE8/8/Da8diHUrB4ZibV46pa29nomU00lcH//guoQUUkgh3wDyKi682Mv3X3+X/pb2FXIu5Grj1WZfF6Qwq/WX+wo5GjJtfPf5txsdBB89sJBCkmCoEvgqOFLgCCnk08AhCZocVEghdwUGFQfpACsB8iMqSMjjIKuC6Ddff6xaFPIoyE7hf3fDkwDpGA1brpqQR0FWN/JdcFWwVVG2gi+Tv5DjIYkgvXtfBR0xwVbiWMi5kB1jiSTwlNCJ4SDkbMiUtOkhksmQhC+qFoUcAVkldNroJEZ/ekCg6BbyeEhieu4YBuTwqUATUshVEicJmTSiOg8LIedC0s06w04kgSOxLKSQjSZnvOkb4mIpaIQUsrjBuwKXDp2UwyRCjoYkYqDTME0NrGSKCTkXMokMWrClBN35XMjZkDvDccQMrcwoEqBCCkka7dS4T4BVsAgpZCrIdozU1OCn4kTI2ZCdQKmaolXSpoaEkLMhqwVo0Z+a9+lgyLASchzkriHQHbgjzXwhhUyilST86n1qzGNXTciRkBS2ehhU320FrJCjIbuDmHQIqfMgiMlcyBGQTxpDVXA9GTwRcjYkGUbaSd4kIKPZIORYSBIwdEApDsld+Z8yhRSSNJG6ptWuuY+VuZDjIWmRnxqhJLkLKSQNnJXBlIZMiJkVRa+Q4yDTYpUwIMFCGlnbKkjI4yBJA6lqBJAmZzIQHpkDQh4F+c6XkEIKKeQfXp8/S/dGT92D7wAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</section>
+</header>
+
+            
+    <!-- ## Post ## -->
+    
+    
+
+
+<div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    <h2 class="card-title h3 mb-2">C语言标准库stdlib.h学习</h2>
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <span>2018-09-02</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            
+<div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">分享本文</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=C语言标准库stdlib.h学习&url=http://zoollcar.github.io/2018/09/02/C语言标准库stdlib.h学习/index.html&pic=http://zoollcar.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">分享到微博</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=C语言标准库stdlib.h学习&url=http://zoollcar.github.io/2018/09/02/C语言标准库stdlib.h学习/index.html&via=邵晨峰" target="_blank" rel="noopener noreferrer nofollow">分享到 Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://zoollcar.github.io/2018/09/02/C语言标准库stdlib.h学习/index.html" target="_blank" rel="noopener noreferrer nofollow">分享到 Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://zoollcar.github.io/2018/09/02/C语言标准库stdlib.h学习/index.html" target="_blank" rel="noopener noreferrer nofollow">分享到 Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://zoollcar.github.io&title=邵晨峰的个人网站" target="_blank" rel="noopener noreferrer nofollow">分享到 LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=邵晨峰的个人网站&title=邵晨峰的个人网站&summary=我热爱计算机科学，这是我的个人网站&pics=http://zoollcar.github.io/img/favicon.png&url=http://zoollcar.github.io" target="_blank" rel="noopener noreferrer nofollow"> 分享到 QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://telegram.me/share/url?url=http://zoollcar.github.io&text=邵晨峰的个人网站" target="_blank" rel="noopener noreferrer nofollow">分享到 Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAACkCAAAAAA83tqdAAACNElEQVR42u2aQW7DMAwE8/9Pt6cChSFxh7aDpub4EsRSpBEQUuSSr69/8LyEFFJIIT8A8lU8P+O/567erX53HFutUe0r5GzI5Z92s1h3c3LQ1b5CClktvDOW4/jqfYIsDySkkIvJlaNOcNW4kEJeMZydkexgqsMIKSSFJA74uFkV/FYHvD0KEvJxkCQRe8fn7dmikI+AjKJRAUwCk+oCuE1VE/JRkKtFk/hUAVTJXHXQ5cGEHAlJjYcKBlRESIGMkEKmwJUYzc657wwoGpmQIyGrRTvFo5RcnQk2hJwJ2S2CkqSqMsTqexlgCDkGkgj0xLF33qe5Qgp5RuQngcbuoMmAhJwNSZJ7aji06JnghRQyBQBXRVUiECznCTkSMhUkKwfenUsuhxgFCfl4SGIcVPQnokAq8gsp5C4xj39qKCJ0GulKZy7kOEgiMCGRCR64Er+EFDIFDkTQpwUq4tyFFPKM+N4VB0gjSSvAEPKxkJ0g9EojUgpKYueAkKMgUzGTjJGknwgHQgpJxFGSdJ1JvGJALORYSJIYpeJmJWKR4CU2eQo5BpIU0mkhKhULUrNe2fUn5BhI0ujREQeuFvXxjSPk4yGTWEVErK7Q1WoUEXIMZLvxEjQmkYI8ai4VciwkafhIhdIrjUxbIxJyNCRN/okBUQcfoYUUshBOaYGdNIymgpOQQpIFCXz3UkjrCDkbsnLcSZA6E3ygfYQcC9lJxIi4RZw+CYqFnAn5yY+QQgop5B8+3xavtpUUllfwAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                            <div id="post-toc">
+                                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#size-t是sizeof关键词的值，无符号整形"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">size_t是sizeof关键词的值，无符号整形</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#wchar-t-宽字符类型"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">wchar_t 宽字符类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#div-t与ldiv-t结构体-作为-div-的返回值"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">div_t与ldiv_t结构体 作为 div 的返回值</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#宏"><span class="post-toc-number">2.</span> <span class="post-toc-text">宏</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#EXIT-SUCCESS-和-EXIT-FAILURE"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">EXIT_SUCCESS 和 EXIT_FAILURE</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#RAND-MAX-rand-函数返回的最大的数"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">RAND_MAX rand 函数返回的最大的数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MB-CUR-MAX-一个多字节字符的最大字节数"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">MB_CUR_MAX 一个多字节字符的最大字节数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数"><span class="post-toc-number">3.</span> <span class="post-toc-text">函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将字符串转换为-double"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">将字符串转换为 double</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将字符串转换为-int"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">将字符串转换为 int</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将字符串转换为-long-int"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">将字符串转换为 long int</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将以数字开头的字符串转换为-double"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">将以数字开头的字符串转换为 double</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将以数字开头的字符串转换为-long-int"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">将以数字开头的字符串转换为 long int</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#str-是一个以数字开头的字符串，"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">str 是一个以数字开头的字符串，</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分配请求的内存大小-nitems-size-并返回指向它的指针"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">分配请求的内存大小(nitems * size)并返回指向它的指针</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分配请求的内存-size-并返回指向它的指针"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">分配请求的内存(size)并返回指向它的指针</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#调整之前分配的内存块大小"><span class="post-toc-number">3.9.</span> <span class="post-toc-text">调整之前分配的内存块大小</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#回收先前分配的内存"><span class="post-toc-number">3.10.</span> <span class="post-toc-text">回收先前分配的内存</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搜索环境变量并返回字符串"><span class="post-toc-number">3.11.</span> <span class="post-toc-text">搜索环境变量并返回字符串</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#把命令-string-传递给主机由主机执行"><span class="post-toc-number">3.12.</span> <span class="post-toc-text">把命令(string)传递给主机由主机执行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#快速排序"><span class="post-toc-number">3.13.</span> <span class="post-toc-text">快速排序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二分查找"><span class="post-toc-number">3.14.</span> <span class="post-toc-text">二分查找</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#返回x的绝对值"><span class="post-toc-number">3.15.</span> <span class="post-toc-text">返回x的绝对值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#做除法，分别得到除数和被除数"><span class="post-toc-number">3.16.</span> <span class="post-toc-text">做除法，分别得到除数和被除数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#返回一个随机数，范围-0-RAND-MAX"><span class="post-toc-number">3.17.</span> <span class="post-toc-text">返回一个随机数，范围(0~RAND_MAX)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对随机函数设置种子"><span class="post-toc-number">3.18.</span> <span class="post-toc-text">对随机函数设置种子</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#计算一个多字节字符的长度"><span class="post-toc-number">3.19.</span> <span class="post-toc-text">计算一个多字节字符的长度</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多字节字符串转换为数组"><span class="post-toc-number">3.20.</span> <span class="post-toc-text">多字节字符串转换为数组</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在程序正常退出时执行"><span class="post-toc-number">3.21.</span> <span class="post-toc-text">在程序正常退出时执行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#程序异常退出"><span class="post-toc-number">3.22.</span> <span class="post-toc-text">程序异常退出</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#程序正常退出-返回给操作系统-status"><span class="post-toc-number">3.23.</span> <span class="post-toc-text">程序正常退出 ,返回给操作系统 status</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#示例文件"><span class="post-toc-number">4.</span> <span class="post-toc-text">示例文件</span></a></li></ol>
+                            </div>
+                        
+                    
+                    <article id="post-content">
+                        <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="size-t是sizeof关键词的值，无符号整形"><a href="#size-t是sizeof关键词的值，无符号整形" class="headerlink" title="size_t是sizeof关键词的值，无符号整形"></a>size_t是sizeof关键词的值，无符号整形</h3><h3 id="wchar-t-宽字符类型"><a href="#wchar-t-宽字符类型" class="headerlink" title="wchar_t 宽字符类型"></a>wchar_t 宽字符类型</h3><h3 id="div-t与ldiv-t结构体-作为-div-的返回值"><a href="#div-t与ldiv-t结构体-作为-div-的返回值" class="headerlink" title="div_t与ldiv_t结构体 作为 div 的返回值"></a>div_t与ldiv_t结构体 作为 div 的返回值</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> quot; <span class="comment">// 商</span></span><br><span class="line">    <span class="keyword">int</span> rem;  <span class="comment">// 余数</span></span><br><span class="line">&#125; <span class="keyword">div_t</span>;</span><br><span class="line"><span class="comment">//-------------------------------</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">int</span> quot; <span class="comment">// 商</span></span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">int</span> rem;  <span class="comment">// 余数</span></span><br><span class="line">&#125; <span class="keyword">ldiv_t</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h2><a id="more"></a>
+<h3 id="EXIT-SUCCESS-和-EXIT-FAILURE"><a href="#EXIT-SUCCESS-和-EXIT-FAILURE" class="headerlink" title="EXIT_SUCCESS 和 EXIT_FAILURE"></a>EXIT_SUCCESS 和 EXIT_FAILURE</h3><p>exit函数成功退出和失败的返回值<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EXIT_SUCCESS	0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EXIT_FAILURE	1</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="RAND-MAX-rand-函数返回的最大的数"><a href="#RAND-MAX-rand-函数返回的最大的数" class="headerlink" title="RAND_MAX rand 函数返回的最大的数"></a>RAND_MAX rand 函数返回的最大的数</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> RAND_MAX	0x7FFF</span></span><br></pre></td></tr></table></figure>
+<h3 id="MB-CUR-MAX-一个多字节字符的最大字节数"><a href="#MB-CUR-MAX-一个多字节字符的最大字节数" class="headerlink" title="MB_CUR_MAX 一个多字节字符的最大字节数"></a>MB_CUR_MAX 一个多字节字符的最大字节数</h3><p>源码处理的比较复杂</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="将字符串转换为-double"><a href="#将字符串转换为-double" class="headerlink" title="将字符串转换为 double"></a>将字符串转换为 double</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">atof</span> <span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *)</span></span>;</span><br></pre></td></tr></table></figure>
+<h3 id="将字符串转换为-int"><a href="#将字符串转换为-int" class="headerlink" title="将字符串转换为 int"></a>将字符串转换为 int</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">atoi</span> <span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *)</span></span>;</span><br></pre></td></tr></table></figure>
+<h3 id="将字符串转换为-long-int"><a href="#将字符串转换为-long-int" class="headerlink" title="将字符串转换为 long int"></a>将字符串转换为 long int</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">atol</span> <span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *)</span></span>;</span><br></pre></td></tr></table></figure>
+<h3 id="将以数字开头的字符串转换为-double"><a href="#将以数字开头的字符串转换为-double" class="headerlink" title="将以数字开头的字符串转换为 double"></a>将以数字开头的字符串转换为 double</h3><p>str 是一个以数字开头的字符串，<br>返回把 str 转换后的 double ， endptr 指向第一个不是数字的字符<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">strtod</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *str, <span class="keyword">char</span> **endptr)</span></span></span><br></pre></td></tr></table></figure></p>
+<h3 id="将以数字开头的字符串转换为-long-int"><a href="#将以数字开头的字符串转换为-long-int" class="headerlink" title="将以数字开头的字符串转换为 long int"></a>将以数字开头的字符串转换为 long int</h3><p>str 是一个以数字开头的字符串，<br>返回把 str 以 base 为基数（进制）转换后的 long int ，<br>endptr 指向第一个不是数字的字符<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">int</span> <span class="title">strtol</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *str, <span class="keyword">char</span> **endptr, <span class="keyword">int</span> base)</span></span></span><br></pre></td></tr></table></figure></p>
+<h3 id="str-是一个以数字开头的字符串，"><a href="#str-是一个以数字开头的字符串，" class="headerlink" title="str 是一个以数字开头的字符串，"></a>str 是一个以数字开头的字符串，</h3><p>返回把 str 以 base 为基数 转换后的 unsigned long int ，<br>endptr 指向第一个不是数字的字符<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">int</span> <span class="title">strtoul</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *str, <span class="keyword">char</span> **endptr, <span class="keyword">int</span> base)</span></span></span><br></pre></td></tr></table></figure></p>
+<h3 id="分配请求的内存大小-nitems-size-并返回指向它的指针"><a href="#分配请求的内存大小-nitems-size-并返回指向它的指针" class="headerlink" title="分配请求的内存大小(nitems * size)并返回指向它的指针"></a>分配请求的内存大小(nitems * size)并返回指向它的指针</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">calloc</span><span class="params">(<span class="keyword">size_t</span> nitems, <span class="keyword">size_t</span> size)</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="分配请求的内存-size-并返回指向它的指针"><a href="#分配请求的内存-size-并返回指向它的指针" class="headerlink" title="分配请求的内存(size)并返回指向它的指针"></a>分配请求的内存(size)并返回指向它的指针</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">malloc</span><span class="params">(<span class="keyword">size_t</span> size)</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="调整之前分配的内存块大小"><a href="#调整之前分配的内存块大小" class="headerlink" title="调整之前分配的内存块大小"></a>调整之前分配的内存块大小</h3><ul>
+<li>ptr 执行要调整的内存块</li>
+<li>size 要调整到的字节数<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">realloc</span><span class="params">(<span class="keyword">void</span> *ptr, <span class="keyword">size_t</span> size)</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="回收先前分配的内存"><a href="#回收先前分配的内存" class="headerlink" title="回收先前分配的内存"></a>回收先前分配的内存</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">free</span><span class="params">(<span class="keyword">void</span> *ptr)</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="搜索环境变量并返回字符串"><a href="#搜索环境变量并返回字符串" class="headerlink" title="搜索环境变量并返回字符串"></a>搜索环境变量并返回字符串</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">getenv</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *name)</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="把命令-string-传递给主机由主机执行"><a href="#把命令-string-传递给主机由主机执行" class="headerlink" title="把命令(string)传递给主机由主机执行"></a>把命令(string)传递给主机由主机执行</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">system</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *<span class="built_in">string</span>)</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><ul>
+<li>base是数组的基地址 </li>
+<li>nitems是数组的元素个数 </li>
+<li>size是数组元素大小</li>
+<li>compar是比较函数，靠返回值正负来比较，为0的情况未定义<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">qsort</span><span class="params">(<span class="keyword">void</span> *base, <span class="keyword">size_t</span> nitems, <span class="keyword">size_t</span> size,</span></span></span><br><span class="line">                int (*compar)(const void *, const void*))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><ul>
+<li>key是要查找的元素 </li>
+<li>base是数组的基地址 </li>
+<li>num是数组的元素个数 </li>
+<li>size数组元素大小</li>
+<li>cmp是比较函数，靠返回值正负来比较，数组必须是排好序的</li>
+<li>返回找到的元素的指针<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">bsearch</span><span class="params">(<span class="keyword">const</span> <span class="keyword">void</span> *key, <span class="keyword">const</span> <span class="keyword">void</span> *base, <span class="keyword">size_t</span> num, <span class="keyword">size_t</span> size,</span></span></span><br><span class="line">                int (*cmp)(const void *, const void *));</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="返回x的绝对值"><a href="#返回x的绝对值" class="headerlink" title="返回x的绝对值"></a>返回x的绝对值</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">abs</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">int</span> <span class="title">labs</span><span class="params">(<span class="keyword">long</span> <span class="keyword">int</span> x)</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="做除法，分别得到除数和被除数"><a href="#做除法，分别得到除数和被除数" class="headerlink" title="做除法，分别得到除数和被除数"></a>做除法，分别得到除数和被除数</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">div_t</span> div(<span class="keyword">int</span> numer, <span class="keyword">int</span> denom)</span><br><span class="line"><span class="keyword">ldiv_t</span> ldiv(<span class="keyword">long</span> <span class="keyword">int</span> numer, <span class="keyword">long</span> <span class="keyword">int</span> denom)</span><br></pre></td></tr></table></figure>
+<h3 id="返回一个随机数，范围-0-RAND-MAX"><a href="#返回一个随机数，范围-0-RAND-MAX" class="headerlink" title="返回一个随机数，范围(0~RAND_MAX)"></a>返回一个随机数，范围(0~RAND_MAX)</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">rand</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="对随机函数设置种子"><a href="#对随机函数设置种子" class="headerlink" title="对随机函数设置种子"></a>对随机函数设置种子</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">srand</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> seed)</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="计算一个多字节字符的长度"><a href="#计算一个多字节字符的长度" class="headerlink" title="计算一个多字节字符的长度"></a>计算一个多字节字符的长度</h3><ul>
+<li>n 是多字节字符的长度的最大值<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mblen</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *str, <span class="keyword">size_t</span> n)</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="多字节字符串转换为数组"><a href="#多字节字符串转换为数组" class="headerlink" title="多字节字符串转换为数组"></a>多字节字符串转换为数组</h3><p>将由参数str指向的多字节字符串转换为由pwcs指向的数组</p>
+<ul>
+<li>n 是多字节字符的长度的最大值<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">size_t</span> mbstowcs(<span class="keyword">schar_t</span> *pwcs, <span class="keyword">const</span> <span class="keyword">char</span> *str, <span class="keyword">size_t</span> n)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="在程序正常退出时执行"><a href="#在程序正常退出时执行" class="headerlink" title="在程序正常退出时执行"></a>在程序正常退出时执行</h3><ul>
+<li>func 要执行的函数<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int atexit(void (*func)(void))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="程序异常退出"><a href="#程序异常退出" class="headerlink" title="程序异常退出"></a>程序异常退出</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">abort</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="程序正常退出-返回给操作系统-status"><a href="#程序正常退出-返回给操作系统-status" class="headerlink" title="程序正常退出 ,返回给操作系统 status"></a>程序正常退出 ,返回给操作系统 status</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">exit</span><span class="params">(<span class="keyword">int</span> status)</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="示例文件"><a href="#示例文件" class="headerlink" title="示例文件"></a>示例文件</h2><p><a href="https://github.com/zoollcar/stdlib_learn_note_chinese" target="_blank" rel="noopener">Github</a><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123; <span class="built_in">printf</span>(<span class="string">"do this at exit\n"</span>); &#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmptest</span><span class="params">(<span class="keyword">const</span> <span class="keyword">void</span> * a, <span class="keyword">const</span> <span class="keyword">void</span> * b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">int</span>)( *(<span class="keyword">char</span>*)a - *(<span class="keyword">char</span>*)b );</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span>&#123;</span><br><span class="line"><span class="comment">///</span></span><br><span class="line"><span class="comment">/// ## 数据类型</span></span><br><span class="line"><span class="comment">///</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">/// ### size_t是sizeof关键词的值，无符号整形</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"size_t %d\n"</span>,<span class="keyword">sizeof</span>(<span class="keyword">size_t</span>));</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### wchar_t 宽字符类型</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"wchar_t %d\n"</span>,<span class="keyword">sizeof</span>(<span class="keyword">wchar_t</span>));</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### div_t与ldiv_t结构体 作为 div 的返回值</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// typedef struct &#123;</span></span><br><span class="line"><span class="comment">///     int quot; // 商</span></span><br><span class="line"><span class="comment">///     int rem;  // 余数</span></span><br><span class="line"><span class="comment">/// &#125; div_t;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">div_t</span> div_t_timp;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"div_t %d  div_t.quot %d div_t.rem %d\n"</span>,</span><br><span class="line">    <span class="keyword">sizeof</span>(<span class="keyword">div_t</span>),<span class="keyword">sizeof</span>(div_t_timp.quot),<span class="keyword">sizeof</span>(div_t_timp.rem));</span><br><span class="line"><span class="comment">/// //-------------------------------</span></span><br><span class="line"><span class="comment">/// typedef struct &#123;</span></span><br><span class="line"><span class="comment">///     long int quot; // 商</span></span><br><span class="line"><span class="comment">///     long int rem;  // 余数</span></span><br><span class="line"><span class="comment">/// &#125; ldiv_t;</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="keyword">ldiv_t</span> ldiv_t_timp;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"ldiv_t %d  ldiv_t.quot %d ldiv_t.rem %d\n"</span>,</span><br><span class="line">    <span class="keyword">sizeof</span>(<span class="keyword">ldiv_t</span>),<span class="keyword">sizeof</span>(ldiv_t_timp.quot),<span class="keyword">sizeof</span>(ldiv_t_timp.rem));</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="comment">///</span></span><br><span class="line"><span class="comment">/// ## 宏</span></span><br><span class="line"><span class="comment">///</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### EXIT_SUCCESS 和 EXIT_FAILURE</span></span><br><span class="line"><span class="comment">/// exit函数成功退出和失败的返回值</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// #define EXIT_SUCCESS	0</span></span><br><span class="line"><span class="comment">/// #define EXIT_FAILURE	1</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"EXIT_SUCCESS %d\nEXIT_FAILURE %d\n"</span>,EXIT_SUCCESS,EXIT_FAILURE);</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### RAND_MAX rand 函数返回的最大的数</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// #define RAND_MAX	0x7FFF</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"RAND_MAX %d\n"</span>,RAND_MAX);</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### MB_CUR_MAX 一个多字节字符的最大字节数</span></span><br><span class="line"><span class="comment">/// 头文件中的处理比较复杂</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"MB_CUR_MAX %d\n"</span>,MB_CUR_MAX);</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="comment">///</span></span><br><span class="line"><span class="comment">/// ## 函数</span></span><br><span class="line"><span class="comment">///</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 将字符串转换为 double</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// double atof (const char *);</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"atof(\"12.3\") %f\n"</span>,atof(<span class="string">"12.3"</span>));</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 将字符串转换为 int</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// int atoi (const char *);</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"atoi(\"12\") %d\n"</span>,atoi(<span class="string">"12"</span>));</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 将字符串转换为 long int</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// long atol (const char *);</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"atol(\"123456789\") %ld\n"</span>,atol(<span class="string">"123456789"</span>));</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 将以数字开头的字符串转换为 double</span></span><br><span class="line"><span class="comment">/// str 是一个以数字开头的字符串，</span></span><br><span class="line"><span class="comment">/// 返回把 str 转换后的 double ， endptr 指向第一个不是数字的字符</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// double strtod(const char *str, char **endptr)</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="keyword">char</span> *p;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"strtod(\"12.030 hello\",&amp;p) %f"</span>,strtod(<span class="string">"12.030hello"</span>,&amp;p));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">" %s\n"</span>,p);</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 将以数字开头的字符串转换为 long int</span></span><br><span class="line"><span class="comment">/// str 是一个以数字开头的字符串，</span></span><br><span class="line"><span class="comment">/// 返回把 str 以 base 为基数（进制）转换后的 long int ，</span></span><br><span class="line"><span class="comment">/// endptr 指向第一个不是数字的字符</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// long int strtol(const char *str, char **endptr, int base)</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"strtol(\"ffhello\",&amp;p,16) %ld"</span>,strtol(<span class="string">"ffhello"</span>,&amp;p,<span class="number">16</span>));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">" %s\n"</span>,p);</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### str 是一个以数字开头的字符串，</span></span><br><span class="line"><span class="comment">/// 返回把 str 以 base 为基数 转换后的 unsigned long int ，</span></span><br><span class="line"><span class="comment">/// endptr 指向第一个不是数字的字符</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// unsigned long int strtoul(const char *str, char **endptr, int base)</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"strtoul(\"ffhello\",&amp;p,16) %uld"</span>,strtoul(<span class="string">"ffhello"</span>,&amp;p,<span class="number">16</span>));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">" %s\n"</span>,p);</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 分配请求的内存大小(nitems * size)并返回指向它的指针</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// void *calloc(size_t nitems, size_t size)</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    p = (<span class="keyword">char</span> *)<span class="built_in">calloc</span>(<span class="number">5</span>, <span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"calloc(5, sizeof(char))  %p\n"</span>,p);</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 分配请求的内存(size)并返回指向它的指针</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// void *malloc(size_t size)</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="comment">/* p = (char *)calloc(5 * sizeof(char)); */</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 调整之前分配的内存块大小</span></span><br><span class="line"><span class="comment">/// * ptr 执行要调整的内存块</span></span><br><span class="line"><span class="comment">/// * size 要调整到的字节数</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// void *realloc(void *ptr, size_t size)</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    p = <span class="built_in">realloc</span>(p,<span class="number">10</span>*<span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"realloc(p,10*sizeof(char))  %p\n"</span>,p);</span><br><span class="line">    p = <span class="built_in">realloc</span>(p,<span class="number">10000</span>*<span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"realloc(p,10000*sizeof(char))  %p\n"</span>,p);</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 回收先前分配的内存</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// void free(void *ptr)</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="built_in">free</span>(p);</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 搜索环境变量并返回字符串</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// char *getenv(const char *name)</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"getenv(\"PATH\")  %.30s ...\n"</span>, getenv(<span class="string">"PATH"</span>));</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 把命令(string)传递给主机由主机执行</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// int system(const char *string)</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"system(\"echo ok\")\n"</span>);</span><br><span class="line">    system(<span class="string">"echo ok"</span>);</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 快速排序</span></span><br><span class="line"><span class="comment">/// * base是数组的基地址 </span></span><br><span class="line"><span class="comment">/// * nitems是数组的元素个数 </span></span><br><span class="line"><span class="comment">/// * size是数组元素大小</span></span><br><span class="line"><span class="comment">/// * compar是比较函数，靠返回值正负来比较，为0的情况未定义</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// void qsort(void *base, size_t nitems, size_t size,</span></span><br><span class="line"><span class="comment">///                 int (*compar)(const void *, const void*))</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    p = (<span class="keyword">char</span> *)<span class="built_in">calloc</span>(<span class="number">11</span>, <span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line">    <span class="built_in">strcpy</span>(p,<span class="string">"5147096382"</span>);</span><br><span class="line">    qsort(p,<span class="number">10</span>,<span class="keyword">sizeof</span>(<span class="keyword">char</span>),cmptest);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"qsort  "</span>);</span><br><span class="line">    <span class="built_in">printf</span>(p);</span><br><span class="line">    <span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 二分查找</span></span><br><span class="line"><span class="comment">/// * key是要查找的元素 </span></span><br><span class="line"><span class="comment">/// * base是数组的基地址 </span></span><br><span class="line"><span class="comment">/// * num是数组的元素个数 </span></span><br><span class="line"><span class="comment">/// * size数组元素大小</span></span><br><span class="line"><span class="comment">/// * cmp是比较函数，靠返回值正负来比较，数组必须是排好序的</span></span><br><span class="line"><span class="comment">/// * 返回找到的元素的指针</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// void *bsearch(const void *key, const void *base, size_t num, size_t size,</span></span><br><span class="line"><span class="comment">///                 int (*cmp)(const void *, const void *));</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="keyword">char</span> a = <span class="string">'3'</span>; <span class="comment">/* 搜索a */</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"bsearch  "</span>);</span><br><span class="line">    <span class="built_in">printf</span>((<span class="keyword">char</span> *)bsearch(&amp;a,p,<span class="number">10</span>,<span class="keyword">sizeof</span>(<span class="keyword">char</span>),cmptest));</span><br><span class="line">    <span class="built_in">free</span>(p);</span><br><span class="line">    <span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 返回x的绝对值</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// int abs(int x)</span></span><br><span class="line"><span class="comment">/// long int labs(long int x)</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"abs(-5)  %d\n"</span>,<span class="built_in">abs</span>(<span class="number">-5</span>));</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 做除法，分别得到除数和被除数</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// div_t div(int numer, int denom)</span></span><br><span class="line"><span class="comment">/// ldiv_t ldiv(long int numer, long int denom)</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="keyword">div_t</span> div_out = div(<span class="number">7</span>,<span class="number">2</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"div(7,2)=&#123;%d,%d&#125;\n"</span>,div_out.quot,div_out.rem);</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 返回一个随机数，范围(0~RAND_MAX)</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// int rand(void)</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"rand() = %d\n"</span>,rand());</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 对随机函数设置种子</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// void srand(unsigned int seed)</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    srand(<span class="number">15</span>);</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 计算一个多字节字符的长度</span></span><br><span class="line"><span class="comment">/// * n 是多字节字符的长度的最大值</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// int mblen(const char *str, size_t n)</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    wchar_t mywchar = L'汉';      /***** todo: 换成'国'就不行了 */</span><br><span class="line">    printf("mblen('%x',MB_CUR_MAX)  %u\n",L'汉',mblen((char *)&amp;mywchar,MB_CUR_MAX));</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 多字节字符串转换为数组</span></span><br><span class="line"><span class="comment">/// 将由参数str指向的多字节字符串转换为由pwcs指向的数组</span></span><br><span class="line"><span class="comment">/// * n 是多字节字符的长度的最大值</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// size_t mbstowcs(schar_t *pwcs, const char *str, size_t n)</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="comment">/***** todo: 添加实例 */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*  todu 宽字符处理都不懂</span></span><br><span class="line"><span class="comment">    int mbtowc(whcar_t *pwc, const char *str, size_t n)</span></span><br><span class="line"><span class="comment">    Examines the multibyte character pointed to by the argument str.</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    size_t wcstombs(char *str, const wchar_t *pwcs, size_t n)</span></span><br><span class="line"><span class="comment">    Converts the codes stored in the array pwcs to multibyte characters and stores them in the string str.</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    int wctomb(char *str, wchar_t wchar)</span></span><br><span class="line"><span class="comment">    Examines the code which corresponds to a multibyte character given by the argument wchar.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"><span class="comment">/// ### 在程序正常退出时执行 </span></span><br><span class="line"><span class="comment">/// * func 要执行的函数</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// int atexit(void (*func)(void))</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    atexit(test);</span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 程序异常退出</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// void abort(void)</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="comment">/* abort(); */</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">/// ### 程序正常退出 ,返回给操作系统 status</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c</span></span><br><span class="line"><span class="comment">/// void exit(int status)</span></span><br><span class="line"><span class="comment">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+                    </article>
+                    
+    <blockquote class="post-license">
+        <p>
+            <strong>本文作者&nbsp;:&nbsp;邵晨峰</strong>
+            <br>
+            <strong>
+            
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。
+            </strong>
+            <br>
+            <strong>本文链接&nbsp;:&nbsp;</strong><a href="http://zoollcar.github.io/2018/09/02/C语言标准库stdlib.h学习/">http://zoollcar.github.io/2018/09/02/C语言标准库stdlib.h学习/</a>
+        </p>
+    </blockquote>
+
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">本文最后更新于 <span id="date-expire-num"></span> 天前，文中所描述的信息可能已发生改变</blockquote>
+    <script>
+        var dateUpdate = Date.parse("2018-09-02");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2018-09-02T13:15:01.605Z" itemprop="datePublished">2018-09-02</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+
+</p>
+
+                </div>
+                
+<div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2018/09/02/gcc常用命令/">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">gcc常用命令</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
+        <a class="footer-copyright-a" href="http://zoollcar.github.io">邵晨峰的个人网站</a>
+    </p>
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+        
+            <a href="http://www.miitbeian.gov.cn" rel="nofollow">某ICP备xxxxxxxx号-x</a>
+        
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+            
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+        
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="noopener">Suka</a>
+    </p>
+</footer>
+
+        
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    
+        copyrightSince = 2018;
+        if (copyrightSince === copyrightNow) {
+            copyrightContent.textContent = copyrightNow
+        } else {
+            copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow
+        }
+    
+
+
+
+/* Cnosole Log */
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.1.0 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+</script>
+
+<!-- vanilla-lazyload -->
+
+    <script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+
+
+
+    <!-- Busuanzi -->
+    
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+
+
+
+<!-- gallery.js -->
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+
+    </body>
+
+</html>

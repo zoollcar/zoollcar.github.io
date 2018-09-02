@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: 1.1.0
+    -->
+    <script>
+window.lsVersion = "1.1.0",
+window.oldVersion = [
+    
+        
+            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1"
+        
+    
+]
+</script>
+
+    <!-- ### DNS Prefetch ### -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<title>邵晨峰的个人网站</title>
+
+<!-- favicon -->
+<!-- Favicons -->
+
+    <link rel="shortcut icon" type="image/ico" href="/img/favicon.ico">
+
+
+
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+
+
+
+<!-- Android Chrome Color -->
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<meta name="description" content="我热爱计算机科学，这是我的个人网站">
+
+<!-- Keywords -->
+<meta name="keywords" content="机器学习,爬虫,操作系统,底层原理">
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!-- ### Import File ### -->
+    
+        <!-- spectre.css -->
+
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css">
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style>
+
+<!-- style.css -->
+
+    <link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+
+
+    
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <!-- ### RSS ### -->
+    
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="邵晨峰的个人网站">
+<meta name="msapplication-starturl" content="http://zoollcar.github.io">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="邵晨峰的个人网站">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Manifest Import -->
+
+<!-- Open Search -->
+
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    
+
+
+<meta property="og:title" content="邵晨峰的个人网站">
+
+<meta property="og:type" content="blog">
+<meta property="og:url" content="http://zoollcar.github.io/page/2/">
+<meta property="og:image" content="http://zoollcar.github.io/img/favicon.png">
+
+<meta property="og:description" content="我热爱计算机科学，这是我的个人网站">
+
+
+    <meta property="og:article:tag" content="机器学习,爬虫,操作系统,底层原理">
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+<meta property="og:locale" content="zh-CN">
+
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://zoollcar.github.io/page/2/">
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+
+
+
+    <!-- ### Custom Head ### -->
+    
+
+
+</head>
+
+    <body>
+        
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">邵晨峰的个人网站</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                你好，很高兴遇到你
+            
+        
+    </p>
+
+    <section class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">首页</a>
+    
+    
+        <a href="/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/search" class="navbar-link">搜索</a>
+    
+    
+        <a href="/about/" class="navbar-link">关于</a>
+    
+    
+        
+<div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=邵晨峰的个人网站&url=http://zoollcar.github.io&pic=http://zoollcar.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">分享到微博</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=邵晨峰的个人网站&url=http://zoollcar.github.io&via=邵晨峰" target="_blank" rel="noopener noreferrer nofollow">分享到 Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://zoollcar.github.io" target="_blank" rel="noopener noreferrer nofollow">分享到 Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://zoollcar.github.io" target="_blank" rel="noopener noreferrer nofollow">分享到 Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://zoollcar.github.io/2018/09/02/正则表达式简明语法/index.html&title=正则表达式简明语法" target="_blank" rel="noopener noreferrer nofollow">分享到 LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=邵晨峰的个人网站&title=正则表达式简明语法&summary=我热爱计算机科学，这是我的个人网站&pics=http://zoollcar.github.io/img/favicon.png&url=http://zoollcar.github.io/2018/09/02/正则表达式简明语法/index.html" target="_blank" rel="noopener noreferrer nofollow"> 分享到 QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://telegram.me/share/url?url=http://zoollcar.github.io/2018/09/02/正则表达式简明语法/index.html&text=正则表达式简明语法" target="_blank" rel="noopener noreferrer nofollow">分享到 Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAACkCAAAAAA83tqdAAACL0lEQVR42u2b0VLDMAwE8/8/Da8diHUrB4ZibV46pa29nomU00lcH//guoQUUkgh3wDyKi682Mv3X3+X/pb2FXIu5Grj1WZfF6Qwq/WX+wo5GjJtfPf5txsdBB89sJBCkmCoEvgqOFLgCCnk08AhCZocVEghdwUGFQfpACsB8iMqSMjjIKuC6Ddff6xaFPIoyE7hf3fDkwDpGA1brpqQR0FWN/JdcFWwVVG2gi+Tv5DjIYkgvXtfBR0xwVbiWMi5kB1jiSTwlNCJ4SDkbMiUtOkhksmQhC+qFoUcAVkldNroJEZ/ekCg6BbyeEhieu4YBuTwqUATUshVEicJmTSiOg8LIedC0s06w04kgSOxLKSQjSZnvOkb4mIpaIQUsrjBuwKXDp2UwyRCjoYkYqDTME0NrGSKCTkXMokMWrClBN35XMjZkDvDccQMrcwoEqBCCkka7dS4T4BVsAgpZCrIdozU1OCn4kTI2ZCdQKmaolXSpoaEkLMhqwVo0Z+a9+lgyLASchzkriHQHbgjzXwhhUyilST86n1qzGNXTciRkBS2ehhU320FrJCjIbuDmHQIqfMgiMlcyBGQTxpDVXA9GTwRcjYkGUbaSd4kIKPZIORYSBIwdEApDsld+Z8yhRSSNJG6ptWuuY+VuZDjIWmRnxqhJLkLKSQNnJXBlIZMiJkVRa+Q4yDTYpUwIMFCGlnbKkjI4yBJA6lqBJAmZzIQHpkDQh4F+c6XkEIKKeQfXp8/S/dGT92D7wAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</section>
+</header>
+
+            <div class="container">
+    <div class="main-container">
+        <main>
+            <div class="post-stream-container">
+                <!-- # Post List # -->
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/VUE简明教程/">VUE简明教程</a></h2>
+</div>
+<div class="card-body">
+    
+        注：本教程适用于学过vue后的快速复习
+VUE简明教程
+    <a href="/2018/09/02/VUE简明教程/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/Tensorflow快速入门/">Tensorflow快速入门</a></h2>
+</div>
+<div class="card-body">
+    
+        TensorFlow 是一个开放源代码机器学习框架。它可以安装在64位 wintows Ubuntu macOS 上，和 python3.x 工作。它也可以工作在 c 或 java 、 go ，本文只涉及 python ...
+    <a href="/2018/09/02/Tensorflow快速入门/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/python爬虫常用库简明使用方法/">python爬虫常用库简明使用方法</a></h2>
+</div>
+<div class="card-body">
+    
+        爬虫的实现总体上可以分为三步：
+
+获取网页
+
+主要用到 requests selenium
+
+解析网页
+
+主要用到 BeautifulSoup
+
+数据处理
+
+本文不涉及
+下面将简单介绍上面四个库的使用
+    <a href="/2018/09/02/python爬虫常用库简明使用方法/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/Python简明教程/">Python简明教程</a></h2>
+</div>
+<div class="card-body">
+    
+        Python是一种高级编程语言，比较贴近于用户使用而不是硬件；它使用简洁的语法，以缩进表示语法结构；Python是简单，易学的，可以使用多种编程模式（面型对象，函数式编程）
+本教程将用最少的文字，尽量覆盖 Python3 的基础语法，适合于学过其他编程语言的同学快速掌握Python和以前学过Python的人快速复习
+    <a href="/2018/09/02/Python简明教程/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/nuklear的设计与源码分析/">nuklear的设计与源码分析</a></h2>
+</div>
+<div class="card-body">
+    
+        最近在逛Github时发现了一个单文件跨平台零依赖的图形库nuklear，这使我产生了兴趣，一个大约两万行的程序，实现了很不错的效果，更神奇的是它是零依赖的，这意味着可以运用到类似单片机等特殊环境，于是我果断Fork了它开始了学习之路zoollcar/nuklear，下面我们分析下nuklear图形库的源代码
+    <a href="/2018/09/02/nuklear的设计与源码分析/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/matlab 学习笔记（2）常用计算函数/">matlab 学习笔记（2）常用计算函数</a></h2>
+</div>
+<div class="card-body">
+    
+        矩阵计算* 可以计算矩阵的乘法.* 计算矩阵对应位置乘积x’ 表示x的...
+    <a href="/2018/09/02/matlab 学习笔记（2）常用计算函数/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/matlab 学习笔记（1）基本操作/">matlab 学习笔记（1）基本操作</a></h2>
+</div>
+<div class="card-body">
+    
+        矩阵表示
+    <a href="/2018/09/02/matlab 学习笔记（1）基本操作/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/Markdown 语法简明教程/">Markdown 语法简明教程</a></h2>
+</div>
+<div class="card-body">
+    
+        #一级标题##二级标题###三级标题，一共可以有六级使用星号和底线来标记需要强调的区段。12这是*强调*这是_强调_
+这是强调这是_强调_
+    <a href="/2018/09/02/Markdown 语法简明教程/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/GDB程序调试常用命令/">GDB程序调试常用命令</a></h2>
+</div>
+<div class="card-body">
+    
+        写在前面若要在GDB中调试程序在编译时需要加上调试信息在GCC中添加的方法123GCC -g a.c -o a.exe或下面提供更符合GDB的调试信息GCC -ggdb a.c -o a.exe
+运行流程
+
+
+命令
+作用
+
+
+
+
+-continue、-c
+从当前位置继续执行
+
+
+-start
+开始执行程序，在main函数第一句处停止
+
+
+-run、-r
+执行程序到下一个断点或程序结束
+
+
+-next、-n
+执行下一句，不会进入其他函数
+
+
+-step、-s
+执行下一步，会进入其他函数
+
+
+-set args &lt;参数&gt;
+指定运行的参数
+
+
+-show arge
+查看已经设置的参数
+
+
+-path &lt;路径&gt;
+设定程序运行的路径
+
+
+-show path
+查看设定好的路径
+
+
+
+    <a href="/2018/09/02/GDB程序调试常用命令/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry card">
+    <div class="container px-0">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    <div class="card-header">
+    <h2 class="h5 mb-0"><a class="card-title" href="/2018/09/02/gcc常用命令/">gcc常用命令</a></h2>
+</div>
+<div class="card-body">
+    
+        gcc常用命令编译过程预处理，编译，汇编，链接
+gcc的选项（必须分开给出）
+-x 语言名    指出后面文件的语言
+-c         编译，汇编源文件，生成目标文件
+-S        编译不汇编，生成汇编文件
+-E        预处理，输出送到标准输出
+-o        指定输出的文件名
+-pipe    编译时使用管道而不是文件传递
+    <a href="/2018/09/02/gcc常用命令/">阅读全文</a>
+</div>
+<div class="card-footer">
+    <!-- Date & Category -->
+    <div class="post-entry-info text-gray">
+        <img class="author-thumb" src="/img/avatar.png" alt="邵晨峰's Avatar">
+        <time>2018-09-02</time>
+        
+        
+    </div>
+</div>
+                </div>
+            
+        </div>
+    </div>
+
+</article>
+
+                    
+                
+            </div>
+        </main>
+        
+<nav>
+<ul class="pagination -nav">
+    
+        <li class="page-item page-prev">
+            <a href="/">
+                <span class="page-item-subtitle"><i class="icon icon-back" aria-hidden="true"></i></span>
+                <span class="page-item-title">上一页</span>
+            </a>
+        </li>
+    
+    
+        <li class="page-item page-next">
+            <a href="/page/3/">
+                <span class="page-item-title">下一页</span>
+                <span class="page-item-subtitle"><i class="icon icon-forward" aria-hidden="true"></i></span>
+            </a>
+        </li>
+    
+</ul>
+</nav>
+
+
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
+        <a class="footer-copyright-a" href="http://zoollcar.github.io">邵晨峰的个人网站</a>
+    </p>
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+        
+            <a href="http://www.miitbeian.gov.cn" rel="nofollow">某ICP备xxxxxxxx号-x</a>
+        
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+            
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+        
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="noopener">Suka</a>
+    </p>
+</footer>
+
+        
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    
+        copyrightSince = 2018;
+        if (copyrightSince === copyrightNow) {
+            copyrightContent.textContent = copyrightNow
+        } else {
+            copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow
+        }
+    
+
+
+
+/* Cnosole Log */
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.1.0 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+</script>
+
+<!-- vanilla-lazyload -->
+
+    <script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+
+
+
+    <!-- Busuanzi -->
+    
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+
+
+
+<!-- gallery.js -->
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+
+    </body>
+
+</html>
