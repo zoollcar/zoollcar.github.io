@@ -2,14 +2,14 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	
 	<sitemap>
-	   	<loc>https://www.shaochenfeng.com/zh/sitemap.xml</loc>
-		
-	   	<lastmod>2020-03-15T12:34:49+08:00</lastmod>
+	   	<loc>http://www.shaochenfeng.com/en/sitemap.xml</loc>
 		
 	</sitemap>
 	
 	<sitemap>
-	   	<loc>https://www.shaochenfeng.com/en/sitemap.xml</loc>
+	   	<loc>http://www.shaochenfeng.com/zh/sitemap.xml</loc>
+		
+	   	<lastmod>2020-03-15T12:34:49+08:00</lastmod>
 		
 	</sitemap>
 	

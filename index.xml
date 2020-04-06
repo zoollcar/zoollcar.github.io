@@ -2,150 +2,150 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ZDoc on 邵晨峰的博客</title>
-    <link>https://www.shaochenfeng.com/</link>
+    <link>http://www.shaochenfeng.com/</link>
     <description>Recent content in ZDoc on 邵晨峰的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;br/&gt;&lt;a href=&#34;http://www.beian.miit.gov.cn&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号-2&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Sun, 26 Jan 2020 04:15:05 +0900</lastBuildDate>
     
-        <atom:link href="https://www.shaochenfeng.com/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://www.shaochenfeng.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>May 2019</title>
-        <link>https://www.shaochenfeng.com/updates/2019_may/</link>
+        <link>http://www.shaochenfeng.com/updates/2019_may/</link>
         <pubDate>Tue, 28 Jan 2020 00:10:51 +0900</pubDate>
         
-        <guid>https://www.shaochenfeng.com/updates/2019_may/</guid>
+        <guid>http://www.shaochenfeng.com/updates/2019_may/</guid>
         <description>Markdown here</description>
       </item>
       
       <item>
         <title>Basic Usage</title>
-        <link>https://www.shaochenfeng.com/docs/gettingstarted/basicusage/</link>
+        <link>http://www.shaochenfeng.com/docs/gettingstarted/basicusage/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:51 +0900</pubDate>
         
-        <guid>https://www.shaochenfeng.com/docs/gettingstarted/basicusage/</guid>
+        <guid>http://www.shaochenfeng.com/docs/gettingstarted/basicusage/</guid>
         <description>Markdown here</description>
       </item>
       
       <item>
         <title>April 2019</title>
-        <link>https://www.shaochenfeng.com/updates/2019_april/</link>
+        <link>http://www.shaochenfeng.com/updates/2019_april/</link>
         <pubDate>Tue, 28 Jan 2020 00:10:48 +0900</pubDate>
         
-        <guid>https://www.shaochenfeng.com/updates/2019_april/</guid>
+        <guid>http://www.shaochenfeng.com/updates/2019_april/</guid>
         <description>Markdown here</description>
       </item>
       
       <item>
         <title>Configuration</title>
-        <link>https://www.shaochenfeng.com/docs/gettingstarted/configuration/</link>
+        <link>http://www.shaochenfeng.com/docs/gettingstarted/configuration/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:56 +0900</pubDate>
         
-        <guid>https://www.shaochenfeng.com/docs/gettingstarted/configuration/</guid>
+        <guid>http://www.shaochenfeng.com/docs/gettingstarted/configuration/</guid>
         <description>Markdown here</description>
       </item>
       
       <item>
         <title>March 2019</title>
-        <link>https://www.shaochenfeng.com/updates/2019_march/</link>
+        <link>http://www.shaochenfeng.com/updates/2019_march/</link>
         <pubDate>Tue, 28 Jan 2020 00:10:42 +0900</pubDate>
         
-        <guid>https://www.shaochenfeng.com/updates/2019_march/</guid>
+        <guid>http://www.shaochenfeng.com/updates/2019_march/</guid>
         <description>Markdown here</description>
       </item>
       
       <item>
         <title>Installation</title>
-        <link>https://www.shaochenfeng.com/docs/gettingstarted/installation/</link>
+        <link>http://www.shaochenfeng.com/docs/gettingstarted/installation/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:13 +0900</pubDate>
         
-        <guid>https://www.shaochenfeng.com/docs/gettingstarted/installation/</guid>
+        <guid>http://www.shaochenfeng.com/docs/gettingstarted/installation/</guid>
         <description>Markdown here</description>
       </item>
       
       <item>
         <title>February 2019</title>
-        <link>https://www.shaochenfeng.com/updates/2019_february/</link>
+        <link>http://www.shaochenfeng.com/updates/2019_february/</link>
         <pubDate>Tue, 28 Jan 2020 00:10:37 +0900</pubDate>
         
-        <guid>https://www.shaochenfeng.com/updates/2019_february/</guid>
+        <guid>http://www.shaochenfeng.com/updates/2019_february/</guid>
         <description>Markdown here</description>
       </item>
       
       <item>
         <title>Quick Start</title>
-        <link>https://www.shaochenfeng.com/docs/gettingstarted/quickstart/</link>
+        <link>http://www.shaochenfeng.com/docs/gettingstarted/quickstart/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:41 +0900</pubDate>
         
-        <guid>https://www.shaochenfeng.com/docs/gettingstarted/quickstart/</guid>
+        <guid>http://www.shaochenfeng.com/docs/gettingstarted/quickstart/</guid>
         <description>Markdown here</description>
       </item>
       
       <item>
         <title>January 2019</title>
-        <link>https://www.shaochenfeng.com/updates/2019_january/</link>
+        <link>http://www.shaochenfeng.com/updates/2019_january/</link>
         <pubDate>Tue, 28 Jan 2020 00:10:09 +0900</pubDate>
         
-        <guid>https://www.shaochenfeng.com/updates/2019_january/</guid>
+        <guid>http://www.shaochenfeng.com/updates/2019_january/</guid>
         <description>Markdown here</description>
       </item>
       
       <item>
         <title>用命令行构建和运行springboot项目</title>
-        <link>https://www.shaochenfeng.com/blog/%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9E%84%E5%BB%BA%E8%BF%90%E8%A1%8Cspringboot%E9%A1%B9%E7%9B%AE/</link>
+        <link>http://www.shaochenfeng.com/blog/%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9E%84%E5%BB%BA%E8%BF%90%E8%A1%8Cspringboot%E9%A1%B9%E7%9B%AE/</link>
         <pubDate>Sun, 15 Mar 2020 12:34:49 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9E%84%E5%BB%BA%E8%BF%90%E8%A1%8Cspringboot%E9%A1%B9%E7%9B%AE/</guid>
+        <guid>http://www.shaochenfeng.com/blog/%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9E%84%E5%BB%BA%E8%BF%90%E8%A1%8Cspringboot%E9%A1%B9%E7%9B%AE/</guid>
         <description>检查你的项目 如果你的项目根目录下有 pom.xml 文件，可以认为是Maven项目，参照下面Maven项目执行 如果你的项目根目录下有 build.gradle 文件，可以认为是Gra</description>
       </item>
       
       <item>
         <title>写给大忙人看的Git案例总结</title>
-        <link>https://www.shaochenfeng.com/blog/%E5%86%99%E7%BB%99%E5%A4%A7%E5%BF%99%E4%BA%BA%E7%9C%8B%E7%9A%84git%E6%A1%88%E4%BE%8B%E6%80%BB%E7%BB%93/</link>
+        <link>http://www.shaochenfeng.com/blog/%E5%86%99%E7%BB%99%E5%A4%A7%E5%BF%99%E4%BA%BA%E7%9C%8B%E7%9A%84git%E6%A1%88%E4%BE%8B%E6%80%BB%E7%BB%93/</link>
         <pubDate>Thu, 12 Mar 2020 14:02:18 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/%E5%86%99%E7%BB%99%E5%A4%A7%E5%BF%99%E4%BA%BA%E7%9C%8B%E7%9A%84git%E6%A1%88%E4%BE%8B%E6%80%BB%E7%BB%93/</guid>
+        <guid>http://www.shaochenfeng.com/blog/%E5%86%99%E7%BB%99%E5%A4%A7%E5%BF%99%E4%BA%BA%E7%9C%8B%E7%9A%84git%E6%A1%88%E4%BE%8B%E6%80%BB%E7%BB%93/</guid>
         <description>全部案例 配置git用户名邮件 单纯的下载一个仓库 将远程仓库的更新拉到本地仓库（不影响本地已有的提交） 将本地修改上传到远程仓库 将本地更改上传到远</description>
       </item>
       
       <item>
         <title>Centos8安装zabbix监控，源码方式</title>
-        <link>https://www.shaochenfeng.com/blog/cento8%E5%AE%89%E8%A3%85szabbix%E7%9B%91%E6%8E%A7/</link>
+        <link>http://www.shaochenfeng.com/blog/cento8%E5%AE%89%E8%A3%85szabbix%E7%9B%91%E6%8E%A7/</link>
         <pubDate>Sun, 08 Mar 2020 22:00:12 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/cento8%E5%AE%89%E8%A3%85szabbix%E7%9B%91%E6%8E%A7/</guid>
+        <guid>http://www.shaochenfeng.com/blog/cento8%E5%AE%89%E8%A3%85szabbix%E7%9B%91%E6%8E%A7/</guid>
         <description>安装中文支持 不然安装以后web界面不能设置为中文 dnf install langpacks-zh_CN # 在centos7中是 yum install kde-l10n-Chinese 下载源码 浏览器打开 https://www.zabbix.com/download_sources 下载最新的长期支持版，上传到服务器 在服</description>
       </item>
       
       <item>
         <title>RPM封装：创建一个RPM包的简化指南</title>
-        <link>https://www.shaochenfeng.com/blog/rpm%E5%B0%81%E8%A3%85%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AArpm%E5%8C%85%E7%9A%84%E7%AE%80%E5%8C%96%E6%8C%87%E5%8D%97/</link>
+        <link>http://www.shaochenfeng.com/blog/rpm%E5%B0%81%E8%A3%85%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AArpm%E5%8C%85%E7%9A%84%E7%AE%80%E5%8C%96%E6%8C%87%E5%8D%97/</link>
         <pubDate>Thu, 05 Mar 2020 19:57:42 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/rpm%E5%B0%81%E8%A3%85%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AArpm%E5%8C%85%E7%9A%84%E7%AE%80%E5%8C%96%E6%8C%87%E5%8D%97/</guid>
+        <guid>http://www.shaochenfeng.com/blog/rpm%E5%B0%81%E8%A3%85%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AArpm%E5%8C%85%E7%9A%84%E7%AE%80%E5%8C%96%E6%8C%87%E5%8D%97/</guid>
         <description>第一次接触RPM包的概念，初学者可能会不知所措，因为它给人留下了学习曲线陡峭的的印象。在本文中，我将演示用最少的知识和经验来构建RPM。请注</description>
       </item>
       
       <item>
         <title>Firewall常用规则设置【转发】</title>
-        <link>https://www.shaochenfeng.com/blog/firewall%E5%B8%B8%E7%94%A8%E8%A7%84%E5%88%99%E8%AE%BE%E7%BD%AE/</link>
+        <link>http://www.shaochenfeng.com/blog/firewall%E5%B8%B8%E7%94%A8%E8%A7%84%E5%88%99%E8%AE%BE%E7%BD%AE/</link>
         <pubDate>Tue, 03 Mar 2020 08:04:52 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/firewall%E5%B8%B8%E7%94%A8%E8%A7%84%E5%88%99%E8%AE%BE%E7%BD%AE/</guid>
+        <guid>http://www.shaochenfeng.com/blog/firewall%E5%B8%B8%E7%94%A8%E8%A7%84%E5%88%99%E8%AE%BE%E7%BD%AE/</guid>
         <description>一. 设置firewall规则 例1：对外暴露8080端口 firewall-cmd --permanent --add-port=8080/tcp 例2：使mysql服务的3306端口只允许192.168.1.1/24网段的服务</description>
       </item>
       
       <item>
         <title>2020年Spring所有官方项目介绍</title>
-        <link>https://www.shaochenfeng.com/blog/2020%E5%B9%B4spring%E6%89%80%E6%9C%89%E5%AE%98%E6%96%B9%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/</link>
+        <link>http://www.shaochenfeng.com/blog/2020%E5%B9%B4spring%E6%89%80%E6%9C%89%E5%AE%98%E6%96%B9%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/</link>
         <pubDate>Sun, 01 Mar 2020 10:01:35 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/2020%E5%B9%B4spring%E6%89%80%E6%9C%89%E5%AE%98%E6%96%B9%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/</guid>
+        <guid>http://www.shaochenfeng.com/blog/2020%E5%B9%B4spring%E6%89%80%E6%9C%89%E5%AE%98%E6%96%B9%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/</guid>
         <description>&lt;p&gt;从可配置性到安全性，从Web应用程序到大数据开发，无论您的应用程序需要什么样的基础框架，都有一个 Spring项目 可以帮助您构建它。从小着手并按需使用，因为Spring是为模块化设计的。&lt;/p&gt;
 
 &lt;p&gt;——来自官网&lt;/p&gt;
@@ -157,19 +157,19 @@
       
       <item>
         <title>初探用nginx Rtmp Module自建直播服务器</title>
-        <link>https://www.shaochenfeng.com/blog/%E5%88%9D%E6%8E%A2%E7%94%A8nginx-rtmp-module%E8%87%AA%E5%BB%BA%E7%9B%B4%E6%92%AD%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+        <link>http://www.shaochenfeng.com/blog/%E5%88%9D%E6%8E%A2%E7%94%A8nginx-rtmp-module%E8%87%AA%E5%BB%BA%E7%9B%B4%E6%92%AD%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
         <pubDate>Tue, 25 Feb 2020 22:11:24 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/%E5%88%9D%E6%8E%A2%E7%94%A8nginx-rtmp-module%E8%87%AA%E5%BB%BA%E7%9B%B4%E6%92%AD%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+        <guid>http://www.shaochenfeng.com/blog/%E5%88%9D%E6%8E%A2%E7%94%A8nginx-rtmp-module%E8%87%AA%E5%BB%BA%E7%9B%B4%E6%92%AD%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
         <description>nginx Rtmp Module 是一个nginx插件，需要在在编译时和nginx一起编译安装，就可以利用nginx的转发能力进行直播了 下载源码 首先准备好源码和常用编译</description>
       </item>
       
       <item>
         <title>Supervisor-守护进程工具【转载】</title>
-        <link>https://www.shaochenfeng.com/blog/supervisor-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E5%B7%A5%E5%85%B7%E8%BD%AC%E8%BD%BD/</link>
+        <link>http://www.shaochenfeng.com/blog/supervisor-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E5%B7%A5%E5%85%B7%E8%BD%AC%E8%BD%BD/</link>
         <pubDate>Thu, 20 Feb 2020 10:47:23 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/supervisor-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E5%B7%A5%E5%85%B7%E8%BD%AC%E8%BD%BD/</guid>
+        <guid>http://www.shaochenfeng.com/blog/supervisor-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E5%B7%A5%E5%85%B7%E8%BD%AC%E8%BD%BD/</guid>
         <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 
 &lt;p&gt;手头上的服务器程序1.0版本终于要进入线上测试阶段了😮。兴致冲冲的分了一台公司的系统为CentOS7.+的服务器。1、部署上环境。2、打开终端开始跑程序 &amp;ldquo;nohup dotnet XXX.dll &amp;amp;&amp;ldquo;。3、关闭终端。。。4、卧槽😮,我的后台运行的程序呢!?
@@ -179,37 +179,37 @@
       
       <item>
         <title>Apache httpd结合php，yum方式和源码方式</title>
-        <link>https://www.shaochenfeng.com/blog/apache_httpd%E5%92%8Cphp/</link>
+        <link>http://www.shaochenfeng.com/blog/apache_httpd%E5%92%8Cphp/</link>
         <pubDate>Wed, 19 Feb 2020 15:10:23 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/apache_httpd%E5%92%8Cphp/</guid>
+        <guid>http://www.shaochenfeng.com/blog/apache_httpd%E5%92%8Cphp/</guid>
         <description>Apache httpd和php的结合方式有两种： * DSO方式，php作为httpd的模块 * FCGI方式，使用php-fpm单独管理php进程池 yum方</description>
       </item>
       
       <item>
         <title>Centos8(7)安装tomcat9和常见用法</title>
-        <link>https://www.shaochenfeng.com/blog/centos87%E5%AE%89%E8%A3%85tomcat9%E5%92%8C%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/</link>
+        <link>http://www.shaochenfeng.com/blog/centos87%E5%AE%89%E8%A3%85tomcat9%E5%92%8C%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/</link>
         <pubDate>Wed, 19 Feb 2020 13:57:03 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/centos87%E5%AE%89%E8%A3%85tomcat9%E5%92%8C%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/</guid>
+        <guid>http://www.shaochenfeng.com/blog/centos87%E5%AE%89%E8%A3%85tomcat9%E5%92%8C%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/</guid>
         <description>1.安装jdk tomcat9可以工作在jdk8及之后的版本 所以可以安装jdk8或是jdk11 dnf install java-11-openjdk # centos8 yum install java-11-openjdk # centos7 2.下载最新的tomcat二</description>
       </item>
       
       <item>
         <title>Yum安装httpd(apache)并设置虚拟主机</title>
-        <link>https://www.shaochenfeng.com/blog/yum%E5%AE%89%E8%A3%85httpdapache%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/</link>
+        <link>http://www.shaochenfeng.com/blog/yum%E5%AE%89%E8%A3%85httpdapache%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/</link>
         <pubDate>Fri, 14 Feb 2020 17:12:11 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/yum%E5%AE%89%E8%A3%85httpdapache%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/</guid>
+        <guid>http://www.shaochenfeng.com/blog/yum%E5%AE%89%E8%A3%85httpdapache%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/</guid>
         <description>&lt;p&gt;httpd(apache)以其功能丰富，安全稳定，广为使用&lt;/p&gt;</description>
       </item>
       
       <item>
         <title>源码安装nginx到指定目录</title>
-        <link>https://www.shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85nginx%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95/</link>
+        <link>http://www.shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85nginx%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95/</link>
         <pubDate>Fri, 14 Feb 2020 16:30:41 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85nginx%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95/</guid>
+        <guid>http://www.shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85nginx%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95/</guid>
         <description>&lt;h2 id=&#34;首先是全部步骤概括&#34;&gt;首先是全部步骤概括&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget
@@ -231,10 +231,10 @@ vi /opt/nginx1.16/conf/nginx.conf # 修改配置文件
       
       <item>
         <title>Nginx配置ssl证书，支持https</title>
-        <link>https://www.shaochenfeng.com/blog/nginx%E9%85%8D%E7%BD%AEssl%E8%AF%81%E4%B9%A6%E6%94%AF%E6%8C%81htts/</link>
+        <link>http://www.shaochenfeng.com/blog/nginx%E9%85%8D%E7%BD%AEssl%E8%AF%81%E4%B9%A6%E6%94%AF%E6%8C%81htts/</link>
         <pubDate>Fri, 14 Feb 2020 10:19:59 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/nginx%E9%85%8D%E7%BD%AEssl%E8%AF%81%E4%B9%A6%E6%94%AF%E6%8C%81htts/</guid>
+        <guid>http://www.shaochenfeng.com/blog/nginx%E9%85%8D%E7%BD%AEssl%E8%AF%81%E4%B9%A6%E6%94%AF%E6%8C%81htts/</guid>
         <description>&lt;p&gt;https是加密的http协议，现在以谷歌浏览器为首的很多浏览器开始将仅支持http的网站标识为不安全&lt;/p&gt;
 
 &lt;p&gt;所以全站https就成为了现代网站的标配，本文介绍ngnix如何配置ssl证书，以支持https&lt;/p&gt;</description>
@@ -242,37 +242,37 @@ vi /opt/nginx1.16/conf/nginx.conf # 修改配置文件
       
       <item>
         <title>yum安装mysql5.7，查看默认root密码</title>
-        <link>https://www.shaochenfeng.com/blog/yum%E5%AE%89%E8%A3%85mysql5.7%E6%9F%A5%E7%9C%8B%E9%BB%98%E8%AE%A4root%E5%AF%86%E7%A0%81/</link>
+        <link>http://www.shaochenfeng.com/blog/yum%E5%AE%89%E8%A3%85mysql5.7%E6%9F%A5%E7%9C%8B%E9%BB%98%E8%AE%A4root%E5%AF%86%E7%A0%81/</link>
         <pubDate>Fri, 14 Feb 2020 08:52:41 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/yum%E5%AE%89%E8%A3%85mysql5.7%E6%9F%A5%E7%9C%8B%E9%BB%98%E8%AE%A4root%E5%AF%86%E7%A0%81/</guid>
+        <guid>http://www.shaochenfeng.com/blog/yum%E5%AE%89%E8%A3%85mysql5.7%E6%9F%A5%E7%9C%8B%E9%BB%98%E8%AE%A4root%E5%AF%86%E7%A0%81/</guid>
         <description>&lt;p&gt;CentOS7默认安装MariaDB，安装mysql5.7就需要添加mysql官方yum源&lt;/p&gt;</description>
       </item>
       
       <item>
         <title>yum安装mysql8，查看默认root密码</title>
-        <link>https://www.shaochenfeng.com/blog/yum%E5%AE%89%E8%A3%85mysql8%E6%9F%A5%E7%9C%8B%E9%BB%98%E8%AE%A4root%E5%AF%86%E7%A0%81/</link>
+        <link>http://www.shaochenfeng.com/blog/yum%E5%AE%89%E8%A3%85mysql8%E6%9F%A5%E7%9C%8B%E9%BB%98%E8%AE%A4root%E5%AF%86%E7%A0%81/</link>
         <pubDate>Fri, 14 Feb 2020 08:52:41 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/yum%E5%AE%89%E8%A3%85mysql8%E6%9F%A5%E7%9C%8B%E9%BB%98%E8%AE%A4root%E5%AF%86%E7%A0%81/</guid>
+        <guid>http://www.shaochenfeng.com/blog/yum%E5%AE%89%E8%A3%85mysql8%E6%9F%A5%E7%9C%8B%E9%BB%98%E8%AE%A4root%E5%AF%86%E7%A0%81/</guid>
         <description>1. 下载官方yum源 CentOS8默认源安装的就是mysql8 跳过这一步，去第三步 CentOS7默认安装MariaDB，安装mysql8就需要</description>
       </item>
       
       <item>
         <title>sed常用模板整理</title>
-        <link>https://www.shaochenfeng.com/blog/sed%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86/</link>
+        <link>http://www.shaochenfeng.com/blog/sed%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86/</link>
         <pubDate>Thu, 13 Feb 2020 11:21:17 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/sed%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86/</guid>
+        <guid>http://www.shaochenfeng.com/blog/sed%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86/</guid>
         <description>&lt;p&gt;sed可以按照指令或脚本编辑文本的linux工具，文本处理功能非常强大，本文总结一些工作中常用的sed模板，方便大家使用&lt;/p&gt;</description>
       </item>
       
       <item>
         <title>Nginx端口转发（反向代理）</title>
-        <link>https://www.shaochenfeng.com/blog/nginx%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</link>
+        <link>http://www.shaochenfeng.com/blog/nginx%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</link>
         <pubDate>Tue, 11 Feb 2020 10:59:29 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/nginx%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</guid>
+        <guid>http://www.shaochenfeng.com/blog/nginx%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</guid>
         <description>&lt;p&gt;有时我们会使用一些java或node应用，但又不想让他们直接监听80端口，这时就需要用到端口转发&lt;/p&gt;
 
 &lt;p&gt;本文中，我们介绍Nginx如何做端口转发，还有各种转发规则&lt;/p&gt;</description>
@@ -280,10 +280,10 @@ vi /opt/nginx1.16/conf/nginx.conf # 修改配置文件
       
       <item>
         <title>用Rsync,实现网站的增量部署</title>
-        <link>https://www.shaochenfeng.com/blog/%E7%94%A8rsync%E5%AE%9E%E7%8E%B0%E7%BD%91%E7%AB%99%E7%9A%84%E5%A2%9E%E9%87%8F%E9%83%A8%E7%BD%B2/</link>
+        <link>http://www.shaochenfeng.com/blog/%E7%94%A8rsync%E5%AE%9E%E7%8E%B0%E7%BD%91%E7%AB%99%E7%9A%84%E5%A2%9E%E9%87%8F%E9%83%A8%E7%BD%B2/</link>
         <pubDate>Tue, 11 Feb 2020 08:33:13 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/%E7%94%A8rsync%E5%AE%9E%E7%8E%B0%E7%BD%91%E7%AB%99%E7%9A%84%E5%A2%9E%E9%87%8F%E9%83%A8%E7%BD%B2/</guid>
+        <guid>http://www.shaochenfeng.com/blog/%E7%94%A8rsync%E5%AE%9E%E7%8E%B0%E7%BD%91%E7%AB%99%E7%9A%84%E5%A2%9E%E9%87%8F%E9%83%A8%E7%BD%B2/</guid>
         <description>&lt;p&gt;整个网站通常会很大，尤其的其中静态的图片视频之类，但我们通常不会修改他们，平常只会修改几个文件，如果每次更新都将整个网站从本地上传到服务器，无疑很费时间，如果要找到修改的文件，并只上传这些文件，甚至只上传这些文件修改的部分，无疑会方便很多。&lt;/p&gt;
 
 &lt;p&gt;这就要用的到今天的主角*Rsync*，Rsync 可以执行增量备份，它只传输源文件和目标文件之间不一致的部分&lt;/p&gt;</description>
@@ -291,19 +291,19 @@ vi /opt/nginx1.16/conf/nginx.conf # 修改配置文件
       
       <item>
         <title>红帽8发行版说明PDF</title>
-        <link>https://www.shaochenfeng.com/blog/%E7%BA%A2%E5%B8%BD8%E5%8F%91%E8%A1%8C%E7%89%88%E8%AF%B4%E6%98%8Epdf/</link>
+        <link>http://www.shaochenfeng.com/blog/%E7%BA%A2%E5%B8%BD8%E5%8F%91%E8%A1%8C%E7%89%88%E8%AF%B4%E6%98%8Epdf/</link>
         <pubDate>Mon, 10 Feb 2020 21:54:36 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/%E7%BA%A2%E5%B8%BD8%E5%8F%91%E8%A1%8C%E7%89%88%E8%AF%B4%E6%98%8Epdf/</guid>
+        <guid>http://www.shaochenfeng.com/blog/%E7%BA%A2%E5%B8%BD8%E5%8F%91%E8%A1%8C%E7%89%88%E8%AF%B4%E6%98%8Epdf/</guid>
         <description></description>
       </item>
       
       <item>
         <title>2020年CentOS8(7)更换yum源为阿里源</title>
-        <link>https://www.shaochenfeng.com/blog/2020%E5%B9%B4centos87%E6%9B%B4%E6%8D%A2yum%E6%BA%90%E4%B8%BA%E9%98%BF%E9%87%8C%E6%BA%90/</link>
+        <link>http://www.shaochenfeng.com/blog/2020%E5%B9%B4centos87%E6%9B%B4%E6%8D%A2yum%E6%BA%90%E4%B8%BA%E9%98%BF%E9%87%8C%E6%BA%90/</link>
         <pubDate>Mon, 10 Feb 2020 15:47:23 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/2020%E5%B9%B4centos87%E6%9B%B4%E6%8D%A2yum%E6%BA%90%E4%B8%BA%E9%98%BF%E9%87%8C%E6%BA%90/</guid>
+        <guid>http://www.shaochenfeng.com/blog/2020%E5%B9%B4centos87%E6%9B%B4%E6%8D%A2yum%E6%BA%90%E4%B8%BA%E9%98%BF%E9%87%8C%E6%BA%90/</guid>
         <description>&lt;h2 id=&#34;1-首先备份当前配置文件&#34;&gt;1.首先备份当前配置文件&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
@@ -321,10 +321,10 @@ vi /opt/nginx1.16/conf/nginx.conf # 修改配置文件
       
       <item>
         <title>Centos8 Yum安装nginx并设置虚拟主机</title>
-        <link>https://www.shaochenfeng.com/blog/centos8yum%E5%AE%89%E8%A3%85nginx%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/</link>
+        <link>http://www.shaochenfeng.com/blog/centos8yum%E5%AE%89%E8%A3%85nginx%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/</link>
         <pubDate>Mon, 10 Feb 2020 15:33:23 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/centos8yum%E5%AE%89%E8%A3%85nginx%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/</guid>
+        <guid>http://www.shaochenfeng.com/blog/centos8yum%E5%AE%89%E8%A3%85nginx%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/</guid>
         <description>&lt;p&gt;&lt;strong&gt;nginx&lt;/strong&gt;是最近非常火的web服务器，这次CentOS8也在yum官方源中新增了nginx 1.14&lt;/p&gt;
 
 &lt;p&gt;与&lt;strong&gt;Apache&lt;/strong&gt;相比可以承担更大的并发，并占用更少的内存&lt;/p&gt;</description>
@@ -332,110 +332,110 @@ vi /opt/nginx1.16/conf/nginx.conf # 修改配置文件
       
       <item>
         <title>Related content</title>
-        <link>https://www.shaochenfeng.com/docs/relatedcontent/</link>
+        <link>http://www.shaochenfeng.com/docs/relatedcontent/</link>
         <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
         
-        <guid>https://www.shaochenfeng.com/docs/relatedcontent/</guid>
+        <guid>http://www.shaochenfeng.com/docs/relatedcontent/</guid>
         <description>Markdown here</description>
       </item>
       
       <item>
         <title>Page Resources</title>
-        <link>https://www.shaochenfeng.com/docs/pageresources/</link>
+        <link>http://www.shaochenfeng.com/docs/pageresources/</link>
         <pubDate>Tue, 28 Jan 2020 00:39:06 +0900</pubDate>
         
-        <guid>https://www.shaochenfeng.com/docs/pageresources/</guid>
+        <guid>http://www.shaochenfeng.com/docs/pageresources/</guid>
         <description>Markdown here</description>
       </item>
       
       <item>
         <title>Page Bundles</title>
-        <link>https://www.shaochenfeng.com/docs/pagebundles/</link>
+        <link>http://www.shaochenfeng.com/docs/pagebundles/</link>
         <pubDate>Tue, 28 Jan 2020 00:38:59 +0900</pubDate>
         
-        <guid>https://www.shaochenfeng.com/docs/pagebundles/</guid>
+        <guid>http://www.shaochenfeng.com/docs/pagebundles/</guid>
         <description>Markdown here</description>
       </item>
       
       <item>
         <title>Content Formats</title>
-        <link>https://www.shaochenfeng.com/docs/contentfortmats/</link>
+        <link>http://www.shaochenfeng.com/docs/contentfortmats/</link>
         <pubDate>Tue, 28 Jan 2020 00:38:51 +0900</pubDate>
         
-        <guid>https://www.shaochenfeng.com/docs/contentfortmats/</guid>
+        <guid>http://www.shaochenfeng.com/docs/contentfortmats/</guid>
         <description>Markdown here</description>
       </item>
       
       <item>
         <title>Image Processing</title>
-        <link>https://www.shaochenfeng.com/docs/imageprocessing/</link>
+        <link>http://www.shaochenfeng.com/docs/imageprocessing/</link>
         <pubDate>Tue, 28 Jan 2020 00:38:48 +0900</pubDate>
         
-        <guid>https://www.shaochenfeng.com/docs/imageprocessing/</guid>
+        <guid>http://www.shaochenfeng.com/docs/imageprocessing/</guid>
         <description>Markdown here</description>
       </item>
       
       <item>
         <title>Shortcodes</title>
-        <link>https://www.shaochenfeng.com/docs/contentmanagement/shortcodes/</link>
+        <link>http://www.shaochenfeng.com/docs/contentmanagement/shortcodes/</link>
         <pubDate>Tue, 28 Jan 2020 00:36:19 +0900</pubDate>
         
-        <guid>https://www.shaochenfeng.com/docs/contentmanagement/shortcodes/</guid>
+        <guid>http://www.shaochenfeng.com/docs/contentmanagement/shortcodes/</guid>
         <description>Markdown here</description>
       </item>
       
       <item>
         <title>Frontmatter</title>
-        <link>https://www.shaochenfeng.com/docs/contentmanagement/frontmatter/</link>
+        <link>http://www.shaochenfeng.com/docs/contentmanagement/frontmatter/</link>
         <pubDate>Tue, 28 Jan 2020 00:36:14 +0900</pubDate>
         
-        <guid>https://www.shaochenfeng.com/docs/contentmanagement/frontmatter/</guid>
+        <guid>http://www.shaochenfeng.com/docs/contentmanagement/frontmatter/</guid>
         <description>Markdown here</description>
       </item>
       
       <item>
         <title>首页</title>
-        <link>https://www.shaochenfeng.com/_index_max/</link>
+        <link>http://www.shaochenfeng.com/_index_max/</link>
         <pubDate>Sun, 26 Jan 2020 04:15:05 +0900</pubDate>
         
-        <guid>https://www.shaochenfeng.com/_index_max/</guid>
+        <guid>http://www.shaochenfeng.com/_index_max/</guid>
         <description></description>
       </item>
       
       <item>
         <title>C语言标准库stdlib</title>
-        <link>https://www.shaochenfeng.com/blog/c%E8%AF%AD%E8%A8%80%E6%A0%87%E5%87%86%E5%BA%93stdlib.h%E5%AD%A6%E4%B9%A0/</link>
+        <link>http://www.shaochenfeng.com/blog/c%E8%AF%AD%E8%A8%80%E6%A0%87%E5%87%86%E5%BA%93stdlib.h%E5%AD%A6%E4%B9%A0/</link>
         <pubDate>Sun, 05 Jan 2020 22:51:52 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/c%E8%AF%AD%E8%A8%80%E6%A0%87%E5%87%86%E5%BA%93stdlib.h%E5%AD%A6%E4%B9%A0/</guid>
+        <guid>http://www.shaochenfeng.com/blog/c%E8%AF%AD%E8%A8%80%E6%A0%87%E5%87%86%E5%BA%93stdlib.h%E5%AD%A6%E4%B9%A0/</guid>
         <description>&lt;p&gt;本文将介绍 C语言标准库&lt;stdlib.h&gt; 中的 宏、函数、数据类型
 在最后给出一个实例程序，尽可能运用到所有函数&lt;/p&gt;</description>
       </item>
       
       <item>
         <title>关于我</title>
-        <link>https://www.shaochenfeng.com/blog/%E5%85%B3%E4%BA%8E%E6%88%91/</link>
+        <link>http://www.shaochenfeng.com/blog/%E5%85%B3%E4%BA%8E%E6%88%91/</link>
         <pubDate>Sun, 05 Jan 2020 22:05:32 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/%E5%85%B3%E4%BA%8E%E6%88%91/</guid>
+        <guid>http://www.shaochenfeng.com/blog/%E5%85%B3%E4%BA%8E%E6%88%91/</guid>
         <description>&lt;h1 id=&#34;我是邵晨峰-这是我的网站&#34;&gt;我是邵晨峰，这是我的网站&lt;/h1&gt;</description>
       </item>
       
       <item>
         <title>使用acme.sh进行ssl申请和自动续约</title>
-        <link>https://www.shaochenfeng.com/blog/acme.sh/</link>
+        <link>http://www.shaochenfeng.com/blog/acme.sh/</link>
         <pubDate>Sun, 05 Jan 2020 22:02:41 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/acme.sh/</guid>
+        <guid>http://www.shaochenfeng.com/blog/acme.sh/</guid>
         <description>&lt;p&gt;本文以demo.example.com为例，详细介绍了使用acme.sh进行ssl申请和自动续约的方法&lt;/p&gt;</description>
       </item>
       
       <item>
         <title>Markdown Syntax Guide</title>
-        <link>https://www.shaochenfeng.com/blog/markdown-syntax/</link>
+        <link>http://www.shaochenfeng.com/blog/markdown-syntax/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/markdown-syntax/</guid>
+        <guid>http://www.shaochenfeng.com/blog/markdown-syntax/</guid>
         <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de
 pectora summo. Redit teque digerit hominumque toris verebor lumina non cervice
 subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc
@@ -444,19 +444,19 @@ caluere tempus&lt;/p&gt;</description>
       
       <item>
         <title>Section</title>
-        <link>https://www.shaochenfeng.com/docs/contentmanagement/sections/</link>
+        <link>http://www.shaochenfeng.com/docs/contentmanagement/sections/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://www.shaochenfeng.com/docs/contentmanagement/sections/</guid>
+        <guid>http://www.shaochenfeng.com/docs/contentmanagement/sections/</guid>
         <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
       </item>
       
       <item>
         <title>Placeholder Text</title>
-        <link>https://www.shaochenfeng.com/blog/placeholder-text/</link>
+        <link>http://www.shaochenfeng.com/blog/placeholder-text/</link>
         <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/placeholder-text/</guid>
+        <guid>http://www.shaochenfeng.com/blog/placeholder-text/</guid>
         <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de
 pectora summo. Redit teque digerit hominumque toris verebor lumina non cervice
 subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc
@@ -465,10 +465,10 @@ caluere tempus&lt;/p&gt;</description>
       
       <item>
         <title>Emoji Support</title>
-        <link>https://www.shaochenfeng.com/blog/emoji-support/</link>
+        <link>http://www.shaochenfeng.com/blog/emoji-support/</link>
         <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/emoji-support/</guid>
+        <guid>http://www.shaochenfeng.com/blog/emoji-support/</guid>
         <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de
 pectora summo. Redit teque digerit hominumque toris verebor lumina non cervice
 subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc
@@ -477,10 +477,10 @@ caluere tempus&lt;/p&gt;</description>
       
       <item>
         <title>nuklear的设计与源码分析</title>
-        <link>https://www.shaochenfeng.com/blog/nuklear%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</link>
+        <link>http://www.shaochenfeng.com/blog/nuklear%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</link>
         <pubDate>Sun, 22 Jul 2018 22:05:32 +0800</pubDate>
         
-        <guid>https://www.shaochenfeng.com/blog/nuklear%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</guid>
+        <guid>http://www.shaochenfeng.com/blog/nuklear%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</guid>
         <description>&lt;h2 id=&#34;更新于-2020年2月-源作者已不再维护-请谨慎选择&#34;&gt;更新于 2020年2月 源作者已不再维护，请谨慎选择&lt;/h2&gt;
 
 &lt;p&gt;最近在逛Github时发现了一个单文件跨平台零依赖的图形库&lt;a href=&#34;https://github.com/vurtun/nuklear&#34;&gt;&lt;strong&gt;nuklear&lt;/strong&gt;&lt;/a&gt;，这使我产生了兴趣，一个大约两万行的程序，实现了很不错的效果，更神奇的是它是零依赖的，这意味着可以运用到类似单片机等特殊环境，于是我果断Fork了它开始了学习之路&lt;a href=&#34;https://github.com/zoollcar/nuklear&#34;&gt;&lt;strong&gt;zoollcar/nuklear&lt;/strong&gt;&lt;/a&gt;，下面我们分析下nuklear图形库的源代码&lt;/p&gt;</description>
