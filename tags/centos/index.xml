@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>centos on 邵晨峰的博客</title>
+    <link>https://www.shaochenfeng.com/tags/centos/</link>
+    <description>Recent content in centos on 邵晨峰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;br/&gt;&lt;a href=&#34;http://www.beian.miit.gov.cn&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号-2&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Fri, 14 Feb 2020 17:12:11 +0800</lastBuildDate>
+    
+        <atom:link href="https://www.shaochenfeng.com/tags/centos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Yum安装httpd(apache)并设置虚拟主机</title>
+        <link>https://www.shaochenfeng.com/blog/yum%E5%AE%89%E8%A3%85httpdapache%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/</link>
+        <pubDate>Fri, 14 Feb 2020 17:12:11 +0800</pubDate>
+        
+        <guid>https://www.shaochenfeng.com/blog/yum%E5%AE%89%E8%A3%85httpdapache%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/</guid>
+        <description>&lt;p&gt;httpd(apache)以其功能丰富，安全稳定，广为使用&lt;/p&gt;</description>
+      </item>
+      
+      <item>
+        <title>yum安装mysql8，查看默认root密码</title>
+        <link>https://www.shaochenfeng.com/blog/yum%E5%AE%89%E8%A3%85mysql8%E6%9F%A5%E7%9C%8B%E9%BB%98%E8%AE%A4root%E5%AF%86%E7%A0%81/</link>
+        <pubDate>Fri, 14 Feb 2020 08:52:41 +0800</pubDate>
+        
+        <guid>https://www.shaochenfeng.com/blog/yum%E5%AE%89%E8%A3%85mysql8%E6%9F%A5%E7%9C%8B%E9%BB%98%E8%AE%A4root%E5%AF%86%E7%A0%81/</guid>
+        <description>1. 下载官方yum源 CentOS8默认源安装的就是mysql8 跳过这一步，去第三步 CentOS7默认安装MariaDB，安装mysql8就需要</description>
+      </item>
+      
+      <item>
+        <title>2020年CentOS8(7)更换yum源为阿里源</title>
+        <link>https://www.shaochenfeng.com/blog/2020%E5%B9%B4centos87%E6%9B%B4%E6%8D%A2yum%E6%BA%90%E4%B8%BA%E9%98%BF%E9%87%8C%E6%BA%90/</link>
+        <pubDate>Mon, 10 Feb 2020 15:47:23 +0800</pubDate>
+        
+        <guid>https://www.shaochenfeng.com/blog/2020%E5%B9%B4centos87%E6%9B%B4%E6%8D%A2yum%E6%BA%90%E4%B8%BA%E9%98%BF%E9%87%8C%E6%BA%90/</guid>
+        <description>&lt;h2 id=&#34;1-首先备份当前配置文件&#34;&gt;1.首先备份当前配置文件&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;2-下载新的-centos-base-repo-到-etc-yum-repos-d&#34;&gt;2.下载新的 CentOS-Base.repo 到 /etc/yum.repos.d&lt;/h2&gt;
+
+&lt;p&gt;对于CentOS8&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-8.repo
+
+&lt;/code&gt;&lt;/pre&gt;</description>
+      </item>
+      
+    
+  </channel>
+</rss>

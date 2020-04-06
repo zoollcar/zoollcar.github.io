@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>部署 on 邵晨峰的博客</title>
+    <link>https://www.shaochenfeng.com/tags/%E9%83%A8%E7%BD%B2/</link>
+    <description>Recent content in 部署 on 邵晨峰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;br/&gt;&lt;a href=&#34;http://www.beian.miit.gov.cn&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号-2&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Tue, 11 Feb 2020 08:33:13 +0800</lastBuildDate>
+    
+        <atom:link href="https://www.shaochenfeng.com/tags/%E9%83%A8%E7%BD%B2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>用Rsync,实现网站的增量部署</title>
+        <link>https://www.shaochenfeng.com/blog/%E7%94%A8rsync%E5%AE%9E%E7%8E%B0%E7%BD%91%E7%AB%99%E7%9A%84%E5%A2%9E%E9%87%8F%E9%83%A8%E7%BD%B2/</link>
+        <pubDate>Tue, 11 Feb 2020 08:33:13 +0800</pubDate>
+        
+        <guid>https://www.shaochenfeng.com/blog/%E7%94%A8rsync%E5%AE%9E%E7%8E%B0%E7%BD%91%E7%AB%99%E7%9A%84%E5%A2%9E%E9%87%8F%E9%83%A8%E7%BD%B2/</guid>
+        <description>&lt;p&gt;整个网站通常会很大，尤其的其中静态的图片视频之类，但我们通常不会修改他们，平常只会修改几个文件，如果每次更新都将整个网站从本地上传到服务器，无疑很费时间，如果要找到修改的文件，并只上传这些文件，甚至只上传这些文件修改的部分，无疑会方便很多。&lt;/p&gt;
+
+&lt;p&gt;这就要用的到今天的主角*Rsync*，Rsync 可以执行增量备份，它只传输源文件和目标文件之间不一致的部分&lt;/p&gt;</description>
+      </item>
+      
+    
+  </channel>
+</rss>

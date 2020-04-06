@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>邵晨峰的博客</title>
+    <title>nuklear的设计与源码分析 – 邵晨峰的博客</title>
     
 
 
@@ -262,7 +262,7 @@
     
     var isLandingBgImg = JSON.parse("null");
     
-    var isHome = JSON.parse("true");
+    var isHome = JSON.parse("false");
 
     function setNavbarBG(scrollTop) {
       if (isHome && isLandingBgImg && Object.keys(isLandingBgImg).length) {
@@ -968,22 +968,21 @@
 <link rel="stylesheet" href="/css/main.min.css">
 
 
-    <link rel="alternate" type="application/rss&#43;xml" title="RSS" href="https://www.shaochenfeng.com/index.xml">
-<meta name="description" content="The ZDoc theme for Hugo example site." />
+    <meta name="description" content="" />
 <meta name="keywords" content="">
-<meta name="created" content="2020-01-26T04:15:05&#43;0900">
-<meta name="modified" content="2020-01-26T04:15:05&#43;0900">
-
+<meta name="created" content="2018-07-22T22:05:32&#43;0800">
+<meta name="modified" content="2020-02-28T11:19:00&#43;0800">
+<meta name="author" content="邵晨峰">
 
 <meta property="og:site_name" content="邵晨峰的博客">
-<meta property="og:title" content="ZDoc">
-<meta property="og:url" content="https://www.shaochenfeng.com/">
-<meta property="og:type" content="website">
-
+<meta property="og:title" content="nuklear的设计与源码分析">
+<meta property="og:url" content="https://www.shaochenfeng.com/blog/nuklear%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://www.shaochenfeng.com/me/nuklear%E4%BD%9C%E8%80%85.jpg">
 <meta name="generator" content="Hugo 0.57.2" />
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<link rel="canonical" href="https://www.shaochenfeng.com/">
+<link rel="canonical" href="https://www.shaochenfeng.com/blog/nuklear%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/">
 <link rel="manifest" href="/manifest.json">
 
   <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
@@ -1006,10 +1005,18 @@
     <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "url" : "https://www.shaochenfeng.com/",
-    "name": "ZDoc",
-    "description": "Hugo ZDoc theme landing page",
+    "@type": "BlogPosting",
+    "headline": "nuklear的设计与源码分析",
+    "datePublished": "2018-07-22T22:05:32+08:00",
+    "dateModified": "2020-02-28T11:19:00+08:00",
+    "url" : "https://www.shaochenfeng.com/blog/nuklear%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/",
+    "description": "\u003ch2 id=\"更新于-2020年2月-源作者已不再维护-请谨慎选择\"\u003e更新于 2020年2月 源作者已不再维护，请谨慎选择\u003c/h2\u003e  \u003cp\u003e最近在逛Github时发现了一个单文件跨平台零依赖的图形库\u003ca href=\"https://github.com/vurtun/nuklear\"\u003e\u003cstrong\u003enuklear\u003c/strong\u003e\u003c/a\u003e，这使我产生了兴趣，一个大约两万行的程序，实现了很不错的效果，更神奇的是它是零依赖的，这意味着可以运用到类似单片机等特殊环境，于是我果断Fork了它开始了学习之路\u003ca href=\"https://github.com/zoollcar/nuklear\"\u003e\u003cstrong\u003ezoollcar/nuklear\u003c/strong\u003e\u003c/a\u003e，下面我们分析 …\u003c/p\u003e",
+    "keywords": ["nuklear"],
+    "image" : "https://www.shaochenfeng.com/me/nuklear%E4%BD%9C%E8%80%85.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "邵晨峰"
+    },
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://www.shaochenfeng.com"
@@ -1081,11 +1088,655 @@ var _mtac = {};
     <div class="menu">
   <h6 class="menu__label">
     
-      邵晨峰的博客
+      nuklear的设计与源码分析
     
   </h6>
   <ul>
     
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9E%84%E5%BB%BA%E8%BF%90%E8%A1%8Cspringboot%E9%A1%B9%E7%9B%AE/"
+      class="menu__title ">用命令行构建和运行springboot项目</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/%E5%86%99%E7%BB%99%E5%A4%A7%E5%BF%99%E4%BA%BA%E7%9C%8B%E7%9A%84git%E6%A1%88%E4%BE%8B%E6%80%BB%E7%BB%93/"
+      class="menu__title ">写给大忙人看的Git案例总结</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/cento8%E5%AE%89%E8%A3%85szabbix%E7%9B%91%E6%8E%A7/"
+      class="menu__title ">Centos8安装zabbix监控，源码方式</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/rpm%E5%B0%81%E8%A3%85%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AArpm%E5%8C%85%E7%9A%84%E7%AE%80%E5%8C%96%E6%8C%87%E5%8D%97/"
+      class="menu__title ">RPM封装：创建一个RPM包的简化指南</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/firewall%E5%B8%B8%E7%94%A8%E8%A7%84%E5%88%99%E8%AE%BE%E7%BD%AE/"
+      class="menu__title ">Firewall常用规则设置【转发】</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/2020%E5%B9%B4spring%E6%89%80%E6%9C%89%E5%AE%98%E6%96%B9%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/"
+      class="menu__title ">2020年Spring所有官方项目介绍</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/%E5%88%9D%E6%8E%A2%E7%94%A8nginx-rtmp-module%E8%87%AA%E5%BB%BA%E7%9B%B4%E6%92%AD%E6%9C%8D%E5%8A%A1%E5%99%A8/"
+      class="menu__title ">初探用nginx Rtmp Module自建直播服务器</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/supervisor-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E5%B7%A5%E5%85%B7%E8%BD%AC%E8%BD%BD/"
+      class="menu__title ">Supervisor-守护进程工具【转载】</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/apache_httpd%E5%92%8Cphp/"
+      class="menu__title ">Apache httpd结合php，yum方式和源码方式</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/centos87%E5%AE%89%E8%A3%85tomcat9%E5%92%8C%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"
+      class="menu__title ">Centos8(7)安装tomcat9和常见用法</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/yum%E5%AE%89%E8%A3%85httpdapache%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/"
+      class="menu__title ">Yum安装httpd(apache)并设置虚拟主机</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85nginx%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95/"
+      class="menu__title ">源码安装nginx到指定目录</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/nginx%E9%85%8D%E7%BD%AEssl%E8%AF%81%E4%B9%A6%E6%94%AF%E6%8C%81htts/"
+      class="menu__title ">Nginx配置ssl证书，支持https</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/yum%E5%AE%89%E8%A3%85mysql5.7%E6%9F%A5%E7%9C%8B%E9%BB%98%E8%AE%A4root%E5%AF%86%E7%A0%81/"
+      class="menu__title ">yum安装mysql5.7，查看默认root密码</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/yum%E5%AE%89%E8%A3%85mysql8%E6%9F%A5%E7%9C%8B%E9%BB%98%E8%AE%A4root%E5%AF%86%E7%A0%81/"
+      class="menu__title ">yum安装mysql8，查看默认root密码</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/sed%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86/"
+      class="menu__title ">sed常用模板整理</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/nginx%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"
+      class="menu__title ">Nginx端口转发（反向代理）</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/%E7%94%A8rsync%E5%AE%9E%E7%8E%B0%E7%BD%91%E7%AB%99%E7%9A%84%E5%A2%9E%E9%87%8F%E9%83%A8%E7%BD%B2/"
+      class="menu__title ">用Rsync,实现网站的增量部署</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/%E7%BA%A2%E5%B8%BD8%E5%8F%91%E8%A1%8C%E7%89%88%E8%AF%B4%E6%98%8Epdf/"
+      class="menu__title ">红帽8发行版说明PDF</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/2020%E5%B9%B4centos87%E6%9B%B4%E6%8D%A2yum%E6%BA%90%E4%B8%BA%E9%98%BF%E9%87%8C%E6%BA%90/"
+      class="menu__title ">2020年CentOS8(7)更换yum源为阿里源</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/centos8yum%E5%AE%89%E8%A3%85nginx%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/"
+      class="menu__title ">Centos8 Yum安装nginx并设置虚拟主机</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/c%E8%AF%AD%E8%A8%80%E6%A0%87%E5%87%86%E5%BA%93stdlib.h%E5%AD%A6%E4%B9%A0/"
+      class="menu__title ">C语言标准库stdlib</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/%E5%85%B3%E4%BA%8E%E6%88%91/"
+      class="menu__title ">关于我</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/acme.sh/"
+      class="menu__title ">使用acme.sh进行ssl申请和自动续约</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/markdown-syntax/"
+      class="menu__title ">Markdown Syntax Guide</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/placeholder-text/"
+      class="menu__title ">Placeholder Text</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://www.shaochenfeng.com/blog/emoji-support/"
+      class="menu__title ">Emoji Support</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="active">
+    <a href="https://www.shaochenfeng.com/blog/nuklear%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"
+      class="menu__title active">nuklear的设计与源码分析</a>
+  </li>
+  
+
     
   </ul>
 </div>
@@ -1177,7 +1828,7 @@ var _mtac = {};
           <span id="navMenuMobile" class="hide">
   <button id="navCollapseBtn" class="navbar__dropdown--title" aria-label="Section Menu" data-dir="ltr">
     
-      邵晨峰的博客
+      blog
     
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
   </button>
@@ -1189,8 +1840,8 @@ var _mtac = {};
   
   
   
-  <li class="navbar__menu--mobile-item ">
-    <a href="/blog" class="">博客</a>
+  <li class="navbar__menu--mobile-item active">
+    <a href="/blog" class="active">博客</a>
   </li>
 
   </ul>
@@ -1203,7 +1854,7 @@ var _mtac = {};
   
   
   
-  <li class="navbar__menu--item ">
+  <li class="navbar__menu--item active">
     <a href="/blog" data-bgimg="false">博客</a>
   </li>
 
@@ -1348,73 +1999,734 @@ var _mtac = {};
 </script>
 
         
-  <div class="top">
-  <header class="header home__banner--wrapper">
-    <div class="divider">
-      <div class="lmr">
         
-          <div class="home__banner">
-            &ndash; &nbsp; 最新一篇文章  &nbsp; &ndash;
-          </div>
-        
-      </div>
+<div class="mid">
+  <div class="divider">
+    
+    <nav id="single-menu" class="l" data-dir="ltr">
+    </nav>
+
+    <article id="list-main" class="m" data-dir="ltr">
+      
+      
+      <div class="single" data-display="block">
+  
+    <div class="single__title">
+      nuklear的设计与源码分析
     </div>
-  </header>
+    <div class="single__meta">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M4 4H20V8H4z" opacity=".3"/><path d="M6 1H8V5H6zM16 1H18V5H16z"/><path d="M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z M19,19H5V9h14V19z M19,7H5V5h14V7z"/></svg><time title="创建于">2018年7月22日 </time> &nbsp;&nbsp; <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M 9 1 L 9 3 L 15 3 L 15 1 L 9 1 z M 18.958984 2.7929688 L 17.666016 4.3183594 L 20.615234 6.8183594 L 21.908203 5.2929688 L 18.958984 2.7929688 z M 12 4 C 7.0225467 4 3 8.0225467 3 13 C 3 17.977453 7.0225467 22 12 22 C 16.977453 22 21 17.977453 21 13 C 21 8.0225467 16.977453 4 12 4 z M 12 6 C 15.910547 6 19 9.0894533 19 13 C 19 16.910547 15.910547 20 12 20 C 8.0894533 20 5 16.910547 5 13 C 5 9.0894533 8.0894533 6 12 6 z M 11 8 L 11 14 L 13 14 L 13 8 L 11 8 z"/></svg> <span title="阅读时间"> 7 分钟阅读</span> &nbsp;&nbsp; <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16"><path fill="currentColor" d="M 16 5 C 12.144531 5 9 8.144531 9 12 C 9 14.410156 10.230469 16.550781 12.09375 17.8125 C 8.527344 19.34375 6 22.882813 6 27 L 8 27 C 8 22.570313 11.570313 19 16 19 C 20.429688 19 24 22.570313 24 27 L 26 27 C 26 22.882813 23.472656 19.34375 19.90625 17.8125 C 21.769531 16.550781 23 14.410156 23 12 C 23 8.144531 19.855469 5 16 5 Z M 16 7 C 18.773438 7 21 9.226563 21 12 C 21 14.773438 18.773438 17 16 17 C 13.226563 17 11 14.773438 11 12 C 11 9.226563 13.226563 7 16 7 Z"/></svg> <span title="作者：">邵晨峰</span>
+    </div>
+  
+
+  <article class="single__contents" data-dir="ltr">
+    <h2 id="更新于-2020年2月-源作者已不再维护-请谨慎选择">更新于 2020年2月 源作者已不再维护，请谨慎选择</h2>
+
+<p>最近在逛Github时发现了一个单文件跨平台零依赖的图形库<a href="https://github.com/vurtun/nuklear"><strong>nuklear</strong></a>，这使我产生了兴趣，一个大约两万行的程序，实现了很不错的效果，更神奇的是它是零依赖的，这意味着可以运用到类似单片机等特殊环境，于是我果断Fork了它开始了学习之路<a href="https://github.com/zoollcar/nuklear"><strong>zoollcar/nuklear</strong></a>，下面我们分析下nuklear图形库的源代码</p>
+
+<h1 id="综述">综述</h1>
+
+<p>首先看一下官方提供的demo（win gui版），后面会一部分一部分的分析</p>
+
+<pre><code class="language-c">/* win32 实现细节*/
+while (running)
+{
+    /* 输入部分 */
+    /* win32 实现细节 */
+    nk_input_begin(ctx);
+    /* input 细节 */
+    nk_input_end(ctx);
+
+    /* GUI 部分 */
+    if (nk_begin(ctx, &quot;Demo&quot;, nk_rect(50, 50, 200, 200),
+        NK_WINDOW_BORDER|NK_WINDOW_MOVABLE|NK_WINDOW_SCALABLE|
+        NK_WINDOW_CLOSABLE|NK_WINDOW_MINIMIZABLE|NK_WINDOW_TITLE))
+    {
+        enum {EASY, HARD};
+        static int op = EASY;
+        static int property = 20;
+        /* 固定小部件像素宽度（纵向布局） */
+        /* 创建小部件之前使用 nk_layout_xxx 来说明后面的小部件布局 */
+        nk_layout_row_static(ctx, 30/* 高度 */, 80/* 元素宽度 */, 1/* 个数 */);
+        if (nk_button_label(ctx, &quot;button&quot;)){
+            /* 点击事件 */
+            fprintf(stdout, &quot;button pressed\n&quot;);
+        }
+        /* 小部件横向动态布局（默认是纵向） */
+        nk_layout_row_dynamic(ctx, 30, 2);
+        if (nk_option_label(ctx, &quot;easy&quot;, op == EASY)) op = EASY;
+        if (nk_option_label(ctx, &quot;hard&quot;, op == HARD)) op = HARD;
+
+        nk_layout_row_dynamic(ctx, 22, 1);
+        nk_property_int(ctx, &quot;Compression:&quot;, 0, &amp;property, 100, 10, 1);
+    }
+    nk_end(ctx);
+    /* 绘制部分 */
+    nk_gdi_render(nk_rgb(30,30,30)); /* 平台专用渲染 */
+}
+</code></pre>
+
+<p>这里去除了win32实现细节，因为它本身虽然是跨平台的，但并不是所有部分都跨平台
+整个程序可以分为三个输入部分，GUI部分，绘制部分，他们的关系是这样的：</p>
+
+<pre><code class="language-mermaid">graph TD;
+    输入部分--输入信息--&gt;GUI部分;
+    GUI部分--绘制命令--&gt;绘制部分;
+</code></pre>
+
+<p>在 nuklear 中一个称为上下文的变量会贯穿整个程序，其类型为nk_context，其中记录了这个程序几乎所有的信息，包括输入结构体、整体样式、个个窗口、渲染命令缓冲区，它起着连接 nuklear 所有部分的功能</p>
+
+<pre><code class="language-c">/* 上下文 */
+struct nk_context {
+    struct nk_input input; /* 输入 */
+    struct nk_style style; /* 样式 */
+    struct nk_buffer memory; /* 缓冲区 */
+    struct nk_clipboard clip;  /* 剪切板 */
+    nk_flags last_widget_state;  /* 最近一个小部件状态 */
+    enum nk_button_behavior button_behavior; /* 按钮行为是默认还是被替换的 */
+    struct nk_configuration_stacks stacks;
+    float delta_time_seconds; /* 时间（秒） */
+
+    /* 其他细节 */
+
+    /* 窗口 */
+    int build;
+    int use_pool;
+    struct nk_pool pool;
+    struct nk_window *begin; /* 窗口链表 */
+    struct nk_window *end;
+    struct nk_window *active; /* 激活窗口 */
+    struct nk_window *current; /* 当前窗口 */
+    struct nk_page_element *freelist;
+    unsigned int count;
+    unsigned int seq;
+};
+</code></pre>
+
+<h1 id="输入部分">输入部分</h1>
+
+<p>input API 负责组织一个由当前鼠标、按键和文本输入所组成的输入状态（nk_input结构体）。 nuklear 并没有直接与系统通信，有输入状态都必须由特定于平台的代码提供的。</p>
+
+<p>nk_input_begin 会清空当前的状态，然后就可以使用nk_input_motion、nk_input_key、nk_input_button、nk_input_scroll、nk_input_char 等 这些输入函数将消息提供给nuklear，nuklear会将这些信息记录在nk_input结构体中。nk_input结构体 在 nk_context 主上下文中。</p>
+
+<p>下面是nk_input的数据结构</p>
+
+<pre><code class="language-c">/* nk_input结构体，分为键盘和鼠标 */
+struct nk_input {
+    struct nk_keyboard keyboard;
+    struct nk_mouse mouse;
+};
+/* 鼠标结构体 */
+struct nk_mouse {
+    struct nk_mouse_button buttons[NK_BUTTON_MAX];
+    struct nk_vec2 pos;
+    struct nk_vec2 prev;
+    struct nk_vec2 delta;
+    struct nk_vec2 scroll_delta;
+    unsigned char grab;
+    unsigned char grabbed;
+    unsigned char ungrab;
+};
+/* 键盘结构体 */
+struct nk_keyboard {
+    struct nk_key keys[NK_KEY_MAX];
+    char text[NK_INPUT_MAX];
+    int text_len;
+};
+</code></pre>
+
+<p>最后使用 nk_input_end 结束输入过程，这会固定下输入信息，知道下一帧中执行 nk_input_begin 。</p>
+
+<h1 id="gui部分">GUI部分</h1>
+
+<p>这部分是 nuklear 中最精彩的部分，这部分是跨平台的，它会将这部分中注册的小部件（按钮，单选，文字等）转换为渲染部分需要的简单命令</p>
+
+<p>总的来说，它的作用就是用尽可能简单的命令制作出美观的 UI 。</p>
+
+<p>建立一个新窗口的方法是 使用 nk_begin 它会在上下文中新建一个窗口，然后的操作就都在这个窗口进行了</p>
+
+<p>在向窗口加入小部件前需要先设定布局， nuklear 使用的是基于行的布局，使用 nk_layout_xxx 来为当前行设置布局，后面再加入的小部件就使用这个布局提供的位置和大小了。</p>
+
+<p>放置小部件可以调用 nk_button_xxx 、 nk_option_xxx 等函数创建，他们会使用 nk_widget 从窗口的 layout 中得到下一个小部件的位置大小信息，然后将渲染信息加入到渲染命令缓冲区</p>
+
+<p>最后使用 nk_end 结束建立这个窗口，可以建立下一个窗口了</p>
+
+<p>具体来说， nk_begin 建立了一个新窗口， nk_layout_xxx 设置这个窗口的 layout 属性来控制下面小部件的位置和大小， nk_button 等建立小部件的函数使用从窗口中得到位置大小信息，然后处理加入到缓冲区</p>
+
+<p>下面结合代码看一遍：</p>
+
+<h2 id="新建窗口">新建窗口</h2>
+
+<p>（为了效果进行了削减，突出重点）：</p>
+
+<pre><code class="language-c">/* 建立一个新窗口，分离的标题和标识符的窗口，允许出现具有相同名称但不同标题的多个窗口  */
+NK_API int
+nk_begin_titled(struct nk_context *ctx, const char *name, const char *title,
+    struct nk_rect bounds, nk_flags flags)
+{
+    struct nk_window *win;
+    struct nk_style *style;
+
+    /* 此处省略对参数进行可行性检验的代码 */
+
+    /* 下面判断这个名字是否已经存在相同的窗口 */
+    /* 如果有更新窗口，否则新建窗口 */
+    style = &amp;ctx-&gt;style;
+    title_len = (int)nk_strlen(name);
+    /* 将窗口名字计算为一个哈希值，比较哈希值比字符串比较快 */
+    title_hash = nk_murmur_hash(name, (int)title_len, NK_WINDOW_TITLE);
+    /* 寻找窗口，返回值为0表示没找到，返回值为一个nk_window指针说明找到了 */
+    win = nk_find_window(ctx, title_hash, name);
+    /* 下面创建或更新窗口 */
+    if (!win) {
+        /* 创建一个新窗口 create new window */
+        nk_size name_length = (nk_size)nk_strlen(name);
+        win = (struct nk_window*)nk_create_window(ctx);
+        NK_ASSERT(win);
+        if (!win) return 0;
+        /* 将窗口添加到 ctx */
+        if (flags &amp; NK_WINDOW_BACKGROUND)
+            nk_insert_window(ctx, win, NK_INSERT_FRONT);/* 顶部添加 */
+        else nk_insert_window(ctx, win, NK_INSERT_BACK);/* 尾部添加 */
+        /* 初始化命令缓冲区 */
+        nk_command_buffer_init(&amp;win-&gt;buffer, &amp;ctx-&gt;memory, NK_CLIPPING_ON);
+        win-&gt;flags = flags;
+        win-&gt;bounds = bounds;
+        win-&gt;name = title_hash;
+        /* 如果窗口名字比最大长度长，会被截断 */
+        name_length = NK_MIN(name_length, NK_WINDOW_MAX_NAME-1);
+        NK_MEMCPY(win-&gt;name_string, name, name_length);
+        win-&gt;name_string[name_length] = 0;
+        /* 不是弹出式窗口 */
+        win-&gt;popup.win = 0;
+        if (!ctx-&gt;active)
+            ctx-&gt;active = win;
+    } else {
+        /* 省略更新窗口的代码 */
+    }
+
+    /* 省略后面会对鼠标点击后窗口的排列进行控制，大致就是点哪个哪个放到窗口链表顶端 */
+
+    win-&gt;layout = (struct nk_panel*)nk_create_panel(ctx);
+    ctx-&gt;current = win;
+    ret = nk_panel_begin(ctx, title, NK_PANEL_WINDOW);
+    win-&gt;layout-&gt;offset_x = &amp;win-&gt;scrollbar.x;
+    win-&gt;layout-&gt;offset_y = &amp;win-&gt;scrollbar.y;
+    return ret;
+}
+</code></pre>
+
+<h2 id="设置布局函数">设置布局函数：</h2>
+
+<pre><code class="language-c">NK_LIB void
+nk_row_layout(struct nk_context *ctx, enum nk_layout_format fmt,/* fmt 布局类型 */
+    float height, int cols, int width)
+{
+    /* 更新当前行并设置当前行的布局 */
+    struct nk_window *win;
+    NK_ASSERT(ctx);
+    NK_ASSERT(ctx-&gt;current);
+    NK_ASSERT(ctx-&gt;current-&gt;layout);
+    if (!ctx || !ctx-&gt;current || !ctx-&gt;current-&gt;layout)
+        return;
+    win = ctx-&gt;current;
+    /* 创建横向 cols 个面板 高度是 height */
+    nk_panel_layout(ctx, win, height, cols); /* 在下面 */
+    /* 根据布局类型设置 */
+    if (fmt == NK_DYNAMIC)
+        win-&gt;layout-&gt;row.type = NK_LAYOUT_DYNAMIC_FIXED;/* 固定宽度 */
+    else win-&gt;layout-&gt;row.type = NK_LAYOUT_STATIC_FIXED;/* 动态宽度 */
+
+    win-&gt;layout-&gt;row.ratio = 0;
+    win-&gt;layout-&gt;row.filled = 0;
+    win-&gt;layout-&gt;row.item_offset = 0;
+    win-&gt;layout-&gt;row.item_width = (float)width;
+}
+
+NK_LIB void
+nk_panel_layout(const struct nk_context *ctx, struct nk_window *win,
+    float height, int cols)
+{
+    struct nk_panel *layout;
+    const struct nk_style *style;
+    struct nk_command_buffer *out;
+    struct nk_vec2 item_spacing;
+    struct nk_color color;
+
+    /* 省略对参数可行性检验 */
+
+    /* 先获得一些预设的配置数据 prefetch some configuration data */
+    layout = win-&gt;layout;
+    style = &amp;ctx-&gt;style;
+    out = &amp;win-&gt;buffer;
+    color = style-&gt;window.background;
+    item_spacing = style-&gt;window.spacing;
+
+    /* 更新当前行并设置当前行布局 update the current row and set the current row layout */
+    /* 通过前面获得的 layout 指针更改后面的小部件都会使用的 win-&gt;layout */
+    layout-&gt;row.index = 0;
+    layout-&gt;at_y += layout-&gt;row.height;
+    layout-&gt;row.columns = cols;
+    if (height == 0.0f)
+        layout-&gt;row.height = NK_MAX(height, layout-&gt;row.min_height) + item_spacing.y;
+    else layout-&gt;row.height = height + item_spacing.y;
+
+    layout-&gt;row.item_offset = 0;
+    if (layout-&gt;flags &amp; NK_WINDOW_DYNAMIC) {
+        /* 为动态区域设置背景 draw background for dynamic panels */
+        struct nk_rect background;
+        background.x = win-&gt;bounds.x;
+        background.w = win-&gt;bounds.w;
+        background.y = layout-&gt;at_y - 1.0f;
+        background.h = layout-&gt;row.height + 1.0f;
+        nk_fill_rect(out, background, 0, color);
+    }
+}
+</code></pre>
+
+<h2 id="创建小部件">创建小部件：</h2>
+
+<pre><code class="language-c">/* 创建按钮 */
+NK_API int
+nk_button_text_styled(struct nk_context *ctx,
+    const struct nk_style_button *style, const char *title, int len)
+{
+    struct nk_window *win;
+    struct nk_panel *layout;
+    const struct nk_input *in;
+
+    struct nk_rect bounds;
+    enum nk_widget_layout_states state;
+
+    /* 省略对参数可行性检验 */
+
+    /* 从 nk_context 中得到位置和大小的 nk_rect  */
+    win = ctx-&gt;current;
+    layout = win-&gt;layout;
+    state = nk_widget(&amp;bounds, ctx);
+
+    if (!state) return 0;
+    /* 生成按钮 */
+    in = (state == NK_WIDGET_ROM || layout-&gt;flags &amp; NK_WINDOW_ROM) ? 0 : &amp;ctx-&gt;input;
+    return nk_do_button_text(&amp;ctx-&gt;last_widget_state, &amp;win-&gt;buffer, bounds,
+                    title, len, style-&gt;text_alignment, ctx-&gt;button_behavior,
+                    style, in, ctx-&gt;style.font);
+}
+/* 生成按钮函数 */
+NK_LIB int
+nk_do_button_text(nk_flags *state,
+    struct nk_command_buffer *out, struct nk_rect bounds,
+    const char *string, int len, nk_flags align, enum nk_button_behavior behavior,
+    const struct nk_style_button *style, const struct nk_input *in,
+    const struct nk_user_font *font)
+{
+    struct nk_rect content;
+    int ret = nk_false;
+
+    /* 省略对参数可行性检验 */
+
+    /* 计算和返回按钮点击事件 */
+    /* 这里的使用 nk_input 结构中的鼠标点击位置计算是否点击到按钮 */
+    /* 如果点击到按钮，会返回相应的点击事件，这个时间会一路返回到用户代码中的if判断 */
+    ret = nk_do_button(state, out, bounds, style, in, behavior, &amp;content);
+    if (style-&gt;draw_begin) style-&gt;draw_begin(out, style-&gt;userdata);/* 绘制开始的回调 */
+    /* 绘制按钮，生成按钮文字 */
+    nk_draw_button_text(out, &amp;bounds, &amp;content, *state, style, string, len, align, font);
+    if (style-&gt;draw_end) style-&gt;draw_end(out, style-&gt;userdata);/* 绘制完成的回调 */
+    return ret;
+}
+/* 真正绘制按钮 外观 */
+NK_LIB const struct nk_style_item*
+nk_draw_button(struct nk_command_buffer *out,
+    const struct nk_rect *bounds, nk_flags state,
+    const struct nk_style_button *style)
+{
+    const struct nk_style_item *background;
+    if (state &amp; NK_WIDGET_STATE_HOVER)
+        background = &amp;style-&gt;hover;
+    else if (state &amp; NK_WIDGET_STATE_ACTIVED)
+        background = &amp;style-&gt;active;
+    else background = &amp;style-&gt;normal;
+
+    if (background-&gt;type == NK_STYLE_ITEM_IMAGE) {
+        /* 如果是图片背景，就绘制图片 */
+        nk_draw_image(out, *bounds, &amp;background-&gt;data.image, nk_white);
+    } else {
+        /* 否则绘制矩形 */
+        nk_fill_rect(out, *bounds, style-&gt;rounding, background-&gt;data.color);
+        nk_stroke_rect(out, *bounds, style-&gt;rounding, style-&gt;border, style-&gt;border_color);
+    }
+    return background;
+}
+/* 绘制矩形 */
+NK_API void
+nk_fill_rect(struct nk_command_buffer *b, struct nk_rect rect,
+    float rounding, struct nk_color c)
+{
+    struct nk_command_rect_filled *cmd;
+    /* 省略对参数可行性检验 */
+    /* 将绘制命令放入命令缓冲区中，先放入再设置属性 */
+    cmd = (struct nk_command_rect_filled*)
+        nk_command_buffer_push(b, NK_COMMAND_RECT_FILLED, sizeof(*cmd));
+    if (!cmd) return;
+    cmd-&gt;rounding = (unsigned short)rounding;
+    cmd-&gt;x = (short)rect.x;
+    cmd-&gt;y = (short)rect.y;
+    cmd-&gt;w = (unsigned short)NK_MAX(0, rect.w);
+    cmd-&gt;h = (unsigned short)NK_MAX(0, rect.h);
+    cmd-&gt;color = c;
+}
+/* 将命令加入到命令缓冲  所有的绘制命令都用这个 */
+NK_LIB void*
+nk_command_buffer_push(struct nk_command_buffer* b,
+    enum nk_command_type t, nk_size size)
+{
+    NK_STORAGE const nk_size align = NK_ALIGNOF(struct nk_command);
+    struct nk_command *cmd;
+    nk_size alignment;
+    void *unaligned;
+    void *memory;
+
+    NK_ASSERT(b);
+    NK_ASSERT(b-&gt;base);
+    if (!b) return 0;
+    /* 新建一块缓冲区区域，用来将命令加入缓冲区 */
+    cmd = (struct nk_command*)nk_buffer_alloc(b-&gt;base,NK_BUFFER_FRONT,size,align);
+    if (!cmd) return 0;
+    /* 确保下一命令的偏移量是对齐的 make sure the offset to the next command is aligned */
+    b-&gt;last = (nk_size)((nk_byte*)cmd - (nk_byte*)b-&gt;base-&gt;memory.ptr);
+    unaligned = (nk_byte*)cmd + size;
+    memory = NK_ALIGN_PTR(unaligned, align);
+    alignment = (nk_size)((nk_byte*)memory - (nk_byte*)unaligned);
+#ifdef NK_ZERO_COMMAND_MEMORY
+    NK_MEMSET(cmd, 0, size + alignment);
+#endif
+
+    cmd-&gt;type = t;
+    cmd-&gt;next = b-&gt;base-&gt;allocated + alignment;
+#ifdef NK_INCLUDE_COMMAND_USERDATA
+    cmd-&gt;userdata = b-&gt;userdata;
+#endif
+    b-&gt;end = cmd-&gt;next;
+    /* 返回建好的新命令指针 */
+    return cmd;
+}
+</code></pre>
+
+<h1 id="渲染部分">渲染部分</h1>
+
+<p>这个库被设计为推给后端绘制 所以它不会直接在屏幕上绘制任何图形. 而是绘制形状、小部件等。 这会缓冲进内存并组成命令队列。 每一帧会有一个带有绘制命令的命令缓冲区，提供给后端 这些绘制命令需要用户在他们自己的后端绘制中实现 之后，命令缓冲区会被清除，并且开始启动一个新帧。</p>
+
+<p>后端是用户编写的在自己设备上可以执行 nuklear 需要的最小命令集的一组函数
+其中重点在于遍历GUI部分提供的命令队列，然后根据命令类型执行相应操作</p>
+
+<p>下面看一下 nuklear 自带的在win32 GUI上的实现：</p>
+
+<pre><code class="language-c">NK_API void
+nk_gdi_render(struct nk_color clear)
+{
+    const struct nk_command *cmd;
+
+    HDC memory_dc = gdi.memory_dc;
+    SelectObject(memory_dc, GetStockObject(DC_PEN));
+    SelectObject(memory_dc, GetStockObject(DC_BRUSH));
+    nk_gdi_clear(memory_dc, clear);
+
+    nk_foreach(cmd, &amp;gdi.ctx)
+    {
+        switch (cmd-&gt;type) {
+        case NK_COMMAND_NOP: break;
+        case NK_COMMAND_SCISSOR: {
+            const struct nk_command_scissor *s =(const struct nk_command_scissor*)cmd;
+            nk_gdi_scissor(memory_dc, s-&gt;x, s-&gt;y, s-&gt;w, s-&gt;h);
+        } break;
+        case NK_COMMAND_LINE: {
+            const struct nk_command_line *l = (const struct nk_command_line *)cmd;
+            nk_gdi_stroke_line(memory_dc, l-&gt;begin.x, l-&gt;begin.y, l-&gt;end.x,
+                l-&gt;end.y, l-&gt;line_thickness, l-&gt;color);
+        } break;
+
+        /* 省略类似的处理 */
+
+    }
+    nk_gdi_blit(gdi.window_dc);
+    nk_clear(&amp;gdi.ctx);
+}
+</code></pre>
+  </article>
 </div>
-
-        
-  <div class="mid">
-  <main class="main">
-    
-
-<div class="divider">
-  <div class="lmr">
-    
-    <div class="home__landing" style="height: px;">
       
-        <div class="home__landing--img">
-          <img src="/me/Git%e6%a1%88%e4%be%8b%e6%80%bb%e7%bb%93.jpg" alt="Site Landing Page image">
+<div class="grow"></div>
+<nav class="pagination-single">
+  
+    
+      <a href="https://www.shaochenfeng.com/blog/emoji-support/" title="Emoji Support" class="pagination-single__left">
+        <div class="pagination-single__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
         </div>
-        <div class="home__landing--txt">
-          
-            
-              <div class="title" style=";">
-                写给大忙人看的Git案例总结
-              </div>
-            
-          
-            
-          
-            
-              <div class="text" style=";">
-                目录 配置git用户名邮件 单纯的下载一个仓库 将远程仓库的更新拉到本地仓库（不影响本地已有的提交）将本地修改上传到远程仓库 将本地更改上传到远程仓库，并使本地远程一致 新建一个仓库并用本地代码初始化 我不想同步某些文件/文件夹 从master创建临时分支作修改，然后合并到主分支 删除仓库所有历史记录，仅保留当前文件...
-              </div>
-            
-          
+        <div class="pagination-single__right-title">Emoji Support</div>
+      </a>
+    
+    <div class="grow"></div>
+    
+  
+</nav>
 
-          
-            <a href="blog/%E5%86%99%E7%BB%99%E5%A4%A7%E5%BF%99%E4%BA%BA%E7%9C%8B%E7%9A%84git%E6%A1%88%E4%BE%8B%E6%80%BB%E7%BB%93/" target="_self" rel="noreferrer" class="home__landing--link">
-              <button class="button home__landing--btn" aria-label="继续阅读全文" data-color="primary">
-                继续阅读全文
-              </button>
-            </a>
-          
-            <a href="blog/" target="_self" rel="noreferrer" class="home__landing--link">
-              <button class="button home__landing--btn" aria-label="阅读其他" data-color="default">
-                阅读其他
-              </button>
-            </a>
-          
-        </div>
+
+    </article>
+    
+    <section id="list-side" class="r" data-dir="ltr">
       
-    </div>
+        <div class="toc">
+  <h6 class="toc__label">目录</h6>
+  <div class="toc__body">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#更新于-2020年2月-源作者已不再维护-请谨慎选择">更新于 2020年2月 源作者已不再维护，请谨慎选择</a></li>
+</ul></li>
+<li><a href="#综述">综述</a></li>
+<li><a href="#输入部分">输入部分</a></li>
+<li><a href="#gui部分">GUI部分</a>
+<ul>
+<li><a href="#新建窗口">新建窗口</a></li>
+<li><a href="#设置布局函数">设置布局函数：</a></li>
+<li><a href="#创建小部件">创建小部件：</a></li>
+</ul></li>
+<li><a href="#渲染部分">渲染部分</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+      
+    </section>
+
   </div>
 </div>
 
-  </main>
-  
-</div>
 
+
+
+
+<script defer src="/js/helper/getParents.min.js"></script>
+
+<script defer src="/js/helper/closest.min.js"></script>
+
+<script defer src="/js/helper/prev.min.js"></script>
+
+<script defer src="/js/helper/prop.min.js"></script>
+
+<script defer src="/js/helper/fadeinout.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    'use strict';
+    
+    
+    var tables = document.querySelectorAll('.single__contents > table');
+    for (let i = 0; i < tables.length; i++) {
+      var table = tables[i];
+      var wrapper = document.createElement('div');
+      wrapper.className = 'table-wrapper';
+      table.parentElement.replaceChild(wrapper, table);
+      wrapper.appendChild(table);
+    }
+    
+
+    
+    
+    
+    var lib = JSON.parse("null");
+
+    if (lib && lib.includes('mermaid')) {
+      var themeVariant = localStorage.getItem('theme') || 'light';
+
+      if (themeVariant === "dark") {
+        mermaid.initialize({ theme: 'dark' });
+      } else {
+        mermaid.initialize({ theme: 'default' });
+      }
+      
+      var mermaids = [];
+      [].push.apply(mermaids, document.getElementsByClassName('language-mermaid'));
+      mermaids.forEach(function(elem) {
+        var elemParentNode = elem.parentNode;
+
+        if (elemParentNode !== document.body) {
+          elemParentNode.parentNode.insertBefore(elem, elemParentNode);
+          elemParentNode.parentNode.removeChild(elemParentNode);
+        }
+
+        var newElemWrapper = document.createElement('div');
+        newElemWrapper.classList.add('mermaid');
+        newElemWrapper.innerHTML = elem.innerHTML;
+        elem.replaceWith(newElemWrapper);
+      });
+    }
+    
+    
+
+    
+    if (lib && lib.includes('katex')) {
+      var mathElements = document.getElementsByClassName('math');
+      var options = {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$", right: "$", display: false },
+          { left: "\\(", right: "\\)", display: false }
+        ],
+      };
+
+      renderMathInElement(document.querySelector('.single__contents'), options);
+    }
+    
+
+
+    
+    if (lib && lib.includes('flowchartjs')) {
+      
+      var options = JSON.parse("{\"arrow-end\":\"block\",\"element-color\":\"black\",\"fill\":\"white\",\"flowstate\":{\"approved\":{\"fill\":\"#58C4A3\",\"font-size\":12,\"no-text\":\"n/a\",\"yes-text\":\"APPROVED\"},\"current\":{\"fill\":\"yellow\",\"font-color\":\"red\",\"font-weight\":\"bold\"},\"future\":{\"fill\":\"#FFFF99\"},\"invalid\":{\"fill\":\"#444444\"},\"past\":{\"fill\":\"#CCCCCC\",\"font-size\":12},\"rejected\":{\"fill\":\"#C45879\",\"font-size\":12,\"no-text\":\"REJECTED\",\"yes-text\":\"n/a\"},\"request\":{\"fill\":\"blue\"}},\"font-color\":\"black\",\"font-size\":14,\"line-color\":\"black\",\"line-length\":50,\"line-width\":3,\"no-text\":\"no\",\"scale\":1,\"symbols\":{\"end\":{\"class\":\"end-element\"},\"start\":{\"element-color\":\"green\",\"fill\":\"yellow\",\"font-color\":\"red\"}},\"text-margin\":10,\"x\":0,\"y\":0,\"yes-text\":\"yes\"}");
+      var jsonContent = null;
+
+      var flowchartPrefix = "language-flowchart";
+      var index = 0;
+      Array.prototype.forEach.call(document.querySelectorAll("[class^=" + flowchartPrefix + "]"), function(x){
+          x.style.display = 'none'
+          x.parentNode.style.backgroundColor = "transparent"
+          jsonContent = x.innerText;
+
+          var node0 = document.createElement('div');
+          node0.id = 'flowchart' + index;
+          x.parentNode.insertBefore(node0, x);
+
+          var diagram = flowchart.parse(jsonContent);
+          diagram.drawSVG("flowchart"+index, options);
+
+          index +=1;
+      });      
+    }
+    
+
+
+    
+    if (lib && lib.includes('chart')) {
+      var borderColor = "#666";
+      var bgColor = "#ddd";
+      var borderWidth = 2;
+
+      Chart.defaults.global.elements.rectangle.borderWidth = borderWidth;
+      Chart.defaults.global.elements.rectangle.borderColor = borderColor;
+      Chart.defaults.global.elements.rectangle.backgroundColor = bgColor;
+
+      Chart.defaults.global.elements.line.borderWidth = borderWidth;
+      Chart.defaults.global.elements.line.borderColor = borderColor;
+      Chart.defaults.global.elements.line.backgroundColor = bgColor;
+
+      Chart.defaults.global.elements.point.borderWidth = borderWidth;
+      Chart.defaults.global.elements.point.borderColor = borderColor;
+      Chart.defaults.global.elements.point.backgroundColor = bgColor;
+
+      var chartPrefix = "language-chart";
+      var index = 0;
+      var jsonContent = null;
+
+      Array.prototype.forEach.call(document.querySelectorAll("[class^=" + chartPrefix + "]"), function (x) {
+        x.style.display = 'none'
+        x.parentNode.style.backgroundColor = "transparent"
+        jsonContent = x.innerText;
+        var node0 = document.createElement('canvas');
+        var source = null;
+        node0.height = 200;
+        node0.style.height = 200;
+        node0.id = 'myChart' + index;
+        source = JSON.parse(jsonContent);
+        x.parentNode.insertBefore(node0, x);
+        var ctx = document.getElementById('myChart' + index).getContext('2d');
+        var myChart = new Chart(ctx, source);
+        index += 1;
+      });            
+    }
+    
+
+
+    
+    if (lib && lib.includes('viz')) {
+      var vizPrefix = "language-viz-";
+      Array.prototype.forEach.call(document.querySelectorAll("[class^=" + vizPrefix + "]"), function (x) {
+        x.style.display = 'none'
+        x.parentNode.style.backgroundColor = "transparent"
+        var engine;
+        x.getAttribute("class").split(" ").forEach(function (cls) {
+          if (cls.startsWith(vizPrefix)) {
+            engine = cls.substr(vizPrefix.length);
+          }
+        });
+        var viz = new Viz();
+        viz.renderSVGElement(x.innerText, { engine: engine })
+          .then(function (element) {
+            element.style.width = "100%";
+            x.parentNode.insertBefore(element, x);
+          })
+      });
+    }
+    
+    
+  });
+</script>
+<script>
+  var listSide = document.getElementById('list-side');
+  var listMain = document.getElementById('list-main');
+  var singleMenu = document.getElementById('single-menu');
+
+  enquire.register("screen and (max-width:1280px)", {
+    match: function () {
+      listSide.className = 'r';
+      listMain.className = 'm';
+      singleMenu.className = 'l';
+    },
+    unmatch: function () {
+      listSide.className = 'r';
+      listMain.className = 'm';
+      singleMenu.className = 'l';
+    },
+  }).register("screen and (max-width:960px)", {
+    match: function () {
+      listSide.className = 'r';
+      listMain.className = 'lm';
+      singleMenu.className = 'hide';
+    },
+    unmatch: function () {
+      listSide.className = 'r';
+      listMain.className = 'm';
+      singleMenu.className = 'l';
+    },
+  }).register("screen and (max-width:600px)", {
+    match: function () {
+      listSide.className = 'hide';
+      listMain.className = 'lmr';
+      singleMenu.className = 'hide';
+    },
+    unmatch: function () {
+      listSide.className = 'r';
+      listMain.className = 'lm';
+      singleMenu.className = 'hide';
+      
+    },
+  });
+</script>
 
         
 <div class="bot">
