@@ -8,9 +8,12 @@
     
 
 
-<script src="/js/enquire.min.aa37bdcb743826eecdae5c5d177fc7d6552340f1b4378ffaa9c82b2c6111400b.js"></script>
+  
+  <script defer src="/js/fuse.min.c4bee9a8d44273d6154fe86006923d4131eb2e8069d8897687137c6f37f553e3.js"></script>
 
-<script defer src="/js/fuse.min.c4bee9a8d44273d6154fe86006923d4131eb2e8069d8897687137c6f37f553e3.js"></script>
+
+
+<script src="/js/enquire.min.aa37bdcb743826eecdae5c5d177fc7d6552340f1b4378ffaa9c82b2c6111400b.js"></script>
 
 <script defer src="/js/lazysizes.min.5e11d056075a05065b9c0bfec44084a113fc2976c2952ec804dedb61c7662db9.js"></script>
 
@@ -21,17 +24,22 @@
 <script>
   "use strict";
 
-  
-  var languagedir = JSON.parse("\"ltr\"");
-
   window.onload = function() {
+    
+    var languagedir = JSON.parse("\"ltr\"");
+    
+    var baseurl = JSON.parse("\"http://www.shaochenfeng.com\"");
+    
+    var permalink = JSON.parse("\"http://www.shaochenfeng.com/tags/maven/\"");
 
     
     var toggleSidebarElem = document.getElementById("toggle-sidebar");
+    var toggleMenuElem = document.getElementById("toggle-menu");
     var tocBodyElem = document.querySelector('.toc__body');
     var tocLabelElem = document.querySelector('.toc__label');
     var listMainElem = document.getElementById('list-main');
     var listSideElem = document.getElementById('list-side');
+    var singleMenuElem = document.getElementById('single-menu');
     var sliderIcons = document.querySelectorAll('.slider__icon');
 
     toggleSidebarElem ?
@@ -77,7 +85,40 @@
           });
         }
       }) : null;
+
+    toggleMenuElem ?
+      toggleMenuElem.addEventListener('change', function (e) {
+        if (e.target.checked) {
+          if (listMainElem && singleMenuElem) {
+            listMainElem.className = 'm';
+            singleMenuElem.className = 'l';
+          }
+
+          sliderIcons && sliderIcons.forEach(function (elem) {
+            if (elem.classList.contains('hide')) {
+              elem.classList.remove('hide');
+            } else {
+              elem.classList.add('hide');
+            }
+          });
+
+        } else {
+          if (listMainElem && singleMenuElem) {
+            listMainElem.className = 'lm';
+            singleMenuElem.className = 'hide';
+          }
+
+          sliderIcons && sliderIcons.forEach(function (elem) {
+            if (elem.classList.contains('hide')) {
+              elem.classList.remove('hide');
+            } else {
+              elem.classList.add('hide');
+            }
+          });
+        }
+      }) : null;
     
+
 
     
     var navCollapseBtn = document.getElementById('navCollapseBtn');
@@ -118,26 +159,95 @@
     }
     
 
+
+
+    
+    document.querySelectorAll('.tab') ? 
+    document.querySelectorAll('.tab').forEach(function(elem, idx) {
+      var containerId = elem.getAttribute('id');
+      var containerElem = elem;
+      var tabLinks = elem.querySelectorAll('.tab__link');
+      var tabContents = elem.querySelectorAll('.tab__content');
+      var ids = [];
+
+      tabLinks && tabLinks.length > 0 ?
+      tabLinks.forEach(function(link, index, self) {
+        link.onclick = function(e) {
+          for (var i = 0; i < self.length; i++) {
+            if (index === parseInt(i, 10)) {
+              if (!self[i].classList.contains('active')) {
+                self[i].classList.add('active');
+                tabContents[i].style.display = 'block';
+              }
+            } else {
+              self[i].classList.remove('active');
+              tabContents[i].style.display = 'none';
+            }
+          }
+        }
+      }) : null;
+    }) : null;
+    
+
+
+    
+    document.querySelectorAll('.codetab') ? 
+    document.querySelectorAll('.codetab').forEach(function(elem, idx) {
+      var containerId = elem.getAttribute('id');
+      var containerElem = elem;
+      var codetabLinks = elem.querySelectorAll('.codetab__link');
+      var codetabContents = elem.querySelectorAll('.codetab__content');
+      var ids = [];
+
+      codetabLinks && codetabLinks.length > 0 ?
+      codetabLinks.forEach(function(link, index, self) {
+        link.onclick = function(e) {
+          for (var i = 0; i < self.length; i++) {
+            if (index === parseInt(i, 10)) {
+              if (!self[i].classList.contains('active')) {
+                self[i].classList.add('active');
+                codetabContents[i].style.display = 'block';
+              }
+            } else {
+              self[i].classList.remove('active');
+              codetabContents[i].style.display = 'none';
+            }
+          }
+        }
+      }) : null;
+    }) : null;
+    
+
     
     
+    
+    var enableDarkMode = JSON.parse("true");
     var root = document.getElementById('root');
     var toggleToLightBtn = document.getElementById('toggleToLight');
     var toggleToDarkBtn = document.getElementById('toggleToDark');
 
-    toggleToDark.onclick = function(e) {
-      root.className = 'theme__dark';
-      localStorage.setItem('theme', 'dark');
-      toggleToLightBtn.className = 'navbar__icons--icon';
-      toggleToDarkBtn.className = 'hide';
-    }
-
-    toggleToLight.onclick = function (e) {
+    if (!enableDarkMode) {
       root.className = 'theme__light';
       localStorage.setItem('theme', 'light');
-      toggleToLightBtn.className = 'hide';
-      toggleToDarkBtn.className = 'navbar__icons--icon';
+    }
+    
+    if (toggleToDarkBtn) {
+      toggleToDarkBtn.onclick = function (e) {
+        root.className = 'theme__dark';
+        localStorage.setItem('theme', 'dark');
+        toggleToLightBtn.className = 'navbar__icons--icon';
+        toggleToDarkBtn.className = 'hide';
+      }
     }
 
+    if (toggleToLightBtn) {
+      toggleToLightBtn.onclick = function (e) {
+        root.className = 'theme__light';
+        localStorage.setItem('theme', 'light');
+        toggleToLightBtn.className = 'hide';
+        toggleToDarkBtn.className = 'navbar__icons--icon';
+      }
+    }
 
     
     document.querySelectorAll('.menu__list').forEach(function(elem) {
@@ -156,13 +266,11 @@
 
         var parent = elem.parentNode;
         while (parent.classList.contains('menu__list') && parent.classList.contains('active')) {
-          console.log('parent');
           parent.style.maxHeight = 100 * parent.children.length + "px";
           parent = parent.parentNode;
         }
 
         if (content.style.maxHeight) {
-          console.log('null');
           content.style.maxHeight = null;
           content.classList.remove('active');
           menuTitleIcon.classList.add('right');
@@ -173,7 +281,6 @@
             menuTitleIcon.classList.remove('down');
           }
         } else {
-          console.log('scrollHeight');
           content.style.maxHeight = content.scrollHeight + "px";
           content.classList.add('active');
           menuTitleIcon.classList.remove('right');
@@ -456,7 +563,7 @@
 
   
     
-    var searchURL = JSON.parse("\"http://www.shaochenfeng.com/\"");
+    var langprefix = JSON.parse("\"\"");
     var searchResults = null;
     var searchMenu = null;
     var searchText = null;
@@ -471,7 +578,7 @@
     if (enableSearch) {
       (function initFuse() {
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', searchURL + "index.json");
+        xhr.open('GET', baseurl + langprefix + "/index.json");
         xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
         xhr.onload = function () {
           if (xhr.status === 200) {
@@ -831,7 +938,6 @@
       var dropdownItems = searchResultsContainer.querySelectorAll('.dd-item');
       dropdownItems ? dropdownItems.forEach(function (item) {
         item.addEventListener('mousedown', function (e) {
-          console.log('mousedown');
           e.target.click();
         });
       }) : null;
@@ -867,7 +973,6 @@
       var dropdownItems = searchResultsContainer.querySelectorAll('.dd-item');
       dropdownItems ? dropdownItems.forEach(function (item) {
         item.addEventListener('mousedown', function (e) {
-          console.log('mousedown');
           e.target.click();
         });
       }) : null;
@@ -954,7 +1059,6 @@
       var dropdownItems = searchResultsContainer.querySelectorAll('.dd-item');
       dropdownItems ? dropdownItems.forEach(function (item) {
         item.addEventListener('mousedown', function (e) {
-          console.log('mousedown');
           e.target.click();
         });
       }) : null;
@@ -1057,12 +1161,20 @@ var _mtac = {};
 
 </head>
 
+
 <body id="root" class="theme__light">
     <script>
+        var rootElem = document.getElementById('root');
+        var themeOptions = JSON.parse("[\"light\",\"dark\"]");
         var localTheme = localStorage.getItem('theme');
+
         if (localTheme) {
-            document.getElementById('root').className = `theme__${localTheme}`;
-        }        
+            if (themeOptions && themeOptions.length > 0) {
+                themeOptions.includes(localTheme) ? 
+                rootElem.className = `theme__${localTheme}` :
+                rootElem.className = `theme__${themeOptions[0]}`;
+            }
+        }
     </script>
     
     <div id="container">
@@ -2317,492 +2429,51 @@ var _mtac = {};
         
 <div class="top">
   <header class="header__wrapper bgcolor__header">
-    <div class="divider">
-      <div class="lmr">
-        <div class="blog-header blog-header__align-center" style="width: 100%; height: 112px;">
-  <div class="blog-header__title">
-    Maven
-  </div>
-</div>
-      </div>
+    
+      
+        <div class="divider">
+          <div class="lmr">
+            
+    
+  
+    
+    <div class="blog-header blog-header__align-center" style="width: 100%; height: 112px;">
+      
+      
+        
+          <div class="blog-header__title" style="font-size: px; ;">
+            最近文章
+          </div>
+              
+      
+      
+        <div style="height: 3px"></div>
+      
+      
+         
+          <div class="blog-header__subtitle" style="font-size: px; " data-cursive="">
+            
+          </div>
+              
+      
     </div>
-  </header>
+    
+  
+    
+  
 
-  <div class="header__wrapper bgcolor__breadcrumb">
-    <div class="divider">
-      <div class="lmr flexbox jc-center flex-wrap tag__wrapper">
-        
-          
-            <a href="/tags/apache/" class="tag">
-              <span class="tag__text">
-                apache
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/c/c&#43;&#43;/" class="tag">
-              <span class="tag__text">
-                c/c&#43;&#43;
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/centos/" class="tag">
-              <span class="tag__text">
-                centos
-              </span>
-              <span class="tag__num" dir="auto">
-                3
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/centos7/" class="tag">
-              <span class="tag__text">
-                CentOS7
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/centos8/" class="tag">
-              <span class="tag__text">
-                centos8
-              </span>
-              <span class="tag__num" dir="auto">
-                4
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/css/" class="tag">
-              <span class="tag__text">
-                css
-              </span>
-              <span class="tag__num" dir="auto">
-                2
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/emoji/" class="tag">
-              <span class="tag__text">
-                emoji
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/firewall/" class="tag">
-              <span class="tag__text">
-                Firewall
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/git/" class="tag">
-              <span class="tag__text">
-                git
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/gradle/" class="tag">
-              <span class="tag__text">
-                Gradle
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/html/" class="tag">
-              <span class="tag__text">
-                html
-              </span>
-              <span class="tag__num" dir="auto">
-                2
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/httpd/" class="tag">
-              <span class="tag__text">
-                httpd
-              </span>
-              <span class="tag__num" dir="auto">
-                2
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/https/" class="tag">
-              <span class="tag__text">
-                https
-              </span>
-              <span class="tag__num" dir="auto">
-                2
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/java/" class="tag">
-              <span class="tag__text">
-                java
-              </span>
-              <span class="tag__num" dir="auto">
-                2
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/linux%E5%91%BD%E4%BB%A4/" class="tag">
-              <span class="tag__text">
-                linux命令
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/markdown/" class="tag">
-              <span class="tag__text">
-                markdown
-              </span>
-              <span class="tag__num" dir="auto">
-                3
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/maven/" class="tag">
-              <span class="tag__text">
-                Maven
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/mysql5.7/" class="tag">
-              <span class="tag__text">
-                mysql5.7
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/mysql8/" class="tag">
-              <span class="tag__text">
-                mysql8
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/nginx/" class="tag">
-              <span class="tag__text">
-                nginx
-              </span>
-              <span class="tag__num" dir="auto">
-                5
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/nuklear/" class="tag">
-              <span class="tag__text">
-                nuklear
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/php/" class="tag">
-              <span class="tag__text">
-                php
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/rpm/" class="tag">
-              <span class="tag__text">
-                RPM
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/rsync/" class="tag">
-              <span class="tag__text">
-                Rsync
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/sed/" class="tag">
-              <span class="tag__text">
-                sed
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/ssl/" class="tag">
-              <span class="tag__text">
-                ssl
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/supervisor/" class="tag">
-              <span class="tag__text">
-                Supervisor
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/text/" class="tag">
-              <span class="tag__text">
-                text
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/themes/" class="tag">
-              <span class="tag__text">
-                themes
-              </span>
-              <span class="tag__num" dir="auto">
-                2
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/tomcat/" class="tag">
-              <span class="tag__text">
-                tomcat
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/web%E5%BC%80%E5%8F%91/" class="tag">
-              <span class="tag__text">
-                web开发
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/yum/" class="tag">
-              <span class="tag__text">
-                yum
-              </span>
-              <span class="tag__num" dir="auto">
-                2
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/zabbix/" class="tag">
-              <span class="tag__text">
-                zabbix
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3/" class="tag">
-              <span class="tag__text">
-                官方文档
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/%E6%A0%87%E5%87%86%E5%BA%93/" class="tag">
-              <span class="tag__text">
-                标准库
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/%E7%9B%B4%E6%92%AD/" class="tag">
-              <span class="tag__text">
-                直播
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/" class="tag">
-              <span class="tag__text">
-                端口转发
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/%E7%BA%AA%E5%BF%B5%E7%A2%91/" class="tag">
-              <span class="tag__text">
-                纪念碑
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/%E7%BF%BB%E8%AF%91/" class="tag">
-              <span class="tag__text">
-                翻译
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/" class="tag">
-              <span class="tag__text">
-                虚拟主机
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/%E8%BD%AC%E8%BD%BD/" class="tag">
-              <span class="tag__text">
-                转载
-              </span>
-              <span class="tag__num" dir="auto">
-                2
-              </span>
-            </a>
-          
-        
-          
-            <a href="/tags/%E9%83%A8%E7%BD%B2/" class="tag">
-              <span class="tag__text">
-                部署
-              </span>
-              <span class="tag__num" dir="auto">
-                1
-              </span>
-            </a>
-          
-        
-      </div>
-    </div>
-  </div>
+
+          </div>
+        </div>
+      
+    
+  </header>
 </div>
 
 <div class="mid blog__bg">
   <main class="main blog__bg">
-    <div class="sv" data-view="full">
-      <div class="blog">
+    <div class="sv">
+      <div class="blog-post">
         
           <article class="summary-card">
   <header>
@@ -2843,6 +2514,477 @@ var _mtac = {};
 
 
       </div>
+      <div class="blog-tags">
+        
+<h6 class="tag-cloud__label">
+  Maven
+</h6>
+<div class="tag-cloud__tags">
+  
+    
+      <a href="/tags/apache/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          apache
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/c/c&#43;&#43;/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          c/c&#43;&#43;
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/centos/" class="tag">
+        <span class="tag__text" style="font-size: 0.8714285714285714rem;">
+          centos
+        </span>
+        <span class="tag__num" style="font-size: 0.8714285714285714rem;" dir="auto">
+          (3)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/centos7/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          CentOS7
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/centos8/" class="tag">
+        <span class="tag__text" style="font-size: 0.8952380952380953rem;">
+          centos8
+        </span>
+        <span class="tag__num" style="font-size: 0.8952380952380953rem;" dir="auto">
+          (4)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/css/" class="tag">
+        <span class="tag__text" style="font-size: 0.8476190476190477rem;">
+          css
+        </span>
+        <span class="tag__num" style="font-size: 0.8476190476190477rem;" dir="auto">
+          (2)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/emoji/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          emoji
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/firewall/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          Firewall
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/git/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          git
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/gradle/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          Gradle
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/html/" class="tag">
+        <span class="tag__text" style="font-size: 0.8476190476190477rem;">
+          html
+        </span>
+        <span class="tag__num" style="font-size: 0.8476190476190477rem;" dir="auto">
+          (2)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/httpd/" class="tag">
+        <span class="tag__text" style="font-size: 0.8476190476190477rem;">
+          httpd
+        </span>
+        <span class="tag__num" style="font-size: 0.8476190476190477rem;" dir="auto">
+          (2)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/https/" class="tag">
+        <span class="tag__text" style="font-size: 0.8476190476190477rem;">
+          https
+        </span>
+        <span class="tag__num" style="font-size: 0.8476190476190477rem;" dir="auto">
+          (2)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/java/" class="tag">
+        <span class="tag__text" style="font-size: 0.8476190476190477rem;">
+          java
+        </span>
+        <span class="tag__num" style="font-size: 0.8476190476190477rem;" dir="auto">
+          (2)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/linux%E5%91%BD%E4%BB%A4/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          linux命令
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/markdown/" class="tag">
+        <span class="tag__text" style="font-size: 0.8714285714285714rem;">
+          markdown
+        </span>
+        <span class="tag__num" style="font-size: 0.8714285714285714rem;" dir="auto">
+          (3)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/maven/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          Maven
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/mysql5.7/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          mysql5.7
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/mysql8/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          mysql8
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/nginx/" class="tag">
+        <span class="tag__text" style="font-size: 0.9190476190476191rem;">
+          nginx
+        </span>
+        <span class="tag__num" style="font-size: 0.9190476190476191rem;" dir="auto">
+          (5)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/nuklear/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          nuklear
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/php/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          php
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/rpm/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          RPM
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/rsync/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          Rsync
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/sed/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          sed
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/ssl/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          ssl
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/supervisor/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          Supervisor
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/text/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          text
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/themes/" class="tag">
+        <span class="tag__text" style="font-size: 0.8476190476190477rem;">
+          themes
+        </span>
+        <span class="tag__num" style="font-size: 0.8476190476190477rem;" dir="auto">
+          (2)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/tomcat/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          tomcat
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/web%E5%BC%80%E5%8F%91/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          web开发
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/yum/" class="tag">
+        <span class="tag__text" style="font-size: 0.8476190476190477rem;">
+          yum
+        </span>
+        <span class="tag__num" style="font-size: 0.8476190476190477rem;" dir="auto">
+          (2)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/zabbix/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          zabbix
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          官方文档
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/%E6%A0%87%E5%87%86%E5%BA%93/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          标准库
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/%E7%9B%B4%E6%92%AD/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          直播
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          端口转发
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/%E7%BA%AA%E5%BF%B5%E7%A2%91/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          纪念碑
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/%E7%BF%BB%E8%AF%91/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          翻译
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          虚拟主机
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/%E8%BD%AC%E8%BD%BD/" class="tag">
+        <span class="tag__text" style="font-size: 0.8476190476190477rem;">
+          转载
+        </span>
+        <span class="tag__num" style="font-size: 0.8476190476190477rem;" dir="auto">
+          (2)
+        </span>
+      </a>
+    
+  
+    
+      <a href="/tags/%E9%83%A8%E7%BD%B2/" class="tag">
+        <span class="tag__text" style="font-size: 0.8238095238095239rem;">
+          部署
+        </span>
+        <span class="tag__num" style="font-size: 0.8238095238095239rem;" dir="auto">
+          (1)
+        </span>
+      </a>
+    
+  
+</div>
+      </div>
     </div>
 
   </main>
@@ -2850,27 +2992,33 @@ var _mtac = {};
 
 <script>
   var singleViewElem = document.querySelectorAll('.sv');
+  var postElem = document.querySelector('.blog-post');
+  var tagsElem = document.querySelector('.blog-tags');
 
   enquire.register("screen and (max-width:1280px)", {
     match: function () {
       singleViewElem.forEach(function (elem) {
-        elem.setAttribute('data-view', 'full');
+        postElem.className = "blog-post";
+        tagsElem.className = "blog-tags";
       });
     },
     unmatch: function () {
       singleViewElem.forEach(function (elem) {
-        elem.setAttribute('data-view', 'full');
+        postElem.className = "blog-post";
+        tagsElem.className = "blog-tags";
       });
     },
   }).register("screen and (max-width:769px)", {
     match: function () {
       singleViewElem.forEach(function (elem) {
-        elem.setAttribute('data-view', 'mobile');
+        postElem.className = "blog-total";
+        tagsElem.className = "hide";
       });
     },
     unmatch: function () {
       singleViewElem.forEach(function (elem) {
-        elem.setAttribute('data-view', 'full');
+        postElem.className = "blog-post";
+        tagsElem.className = "blog-tags";
       });
     },
   });
