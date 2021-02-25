@@ -8,15 +8,15 @@
     
 
 
-<script src="/js/enquire.min.dfb99dee1e029d51d6cfb672d847929890b1585402de17f5ed092edd72a688b4.js"></script>
+<script src="/js/enquire.min.aa37bdcb743826eecdae5c5d177fc7d6552340f1b4378ffaa9c82b2c6111400b.js"></script>
 
-<script defer src="/js/fuse.min.94c78ad70b02749822921660cf4e9f0b3701bc0680c421afb784a78228de0275.js"></script>
+<script defer src="/js/fuse.min.c4bee9a8d44273d6154fe86006923d4131eb2e8069d8897687137c6f37f553e3.js"></script>
 
-<script defer src="/js/lazysizes.min.31dd6a2d3a1ec0f78a8df007535cf23f03aeb5c70f026e6d6a19dac3b3acc340.js"></script>
+<script defer src="/js/lazysizes.min.5e11d056075a05065b9c0bfec44084a113fc2976c2952ec804dedb61c7662db9.js"></script>
 
-<script defer src="/js/helper/getParents.min.1618c696be7c98933f9a92677f518b512a74e55bdbb976b09936b4182e93181b.js"></script>
+<script defer src="/js/helper/getParents.min.ccd45f158c1b17849307ba913a72beac239c410f2b6e648496a79842da84e55b.js"></script>
 
-<script defer src="/js/helper/fadeinout.min.93a331f96194789a542f33690bbe4f0c102c7e78ffc018217f5a1c33010bad91.js"></script>
+<script defer src="/js/helper/fadeinout.min.9fb19682560d5fa5596fffec85da605067c4acc86aad05add4d8fff9d362a446.js"></script>
 
 <script>
   "use strict";
@@ -979,7 +979,7 @@
 <meta property="og:url" content="http://www.shaochenfeng.com/blog/firewall%E5%B8%B8%E7%94%A8%E8%A7%84%E5%88%99%E8%AE%BE%E7%BD%AE/">
 <meta property="og:type" content="article">
 <meta property="og:image" content="http://www.shaochenfeng.com/me/firewall%E8%A7%84%E5%88%99%E8%AE%BE%E7%BD%AE.jpg">
-<meta name="generator" content="Hugo 0.57.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="http://www.shaochenfeng.com/blog/firewall%E5%B8%B8%E7%94%A8%E8%A7%84%E5%88%99%E8%AE%BE%E7%BD%AE/">
@@ -2020,94 +2020,68 @@ var _mtac = {};
   
 
   <article class="single__contents" data-dir="ltr">
-    
-
-<h2 id="一-设置firewall规则">一. 设置firewall规则</h2>
-
+    <h2 id="一-设置firewall规则">一. 设置firewall规则</h2>
 <p>例1：对外暴露8080端口</p>
-
 <pre><code>firewall-cmd --permanent --add-port=8080/tcp
-</code></pre>
-
-<p>例2：使mysql服务的3306端口只允许192.168.1.1/24网段的服务器能访问</p>
-
+</code></pre><p>例2：使mysql服务的3306端口只允许192.168.1.1/24网段的服务器能访问</p>
 <pre><code>#添加规则
 firewall-cmd --permanent --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;192.168.1.1/24&quot; port protocol=&quot;tcp&quot; port=&quot;3306&quot; accept&quot;
 
 #reload使生效
 firewall-cmd --reload
-</code></pre>
-
-<p>例3：端口转发，将到本机的3306端口的访问转发到192.168.1.1服务器的3306端口</p>
-
+</code></pre><p>例3：端口转发，将到本机的3306端口的访问转发到192.168.1.1服务器的3306端口</p>
 <pre><code># 开启伪装IP
 firewall-cmd --permanent --add-masquerade
 # 配置端口转发
 firewall-cmd --permanent --add-forward-port=port=3306:proto=tcp:toaddr=192.168.1.2:toport=13306
 
-</code></pre>
-
-<p>注意：如果不开启伪装IP，端口转发会失败；其次，要确保源服务器上的端口（3306）和目标服务器上的端口（13306）是开启的。</p>
-
+</code></pre><p>注意：如果不开启伪装IP，端口转发会失败；其次，要确保源服务器上的端口（3306）和目标服务器上的端口（13306）是开启的。</p>
 <h2 id="二-firewall命令">二. firewall命令</h2>
-
-<h3 id="1-启动-停止-重启firewalld">1.启动, 停止, 重启firewalld</h3>
-
+<h3 id="1启动-停止-重启firewalld">1.启动, 停止, 重启firewalld</h3>
 <ol>
-<li><p>停止</p>
-
-<pre><code>systemctl stop firewalld.service 
-</code></pre></li>
-
-<li><p>启动</p>
-
-<pre><code>systemctl start firewalld.service 
-</code></pre></li>
-
-<li><p>重启</p>
-
-<pre><code>systemctl restart firewalld.service
-</code></pre></li>
-
-<li><p>查看状态</p>
-
-<pre><code>systemctl status firewalld 
-</code></pre></li>
-
-<li><p>禁止firewall开机启动</p>
-
-<pre><code>systemctl disable firewalld
-</code></pre></li>
-
-<li><p>设置开机启用防火墙
-systemctl enable firewalld.service</p></li>
+<li>停止</li>
 </ol>
-
-<h3 id="2-查看firewall规则与状态">2.查看firewall规则与状态</h3>
-
+<pre><code>systemctl stop firewalld.service 
+</code></pre><ol start="2">
+<li>启动</li>
+</ol>
+<pre><code>systemctl start firewalld.service 
+</code></pre><ol start="3">
+<li>重启</li>
+</ol>
+<pre><code>systemctl restart firewalld.service
+</code></pre><ol start="4">
+<li>查看状态</li>
+</ol>
+<pre><code>systemctl status firewalld 
+</code></pre><ol start="5">
+<li>禁止firewall开机启动</li>
+</ol>
+<pre><code>systemctl disable firewalld
+</code></pre><ol start="6">
+<li>设置开机启用防火墙<br />
+systemctl enable firewalld.service</li>
+</ol>
+<h3 id="2查看firewall规则与状态">2.查看firewall规则与状态</h3>
 <ol>
-<li><p>查看默认防火墙状态（关闭后显示notrunning，开启后显示running）</p>
-
+<li>查看默认防火墙状态（关闭后显示notrunning，开启后显示running）</li>
+</ol>
 <pre><code>firewall-cmd --state              
-</code></pre></li>
-
-<li><p>查看防火墙规则（只显示/etc/firewalld/zones/public.xml中防火墙策略）</p>
-
+</code></pre><ol start="2">
+<li>查看防火墙规则（只显示/etc/firewalld/zones/public.xml中防火墙策略）</li>
+</ol>
 <pre><code>firewall-cmd --list-all           
-</code></pre></li>
-
-<li><p>查看所有的防火墙策略（即显示/etc/firewalld/zones/下的所有策略）</p>
-
+</code></pre><ol start="3">
+<li>查看所有的防火墙策略（即显示/etc/firewalld/zones/下的所有策略）</li>
+</ol>
 <pre><code>firewall-cmd --list-all-zones     
-</code></pre></li>
-
-<li><p>重新加载配置文件</p>
-
+</code></pre><ol start="4">
+<li>重新加载配置文件</li>
+</ol>
 <pre><code>firewall-cmd --reload             
-</code></pre></li>
-
-<li><p>配置firewalld-cmd</p>
-
+</code></pre><ol start="3">
+<li>配置firewalld-cmd</li>
+</ol>
 <pre><code>查看版本： firewall-cmd --version
 
 查看帮助： firewall-cmd --help
@@ -2127,39 +2101,28 @@ systemctl enable firewalld.service</p></li>
 取消拒绝状态： firewall-cmd --panic-off
 
 查看是否拒绝： firewall-cmd --query-panic
-</code></pre></li>
-</ol>
-
-<h3 id="4-开启一个端口">4. 开启一个端口</h3>
-
+</code></pre><h3 id="4-开启一个端口">4. 开启一个端口</h3>
 <ol>
-<li><p>添加（&ndash;permanent永久生效，没有此参数重启后失效）</p>
-
+<li>添加（&ndash;permanent永久生效，没有此参数重启后失效）</li>
+</ol>
 <pre><code>firewall-cmd --zone=public --add-port=80/tcp --permanent
-</code></pre></li>
-
-<li><p>重新载入(修改规则后使其生效)</p>
-
+</code></pre><ol start="2">
+<li>重新载入(修改规则后使其生效)</li>
+</ol>
 <pre><code>firewall-cmd --reload
-</code></pre></li>
-
-<li><p>查看</p>
-
+</code></pre><ol start="3">
+<li>查看</li>
+</ol>
 <pre><code>firewall-cmd --zone=public --query-port=80/tcp
-</code></pre></li>
-
-<li><p>删除</p>
-
+</code></pre><ol start="4">
+<li>删除</li>
+</ol>
 <pre><code>firewall-cmd --zone=public --remove-port=80/tcp --permanent
-</code></pre>
-
-<p>因为在/usr/lib/firewalld/services/中事先定义了ssh.xml等相应的规则，所以可以直接运用规则</p>
-
+</code></pre><p>因为在/usr/lib/firewalld/services/中事先定义了ssh.xml等相应的规则，所以可以直接运用规则</p>
 <pre><code>firewall-com --zone=public --add-server=ssh --permanent
-</code></pre></li>
-
-<li><p>systemctl是CentOS7的服务管理工具中主要的工具，它融合之前service和chkconfig的功能于一体。</p>
-
+</code></pre><ol start="5">
+<li>systemctl是CentOS7的服务管理工具中主要的工具，它融合之前service和chkconfig的功能于一体。</li>
+</ol>
 <pre><code>启动一个服务：systemctl start firewalld.service
 关闭一个服务：systemctl stop firewalld.service
 重启一个服务：systemctl restart firewalld.service
@@ -2169,10 +2132,7 @@ systemctl enable firewalld.service</p></li>
 查看服务是否开机启动：systemctl is-enabled firewalld.service
 查看已启动的服务列表：systemctl list-unit-files|grep enabled
 查看启动失败的服务列表：systemctl --failed
-</code></pre>
-
-<p>原文链接：<a href="https://www.jianshu.com/p/4a9958d2e859">https://www.jianshu.com/p/4a9958d2e859</a></p></li>
-</ol>
+</code></pre><p>原文链接：https://www.jianshu.com/p/4a9958d2e859</p>
 
   </article>
 </div>
@@ -2209,18 +2169,16 @@ systemctl enable firewalld.service</p></li>
   <h6 class="toc__label">目录</h6>
   <div class="toc__body">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#一-设置firewall规则">一. 设置firewall规则</a></li>
-<li><a href="#二-firewall命令">二. firewall命令</a>
-<ul>
-<li><a href="#1-启动-停止-重启firewalld">1.启动, 停止, 重启firewalld</a></li>
-<li><a href="#2-查看firewall规则与状态">2.查看firewall规则与状态</a></li>
-<li><a href="#4-开启一个端口">4. 开启一个端口</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#一-设置firewall规则">一. 设置firewall规则</a></li>
+    <li><a href="#二-firewall命令">二. firewall命令</a>
+      <ul>
+        <li><a href="#1启动-停止-重启firewalld">1.启动, 停止, 重启firewalld</a></li>
+        <li><a href="#2查看firewall规则与状态">2.查看firewall规则与状态</a></li>
+        <li><a href="#4-开启一个端口">4. 开启一个端口</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
@@ -2460,7 +2418,7 @@ systemctl enable firewalld.service</p></li>
       <div class="lmr">
         
           <p class="caption">
-            采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。<br/><a href="http://www.beian.miit.gov.cn" target="_blank">冀ICP备18002899号-2</a>    &copy;2020, All Rights Reserved
+            采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。<br/><a href="https://beian.miit.gov.cn/" target="_blank">冀ICP备18002899号</a>    ©2021, All Rights Reserved
           </p>
           
         

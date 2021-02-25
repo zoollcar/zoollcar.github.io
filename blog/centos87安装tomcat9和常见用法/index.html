@@ -8,15 +8,15 @@
     
 
 
-<script src="/js/enquire.min.dfb99dee1e029d51d6cfb672d847929890b1585402de17f5ed092edd72a688b4.js"></script>
+<script src="/js/enquire.min.aa37bdcb743826eecdae5c5d177fc7d6552340f1b4378ffaa9c82b2c6111400b.js"></script>
 
-<script defer src="/js/fuse.min.94c78ad70b02749822921660cf4e9f0b3701bc0680c421afb784a78228de0275.js"></script>
+<script defer src="/js/fuse.min.c4bee9a8d44273d6154fe86006923d4131eb2e8069d8897687137c6f37f553e3.js"></script>
 
-<script defer src="/js/lazysizes.min.31dd6a2d3a1ec0f78a8df007535cf23f03aeb5c70f026e6d6a19dac3b3acc340.js"></script>
+<script defer src="/js/lazysizes.min.5e11d056075a05065b9c0bfec44084a113fc2976c2952ec804dedb61c7662db9.js"></script>
 
-<script defer src="/js/helper/getParents.min.1618c696be7c98933f9a92677f518b512a74e55bdbb976b09936b4182e93181b.js"></script>
+<script defer src="/js/helper/getParents.min.ccd45f158c1b17849307ba913a72beac239c410f2b6e648496a79842da84e55b.js"></script>
 
-<script defer src="/js/helper/fadeinout.min.93a331f96194789a542f33690bbe4f0c102c7e78ffc018217f5a1c33010bad91.js"></script>
+<script defer src="/js/helper/fadeinout.min.9fb19682560d5fa5596fffec85da605067c4acc86aad05add4d8fff9d362a446.js"></script>
 
 <script>
   "use strict";
@@ -979,7 +979,7 @@
 <meta property="og:url" content="http://www.shaochenfeng.com/blog/centos87%E5%AE%89%E8%A3%85tomcat9%E5%92%8C%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
 <meta property="og:type" content="article">
 <meta property="og:image" content="http://www.shaochenfeng.com/me/tomcat.jpg">
-<meta name="generator" content="Hugo 0.57.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="http://www.shaochenfeng.com/blog/centos87%E5%AE%89%E8%A3%85tomcat9%E5%92%8C%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
@@ -2020,41 +2020,24 @@ var _mtac = {};
   
 
   <article class="single__contents" data-dir="ltr">
-    
-
-<h2 id="1-安装jdk">1.安装jdk</h2>
-
+    <h2 id="1安装jdk">1.安装jdk</h2>
 <p>tomcat9可以工作在jdk8及之后的版本</p>
-
 <p>所以可以安装jdk8或是jdk11</p>
-
 <pre><code>dnf install java-11-openjdk # centos8
 yum install java-11-openjdk # centos7
-</code></pre>
-
-<h2 id="2-下载最新的tomcat二进制包">2.下载最新的tomcat二进制包</h2>
-
+</code></pre><h2 id="2下载最新的tomcat二进制包">2.下载最新的tomcat二进制包</h2>
 <p>打开网站 <a href="https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/">https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/</a></p>
-
-<p><img src="/webimg/img2020I03I16T091000" alt="" /></p>
-
+<p><p class="md__image">
+  <img src="/webimg/img2020I03I16T091000" alt=""  />
+</p></p>
 <p>在这里找到最新版本，进入后进入bin目录</p>
-
 <p>里面有名为 apache-tomcat-XXXX.tar.gz 的文件，右键复制地址</p>
-
 <p>下载并解压</p>
-
 <pre><code>wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.31/bin/apache-tomcat-9.0.31.tar.gz
 tar xvf apache-tomcat-9.0.31.tar.gz
-</code></pre>
-
-<p>移动到安装目录</p>
-
+</code></pre><p>移动到安装目录</p>
 <pre><code>mv apache-tomcat-9.0.31 /opt/tomcat9
-</code></pre>
-
-<h2 id="3-常见命令和目录">3.常见命令和目录</h2>
-
+</code></pre><h2 id="3常见命令和目录">3.常见命令和目录</h2>
 <table>
 <thead>
 <tr>
@@ -2062,39 +2045,31 @@ tar xvf apache-tomcat-9.0.31.tar.gz
 <th align="left">作用</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">/opt/tomcat9/bin/startup.sh</td>
 <td align="left">启动tomcat</td>
 </tr>
-
 <tr>
 <td align="left">/opt/tomcat9/bin/shutdown.sh</td>
 <td align="left">关闭tomcat</td>
 </tr>
-
 <tr>
 <td align="left">/opt/tomcat9/conf/</td>
 <td align="left">配置</td>
 </tr>
-
 <tr>
 <td align="left">/opt/tomcat9/logs/</td>
 <td align="left">日志</td>
 </tr>
-
 <tr>
 <td align="left">/opt/tomcat9/webapps/</td>
 <td align="left">默认应用目录</td>
 </tr>
 </tbody>
 </table>
-
-<h2 id="4-如何选择tomcat版本">4.如何选择tomcat版本</h2>
-
+<h2 id="4如何选择tomcat版本">4.如何选择tomcat版本</h2>
 <p>下面表格来自tomcat官网</p>
-
 <table>
 <thead>
 <tr>
@@ -2108,7 +2083,6 @@ tar xvf apache-tomcat-9.0.31.tar.gz
 <th align="left">支持的 Java 版本</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">4.0</td>
@@ -2120,7 +2094,6 @@ tar xvf apache-tomcat-9.0.31.tar.gz
 <td align="left">9.0.31</td>
 <td align="left">8 and later</td>
 </tr>
-
 <tr>
 <td align="left">3.1</td>
 <td align="left">2.3</td>
@@ -2131,7 +2104,6 @@ tar xvf apache-tomcat-9.0.31.tar.gz
 <td align="left">8.5.51</td>
 <td align="left">7 and later</td>
 </tr>
-
 <tr>
 <td align="left">3.1</td>
 <td align="left">2.3</td>
@@ -2142,7 +2114,6 @@ tar xvf apache-tomcat-9.0.31.tar.gz
 <td align="left">8.0.53 (superseded)</td>
 <td align="left">7 and later</td>
 </tr>
-
 <tr>
 <td align="left">3.0</td>
 <td align="left">2.2</td>
@@ -2153,7 +2124,6 @@ tar xvf apache-tomcat-9.0.31.tar.gz
 <td align="left">7.0.100</td>
 <td align="left">6 and later (7 and later for WebSocket)</td>
 </tr>
-
 <tr>
 <td align="left">2.5</td>
 <td align="left">2.1</td>
@@ -2164,7 +2134,6 @@ tar xvf apache-tomcat-9.0.31.tar.gz
 <td align="left">6.0.53 (archived)</td>
 <td align="left">5 and later</td>
 </tr>
-
 <tr>
 <td align="left">2.4</td>
 <td align="left">2.0</td>
@@ -2175,7 +2144,6 @@ tar xvf apache-tomcat-9.0.31.tar.gz
 <td align="left">5.5.36 (archived)</td>
 <td align="left">1.4 and later</td>
 </tr>
-
 <tr>
 <td align="left">2.3</td>
 <td align="left">1.2</td>
@@ -2186,7 +2154,6 @@ tar xvf apache-tomcat-9.0.31.tar.gz
 <td align="left">4.1.40 (archived)</td>
 <td align="left">1.3 and later</td>
 </tr>
-
 <tr>
 <td align="left">2.2</td>
 <td align="left">1.1</td>
@@ -2235,15 +2202,12 @@ tar xvf apache-tomcat-9.0.31.tar.gz
   <h6 class="toc__label">目录</h6>
   <div class="toc__body">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#1-安装jdk">1.安装jdk</a></li>
-<li><a href="#2-下载最新的tomcat二进制包">2.下载最新的tomcat二进制包</a></li>
-<li><a href="#3-常见命令和目录">3.常见命令和目录</a></li>
-<li><a href="#4-如何选择tomcat版本">4.如何选择tomcat版本</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#1安装jdk">1.安装jdk</a></li>
+    <li><a href="#2下载最新的tomcat二进制包">2.下载最新的tomcat二进制包</a></li>
+    <li><a href="#3常见命令和目录">3.常见命令和目录</a></li>
+    <li><a href="#4如何选择tomcat版本">4.如何选择tomcat版本</a></li>
+  </ul>
 </nav>
   </div>
 </div>
@@ -2483,7 +2447,7 @@ tar xvf apache-tomcat-9.0.31.tar.gz
       <div class="lmr">
         
           <p class="caption">
-            采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。<br/><a href="http://www.beian.miit.gov.cn" target="_blank">冀ICP备18002899号-2</a>    &copy;2020, All Rights Reserved
+            采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。<br/><a href="https://beian.miit.gov.cn/" target="_blank">冀ICP备18002899号</a>    ©2021, All Rights Reserved
           </p>
           
         

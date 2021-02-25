@@ -6,7 +6,7 @@
     <description>Recent content in nginx on 邵晨峰的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <copyright>采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;br/&gt;&lt;a href=&#34;http://www.beian.miit.gov.cn&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号-2&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
+    <copyright>采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;br/&gt;&lt;a href=&#34;https://beian.miit.gov.cn/&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Tue, 25 Feb 2020 22:11:24 +0800</lastBuildDate>
     
         <atom:link href="http://www.shaochenfeng.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
@@ -30,22 +30,41 @@
         
         <guid>http://www.shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85nginx%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95/</guid>
         <description>&lt;h2 id=&#34;首先是全部步骤概括&#34;&gt;首先是全部步骤概括&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget
 yum install -y pcre-devel zlib-devel
-wget http://nginx.org/download/nginx-1.16.1.tar.gz # 下载源码包
+wget http://nginx.org/download/nginx-1.16.1.tar.gz &lt;span class=&#34;c1&#34;&gt;# 下载源码包&lt;/span&gt;
 tar -zxvf nginx-1.16.1.tar.gz
-cd nginx-1.16.1
-./configure --prefix=/opt/nginx1.16 # 这里指定安装目录
-make &amp;amp;&amp;amp; make install
+&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; nginx-1.16.1
+./configure --prefix&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/opt/nginx1.16 &lt;span class=&#34;c1&#34;&gt;# 这里指定安装目录&lt;/span&gt;
+make &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install
 useradd www -s /bin/false
-vi /opt/nginx1.16/conf/nginx.conf # 修改配置文件
-# 第一行去掉前面井号并改为 user  www;
-/opt/nginx1.16/sbin/nginx #启动nginx
-#以下为可选
-/opt/nginx1.16/sbin/nginx -s stop  #停止
-/opt/nginx1.16/sbin/nginx -s reload  #重新载入配置
-&lt;/code&gt;&lt;/pre&gt;</description>
+vi /opt/nginx1.16/conf/nginx.conf &lt;span class=&#34;c1&#34;&gt;# 修改配置文件&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# 第一行去掉前面井号并改为 user  www;&lt;/span&gt;
+/opt/nginx1.16/sbin/nginx &lt;span class=&#34;c1&#34;&gt;#启动nginx&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#以下为可选&lt;/span&gt;
+/opt/nginx1.16/sbin/nginx -s stop  &lt;span class=&#34;c1&#34;&gt;#停止&lt;/span&gt;
+/opt/nginx1.16/sbin/nginx -s reload  &lt;span class=&#34;c1&#34;&gt;#重新载入配置&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
       </item>
       
       <item>
@@ -55,7 +74,6 @@ vi /opt/nginx1.16/conf/nginx.conf # 修改配置文件
         
         <guid>http://www.shaochenfeng.com/blog/nginx%E9%85%8D%E7%BD%AEssl%E8%AF%81%E4%B9%A6%E6%94%AF%E6%8C%81htts/</guid>
         <description>&lt;p&gt;https是加密的http协议，现在以谷歌浏览器为首的很多浏览器开始将仅支持http的网站标识为不安全&lt;/p&gt;
-
 &lt;p&gt;所以全站https就成为了现代网站的标配，本文介绍ngnix如何配置ssl证书，以支持https&lt;/p&gt;</description>
       </item>
       
@@ -66,7 +84,6 @@ vi /opt/nginx1.16/conf/nginx.conf # 修改配置文件
         
         <guid>http://www.shaochenfeng.com/blog/nginx%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</guid>
         <description>&lt;p&gt;有时我们会使用一些java或node应用，但又不想让他们直接监听80端口，这时就需要用到端口转发&lt;/p&gt;
-
 &lt;p&gt;本文中，我们介绍Nginx如何做端口转发，还有各种转发规则&lt;/p&gt;</description>
       </item>
       
@@ -77,7 +94,6 @@ vi /opt/nginx1.16/conf/nginx.conf # 修改配置文件
         
         <guid>http://www.shaochenfeng.com/blog/centos8yum%E5%AE%89%E8%A3%85nginx%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/</guid>
         <description>&lt;p&gt;&lt;strong&gt;nginx&lt;/strong&gt;是最近非常火的web服务器，这次CentOS8也在yum官方源中新增了nginx 1.14&lt;/p&gt;
-
 &lt;p&gt;与&lt;strong&gt;Apache&lt;/strong&gt;相比可以承担更大的并发，并占用更少的内存&lt;/p&gt;</description>
       </item>
       

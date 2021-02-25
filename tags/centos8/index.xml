@@ -6,7 +6,7 @@
     <description>Recent content in centos8 on 邵晨峰的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <copyright>采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;br/&gt;&lt;a href=&#34;http://www.beian.miit.gov.cn&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号-2&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
+    <copyright>采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;br/&gt;&lt;a href=&#34;https://beian.miit.gov.cn/&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Sun, 08 Mar 2020 22:00:12 +0800</lastBuildDate>
     
         <atom:link href="http://www.shaochenfeng.com/tags/centos8/index.xml" rel="self" type="application/rss+xml" />
@@ -20,7 +20,7 @@
         <pubDate>Sun, 08 Mar 2020 22:00:12 +0800</pubDate>
         
         <guid>http://www.shaochenfeng.com/blog/cento8%E5%AE%89%E8%A3%85szabbix%E7%9B%91%E6%8E%A7/</guid>
-        <description>安装中文支持 不然安装以后web界面不能设置为中文 dnf install langpacks-zh_CN # 在centos7中是 yum install kde-l10n-Chinese 下载源码 浏览器打开 https://www.zabbix.com/download_sources 下载最新的长期支持版，上传到服务器 在服</description>
+        <description>安装中文支持 不然安装以后web界面不能设置为中文 1 2 dnf install langpacks-zh_CN # 在centos7中是 yum install kde-l10n-Chinese 下载源码 浏览器打开 https://www.zabbix.com/download_sources 下载最新的长期支持版，上传到服务器</description>
       </item>
       
       <item>
@@ -38,7 +38,7 @@
         <pubDate>Wed, 19 Feb 2020 15:10:23 +0800</pubDate>
         
         <guid>http://www.shaochenfeng.com/blog/apache_httpd%E5%92%8Cphp/</guid>
-        <description>Apache httpd和php的结合方式有两种： * DSO方式，php作为httpd的模块 * FCGI方式，使用php-fpm单独管理php进程池 yum方</description>
+        <description>Apache httpd和php的结合方式有两种： DSO方式，php作为httpd的模块 FCGI方式，使用php-fpm单独管理php进程池 yum方式安</description>
       </item>
       
       <item>
@@ -48,7 +48,6 @@
         
         <guid>http://www.shaochenfeng.com/blog/centos8yum%E5%AE%89%E8%A3%85nginx%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/</guid>
         <description>&lt;p&gt;&lt;strong&gt;nginx&lt;/strong&gt;是最近非常火的web服务器，这次CentOS8也在yum官方源中新增了nginx 1.14&lt;/p&gt;
-
 &lt;p&gt;与&lt;strong&gt;Apache&lt;/strong&gt;相比可以承担更大的并发，并占用更少的内存&lt;/p&gt;</description>
       </item>
       

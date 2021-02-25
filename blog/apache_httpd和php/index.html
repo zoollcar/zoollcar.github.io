@@ -8,15 +8,15 @@
     
 
 
-<script src="/js/enquire.min.dfb99dee1e029d51d6cfb672d847929890b1585402de17f5ed092edd72a688b4.js"></script>
+<script src="/js/enquire.min.aa37bdcb743826eecdae5c5d177fc7d6552340f1b4378ffaa9c82b2c6111400b.js"></script>
 
-<script defer src="/js/fuse.min.94c78ad70b02749822921660cf4e9f0b3701bc0680c421afb784a78228de0275.js"></script>
+<script defer src="/js/fuse.min.c4bee9a8d44273d6154fe86006923d4131eb2e8069d8897687137c6f37f553e3.js"></script>
 
-<script defer src="/js/lazysizes.min.31dd6a2d3a1ec0f78a8df007535cf23f03aeb5c70f026e6d6a19dac3b3acc340.js"></script>
+<script defer src="/js/lazysizes.min.5e11d056075a05065b9c0bfec44084a113fc2976c2952ec804dedb61c7662db9.js"></script>
 
-<script defer src="/js/helper/getParents.min.1618c696be7c98933f9a92677f518b512a74e55bdbb976b09936b4182e93181b.js"></script>
+<script defer src="/js/helper/getParents.min.ccd45f158c1b17849307ba913a72beac239c410f2b6e648496a79842da84e55b.js"></script>
 
-<script defer src="/js/helper/fadeinout.min.93a331f96194789a542f33690bbe4f0c102c7e78ffc018217f5a1c33010bad91.js"></script>
+<script defer src="/js/helper/fadeinout.min.9fb19682560d5fa5596fffec85da605067c4acc86aad05add4d8fff9d362a446.js"></script>
 
 <script>
   "use strict";
@@ -979,7 +979,7 @@
 <meta property="og:url" content="http://www.shaochenfeng.com/blog/apache_httpd%E5%92%8Cphp/">
 <meta property="og:type" content="article">
 <meta property="og:image" content="http://www.shaochenfeng.com/me/php%E5%92%8Chttpd.jpg">
-<meta name="generator" content="Hugo 0.57.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="http://www.shaochenfeng.com/blog/apache_httpd%E5%92%8Cphp/">
@@ -1010,7 +1010,7 @@
     "datePublished": "2020-02-19T15:10:23+08:00",
     "dateModified": "2020-02-28T11:19:00+08:00",
     "url" : "http://www.shaochenfeng.com/blog/apache_httpd%E5%92%8Cphp/",
-    "description": "Apache httpd和php的结合方式有两种： * DSO方式，php作为httpd的模块 * FCGI方式，使用php-fpm单独管理php进程池 yum方",
+    "description": "Apache httpd和php的结合方式有两种： DSO方式，php作为httpd的模块 FCGI方式，使用php-fpm单独管理php进程池 yum方式安",
     "keywords": ["php","httpd","centos8"],
     "image" : "http://www.shaochenfeng.com/me/php%E5%92%8Chttpd.jpg",
     "author": {
@@ -2020,89 +2020,108 @@ var _mtac = {};
   
 
   <article class="single__contents" data-dir="ltr">
-    
-
-<p>Apache httpd和php的结合方式有两种：
-* DSO方式，php作为httpd的模块
-* FCGI方式，使用php-fpm单独管理php进程池</p>
-
+    <p>Apache httpd和php的结合方式有两种：</p>
+<ul>
+<li>DSO方式，php作为httpd的模块</li>
+<li>FCGI方式，使用php-fpm单独管理php进程池</li>
+</ul>
 <h2 id="yum方式安装httpd和php">yum方式安装httpd和php</h2>
-
 <p>centos8</p>
-
-<pre><code class="language-sh">dnf install httpd
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">dnf install httpd
 dnf install php
-</code></pre>
-
-<p>默认是php7.2版本</p>
-
+</code></pre></td></tr></table>
+</div>
+</div><p>默认是php7.2版本</p>
 <p>centos7</p>
-
-<pre><code class="language-sh">yum install httpd
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">yum install httpd
 yum install php
-</code></pre>
-
-<p>默认是php5.4版本</p>
-
-<p>这会自动为httpd安装php插件，并启用，使用OSO方式运行php，也就是php作为httpd的模块
+</code></pre></td></tr></table>
+</div>
+</div><p>默认是php5.4版本</p>
+<p>这会自动为httpd安装php插件，并启用，使用OSO方式运行php，也就是php作为httpd的模块<br />
 默认为每个网站都配置了php的支持，直接就能可以使用</p>
-
 <h2 id="测试一下">测试一下</h2>
-
 <p>创建测试文件</p>
-
-<pre><code class="language-sh">echo -e &quot;&lt;?php\nphpinfo();\n?&gt;&quot;&gt; /var/www/html/index.php
-echo -e &quot;&lt;?php\nphpinfo();\n?&gt;&quot;&gt; /usr/share/nginx/html/index.php
-</code></pre>
-
-<p>这样就可以通过 http://&lt;你的服务器ip&gt; 访问下</p>
-
-<h2 id="源码方式安装php7-3">源码方式安装php7.3</h2>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">echo</span> -e <span class="s2">&#34;&lt;?php\nphpinfo();\n?&gt;&#34;</span>&gt; /var/www/html/index.php
+<span class="nb">echo</span> -e <span class="s2">&#34;&lt;?php\nphpinfo();\n?&gt;&#34;</span>&gt; /usr/share/nginx/html/index.php
+</code></pre></td></tr></table>
+</div>
+</div><p>这样就可以通过 http://&lt;你的服务器ip&gt; 访问下</p>
+<h2 id="源码方式安装php73">源码方式安装php7.3</h2>
 <p>环境 centos8</p>
-
-<h3 id="1-首先安装-httpd-和-httpd-devel">1.首先安装 httpd 和 httpd-devel</h3>
-
+<h3 id="1首先安装-httpd-和-httpd-devel">1.首先安装 httpd 和 httpd-devel</h3>
 <p>这里安装httpd-devel是为了使用apxs动态加载插件</p>
-
-<pre><code class="language-sh">dnf install httpd httpd-devel
-</code></pre>
-
-<h3 id="2-安装必要的依赖">2.安装必要的依赖</h3>
-
-<pre><code class="language-sh">dnf install libxml2-devel openssl-devel libcurl libcurl-devel libjpeg-turbo-devel libpng-devel freetype-devel libzip-devel gcc make
-</code></pre>
-
-<h3 id="3-下载php源码包">3.下载php源码包</h3>
-
-<pre><code class="language-sh">wget https://www.php.net/distributions/php-7.3.13.tar.xz
-</code></pre>
-
-<h3 id="4-解压-编译-安装">4.解压、编译、安装</h3>
-
-<pre><code class="language-sh">cd php-7.3.13
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">dnf install httpd httpd-devel
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2安装必要的依赖">2.安装必要的依赖</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">dnf install libxml2-devel openssl-devel libcurl libcurl-devel libjpeg-turbo-devel libpng-devel freetype-devel libzip-devel gcc make
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="3下载php源码包">3.下载php源码包</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">wget https://www.php.net/distributions/php-7.3.13.tar.xz
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="4解压编译安装">4.解压、编译、安装</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> php-7.3.13
 tar xvf php-7.3.13.tar.xz
-./configure --prefix=/opt/php7.3 --with-apxs2=/usr/bin/apxs --with-config-file-path=/opt/php7.3/usr --enable-mbstring --with-openssl --enable-ftp --with-gd --with-jpeg-dir=/opt/php7.3/usr --with-png-dir=/opt/php7.3/usr --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-pear --enable-sockets --with-freetype-dir=/opt/php7.3/usr --with-zlib --with-libxml-dir=/opt/php7.3/usr --with-xmlrpc --enable-zip --enable-fpm --enable-xml --enable-sockets --with-gd --with-zlib --with-iconv --enable-zip --with-freetype-dir=/opt/php7.3/usr/lib --enable-soap --enable-pcntl --enable-cli --with-curl --enable-bcmath --with-gettext
-make &amp;&amp; make install
-</code></pre>
-
-<blockquote>
+./configure --prefix<span class="o">=</span>/opt/php7.3 --with-apxs2<span class="o">=</span>/usr/bin/apxs --with-config-file-path<span class="o">=</span>/opt/php7.3/usr --enable-mbstring --with-openssl --enable-ftp --with-gd --with-jpeg-dir<span class="o">=</span>/opt/php7.3/usr --with-png-dir<span class="o">=</span>/opt/php7.3/usr --with-mysqli<span class="o">=</span>mysqlnd --with-pdo-mysql<span class="o">=</span>mysqlnd --with-pear --enable-sockets --with-freetype-dir<span class="o">=</span>/opt/php7.3/usr --with-zlib --with-libxml-dir<span class="o">=</span>/opt/php7.3/usr --with-xmlrpc --enable-zip --enable-fpm --enable-xml --enable-sockets --with-gd --with-zlib --with-iconv --enable-zip --with-freetype-dir<span class="o">=</span>/opt/php7.3/usr/lib --enable-soap --enable-pcntl --enable-cli --with-curl --enable-bcmath --with-gettext
+make <span class="o">&amp;&amp;</span> make install
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
 <p>这里使用 <code>--prefix=/opt/php7.3</code> 安装在 /opt/php7.3 ，可以自定义安装位置</p>
-
+</blockquote>
+<blockquote>
 <p>这里使用 <code>--with-apxs2=/usr/bin/apxs</code> 指出了apxs的位置，如果是源码安装的httpd，则在安装目录下的 <code>./sbin/apxs</code></p>
 </blockquote>
-
-<h3 id="5-复制配置文件">5.复制配置文件</h3>
-
+<h3 id="5复制配置文件">5.复制配置文件</h3>
 <p>cp php.ini-development /opt/php7.3/php.ini</p>
-
-<h3 id="6-配置httpd使用php">6.配置httpd使用php</h3>
-
+<h3 id="6配置httpd使用php">6.配置httpd使用php</h3>
 <p>cd httpd.conf</p>
-
-<pre><code class="language-增加">LoadModule php7_module	modules/libphp7.so # 有可能已经自动添加了
+<pre><code class="language-增加" data-lang="增加">LoadModule php7_module	modules/libphp7.so # 有可能已经自动添加了
 </code></pre>
-
   </article>
 </div>
       
@@ -2138,22 +2157,20 @@ make &amp;&amp; make install
   <h6 class="toc__label">目录</h6>
   <div class="toc__body">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#yum方式安装httpd和php">yum方式安装httpd和php</a></li>
-<li><a href="#测试一下">测试一下</a></li>
-<li><a href="#源码方式安装php7-3">源码方式安装php7.3</a>
-<ul>
-<li><a href="#1-首先安装-httpd-和-httpd-devel">1.首先安装 httpd 和 httpd-devel</a></li>
-<li><a href="#2-安装必要的依赖">2.安装必要的依赖</a></li>
-<li><a href="#3-下载php源码包">3.下载php源码包</a></li>
-<li><a href="#4-解压-编译-安装">4.解压、编译、安装</a></li>
-<li><a href="#5-复制配置文件">5.复制配置文件</a></li>
-<li><a href="#6-配置httpd使用php">6.配置httpd使用php</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#yum方式安装httpd和php">yum方式安装httpd和php</a></li>
+    <li><a href="#测试一下">测试一下</a></li>
+    <li><a href="#源码方式安装php73">源码方式安装php7.3</a>
+      <ul>
+        <li><a href="#1首先安装-httpd-和-httpd-devel">1.首先安装 httpd 和 httpd-devel</a></li>
+        <li><a href="#2安装必要的依赖">2.安装必要的依赖</a></li>
+        <li><a href="#3下载php源码包">3.下载php源码包</a></li>
+        <li><a href="#4解压编译安装">4.解压、编译、安装</a></li>
+        <li><a href="#5复制配置文件">5.复制配置文件</a></li>
+        <li><a href="#6配置httpd使用php">6.配置httpd使用php</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
@@ -2393,7 +2410,7 @@ make &amp;&amp; make install
       <div class="lmr">
         
           <p class="caption">
-            采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。<br/><a href="http://www.beian.miit.gov.cn" target="_blank">冀ICP备18002899号-2</a>    &copy;2020, All Rights Reserved
+            采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。<br/><a href="https://beian.miit.gov.cn/" target="_blank">冀ICP备18002899号</a>    ©2021, All Rights Reserved
           </p>
           
         
