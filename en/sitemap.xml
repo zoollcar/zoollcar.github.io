@@ -3,16 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://www.shaochenfeng.com/en/</loc>
+    <loc>https://shaochenfeng.com/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="http://www.shaochenfeng.com/"
+                href="https://shaochenfeng.com/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://www.shaochenfeng.com/en/"
+                href="https://shaochenfeng.com/en/"
                 />
   </url>
   

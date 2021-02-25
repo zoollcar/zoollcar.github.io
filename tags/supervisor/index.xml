@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Supervisor on 邵晨峰的博客</title>
-    <link>http://www.shaochenfeng.com/tags/supervisor/</link>
+    <link>https://shaochenfeng.com/tags/supervisor/</link>
     <description>Recent content in Supervisor on 邵晨峰的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;br/&gt;&lt;a href=&#34;https://beian.miit.gov.cn/&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Thu, 20 Feb 2020 10:47:23 +0800</lastBuildDate>
     
-        <atom:link href="http://www.shaochenfeng.com/tags/supervisor/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://shaochenfeng.com/tags/supervisor/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>Supervisor-守护进程工具【转载】</title>
-        <link>http://www.shaochenfeng.com/blog/supervisor-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E5%B7%A5%E5%85%B7%E8%BD%AC%E8%BD%BD/</link>
+        <link>https://shaochenfeng.com/blog/supervisor-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E5%B7%A5%E5%85%B7%E8%BD%AC%E8%BD%BD/</link>
         <pubDate>Thu, 20 Feb 2020 10:47:23 +0800</pubDate>
         
-        <guid>http://www.shaochenfeng.com/blog/supervisor-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E5%B7%A5%E5%85%B7%E8%BD%AC%E8%BD%BD/</guid>
+        <guid>https://shaochenfeng.com/blog/supervisor-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E5%B7%A5%E5%85%B7%E8%BD%AC%E8%BD%BD/</guid>
         <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;手头上的服务器程序1.0版本终于要进入线上测试阶段了😮。兴致冲冲的分了一台公司的系统为CentOS7.+的服务器。1、部署上环境。2、打开终端开始跑程序 &amp;ldquo;nohup dotnet XXX.dll &amp;amp;&amp;quot;。3、关闭终端。。。4、卧槽😮,我的后台运行的程序呢!?&lt;br /&gt;
 本人Linux小白,又尝试了几种后台运行程序的方案，全部以失败告终😭😭😭。&lt;br /&gt;
