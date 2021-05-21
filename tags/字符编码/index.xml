@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>字符编码 on 邵晨峰的博客</title>
+    <link>https://shaochenfeng.com/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</link>
+    <description>Recent content in 字符编码 on 邵晨峰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&lt;a href=&#34;https://beian.miit.gov.cn/&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Thu, 20 May 2021 23:38:38 +0000</lastBuildDate>
+    
+        <atom:link href="https://shaochenfeng.com/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Java 读写GBK编码的文件</title>
+        <link>https://shaochenfeng.com/blog/java-%E8%AF%BB%E5%86%99gbk%E7%BC%96%E7%A0%81%E7%9A%84%E6%96%87%E4%BB%B6/</link>
+        <pubDate>Thu, 20 May 2021 23:38:38 +0000</pubDate>
+        
+        <guid>https://shaochenfeng.com/blog/java-%E8%AF%BB%E5%86%99gbk%E7%BC%96%E7%A0%81%E7%9A%84%E6%96%87%E4%BB%B6/</guid>
+        <description>以GBK编码某个读写文件 读入: 1 2 3 BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(&amp;#34;a.txt&amp;#34;), Charset.forName(&amp;#34;GBK&amp;#34;))); String str = br.readLine(); br.close(); 写出: 1 2 3 4 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(&amp;#34;a.txt&amp;#34;), Charset.forName(&amp;#34;GBK&amp;#34;))); bw.write(&amp;#34;hello&amp;#34;); bw.flush(); bw.close(); 使用try-with-resource语法</description>
+      </item>
+      
+    
+  </channel>
+</rss>

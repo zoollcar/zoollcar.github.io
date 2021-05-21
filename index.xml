@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ZDoc on 邵晨峰的博客</title>
+    <title>主页 on 邵晨峰的博客</title>
     <link>https://shaochenfeng.com/</link>
-    <description>Recent content in ZDoc on 邵晨峰的博客</description>
+    <description>Recent content in 主页 on 邵晨峰的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <copyright>采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;br/&gt;&lt;a href=&#34;https://beian.miit.gov.cn/&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
+    <copyright>&lt;a href=&#34;https://beian.miit.gov.cn/&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Sun, 26 Jan 2020 04:15:05 +0900</lastBuildDate>
     
         <atom:link href="https://shaochenfeng.com/index.xml" rel="self" type="application/rss+xml" />
@@ -24,29 +24,11 @@
       </item>
       
       <item>
-        <title>Basic Usage</title>
-        <link>https://shaochenfeng.com/docs/gettingstarted/basicusage/</link>
-        <pubDate>Tue, 28 Jan 2020 00:34:51 +0900</pubDate>
-        
-        <guid>https://shaochenfeng.com/docs/gettingstarted/basicusage/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
         <title>April 2019</title>
         <link>https://shaochenfeng.com/updates/2019_april/</link>
         <pubDate>Tue, 28 Jan 2020 00:10:48 +0900</pubDate>
         
         <guid>https://shaochenfeng.com/updates/2019_april/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
-        <title>Configuration</title>
-        <link>https://shaochenfeng.com/docs/gettingstarted/configuration/</link>
-        <pubDate>Tue, 28 Jan 2020 00:34:56 +0900</pubDate>
-        
-        <guid>https://shaochenfeng.com/docs/gettingstarted/configuration/</guid>
         <description>Markdown here</description>
       </item>
       
@@ -60,29 +42,11 @@
       </item>
       
       <item>
-        <title>Installation</title>
-        <link>https://shaochenfeng.com/docs/gettingstarted/installation/</link>
-        <pubDate>Tue, 28 Jan 2020 00:34:13 +0900</pubDate>
-        
-        <guid>https://shaochenfeng.com/docs/gettingstarted/installation/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
         <title>February 2019</title>
         <link>https://shaochenfeng.com/updates/2019_february/</link>
         <pubDate>Tue, 28 Jan 2020 00:10:37 +0900</pubDate>
         
         <guid>https://shaochenfeng.com/updates/2019_february/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
-        <title>Quick Start</title>
-        <link>https://shaochenfeng.com/docs/gettingstarted/quickstart/</link>
-        <pubDate>Tue, 28 Jan 2020 00:34:41 +0900</pubDate>
-        
-        <guid>https://shaochenfeng.com/docs/gettingstarted/quickstart/</guid>
         <description>Markdown here</description>
       </item>
       
@@ -93,6 +57,116 @@
         
         <guid>https://shaochenfeng.com/updates/2019_january/</guid>
         <description>Markdown here</description>
+      </item>
+      
+      <item>
+        <title>1.基础命令</title>
+        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</guid>
+        <description>早期学习的笔记，所以比较乱 # 常用命令 ## echo &amp;quot;str&amp;quot;|shell变量 显示一串字符串或 shell 变量 ## linux 环境变量 * $SHELL shell的类型</description>
+      </item>
+      
+      <item>
+        <title>ansible自动化运维</title>
+        <link>https://shaochenfeng.com/linux/ansible%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://shaochenfeng.com/linux/ansible%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/</guid>
+        <description>&lt;p&gt;ansible是新出现的自动化运维工具，基于Python开发。&lt;/p&gt;
+&lt;p&gt;ansible基于模块化工作，本身没有批量部署的能力。真正具有批量部署的是ansible所运行的模块，ansible只是提供一种框架。ansible不需要在远程主机上安装client/agents，因为它们是基于ssh来和远程主机通讯的。&lt;/p&gt;
+&lt;p&gt;ansible目前已经已经被红帽官方收购，是自动化运维工具中大家认可度最高的，并且上手容易，学习简单。是每位运维工程师必须掌握的技能之一。&lt;/p&gt;</description>
+      </item>
+      
+      <item>
+        <title>docker容器</title>
+        <link>https://shaochenfeng.com/linux/docker%E5%AE%B9%E5%99%A8/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://shaochenfeng.com/linux/docker%E5%AE%B9%E5%99%A8/</guid>
+        <description>安装 19年7月官方安装教程，已经过时 # CentOS sudo yum install -y yum-utils \ device-mapper-persistent-data \ lvm2 sudo yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo sudo yum install docker-ce docker-ce-cli containerd.io # Ubuntu sudo apt-get update sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ gnupg-agent \ software-properties-common curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository \</description>
+      </item>
+      
+      <item>
+        <title>Linus定义Linux</title>
+        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/linus%E5%AE%9A%E4%B9%89linux/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/linus%E5%AE%9A%E4%B9%89linux/</guid>
+        <description>Linus 定义 Linux 英文：Linus Torvalds，翻译：开源中国 www.oschina.net/translate/linux-a-free-unix-386-kernel 本文是 Linus 写于 1991年10月10日 LINUX是什么？ LINUX是一个免费类unix</description>
+      </item>
+      
+      <item>
+        <title>MongoDB</title>
+        <link>https://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/</guid>
+        <description>MongoDB是一种Nosql数据库，基于文档的数据库，是Nosql中最接近sql数据库的，使用类似json的数据格式，以文档的方式管理数据</description>
+      </item>
+      
+      <item>
+        <title>systemd启动管理</title>
+        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/systemd%E5%90%AF%E5%8A%A8%E7%AE%A1%E7%90%86/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/systemd%E5%90%AF%E5%8A%A8%E7%AE%A1%E7%90%86/</guid>
+        <description>历史 linux操作系统经历了从Sysvinit，到Upstart再到Systemd的进化， 还有其他的启动管理程序，但是用的不多 Sysvinit 其中Sysv</description>
+      </item>
+      
+      <item>
+        <title>tar命令和各种压缩格式的压缩和解压</title>
+        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/tar%E5%91%BD%E4%BB%A4%E5%92%8C%E5%90%84%E7%A7%8D%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/tar%E5%91%BD%E4%BB%A4%E5%92%8C%E5%90%84%E7%A7%8D%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/</guid>
+        <description>tar Linux下的归档使用工具，用来打包和备份。 补充说明 tar命令 可以为linux的文件和目录创建档案。利用tar，可以为某一特定文件创建档案</description>
+      </item>
+      
+      <item>
+        <title>yum</title>
+        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/yum/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/yum/</guid>
+        <description>yum管理RPM包 yum [选项][参数] -h 显示帮助 -y 自动回答‘yes’ -c 指定配置文件 -v 详细模式 install update check-update remove list grouplist search info clean shell resolvedep localinstall localupdate deplist 附件</description>
+      </item>
+      
+      <item>
+        <title>中文、时区、编码</title>
+        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/%E4%B8%AD%E6%96%87%E6%97%B6%E5%8C%BA%E7%BC%96%E7%A0%81/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/%E4%B8%AD%E6%96%87%E6%97%B6%E5%8C%BA%E7%BC%96%E7%A0%81/</guid>
+        <description>设置中国时区 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 设置系统语言 export LC_ALL=zh_CN.UTF-8</description>
+      </item>
+      
+      <item>
+        <title>关闭SELinux</title>
+        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%85%B3%E9%97%ADselinux/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%85%B3%E9%97%ADselinux/</guid>
+        <description>getenforce # 检查SELinux的状态 临时关闭 setenforce 0 长期关闭 修改/etc/selinux/config 文件 将SELINUX=enforcing改为SEL</description>
+      </item>
+      
+      <item>
+        <title>对centos LVM逻辑分区的扩容</title>
+        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%AF%B9centos-lvm%E9%80%BB%E8%BE%91%E5%88%86%E5%8C%BA%E7%9A%84%E6%89%A9%E5%AE%B9/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%AF%B9centos-lvm%E9%80%BB%E8%BE%91%E5%88%86%E5%8C%BA%E7%9A%84%E6%89%A9%E5%AE%B9/</guid>
+        <description>对centos LVM逻辑分区的扩容 首先扩展LVM分区 然后扩展逻辑卷: [root@pc ~]# lvdisplay ## 查看逻辑卷 [root@pc ~]# lvextend -l +100%FREE /dev/centos/root ## 将剩余百分百空间都添加到逻辑卷中 [root@pc ~]# lvdisplay ##</description>
+      </item>
+      
+      <item>
+        <title>Java 读写GBK编码的文件</title>
+        <link>https://shaochenfeng.com/blog/java-%E8%AF%BB%E5%86%99gbk%E7%BC%96%E7%A0%81%E7%9A%84%E6%96%87%E4%BB%B6/</link>
+        <pubDate>Thu, 20 May 2021 23:38:38 +0000</pubDate>
+        
+        <guid>https://shaochenfeng.com/blog/java-%E8%AF%BB%E5%86%99gbk%E7%BC%96%E7%A0%81%E7%9A%84%E6%96%87%E4%BB%B6/</guid>
+        <description>以GBK编码某个读写文件 读入: 1 2 3 BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(&amp;#34;a.txt&amp;#34;), Charset.forName(&amp;#34;GBK&amp;#34;))); String str = br.readLine(); br.close(); 写出: 1 2 3 4 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(&amp;#34;a.txt&amp;#34;), Charset.forName(&amp;#34;GBK&amp;#34;))); bw.write(&amp;#34;hello&amp;#34;); bw.flush(); bw.close(); 使用try-with-resource语法</description>
       </item>
       
       <item>
@@ -353,69 +427,6 @@ vi /opt/nginx1.16/conf/nginx.conf &lt;span class=&#34;c1&#34;&gt;# 修改配置�
       </item>
       
       <item>
-        <title>Related content</title>
-        <link>https://shaochenfeng.com/docs/relatedcontent/</link>
-        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
-        
-        <guid>https://shaochenfeng.com/docs/relatedcontent/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
-        <title>Page Resources</title>
-        <link>https://shaochenfeng.com/docs/pageresources/</link>
-        <pubDate>Tue, 28 Jan 2020 00:39:06 +0900</pubDate>
-        
-        <guid>https://shaochenfeng.com/docs/pageresources/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
-        <title>Page Bundles</title>
-        <link>https://shaochenfeng.com/docs/pagebundles/</link>
-        <pubDate>Tue, 28 Jan 2020 00:38:59 +0900</pubDate>
-        
-        <guid>https://shaochenfeng.com/docs/pagebundles/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
-        <title>Content Formats</title>
-        <link>https://shaochenfeng.com/docs/contentfortmats/</link>
-        <pubDate>Tue, 28 Jan 2020 00:38:51 +0900</pubDate>
-        
-        <guid>https://shaochenfeng.com/docs/contentfortmats/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
-        <title>Image Processing</title>
-        <link>https://shaochenfeng.com/docs/imageprocessing/</link>
-        <pubDate>Tue, 28 Jan 2020 00:38:48 +0900</pubDate>
-        
-        <guid>https://shaochenfeng.com/docs/imageprocessing/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
-        <title>Shortcodes</title>
-        <link>https://shaochenfeng.com/docs/contentmanagement/shortcodes/</link>
-        <pubDate>Tue, 28 Jan 2020 00:36:19 +0900</pubDate>
-        
-        <guid>https://shaochenfeng.com/docs/contentmanagement/shortcodes/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
-        <title>Frontmatter</title>
-        <link>https://shaochenfeng.com/docs/contentmanagement/frontmatter/</link>
-        <pubDate>Tue, 28 Jan 2020 00:36:14 +0900</pubDate>
-        
-        <guid>https://shaochenfeng.com/docs/contentmanagement/frontmatter/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
         <title>首页</title>
         <link>https://shaochenfeng.com/_index_max/</link>
         <pubDate>Sun, 26 Jan 2020 04:15:05 +0900</pubDate>
@@ -462,15 +473,6 @@ vi /opt/nginx1.16/conf/nginx.conf &lt;span class=&#34;c1&#34;&gt;# 修改配置�
 pectora summo. Redit teque digerit hominumque toris verebor lumina non cervice&lt;br /&gt;
 subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc&lt;br /&gt;
 caluere tempus&lt;/p&gt;</description>
-      </item>
-      
-      <item>
-        <title>Section</title>
-        <link>https://shaochenfeng.com/docs/contentmanagement/sections/</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://shaochenfeng.com/docs/contentmanagement/sections/</guid>
-        <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
       </item>
       
       <item>

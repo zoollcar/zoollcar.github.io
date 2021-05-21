@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据库 on 邵晨峰的博客</title>
+    <link>https://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+    <description>Recent content in 数据库 on 邵晨峰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&lt;a href=&#34;https://beian.miit.gov.cn/&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Tue, 28 Jan 2020 00:34:39 +0900</lastBuildDate>
+    
+        <atom:link href="https://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>MongoDB</title>
+        <link>https://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/</guid>
+        <description>MongoDB是一种Nosql数据库，基于文档的数据库，是Nosql中最接近sql数据库的，使用类似json的数据格式，以文档的方式管理数据</description>
+      </item>
+      
+    
+  </channel>
+</rss>
