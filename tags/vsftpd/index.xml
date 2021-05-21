@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vsftpd on 邵晨峰的博客</title>
+    <link>https://shaochenfeng.com/tags/vsftpd/</link>
+    <description>Recent content in vsftpd on 邵晨峰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&lt;a href=&#34;https://beian.miit.gov.cn/&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Fri, 21 May 2021 20:36:30 +0000</lastBuildDate>
+    
+        <atom:link href="https://shaochenfeng.com/tags/vsftpd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>vsftpd搭建ftp</title>
+        <link>https://shaochenfeng.com/blog/vsftpd%E6%90%AD%E5%BB%BAftp/</link>
+        <pubDate>Fri, 21 May 2021 20:36:30 +0000</pubDate>
+        
+        <guid>https://shaochenfeng.com/blog/vsftpd%E6%90%AD%E5%BB%BAftp/</guid>
+        <description>&lt;p&gt;ftp是传统的文件传输协议，但是经久不衰，现在仍然在广泛的使用&lt;/p&gt;
+&lt;p&gt;ftp最早是明文传输的，有很大的安全隐患，因此出现了两种加密方式：&lt;/p&gt;
+&lt;p&gt;一种是&lt;code&gt;sftp&lt;/code&gt;，是使用ssh作为通道传输文件，因为ssh是全程加密的，所以，以ssh作为通道传输ftp也就是安全的。这种方式优点是不再占用20、21端口，只使用22端口就可以完成全部任务，缺点是传送速度慢，尤其是大量小文件的速度极慢&lt;/p&gt;
+&lt;p&gt;一种是&lt;code&gt;ftps&lt;/code&gt;，是ftp协议使用ssl加密的版本，这种方式，使用的端口和ftp一样，只是建立连接后使用ssl加密传输文件，优点是可以独立控制用户密码，有各种高级功能，速度也很快，本文使用的vsftpd就是一个ftp服务器软件&lt;/p&gt;</description>
+      </item>
+      
+    
+  </channel>
+</rss>

@@ -61,10 +61,10 @@
       
       <item>
         <title>1.基础命令</title>
-        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</link>
+        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
         
-        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</guid>
+        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</guid>
         <description>早期学习的笔记，所以比较乱 # 常用命令 ## echo &amp;quot;str&amp;quot;|shell变量 显示一串字符串或 shell 变量 ## linux 环境变量 * $SHELL shell的类型</description>
       </item>
       
@@ -85,15 +85,15 @@
         <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
         
         <guid>https://shaochenfeng.com/linux/docker%E5%AE%B9%E5%99%A8/</guid>
-        <description>安装 19年7月官方安装教程，已经过时 # CentOS sudo yum install -y yum-utils \ device-mapper-persistent-data \ lvm2 sudo yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo sudo yum install docker-ce docker-ce-cli containerd.io # Ubuntu sudo apt-get update sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ gnupg-agent \ software-properties-common curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository \</description>
+        <description>注意：本文写自19年7月，已经过时 安装 # CentOS sudo yum install -y yum-utils \ device-mapper-persistent-data \ lvm2 sudo yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo sudo yum install docker-ce docker-ce-cli containerd.io # Ubuntu sudo apt-get update sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ gnupg-agent \ software-properties-common curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository</description>
       </item>
       
       <item>
         <title>Linus定义Linux</title>
-        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/linus%E5%AE%9A%E4%B9%89linux/</link>
+        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/linus%E5%AE%9A%E4%B9%89linux/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
         
-        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/linus%E5%AE%9A%E4%B9%89linux/</guid>
+        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/linus%E5%AE%9A%E4%B9%89linux/</guid>
         <description>Linus 定义 Linux 英文：Linus Torvalds，翻译：开源中国 www.oschina.net/translate/linux-a-free-unix-386-kernel 本文是 Linus 写于 1991年10月10日 LINUX是什么？ LINUX是一个免费类unix</description>
       </item>
       
@@ -108,56 +108,95 @@
       
       <item>
         <title>systemd启动管理</title>
-        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/systemd%E5%90%AF%E5%8A%A8%E7%AE%A1%E7%90%86/</link>
+        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/systemd%E5%90%AF%E5%8A%A8%E7%AE%A1%E7%90%86/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
         
-        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/systemd%E5%90%AF%E5%8A%A8%E7%AE%A1%E7%90%86/</guid>
+        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/systemd%E5%90%AF%E5%8A%A8%E7%AE%A1%E7%90%86/</guid>
         <description>历史 linux操作系统经历了从Sysvinit，到Upstart再到Systemd的进化， 还有其他的启动管理程序，但是用的不多 Sysvinit 其中Sysv</description>
       </item>
       
       <item>
         <title>tar命令和各种压缩格式的压缩和解压</title>
-        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/tar%E5%91%BD%E4%BB%A4%E5%92%8C%E5%90%84%E7%A7%8D%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/</link>
+        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/tar%E5%91%BD%E4%BB%A4%E5%92%8C%E5%90%84%E7%A7%8D%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
         
-        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/tar%E5%91%BD%E4%BB%A4%E5%92%8C%E5%90%84%E7%A7%8D%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/</guid>
+        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/tar%E5%91%BD%E4%BB%A4%E5%92%8C%E5%90%84%E7%A7%8D%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/</guid>
         <description>tar Linux下的归档使用工具，用来打包和备份。 补充说明 tar命令 可以为linux的文件和目录创建档案。利用tar，可以为某一特定文件创建档案</description>
       </item>
       
       <item>
         <title>yum</title>
-        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/yum/</link>
+        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/yum/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
         
-        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/yum/</guid>
+        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/yum/</guid>
         <description>yum管理RPM包 yum [选项][参数] -h 显示帮助 -y 自动回答‘yes’ -c 指定配置文件 -v 详细模式 install update check-update remove list grouplist search info clean shell resolvedep localinstall localupdate deplist 附件</description>
       </item>
       
       <item>
         <title>中文、时区、编码</title>
-        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/%E4%B8%AD%E6%96%87%E6%97%B6%E5%8C%BA%E7%BC%96%E7%A0%81/</link>
+        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/%E4%B8%AD%E6%96%87%E6%97%B6%E5%8C%BA%E7%BC%96%E7%A0%81/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
         
-        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/%E4%B8%AD%E6%96%87%E6%97%B6%E5%8C%BA%E7%BC%96%E7%A0%81/</guid>
+        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/%E4%B8%AD%E6%96%87%E6%97%B6%E5%8C%BA%E7%BC%96%E7%A0%81/</guid>
         <description>设置中国时区 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 设置系统语言 export LC_ALL=zh_CN.UTF-8</description>
       </item>
       
       <item>
         <title>关闭SELinux</title>
-        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%85%B3%E9%97%ADselinux/</link>
+        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%85%B3%E9%97%ADselinux/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
         
-        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%85%B3%E9%97%ADselinux/</guid>
+        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%85%B3%E9%97%ADselinux/</guid>
         <description>getenforce # 检查SELinux的状态 临时关闭 setenforce 0 长期关闭 修改/etc/selinux/config 文件 将SELINUX=enforcing改为SEL</description>
       </item>
       
       <item>
         <title>对centos LVM逻辑分区的扩容</title>
-        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%AF%B9centos-lvm%E9%80%BB%E8%BE%91%E5%88%86%E5%8C%BA%E7%9A%84%E6%89%A9%E5%AE%B9/</link>
+        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%AF%B9centos-lvm%E9%80%BB%E8%BE%91%E5%88%86%E5%8C%BA%E7%9A%84%E6%89%A9%E5%AE%B9/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
         
-        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%AF%B9centos-lvm%E9%80%BB%E8%BE%91%E5%88%86%E5%8C%BA%E7%9A%84%E6%89%A9%E5%AE%B9/</guid>
+        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%AF%B9centos-lvm%E9%80%BB%E8%BE%91%E5%88%86%E5%8C%BA%E7%9A%84%E6%89%A9%E5%AE%B9/</guid>
         <description>对centos LVM逻辑分区的扩容 首先扩展LVM分区 然后扩展逻辑卷: [root@pc ~]# lvdisplay ## 查看逻辑卷 [root@pc ~]# lvextend -l +100%FREE /dev/centos/root ## 将剩余百分百空间都添加到逻辑卷中 [root@pc ~]# lvdisplay ##</description>
+      </item>
+      
+      <item>
+        <title>javaExecutor线程池案例</title>
+        <link>https://shaochenfeng.com/blog/javaexecutor%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%A1%88%E4%BE%8B/</link>
+        <pubDate>Fri, 21 May 2021 21:14:24 +0000</pubDate>
+        
+        <guid>https://shaochenfeng.com/blog/javaexecutor%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%A1%88%E4%BE%8B/</guid>
+        <description>第一个例子：基础案例 自动控制线程的数量，且每个线程没有返回值，不能做最后的整合处理 第二个例子：进阶案例 固定线程的数量，每个线程有返回值，在左</description>
+      </item>
+      
+      <item>
+        <title>Java遍历数组、List、Set、Map的种种方法</title>
+        <link>https://shaochenfeng.com/blog/java%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84listsetmap%E7%9A%84%E7%A7%8D%E7%A7%8D%E6%96%B9%E6%B3%95/</link>
+        <pubDate>Fri, 21 May 2021 21:09:27 +0000</pubDate>
+        
+        <guid>https://shaochenfeng.com/blog/java%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84listsetmap%E7%9A%84%E7%A7%8D%E7%A7%8D%E6%96%B9%E6%B3%95/</guid>
+        <description>数组或list的遍历 1 double[] nums = new double[n]; for遍历 1 2 3 4 for(int i=0;i&amp;lt;nums.length;i++) { result += nums[i]; } for-each遍历 1 2 3 4 for(double item : nums) { result += item; } lambda表达式 1 2 3 4 5 items.forEach(item-&amp;gt;{</description>
+      </item>
+      
+      <item>
+        <title>Java各种文件的读写和文件夹遍历方法</title>
+        <link>https://shaochenfeng.com/blog/java%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%BB%E5%86%99%E9%81%8D%E5%8E%86/</link>
+        <pubDate>Fri, 21 May 2021 21:06:41 +0000</pubDate>
+        
+        <guid>https://shaochenfeng.com/blog/java%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%BB%E5%86%99%E9%81%8D%E5%8E%86/</guid>
+        <description>读取文本文件 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 import java.io.BufferedReader; import java.io.FileInputStream; import java.io.InputStreamReader; import java.util.HashMap; public class TxtFileRead</description>
+      </item>
+      
+      <item>
+        <title>vsftpd搭建ftp</title>
+        <link>https://shaochenfeng.com/blog/vsftpd%E6%90%AD%E5%BB%BAftp/</link>
+        <pubDate>Fri, 21 May 2021 20:36:30 +0000</pubDate>
+        
+        <guid>https://shaochenfeng.com/blog/vsftpd%E6%90%AD%E5%BB%BAftp/</guid>
+        <description>&lt;p&gt;ftp是传统的文件传输协议，但是经久不衰，现在仍然在广泛的使用&lt;/p&gt;
+&lt;p&gt;ftp最早是明文传输的，有很大的安全隐患，因此出现了两种加密方式：&lt;/p&gt;
+&lt;p&gt;一种是&lt;code&gt;sftp&lt;/code&gt;，是使用ssh作为通道传输文件，因为ssh是全程加密的，所以，以ssh作为通道传输ftp也就是安全的。这种方式优点是不再占用20、21端口，只使用22端口就可以完成全部任务，缺点是传送速度慢，尤其是大量小文件的速度极慢&lt;/p&gt;
+&lt;p&gt;一种是&lt;code&gt;ftps&lt;/code&gt;，是ftp协议使用ssl加密的版本，这种方式，使用的端口和ftp一样，只是建立连接后使用ssl加密传输文件，优点是可以独立控制用户密码，有各种高级功能，速度也很快，本文使用的vsftpd就是一个ftp服务器软件&lt;/p&gt;</description>
       </item>
       
       <item>

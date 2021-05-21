@@ -7,12 +7,39 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&lt;a href=&#34;https://beian.miit.gov.cn/&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Thu, 20 May 2021 23:38:38 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 May 2021 21:14:24 +0000</lastBuildDate>
     
         <atom:link href="https://shaochenfeng.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>javaExecutor线程池案例</title>
+        <link>https://shaochenfeng.com/blog/javaexecutor%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%A1%88%E4%BE%8B/</link>
+        <pubDate>Fri, 21 May 2021 21:14:24 +0000</pubDate>
+        
+        <guid>https://shaochenfeng.com/blog/javaexecutor%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%A1%88%E4%BE%8B/</guid>
+        <description>第一个例子：基础案例 自动控制线程的数量，且每个线程没有返回值，不能做最后的整合处理 第二个例子：进阶案例 固定线程的数量，每个线程有返回值，在左</description>
+      </item>
+      
+      <item>
+        <title>Java遍历数组、List、Set、Map的种种方法</title>
+        <link>https://shaochenfeng.com/blog/java%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84listsetmap%E7%9A%84%E7%A7%8D%E7%A7%8D%E6%96%B9%E6%B3%95/</link>
+        <pubDate>Fri, 21 May 2021 21:09:27 +0000</pubDate>
+        
+        <guid>https://shaochenfeng.com/blog/java%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84listsetmap%E7%9A%84%E7%A7%8D%E7%A7%8D%E6%96%B9%E6%B3%95/</guid>
+        <description>数组或list的遍历 1 double[] nums = new double[n]; for遍历 1 2 3 4 for(int i=0;i&amp;lt;nums.length;i++) { result += nums[i]; } for-each遍历 1 2 3 4 for(double item : nums) { result += item; } lambda表达式 1 2 3 4 5 items.forEach(item-&amp;gt;{</description>
+      </item>
+      
+      <item>
+        <title>Java各种文件的读写和文件夹遍历方法</title>
+        <link>https://shaochenfeng.com/blog/java%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%BB%E5%86%99%E9%81%8D%E5%8E%86/</link>
+        <pubDate>Fri, 21 May 2021 21:06:41 +0000</pubDate>
+        
+        <guid>https://shaochenfeng.com/blog/java%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%BB%E5%86%99%E9%81%8D%E5%8E%86/</guid>
+        <description>读取文本文件 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 import java.io.BufferedReader; import java.io.FileInputStream; import java.io.InputStreamReader; import java.util.HashMap; public class TxtFileRead</description>
+      </item>
       
       <item>
         <title>Java 读写GBK编码的文件</title>

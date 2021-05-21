@@ -31,16 +31,16 @@
         <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
         
         <guid>https://shaochenfeng.com/linux/docker%E5%AE%B9%E5%99%A8/</guid>
-        <description>安装 19年7月官方安装教程，已经过时 # CentOS sudo yum install -y yum-utils \ device-mapper-persistent-data \ lvm2 sudo yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo sudo yum install docker-ce docker-ce-cli containerd.io # Ubuntu sudo apt-get update sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ gnupg-agent \ software-properties-common curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository \</description>
+        <description>注意：本文写自19年7月，已经过时 安装 # CentOS sudo yum install -y yum-utils \ device-mapper-persistent-data \ lvm2 sudo yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo sudo yum install docker-ce docker-ce-cli containerd.io # Ubuntu sudo apt-get update sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ gnupg-agent \ software-properties-common curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository</description>
       </item>
       
       <item>
-        <title>linux</title>
-        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/</link>
+        <title>linux基础</title>
+        <link>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
         
-        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80%E5%92%8C%E5%8E%9F%E7%90%86/</guid>
-        <description>本章收录linux基础程序介绍，一般是linux通用或主流的，如果是某个发行版的特性会放在单独的目录下</description>
+        <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/</guid>
+        <description></description>
       </item>
       
       <item>

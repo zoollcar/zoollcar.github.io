@@ -1,0 +1,2930 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1.基础命令 – 邵晨峰的博客</title>
+    
+
+
+  
+  <script defer src="/js/fuse.min.c4bee9a8d44273d6154fe86006923d4131eb2e8069d8897687137c6f37f553e3.js"></script>
+
+
+
+<script src="/js/enquire.min.aa37bdcb743826eecdae5c5d177fc7d6552340f1b4378ffaa9c82b2c6111400b.js"></script>
+
+<script defer src="/js/lazysizes.min.5e11d056075a05065b9c0bfec44084a113fc2976c2952ec804dedb61c7662db9.js"></script>
+
+<script defer src="/js/helper/getParents.min.ccd45f158c1b17849307ba913a72beac239c410f2b6e648496a79842da84e55b.js"></script>
+
+<script defer src="/js/helper/fadeinout.min.9fb19682560d5fa5596fffec85da605067c4acc86aad05add4d8fff9d362a446.js"></script>
+
+<script>
+  "use strict";
+
+  window.onload = function() {
+    
+    var languagedir = JSON.parse("\"ltr\"");
+    
+    var baseurl = JSON.parse("\"https://shaochenfeng.com\"");
+    
+    var permalink = JSON.parse("\"https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/\"");
+
+    
+    var toggleSidebarElem = document.getElementById("toggle-sidebar");
+    var toggleMenuElem = document.getElementById("toggle-menu");
+    var tocBodyElem = document.querySelector('.toc__body');
+    var tocLabelElem = document.querySelector('.toc__label');
+    var listMainElem = document.getElementById('list-main');
+    var listSideElem = document.getElementById('list-side');
+    var singleMenuElem = document.getElementById('single-menu');
+    var sliderIcons = document.querySelectorAll('.slider__icon');
+
+    toggleSidebarElem ?
+      toggleSidebarElem.addEventListener('change', function (e) {
+        if (e.target.checked) {
+          if (tocBodyElem) {
+            fadeIn(tocBodyElem, 200);
+          }
+          if (tocLabelElem) {
+            fadeIn(tocLabelElem, 200);
+          }
+          if (listMainElem && listSideElem) {
+            listMainElem.className = 'm';
+            listSideElem.className = 'r';
+          }
+
+          sliderIcons && sliderIcons.forEach(function (elem) {
+            if (elem.classList.contains('hide')) {
+              elem.classList.remove('hide');
+            } else {
+              elem.classList.add('hide');
+            }
+          });
+
+        } else {
+          if (tocBodyElem) {
+            fadeOut(tocBodyElem, 200);
+          }
+          if (tocLabelElem) {
+            fadeOut(tocLabelElem, 200);
+          }
+          if (listMainElem && listSideElem) {
+            listMainElem.className = 'mr';
+            listSideElem.className = 'hide';
+          }
+
+          sliderIcons && sliderIcons.forEach(function (elem) {
+            if (elem.classList.contains('hide')) {
+              elem.classList.remove('hide');
+            } else {
+              elem.classList.add('hide');
+            }
+          });
+        }
+      }) : null;
+
+    toggleMenuElem ?
+      toggleMenuElem.addEventListener('change', function (e) {
+        if (e.target.checked) {
+          if (listMainElem && singleMenuElem) {
+            listMainElem.className = 'm';
+            singleMenuElem.className = 'l';
+          }
+
+          sliderIcons && sliderIcons.forEach(function (elem) {
+            if (elem.classList.contains('hide')) {
+              elem.classList.remove('hide');
+            } else {
+              elem.classList.add('hide');
+            }
+          });
+
+        } else {
+          if (listMainElem && singleMenuElem) {
+            listMainElem.className = 'lm';
+            singleMenuElem.className = 'hide';
+          }
+
+          sliderIcons && sliderIcons.forEach(function (elem) {
+            if (elem.classList.contains('hide')) {
+              elem.classList.remove('hide');
+            } else {
+              elem.classList.add('hide');
+            }
+          });
+        }
+      }) : null;
+    
+
+
+    
+    var navCollapseBtn = document.getElementById('navCollapseBtn');
+    navCollapseBtn ? navCollapseBtn.addEventListener('click', function(e) {
+      var navCollapse = document.querySelector('.navbar__collapse');
+      
+      if (navCollapse) {
+        var dataOpen = navCollapse.getAttribute('data-open');
+
+        if (dataOpen === 'true') {
+          navCollapse.setAttribute('data-open', 'false');
+          navCollapse.style.maxHeight = 0;
+        } else {
+          navCollapse.setAttribute('data-open', 'true');
+          navCollapse.style.maxHeight = navCollapse.scrollHeight + "px";
+        }
+      }
+    }) : null;
+    
+
+
+    
+    var expandBtn = document.querySelectorAll('.expand__button');
+
+    for (let i = 0; i < expandBtn.length; i++) {
+      expandBtn[i].addEventListener("click", function () {
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          this.querySelector('svg').classList.add('expand-icon__right');
+          this.querySelector('svg').classList.remove('expand-icon__down');
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          this.querySelector('svg').classList.remove('expand-icon__right');
+          this.querySelector('svg').classList.add('expand-icon__down');
+        }
+      });
+    }
+    
+
+
+
+    
+    document.querySelectorAll('.tab') ? 
+    document.querySelectorAll('.tab').forEach(function(elem, idx) {
+      var containerId = elem.getAttribute('id');
+      var containerElem = elem;
+      var tabLinks = elem.querySelectorAll('.tab__link');
+      var tabContents = elem.querySelectorAll('.tab__content');
+      var ids = [];
+
+      tabLinks && tabLinks.length > 0 ?
+      tabLinks.forEach(function(link, index, self) {
+        link.onclick = function(e) {
+          for (var i = 0; i < self.length; i++) {
+            if (index === parseInt(i, 10)) {
+              if (!self[i].classList.contains('active')) {
+                self[i].classList.add('active');
+                tabContents[i].style.display = 'block';
+              }
+            } else {
+              self[i].classList.remove('active');
+              tabContents[i].style.display = 'none';
+            }
+          }
+        }
+      }) : null;
+    }) : null;
+    
+
+
+    
+    document.querySelectorAll('.codetab') ? 
+    document.querySelectorAll('.codetab').forEach(function(elem, idx) {
+      var containerId = elem.getAttribute('id');
+      var containerElem = elem;
+      var codetabLinks = elem.querySelectorAll('.codetab__link');
+      var codetabContents = elem.querySelectorAll('.codetab__content');
+      var ids = [];
+
+      codetabLinks && codetabLinks.length > 0 ?
+      codetabLinks.forEach(function(link, index, self) {
+        link.onclick = function(e) {
+          for (var i = 0; i < self.length; i++) {
+            if (index === parseInt(i, 10)) {
+              if (!self[i].classList.contains('active')) {
+                self[i].classList.add('active');
+                codetabContents[i].style.display = 'block';
+              }
+            } else {
+              self[i].classList.remove('active');
+              codetabContents[i].style.display = 'none';
+            }
+          }
+        }
+      }) : null;
+    }) : null;
+    
+
+    
+    
+    
+    var enableDarkMode = JSON.parse("true");
+    var root = document.getElementById('root');
+    var toggleToLightBtn = document.getElementById('toggleToLight');
+    var toggleToDarkBtn = document.getElementById('toggleToDark');
+
+    if (!enableDarkMode) {
+      root.className = 'theme__light';
+      localStorage.setItem('theme', 'light');
+    }
+    
+    if (toggleToDarkBtn) {
+      toggleToDarkBtn.onclick = function (e) {
+        root.className = 'theme__dark';
+        localStorage.setItem('theme', 'dark');
+        toggleToLightBtn.className = 'navbar__icons--icon';
+        toggleToDarkBtn.className = 'hide';
+      }
+    }
+
+    if (toggleToLightBtn) {
+      toggleToLightBtn.onclick = function (e) {
+        root.className = 'theme__light';
+        localStorage.setItem('theme', 'light');
+        toggleToLightBtn.className = 'hide';
+        toggleToDarkBtn.className = 'navbar__icons--icon';
+      }
+    }
+
+    
+    document.querySelectorAll('.menu__list').forEach(function(elem) {
+      if (elem.classList.contains('active')) {
+        elem.style.maxHeight = elem.scrollHeight + "px"; 
+      }
+    });
+    
+    document.querySelectorAll('.menu__title--collapse').forEach(function(elem) {
+      elem.addEventListener('click', function (e) {
+        var content = this.nextElementSibling;
+        var menuTitleIcon = this.querySelector('.menu__title--icon');
+        if (!content) {
+          return null;
+        }
+
+        var parent = elem.parentNode;
+        while (parent.classList.contains('menu__list') && parent.classList.contains('active')) {
+          parent.style.maxHeight = 100 * parent.children.length + "px";
+          parent = parent.parentNode;
+        }
+
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          content.classList.remove('active');
+          menuTitleIcon.classList.add('right');
+          
+          if (languagedir === 'rtl') {
+            menuTitleIcon.classList.remove('downrtl');
+          } else {
+            menuTitleIcon.classList.remove('down');
+          }
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          content.classList.add('active');
+          menuTitleIcon.classList.remove('right');
+          
+          if (languagedir === 'rtl') {
+            menuTitleIcon.classList.add('downrtl');
+          } else {
+            menuTitleIcon.classList.add('down');
+          }
+        }
+      });
+    });
+    
+
+
+    
+    var mobileLogo = document.getElementById('mobileLogo');
+    var modal = document.getElementById("myModal");
+    var drawer = document.getElementById('myDrawer');
+    var drawerCloseBtn = document.querySelector('.drawer__close');
+
+    var openDrawer = function() {
+      modal.style.opacity = 1;
+
+      if (languagedir === 'rtl') {
+        modal.style.right = 0;
+        drawer.style.right = 0;
+      } else {
+        modal.style.left = 0;
+        drawer.style.left = 0;
+      }
+    }
+
+    var closeDrawer = function() {
+      modal.style.opacity = 0;
+
+      if (languagedir === 'rtl') {
+        drawer.style.right = '-100%';
+      } else {
+        drawer.style.left = '-100%';
+      }
+
+      
+      setTimeout(function () {
+        if (languagedir === 'rtl') {
+          modal.style.right = '-100%';
+        } else {
+          modal.style.left = '-100%';
+        }
+      }, 250);
+    }
+
+    mobileLogo.onclick = function () {
+      openDrawer();
+      localStorage.setItem('isDrawerOpen', 'true');
+    }
+
+    modal.onclick = function () {
+      closeDrawer();
+      localStorage.setItem('isDrawerOpen', 'false');
+    }
+
+    drawerCloseBtn.onclick = function () {
+      closeDrawer();
+      localStorage.setItem('isDrawerOpen', 'false');
+    }
+  
+
+
+  
+    var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var tocElem = document.querySelector('.toc');
+    var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
+    var singleContentsElem = document.querySelector('.single__contents');
+    var dataBGImgs = document.querySelectorAll('div[data-bgimg]');
+
+    
+    var tocLevels = JSON.parse("null");
+
+    if (tocLevels) {
+      tocLevels = tocLevels.toString();
+    } else {
+      tocLevels = "h1, h2, h3, h4, h5, h6";
+    }
+
+    
+    var isLandingBgImg = JSON.parse("null");
+    
+    var isHome = JSON.parse("false");
+
+    function setNavbarBG(scrollTop) {
+      if (isHome && isLandingBgImg && Object.keys(isLandingBgImg).length) {
+        if (isLandingBgImg.height <= scrollTop) {
+          dataBGImgs.forEach(function(elem) {
+            elem.setAttribute('data-bgimg', 'false');
+          });
+        } else {
+          dataBGImgs.forEach(function (elem) {
+            elem.setAttribute('data-bgimg', 'true');
+          });
+        }
+      }
+    }
+    setNavbarBG(lastScrollTop);
+
+    window.onscroll = function () {
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+      if (st > lastScrollTop) { 
+        singleContentsElem ? 
+        singleContentsElem.querySelectorAll(tocLevels.toString()).forEach(function(elem) {
+          if (document.documentElement.scrollTop >= elem.offsetTop) {
+            if (tableOfContentsElem) {
+              var id = elem.getAttribute('id');
+              tocElem.querySelectorAll('a').forEach(function (elem) {
+                elem.classList.remove('active');
+              });
+              tocElem.querySelector('a[href="#' + id + '"]') ? 
+              tocElem.querySelector('a[href="#' + id + '"]').classList.add('active') : null;
+            }
+          }
+        }) : null;
+        setNavbarBG(st);
+      } else { 
+        singleContentsElem ? 
+        singleContentsElem.querySelectorAll(tocLevels.toString()).forEach(function(elem) {
+          if (document.documentElement.scrollTop >= elem.offsetTop) {
+            if (tableOfContentsElem) {
+              var id = elem.getAttribute('id');
+              tocElem.querySelectorAll('a').forEach(function (elem) {
+                elem.classList.remove('active');
+              });
+              tocElem.querySelector('a[href="#' + id + '"]') ? 
+              tocElem.querySelector('a[href="#' + id + '"]').classList.add('active') : null;
+            }
+          }
+        }) : null;
+        setNavbarBG(st);
+      }
+      lastScrollTop = st <= 0 ? 0 : st;
+    };
+    
+
+
+
+    
+    var mobileSearchInputElem = document.querySelector('#search-mobile');
+    var mobileSearchClassElem = document.querySelector('.mobile-search');
+    var mobileSearchBtnElem = document.querySelector('#mobileSearchBtn');
+    var mobileSearchCloseBtnElem = document.querySelector('#search-mobile-close');
+    var mobileSearchContainer = document.querySelector('#search-mobile-container');
+    var mobileSearchResultsElem = document.querySelector('#search-mobile-results');
+    var htmlElem = document.querySelector('html');
+
+    if (mobileSearchClassElem) {
+      mobileSearchClassElem.style.display = 'none';
+    }
+
+    mobileSearchBtnElem ? 
+    mobileSearchBtnElem.addEventListener('click', function () {
+      if (mobileSearchContainer) {
+        mobileSearchContainer.style.display = 'block';
+      }
+
+      if (mobileSearchInputElem) {
+        mobileSearchInputElem.focus();
+      }
+
+      if (htmlElem) {
+        htmlElem.style.overflowY = 'hidden';
+      }
+    }) : null;
+
+    mobileSearchCloseBtnElem ? 
+    mobileSearchCloseBtnElem.addEventListener('click', function() {
+      if (mobileSearchContainer) {
+        mobileSearchContainer.style.display = 'none';
+      }
+
+      if (mobileSearchInputElem) {
+        mobileSearchInputElem.value = '';
+      }
+      
+      if (mobileSearchResultsElem) {
+        while (mobileSearchResultsElem.firstChild) {
+          mobileSearchResultsElem.removeChild(mobileSearchResultsElem.firstChild);
+        }
+      }
+
+      if (htmlElem) {
+        htmlElem.style.overflowY = 'visible';
+      }
+    }) : null;
+
+    mobileSearchInputElem ? 
+    mobileSearchInputElem.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        if (mobileSearchContainer) {
+          mobileSearchContainer.style.display = 'none';
+        }
+        
+        if (mobileSearchInputElem) {
+          mobileSearchInputElem.value = '';
+        }
+
+        if (mobileSearchResultsElem) {
+          while (mobileSearchResultsElem.firstChild) {
+            mobileSearchResultsElem.removeChild(mobileSearchResultsElem.firstChild);
+          }
+        }
+        if (htmlElem) {
+          htmlElem.style.overflowY = 'visible';
+        }
+      }
+    }) : null;
+  
+
+
+  
+    var localTheme = localStorage.getItem('theme');
+    var rootEleme = document.getElementById('root');
+    var selectThemeElem = document.querySelectorAll('.select-theme');
+    var selectThemeItemElem = document.querySelectorAll('.select-theme__item');
+    
+    if (localTheme) {
+      selectThemeItemElem ? 
+      selectThemeItemElem.forEach(function (elem) {
+        if (elem.text.trim() === localTheme) {
+          elem.classList.add('is-active');
+        } else {
+          elem.classList.remove('is-active');
+        }
+      }) : null;
+    }
+
+    selectThemeItemElem ? 
+    selectThemeItemElem.forEach(function (v, i) {
+      v.addEventListener('click', function (e) {
+        var selectedThemeVariant = e.target.text.trim();
+        localStorage.setItem('theme', selectedThemeVariant);
+
+        rootEleme.removeAttribute('class');
+        rootEleme.classList.add(`theme__${selectedThemeVariant}`);
+        selectThemeElem.forEach(function(rootElem) {
+          rootElem.querySelectorAll('a').forEach(function (elem) {
+            if (elem.classList) {
+              if (elem.text.trim() === selectedThemeVariant) {
+                if (!elem.classList.contains('is-active')) {
+                  elem.classList.add('is-active');
+                }
+              } else {
+                if (elem.classList.contains('is-active')) {
+                  elem.classList.remove('is-active');
+                }
+              }
+            }
+          });
+        });
+
+        if (window.mermaid) {
+          if (selectedThemeVariant === "dark" || selectedThemeVariant === "hacker") {
+            mermaid.initialize({ theme: 'dark' });
+            location.reload();
+          } else {
+            mermaid.initialize({ theme: 'default' });
+            location.reload();
+          }
+        }
+
+        var utterances = document.querySelector('iframe');
+        if (utterances) {
+          utterances.contentWindow.postMessage({
+            type: 'set-theme',
+            theme: selectedThemeVariant === "dark" || selectedThemeVariant === "hacker" ? 'photon-dark' : selectedThemeVariant === 'kimbie' ? 'github-dark-orange' : 'github-light',
+          }, 'https://utteranc.es');
+        }
+      });
+    }) : null;
+  
+
+
+  
+    
+    var langprefix = JSON.parse("\"\"");
+    var searchResults = null;
+    var searchMenu = null;
+    var searchText = null;
+    
+    
+    var enableSearchHighlight = JSON.parse("null");
+    
+    var enableSearch = JSON.parse("true");
+
+    var fuse = null;
+
+    if (enableSearch) {
+      (function initFuse() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', baseurl + langprefix + "/index.json");
+        xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            fuse = new Fuse(JSON.parse(xhr.response.toString('utf-8')), {
+              keys: ['title', 'description', 'content'],
+              includeMatches: enableSearchHighlight,
+              shouldSort: true,
+              threshold: 0.4,
+              location: 0,
+              distance: 100,
+              maxPatternLength: 32,
+              minMatchCharLength: 1,
+            });
+          }
+          else {
+            console.error(`[${xhr.status}]Error:`, xhr.statusText);
+          }
+        };
+        xhr.send();
+      })();
+    }
+    
+    function makeLi(ulElem, obj) {
+      var li = document.createElement('li');
+      li.className = 'search-result__item';
+      
+      var a = document.createElement('a');
+      a.innerHTML = obj.title;
+      a.setAttribute('class', 'search-result__item--title');
+      a.setAttribute('href', obj.permalink);
+
+      var descDiv = document.createElement('div');
+      descDiv.setAttribute('class', 'search-result__item--desc');
+      if (obj.description) {
+        descDiv.innerHTML = obj.description;
+      } else if (obj.content) {
+        descDiv.innerHTML = obj.content.substring(0, 80);
+      }
+      
+      li.appendChild(a);
+      li.appendChild(descDiv);
+      ulElem.appendChild(li);
+    }
+
+    function makeHighlightLi(ulElem, obj) {
+      var li = document.createElement('li');
+      li.className = 'search-result__item';
+      var descDiv = null;
+
+      var a = document.createElement('a');
+      a.innerHTML = obj.item.title;
+      a.setAttribute('class', 'search-result__item--title');
+      a.setAttribute('href', obj.item.uri);
+
+      if (obj.matches && obj.matches.length) {
+        for (var i = 0; i < obj.matches.length; i++) {
+          if ('title' === obj.matches[i].key) {
+            a = document.createElement('a');
+            a.innerHTML = generateHighlightedText(obj.matches[i].value, obj.matches[i].indices);
+            a.setAttribute('class', 'search-result__item--title');
+            a.setAttribute('href', obj.item.uri);
+          }
+          
+          if ('description' === obj.matches[i].key) {
+            descDiv = document.createElement('div');
+            descDiv.setAttribute('class', 'search-result__item--desc');
+            descDiv.innerHTML = generateHighlightedText(obj.item.description, obj.matches[i].indices);
+          } else if ('content' === obj.matches[i].key) {
+            if (!descDiv) {
+              descDiv = document.createElement('div');
+              descDiv.setAttribute('class', 'search-result__item--desc');
+              descDiv.innerHTML = generateHighlightedText(obj.item.content.substring(0, 80), obj.matches[i].indices);
+            }
+          } else {
+            if (obj.item.description) {
+              descDiv = document.createElement('div');
+              descDiv.setAttribute('class', 'search-result__item--desc');
+              descDiv.innerHTML = obj.item.description;
+            } else {
+              descDiv = document.createElement('div');
+              descDiv.setAttribute('class', 'search-result__item--desc');
+              descDiv.innerHTML = obj.item.content.substring(0, 80);
+            }
+          }
+        }
+
+        li.appendChild(a);
+        if (descDiv) {
+          li.appendChild(descDiv);
+        }
+        if (li) {
+          ulElem.appendChild(li);
+        }
+      }
+    }
+
+    function renderSearchResults(searchText, results) {
+      searchResults = document.getElementById('search-results');
+      searchMenu = document.getElementById('search-menu');
+      searchResults.setAttribute('class', 'dd is-active');
+      
+      var ul = document.createElement('ul');
+      ul.setAttribute('class', 'dd-content search-content');
+
+      if (results.length) {
+        results.forEach(function (result) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.setAttribute('href', result.uri);
+          a.setAttribute('class', 'dd-item');
+          a.appendChild(li);
+
+          var titleDiv = document.createElement('div');
+          titleDiv.innerHTML = result.title;
+          titleDiv.setAttribute('class', 'search-result__item--title');
+
+          var descDiv = document.createElement('div');
+          descDiv.setAttribute('class', 'search-result__item--desc');
+          if (result.description) {
+            descDiv.innerHTML = result.description;
+          } else if (result.content) {
+            descDiv.innerHTML = result.content.substring(0, 80);
+          }
+
+          li.appendChild(titleDiv);
+          li.appendChild(descDiv);
+          ul.appendChild(a);
+        });
+      } else {
+        var li = document.createElement('li');
+        li.setAttribute('class', 'dd-item');
+        li.innerText = 'No results found';
+        ul.appendChild(li);
+      }
+
+      while (searchMenu.hasChildNodes()) {
+        searchMenu.removeChild(
+          searchMenu.lastChild
+        );
+      }
+      
+      searchMenu.appendChild(ul);
+    }
+
+    function renderSearchHighlightResults(searchText, results) {
+      searchResults = document.getElementById('search-results');
+      searchMenu = document.getElementById('search-menu');
+      searchResults.setAttribute('class', 'dd is-active');
+
+      var ul = document.createElement('ul');
+      ul.setAttribute('class', 'dd-content search-content');
+
+      if (results.length) {
+        results.forEach(function (result) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          var descDiv = null;
+
+          a.setAttribute('href', result.item.uri);
+          a.setAttribute('class', 'dd-item');
+          a.appendChild(li);
+
+          var titleDiv = document.createElement('div');
+          titleDiv.innerHTML = result.item.title;
+          titleDiv.setAttribute('class', 'search-result__item--title');
+          
+          if (result.matches && result.matches.length) {
+            for (var i = 0; i < result.matches.length; i++) {
+              if ('title' === result.matches[i].key) {
+                titleDiv.innerHTML = generateHighlightedText(result.matches[i].value, result.matches[i].indices);
+              }
+
+              if ('description' === result.matches[i].key) {
+                descDiv = document.createElement('div');
+                descDiv.setAttribute('class', 'search-result__item--desc');
+                descDiv.innerHTML = generateHighlightedText(result.item.description, result.matches[i].indices);
+              } else if ('content' === result.matches[i].key) {
+                if (!descDiv) {
+                  descDiv = document.createElement('div');
+                  descDiv.setAttribute('class', 'search-result__item--desc');
+                  descDiv.innerHTML = generateHighlightedText(result.item.content.substring(0, 80), result.matches[i].indices);
+                }
+              } else {
+                if (result.item.description) {
+                  descDiv = document.createElement('div');
+                  descDiv.setAttribute('class', 'search-result__item--desc');
+                  descDiv.innerHTML = result.item.description;
+                } else {
+                  descDiv = document.createElement('div');
+                  descDiv.setAttribute('class', 'search-result__item--desc');
+                  descDiv.innerHTML = result.item.content.substring(0, 80);
+                }
+              }
+            }
+            
+            li.appendChild(titleDiv);
+            if (descDiv) {
+              li.appendChild(descDiv);
+            }
+            ul.appendChild(a);
+          }
+        });
+      } else {
+        var li = document.createElement('li');
+        li.setAttribute('class', 'dd-item');
+        li.innerText = 'No results found';
+        ul.appendChild(li);
+      }
+
+      while (searchMenu.hasChildNodes()) {
+        searchMenu.removeChild(
+          searchMenu.lastChild
+        );
+      }
+      searchMenu.appendChild(ul);
+    }
+
+    function renderSearchResultsMobile(searchText, results) {
+      searchResults = document.getElementById('search-mobile-results');
+
+      var content = document.createElement('div');
+      content.setAttribute('class', 'mobile-search__content');
+
+      if (results.length > 0) {
+        results.forEach(function (result) {
+          var item = document.createElement('a');
+          item.setAttribute('href', result.uri);
+          item.innerHTML = '<div class="mobile-search__item"><div class="mobile-search__item--title">📄 ' + result.title + '</div><div class="mobile-search__item--desc">' + (result.description ? result.description : result.content) + '</div></div>';
+          content.appendChild(item);
+        });
+      } else {
+        var item = document.createElement('span');
+        content.appendChild(item);
+      }
+
+      let wrap = document.getElementById('search-mobile-results');
+      while (wrap.firstChild) {
+        wrap.removeChild(wrap.firstChild)
+      }
+      searchResults.appendChild(content);      
+    }
+
+    function renderSearchHighlightResultsMobile(searchText, results) {
+      searchResults = document.getElementById('search-mobile-results');
+
+      var ul = document.createElement('div');
+      ul.setAttribute('class', 'mobile-search__content');
+
+      if (results.length) {
+        results.forEach(function (result) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          var descDiv = null;
+
+          a.setAttribute('href', result.item.uri);
+          a.appendChild(li);
+          li.setAttribute('class', 'mobile-search__item');
+
+          var titleDiv = document.createElement('div');
+          titleDiv.innerHTML = result.item.title;
+          titleDiv.setAttribute('class', 'mobile-search__item--title');
+          
+          if (result.matches && result.matches.length) {
+            for (var i = 0; i < result.matches.length; i++) {
+              if ('title' === result.matches[i].key) {
+                titleDiv.innerHTML = generateHighlightedText(result.matches[i].value, result.matches[i].indices);
+              }
+
+              if ('description' === result.matches[i].key) {
+                descDiv = document.createElement('div');
+                descDiv.setAttribute('class', 'mobile-search__item--desc');
+                descDiv.innerHTML = generateHighlightedText(result.item.description, result.matches[i].indices);
+              } else if ('content' === result.matches[i].key) {
+                if (!descDiv) {
+                  descDiv = document.createElement('div');
+                  descDiv.setAttribute('class', 'mobile-search__item--desc');
+                  descDiv.innerHTML = generateHighlightedText(result.item.content.substring(0, 150), result.matches[i].indices);
+                }
+              } else {
+                if (result.item.description) {
+                  descDiv = document.createElement('div');
+                  descDiv.setAttribute('class', 'mobile-search__item--desc');
+                  descDiv.innerHTML = result.item.description;
+                } else {
+                  descDiv = document.createElement('div');
+                  descDiv.setAttribute('class', 'mobile-search__item--desc');
+                  descDiv.innerHTML = result.item.content.substring(0, 150);
+                }
+              }
+            }
+            
+            li.appendChild(titleDiv);
+            if (descDiv) {
+              li.appendChild(descDiv);
+            }
+            ul.appendChild(a);
+          }
+        });
+      } else {
+        var item = document.createElement('span');
+        ul.appendChild(item);
+      }
+
+      let wrap = document.getElementById('search-mobile-results');
+      while (wrap.firstChild) {
+        wrap.removeChild(wrap.firstChild)
+      }
+      searchResults.appendChild(ul);
+    }
+
+    function generateHighlightedText(text, regions) {
+      if (!regions) {
+        return text;
+      }
+
+      var content = '', nextUnhighlightedRegionStartingIndex = 0;
+
+      regions.forEach(function(region) {
+        if (region[0] === region[1]) {
+          return null;
+        }
+        
+        content += '' +
+          text.substring(nextUnhighlightedRegionStartingIndex, region[0]) +
+          '<span class="search__highlight">' +
+            text.substring(region[0], region[1] + 1) +
+          '</span>' +
+        '';
+        nextUnhighlightedRegionStartingIndex = region[1] + 1;
+      });
+
+      content += text.substring(nextUnhighlightedRegionStartingIndex);
+
+      return content;
+    };
+
+    var searchElem = document.getElementById('search');
+    var searchMobile = document.getElementById('search-mobile');
+    var searchResultsContainer = document.getElementById('search-results');
+
+    searchElem ? 
+    searchElem.addEventListener('input', function(e) {
+      if (!e.target.value | window.innerWidth < 770) {
+        searchResultsContainer ? searchResultsContainer.setAttribute('class', 'dd') : null;
+        return null;
+      }
+
+      searchText = e.target.value;
+      var results = fuse.search(e.target.value);
+
+      if (enableSearchHighlight) {
+        renderSearchHighlightResults(searchText, results);
+      } else {
+        renderSearchResults(searchText, results);
+      }
+
+      var dropdownItems = searchResultsContainer.querySelectorAll('.dd-item');
+      dropdownItems ? dropdownItems.forEach(function (item) {
+        item.addEventListener('mousedown', function (e) {
+          e.target.click();
+        });
+      }) : null;
+    }) : null;
+
+    searchElem ? 
+    searchElem.addEventListener('blur', function() {
+      if (window.innerWidth < 770) {
+        return null;
+      }
+      searchResultsContainer ? searchResultsContainer.setAttribute('class', 'dd') : null;
+    }) : null;
+
+    searchElem ? 
+    searchElem.addEventListener('click', function(e) {
+      if (window.innerWidth < 770) {
+        return null;
+      }
+      if (!e.target.value) {
+        searchResultsContainer ? searchResultsContainer.setAttribute('class', 'dd') : null;
+        return null;
+      }
+
+      searchText = e.target.value;
+      var results = fuse.search(e.target.value);
+
+      if (enableSearchHighlight) {
+        renderSearchHighlightResults(searchText, results);
+      } else {
+        renderSearchResults(searchText, results);
+      }
+
+      var dropdownItems = searchResultsContainer.querySelectorAll('.dd-item');
+      dropdownItems ? dropdownItems.forEach(function (item) {
+        item.addEventListener('mousedown', function (e) {
+          e.target.click();
+        });
+      }) : null;
+    }) : null;
+
+    var searchMenuElem = document.getElementById("search-menu");
+    var activeItem = document.querySelector('#search-menu .dd-item.is-active');
+    var activeIndex = null;
+    var items = null;
+    var searchContainerMaxHeight = 350;
+
+    searchElem ? 
+    searchElem.addEventListener('keydown', function(e) {
+      if (window.innerWidth < 770) {
+        return null;
+      }
+
+      var items = document.querySelectorAll('#search-menu .dd-item');
+      
+      if (e.key === 'ArrowDown') {
+        if (activeIndex === null) {
+          activeIndex = 0;
+          items[activeIndex].classList.remove('is-active');
+        } else {
+          items[activeIndex].classList.remove('is-active');
+          activeIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+        }
+        items[activeIndex].classList.add('is-active');
+
+        let overflowedPixel = items[activeIndex].offsetTop + items[activeIndex].clientHeight - searchContainerMaxHeight;
+        if (overflowedPixel > 0) {
+          document.querySelector(".search-content").scrollTop += items[activeIndex].getBoundingClientRect().height;
+        } else if (activeIndex === 0) {
+          document.querySelector(".search-content").scrollTop = 0;
+        }
+      } else if (e.key === 'ArrowUp') {
+        if (activeIndex === null) {
+          activeIndex = items.length - 1;
+          items[activeIndex].classList.remove('is-active');
+        } else {
+          items[activeIndex].classList.remove('is-active');
+          activeIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+        }
+        items[activeIndex].classList.add('is-active');
+        
+        let overflowedPixel = items[activeIndex].offsetTop + items[activeIndex].clientHeight - searchContainerMaxHeight;
+        if (overflowedPixel < 0) {
+          document.querySelector(".search-content").scrollTop -= items[activeIndex].getBoundingClientRect().height;
+        } else {
+          document.querySelector(".search-content").scrollTop = overflowedPixel + items[activeIndex].getBoundingClientRect().height;
+        }
+      } else if (e.key === 'Enter') {
+        var currentItemLink = items[activeIndex].getAttribute('href');
+        if (currentItemLink) {
+          location.href = currentItemLink;
+        }
+      } else if (e.key === 'Escape') {
+        e.target.value = null;
+        if (searchResults) {
+          searchResults.classList.remove('is-active');
+        }
+      }
+    }) : null;
+
+    searchMobile ? 
+    searchMobile.addEventListener('input', function(e) {
+      if (!e.target.value) {
+        let wrap = document.getElementById('search-mobile-results');
+        while (wrap.firstChild) {
+          wrap.removeChild(wrap.firstChild);
+        }
+        return null;
+      }
+
+      searchText = e.target.value;
+      var results = fuse.search(e.target.value);
+      
+      if (enableSearchHighlight) {
+        renderSearchHighlightResultsMobile(searchText, results);
+      } else {
+        renderSearchResultsMobile(searchText, results);
+      }
+
+      var dropdownItems = searchResultsContainer.querySelectorAll('.dd-item');
+      dropdownItems ? dropdownItems.forEach(function (item) {
+        item.addEventListener('mousedown', function (e) {
+          e.target.click();
+        });
+      }) : null;
+    }) : null;
+  
+  }
+</script>
+    
+
+
+<link rel="stylesheet" href="/css/main.min.css">
+
+
+    <meta name="description" content="基础命令" />
+<meta name="keywords" content="">
+<meta name="created" content="2020-01-28T00:34:39&#43;0900">
+<meta name="modified" content="2020-01-28T00:34:39&#43;0900">
+
+
+<meta property="og:site_name" content="邵晨峰的博客">
+<meta property="og:title" content="1.基础命令">
+<meta property="og:url" content="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">
+<meta property="og:type" content="article">
+
+<meta name="generator" content="Hugo 0.81.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">
+<link rel="manifest" href="/manifest.json">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-512x512.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "headline": "1.基础命令",
+    "datePublished": "2020-01-28T00:34:39+09:00",
+    "dateModified": "2020-01-28T00:34:39+09:00",
+    "url" : "https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/",
+    "description": "基础命令",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://shaochenfeng.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "邵晨峰的博客",
+      "url": "https://shaochenfeng.com"
+    }
+  }
+</script>
+
+    
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?bbd1a2ff6319307f954c5233f13dcc26";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+var _mtac = {};
+(function() {
+	var mta = document.createElement("script");
+	mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+	mta.setAttribute("name", "MTAH5");
+	mta.setAttribute("sid", "500711551");
+	var s = document.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(mta, s);
+})();
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</head>
+
+
+<body id="root" class="theme__light">
+    <script>
+        var rootElem = document.getElementById('root');
+        var themeOptions = JSON.parse("[\"light\",\"dark\"]");
+        var localTheme = localStorage.getItem('theme');
+
+        if (localTheme) {
+            if (themeOptions && themeOptions.length > 0) {
+                themeOptions.includes(localTheme) ? 
+                rootElem.className = `theme__${localTheme}` :
+                rootElem.className = `theme__${themeOptions[0]}`;
+            }
+        }
+    </script>
+    
+    <div id="container">
+        <div id="myDrawer" class="drawer" style="">
+  <div class="drawer__header">
+    <a href="/" class="drawer__header--text">
+      邵晨峰的博客
+    </a>
+    <div class="grow"></div>
+    <div class="drawer__close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"/></svg>
+    </div>
+  </div>
+
+  <div class="drawer__body">
+    <div class="menu">
+  <h6 class="menu__label">
+    
+      1.基础命令
+    
+  </h6>
+  <ul>
+    
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://shaochenfeng.com/linux/ansible%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/"
+      class="menu__title ">ansible自动化运维</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://shaochenfeng.com/linux/docker%E5%AE%B9%E5%99%A8/"
+      class="menu__title ">docker容器</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  <li class="menu__title--collapse active" data-depth="0" data-permalink="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/">
+    <span class="menu__title--collapse-text">
+      linux基础
+    </span>
+    <span class="menu__title--icon down">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
+      
+    </span>
+  </li>
+  <ul class="menu__list active" data-data=/linux%E5%9F%BA%E7%A1%80/ data-link=https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/>
+    
+      
+        
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  <li class="menu__title--collapse " data-depth="1" data-permalink="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/debian%E7%B3%BB/">
+    <span class="menu__title--collapse-text">
+      0.debian
+    </span>
+    <span class="menu__title--icon right">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
+      
+    </span>
+  </li>
+  <ul class="menu__list " data-data=/debian%E7%B3%BB/ data-link=https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/>
+    
+  </ul>
+  
+
+      
+    
+      
+        
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  <li class="menu__title--collapse " data-depth="1" data-permalink="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/">
+    <span class="menu__title--collapse-text">
+      0.RHEL
+    </span>
+    <span class="menu__title--icon right">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
+      
+    </span>
+  </li>
+  <ul class="menu__list " data-data=/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/ data-link=https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/>
+    
+      
+        
+        
+        <li>
+          <a href="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/yum/" class="menu__title " data-depth="1">yum</a>
+        </li>
+      
+    
+      
+        
+        
+        <li>
+          <a href="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%85%B3%E9%97%ADselinux/" class="menu__title " data-depth="1">关闭SELinux</a>
+        </li>
+      
+    
+      
+        
+        
+        <li>
+          <a href="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%AF%B9centos-lvm%E9%80%BB%E8%BE%91%E5%88%86%E5%8C%BA%E7%9A%84%E6%89%A9%E5%AE%B9/" class="menu__title " data-depth="1">对centos LVM逻辑分区的扩容</a>
+        </li>
+      
+    
+  </ul>
+  
+
+      
+    
+      
+        
+        
+        <li>
+          <a href="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" class="menu__title active" data-depth="0">1.基础命令</a>
+        </li>
+      
+    
+      
+        
+        
+        <li>
+          <a href="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/linus%E5%AE%9A%E4%B9%89linux/" class="menu__title " data-depth="0">Linus定义Linux</a>
+        </li>
+      
+    
+      
+        
+        
+        <li>
+          <a href="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/systemd%E5%90%AF%E5%8A%A8%E7%AE%A1%E7%90%86/" class="menu__title " data-depth="0">systemd启动管理</a>
+        </li>
+      
+    
+      
+        
+        
+        <li>
+          <a href="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/tar%E5%91%BD%E4%BB%A4%E5%92%8C%E5%90%84%E7%A7%8D%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/" class="menu__title " data-depth="0">tar命令和各种压缩格式的压缩和解压</a>
+        </li>
+      
+    
+      
+        
+        
+        <li>
+          <a href="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/%E4%B8%AD%E6%96%87%E6%97%B6%E5%8C%BA%E7%BC%96%E7%A0%81/" class="menu__title " data-depth="0">中文、时区、编码</a>
+        </li>
+      
+    
+  </ul>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  <li class="menu__title--collapse " data-depth="0" data-permalink="https://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+    <span class="menu__title--collapse-text">
+      数据库
+    </span>
+    <span class="menu__title--icon right">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
+      
+    </span>
+  </li>
+  <ul class="menu__list " data-data=/%E6%95%B0%E6%8D%AE%E5%BA%93/ data-link=https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/>
+    
+      
+        
+        
+        <li>
+          <a href="https://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/" class="menu__title " data-depth="0">MongoDB</a>
+        </li>
+      
+    
+  </ul>
+  
+
+    
+  </ul>
+</div>
+
+
+
+<script>
+  var menuTitle = document.querySelectorAll('.menu__title');
+  var modal = document.getElementById("myModal");
+  var drawer = document.getElementById('myDrawer');
+
+  var closeDrawer = function () {
+    setTimeout(function () {
+      modal.style.opacity = 0;
+      drawer.style.left = '-100%';
+      modal.style.left = '-100%';
+    }, 250);
+  }
+
+  menuTitle ? 
+  menuTitle.forEach(function(elem) {
+    elem.onclick = function() {
+      closeDrawer();
+      localStorage.setItem('isDrawerOpen', 'false');
+    }
+  }) : null;
+</script>
+  </div>
+</div>
+<div id="myModal" class="modal" style=""></div>
+
+<script>
+  var isDrawerOpen = localStorage.getItem('isDrawerOpen');
+  var modal = document.getElementById("myModal");
+  var drawer = document.getElementById('myDrawer');
+  
+  
+  var languagedir = JSON.parse("\"ltr\"");
+
+  var openDrawer = function () {
+    modal.style.opacity = 1;
+    
+    if (languagedir === "rtl") {
+      modal.style.right = 0;
+      drawer.style.right = 0;
+    } else {
+      modal.style.left = 0;
+      drawer.style.left = 0;
+    }
+  }
+
+  if (isDrawerOpen && isDrawerOpen === 'true') {
+    openDrawer();
+  }
+</script>
+        
+<nav class="nav">
+  <div class="navbar__wrapper" data-bgimg="false">
+    <div class="divider">
+      <div class="navbar lmr">
+        <div id="siteLogo" class="navbar__logo--wrapper">
+  
+    <a href="/" title="" rel="home" class="navbar__logo--link">
+      <img src="/logo.png" alt="Home" class="navbar__logo">
+    </a>
+  
+  
+    <a href="/" title="" rel="home" class="navbar__logo--text-link">
+      <h6 class="navbar__logo--text" data-bgimg="false">邵晨峰的博客</h6>
+    </a>
+  
+</div>
+        
+        <div class="navbar__menu--wrapper">
+          <div id="tabletLogo" class="hide">
+  
+  <a href="/" rel="home" class="navbar__logo--link">
+    <img src="/logo.png" alt="Home" class="navbar__logo">
+  </a>
+  
+</div>
+          <div id="mobileLogo" class="hide">
+  <a href="#" class="navbar__logo--link">
+    <div class="navbar__icons--icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zM3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1z"/></svg>
+    </div>
+  </a>
+</div>
+          <span id="navMenuMobile" class="hide">
+  <button id="navCollapseBtn" class="navbar__dropdown--title" aria-label="Section Menu" data-dir="ltr">
+    
+      linux
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
+  </button>
+  <div class="navbar__collapse" data-open="false">
+  <ul>
+    
+
+  
+  
+  
+  
+  <li class="navbar__menu--mobile-item ">
+    <a href="/blog" class="">博客</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--mobile-item active">
+    <a href="/linux" class="active">linux运维</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--mobile-item ">
+    <a href="/java-web" class="">java杂谈</a>
+  </li>
+
+  </ul>
+</div>
+</span>
+          <ul id="navMenu" class="navbar__menu">
+            
+
+  
+  
+  
+  
+  <li class="navbar__menu--item ">
+    <a href="/blog" data-bgimg="false">博客</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--item active">
+    <a href="/linux" data-bgimg="false">linux运维</a>
+  </li>
+
+  
+  
+  
+  
+  <li class="navbar__menu--item ">
+    <a href="/java-web" data-bgimg="false">java杂谈</a>
+  </li>
+
+          </ul>
+        </div>
+        <div class="grow"></div>
+        <div id="siteSearch">
+          
+
+<div class="search" data-bgimg="false">
+  <span class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+  </span>
+  <input id="search" aria-label="Site Search" class="input" type="text" autocomplete="no" placeholder="搜索">
+  <div id="search-results" class="dropdown">
+    <div id="search-menu" class="dropdown-menu">
+    </div>
+  </div>
+</div>
+
+
+
+        </div>
+        <div id="mobileSearch" class="hide">
+          
+<div id="mobileSearchBtn" class="mobile-search__btn">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+</div>
+
+<div id="search-mobile-container" class="mobile-search hide">
+  <div class="mobile-search__top">
+    <input id="search-mobile" type="text" aria-label="Mobile Search" placeholder="Search..." class="mobile-search__top--input"/>
+    <div id="search-mobile-close" class="mobile-search__top--icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path opacity=".87" fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.59-13L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"/></svg>
+    </div>
+  </div>
+  <div id="search-mobile-results" class="mobile-search__body">
+    
+  </div>
+</div>
+
+        </div>
+        <div class="navbar__icons">
+  
+  
+<button id="toggleToDark" class="navbar__icons--icon" aria-label="Toggle to dark mode">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/></svg>
+</button>
+<button id="toggleToLight" class="navbar__icons--icon" aria-label="Toggle to light mode">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.662 17.854 17.316 22 12.001 22 6.477 22 2 17.523 2 12c0-5.315 4.146-9.661 9.38-9.981z" fill="rgba(255,255,255,1)"/></svg>
+</button>
+<script>
+  var theme = localStorage.getItem('theme');
+  var toggleToLightBtn = document.getElementById('toggleToLight');
+  var toggleToDarkBtn = document.getElementById('toggleToDark');
+
+  if (theme && theme === 'dark') {
+    toggleToLightBtn.className = 'navbar__icons--icon';
+    toggleToDarkBtn.className = 'hide';
+  } else {
+    toggleToLightBtn.className = 'hide';
+    toggleToDarkBtn.className = 'navbar__icons--icon';
+  }
+</script>
+
+  
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  var siteLogo = document.getElementById('siteLogo');
+  var tabletLogo = document.getElementById('tabletLogo');
+  var mobileLogo = document.getElementById('mobileLogo');
+  var navMenu = document.getElementById('navMenu');
+  var navMenuMobile = document.getElementById('navMenuMobile');
+  var siteSearch = document.getElementById('siteSearch');
+  var mobileSearch = document.getElementById('mobileSearch');
+  
+  enquire.register("screen and (max-width:1280px)", {
+    match: function () {
+      siteLogo.className = 'navbar__logo--wrapper';
+      tabletLogo.className = 'hide';
+      mobileLogo.className = 'hide';
+      navMenu.className = 'navbar__menu';
+      navMenuMobile.className = 'hide';
+      siteSearch.className = '';
+      mobileSearch.className = 'hide';
+    },
+    unmatch: function () {
+      siteLogo.className = 'navbar__logo--wrapper';
+      tabletLogo.className = 'hide';
+      mobileLogo.className = 'hide';
+      navMenu.className = 'navbar__menu';
+      navMenuMobile.className = 'hide';
+      siteSearch.className = '';
+      mobileSearch.className = 'hide';
+    },
+  }).register("screen and (max-width:960px)", {
+    match: function () {
+      siteLogo.className = 'hide';
+      tabletLogo.className = '';
+      mobileLogo.className = 'hide';
+      navMenu.className = 'navbar__menu';
+      navMenuMobile.className = 'hide';
+      siteSearch.className = 'hide';
+      mobileSearch.className = 'navbar__icons--icon';
+    },
+    unmatch: function () {
+      siteLogo.className = 'navbar__logo--wrapper';
+      tabletLogo.className = 'hide';
+      mobileLogo.className = 'hide';
+      navMenu.className = 'navbar__menu';
+      navMenuMobile.className = 'hide';
+      siteSearch.className = '';
+      mobileSearch.className = 'hide';
+    },
+  }).register("screen and (max-width:600px)", {
+    match: function () {
+      siteLogo.className = 'hide';
+      tabletLogo.className = 'hide';
+      mobileLogo.className = '';
+      navMenu.className = 'hide';
+      navMenuMobile.className = '';
+      siteSearch.className = 'hide';
+      mobileSearch.className = 'navbar__icons--icon';
+    },
+    unmatch: function () {
+      siteLogo.className = 'hide';
+      tabletLogo.className = '';
+      mobileLogo.className = 'hide';
+      navMenu.className = 'navbar__menu';
+      navMenuMobile.className = 'hide';
+      siteSearch.className = 'hide';
+      mobileSearch.className = 'navbar__icons--icon';
+    },
+  });
+</script>
+
+        
+  <div class="top">
+  <div class="header__wrapper bgcolor__header">
+    <div class="divider">
+      <div class="lmr">
+        <h2 class="title">1.基础命令</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="header__wrapper bgcolor__breadcrumb">
+    <div class="divider">
+      <div class="lmr flexbox">
+        
+          <nav class="breadcrumb" aria-label="breadcrumbs" data-is-blog="false">
+  
+  <ol>
+    
+  
+  
+  
+  
+  
+  
+  
+  <li >
+    
+      <a href="https://shaochenfeng.com/" class="capitalize">主页</a>
+    
+  </li>
+  
+  
+  <li >
+    
+      <a href="https://shaochenfeng.com/linux/" class="capitalize">Linux运维</a>
+    
+  </li>
+  
+  
+  <li >
+    
+      <a href="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/" class="capitalize">linux基础</a>
+    
+  </li>
+  
+  
+  <li  class="is-active" >
+    
+      <span>1.基础命令</span>
+    
+  </li>
+  
+  </ol>
+  
+</nav>
+        
+        <div class="grow"></div>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        
+  
+
+<div class="mid">
+  <div class="divider">
+    
+    <nav id="single-menu" class="l" data-dir="ltr">
+      
+        <div class="menu">
+  <h6 class="menu__label">
+    
+      1.基础命令
+    
+  </h6>
+  <ul>
+    
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://shaochenfeng.com/linux/ansible%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/"
+      class="menu__title ">ansible自动化运维</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <li class="">
+    <a href="https://shaochenfeng.com/linux/docker%E5%AE%B9%E5%99%A8/"
+      class="menu__title ">docker容器</a>
+  </li>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  <li class="menu__title--collapse active" data-depth="0" data-permalink="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/">
+    <span class="menu__title--collapse-text">
+      linux基础
+    </span>
+    <span class="menu__title--icon down">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
+      
+    </span>
+  </li>
+  <ul class="menu__list active" data-data=/linux%E5%9F%BA%E7%A1%80/ data-link=https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/>
+    
+      
+        
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  <li class="menu__title--collapse " data-depth="1" data-permalink="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/debian%E7%B3%BB/">
+    <span class="menu__title--collapse-text">
+      0.debian
+    </span>
+    <span class="menu__title--icon right">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
+      
+    </span>
+  </li>
+  <ul class="menu__list " data-data=/debian%E7%B3%BB/ data-link=https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/>
+    
+  </ul>
+  
+
+      
+    
+      
+        
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  <li class="menu__title--collapse " data-depth="1" data-permalink="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/">
+    <span class="menu__title--collapse-text">
+      0.RHEL
+    </span>
+    <span class="menu__title--icon right">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
+      
+    </span>
+  </li>
+  <ul class="menu__list " data-data=/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/ data-link=https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/>
+    
+      
+        
+        
+        <li>
+          <a href="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/yum/" class="menu__title " data-depth="1">yum</a>
+        </li>
+      
+    
+      
+        
+        
+        <li>
+          <a href="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%85%B3%E9%97%ADselinux/" class="menu__title " data-depth="1">关闭SELinux</a>
+        </li>
+      
+    
+      
+        
+        
+        <li>
+          <a href="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%AF%B9centos-lvm%E9%80%BB%E8%BE%91%E5%88%86%E5%8C%BA%E7%9A%84%E6%89%A9%E5%AE%B9/" class="menu__title " data-depth="1">对centos LVM逻辑分区的扩容</a>
+        </li>
+      
+    
+  </ul>
+  
+
+      
+    
+      
+        
+        
+        <li>
+          <a href="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" class="menu__title active" data-depth="0">1.基础命令</a>
+        </li>
+      
+    
+      
+        
+        
+        <li>
+          <a href="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/linus%E5%AE%9A%E4%B9%89linux/" class="menu__title " data-depth="0">Linus定义Linux</a>
+        </li>
+      
+    
+      
+        
+        
+        <li>
+          <a href="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/systemd%E5%90%AF%E5%8A%A8%E7%AE%A1%E7%90%86/" class="menu__title " data-depth="0">systemd启动管理</a>
+        </li>
+      
+    
+      
+        
+        
+        <li>
+          <a href="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/tar%E5%91%BD%E4%BB%A4%E5%92%8C%E5%90%84%E7%A7%8D%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/" class="menu__title " data-depth="0">tar命令和各种压缩格式的压缩和解压</a>
+        </li>
+      
+    
+      
+        
+        
+        <li>
+          <a href="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/%E4%B8%AD%E6%96%87%E6%97%B6%E5%8C%BA%E7%BC%96%E7%A0%81/" class="menu__title " data-depth="0">中文、时区、编码</a>
+        </li>
+      
+    
+  </ul>
+  
+
+    
+      
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  <li class="menu__title--collapse " data-depth="0" data-permalink="https://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+    <span class="menu__title--collapse-text">
+      数据库
+    </span>
+    <span class="menu__title--icon right">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
+      
+    </span>
+  </li>
+  <ul class="menu__list " data-data=/%E6%95%B0%E6%8D%AE%E5%BA%93/ data-link=https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/>
+    
+      
+        
+        
+        <li>
+          <a href="https://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/" class="menu__title " data-depth="0">MongoDB</a>
+        </li>
+      
+    
+  </ul>
+  
+
+    
+  </ul>
+</div>
+
+
+      
+    </nav>
+
+    <article id="list-main" class="m" data-dir="ltr">
+      <div class="single" data-display="block">
+  
+
+  <article class="single__contents" data-dir="ltr">
+    <p>早期学习的笔记，所以比较乱</p>
+<pre><code># 常用命令
+## echo &quot;str&quot;|shell变量
+显示一串字符串或 shell 变量
+## linux 环境变量
+* $SHELL shell的类型
+* $HOSTNAME 主机名
+* $PATH  path路径
+env命令可以查看所有的环境变量
+## data
+显示时间 可以按格式
+## reboot
+重启
+## elinks [参数] 网址
+一个纯文字界面的浏览器
+
+
+# 查看系统状况
+## ifconfig
+获取网卡配置和网络状况等信息
+## uptime
+查看系统负载情况，输出内容分别为系统当前时间、系统已运行时间、当前在线用户以及平均负载值。
+### 习惯用法：watch -n 1 uptime
+每秒刷新获得一次系统负载状况
+## free
+用于显示当前系统中内存的使用情况
+## last
+用于查看所有系统的登录记录
+## history
+用于显示历史执行过的命令，历史执行过的命令保存在家目录的.bash_history文件中
+
+
+#文件查看
+## pwd
+显示当前工作的目绝对路径
+## more
+查看纯文本文件，可以翻页
+## head -n [行数] [文件名]
+查看纯文本文件的前N行
+## tail
+查看传文本的后几行
+## od [参数] [文件]
+查看特殊格式的文件
+### od中查看不同格式文件的参数
+不加  二进制
+-t a  默认字符
+-t c  ASCII字符
+-t o  八进制
+-t d  十进制
+-t x  十六进制
+-t f  浮点数类型
+## wc [参数] [文件]
+用于统计指定文件的行数、字数、字节数
+-l  只显示行数
+-w  只显示单词数
+-c  只显示字节数
+## tr [原格式] [现格式]
+用于替换文本中的字符
+## diff
+用于比较多个文本文件的差异
+## touch
+用于创建空白文件或修改修改时间
+## mkdir
+创建文件夹
+常用：mkdir -p a/b/c/d 创建一连串文件夹
+## dd
+用于指定大小的精确复制文件或转换指定文件
+## dd命令的参数
+if  输入的文件名字
+of  输出的文件名字
+bs  设置每个块的大小
+count  设置复制的块数
+conv=ucase  小写变大写
+conv=lcase  大写变小写
+
+## mount /dev/cdrom /mnt/cdrom
+光盘挂载
+
+## yum
+管理软件——软件管家
+
+## 输入输出重定向
+### 对于输出重定向符有这些情况：
+符号		作用
+命令 &gt; 文件	将标准输出重定向到一个文件中（清空原有文件的数据）
+命令 2&gt; 文件	将错误输出重定向到一个文件中（清空原有文件的数据）
+命令 &gt;&gt; 文件	将标准输出重定向到一个文件中（追加到原有内容的后面）
+命令 2&gt;&gt; 文件	将错误准输出重定向到一个文件中（追加到原有内容的后面）
+命令 &gt;&gt; 文件 2&gt;$1	将标准输出与错误输出共同写入到文件中（追加到原有内容的后面）
+### 对于输入重定向有这些情况：
+符号	作用
+命令 &lt; 文件	将文件作为命令的标准输入
+命令 &lt;&lt; 分界符	从标准输入中读入，直到遇见“分界符”才停止
+命令 &lt; 文件1 &gt; 文件2	将文件1作为命令的标准输入并将标准输出到文件2
+
+## bash解释器支持很多特殊字符的扩展
+''(单引号)	转义字符生效
+&quot;&quot;(双引号)	变量依然生效
+``(反引号)	执行命令语句
+
+## alias 别名=命令
+设置命令的别名
+umalias 用于取消别名
+
+## bash寻找一条命令的方法
+1.如果是以绝对/相对路径输入的，直接执行
+2.检查alias，判断是否是别的命令的别名
+3.bash判断是内部命令还是外部命令 （type [命令]）
+4.通过 $PATH 变量中的路径查找此命令
+
+## su [用户名]
+切换用户，当用户登出后，会切换回原用户
+</code></pre><p>ifconfig 用于获取网卡配置与网络状态等信息</p>
+<p>uptime 命令用于查看系统的负载情况</p>
+<p>​	经常用”watch -n 1 uptime“来每秒刷新一次获得当前的系统负载情况，输出内容分别为系统当前时间、系统已运行时间、当前在线用户以及平均负载值。</p>
+<p>free命令用于显示当前系统中内存的使用量情况</p>
+<p>last命令用于查看所有系统的登入记录</p>
+<p>history命令用于显示历史执行过的命令<br />
+历史命令会被保存到用户家目录中的”.bash_history“文件中</p>
+<p>pwd命令用于显示当前的工作目录</p>
+<p>more命令用于查看纯文本文件（较长的）</p>
+<p>head命令用于查看纯文本文档的前N行<br />
+head -n 20 文件名 显示10行</p>
+<p>tail命令用于查看纯文本文档的后N行</p>
+<p>od命令用于对查看特殊格式的文件<br />
+参数	作用<br />
+不加	二进制<br />
+-t a	默认字符<br />
+-t c	ASCII字符<br />
+-t o	八进制<br />
+-t d	十进制<br />
+-t x	十六进制<br />
+-t f	浮点数</p>
+<p>tr命令用于转换文本文件中的字符<br />
+将tr.txt文件的内容转换成大写<br />
+cat tr.txt | tr [a-z] [A-Z]</p>
+<p>wc命令用于统计指定文本的行数、字数、字节数，格式为“wc [参数] 文本”。<br />
+参数	作用<br />
+-l	只显示行数<br />
+-w	只显示单词数<br />
+-c	只显示字节数</p>
+<p>diff命令用于比较显示多个文本文件的差异<br />
+touch命令用于创建空白文件与修改文件时间</p>
+<p>mkdir -p a/b/c/d/e<br />
+创建一条龙的目录</p>
+<p>dd命令用于指定大小的拷贝的文件或指定转换文件<br />
+参数	作用<br />
+if	输入的文件名称。<br />
+of	输出的文件名称。<br />
+bs	设置每个“块”的大小。<br />
+count	设置要拷贝“块”的个数。<br />
+conv=ucase	将字母从小写转换为大写。<br />
+conv=lcase	把字符从大写转换为小写。</p>
+<p>mount /dev/cdrom /mnt/cdrom光盘挂载</p>
+<p>yum -y install 软件名<br />
+安装软件</p>
+<p>echo &ldquo;Content&rdquo; | mail -s &ldquo;Subject&rdquo; linuxprobe<br />
+使用非交互式设置用户密码，将root的密码修改为linuxprobe。</p>
+<p>对于输出重定向符有这些情况：<br />
+符号		作用<br />
+命令 &gt; 文件	将标准输出重定向到一个文件中（清空原有文件的数据）<br />
+命令 2&gt; 文件	将错误输出重定向到一个文件中（清空原有文件的数据）<br />
+命令 &raquo; 文件	将标准输出重定向到一个文件中（追加到原有内容的后面）<br />
+命令 2&raquo; 文件	将错误准输出重定向到一个文件中（追加到原有内容的后面）<br />
+命令 &raquo; 文件 2&gt;$1	将标准输出与错误输出共同写入到文件中（追加到原有内容的后面）</p>
+<p>对于输入重定向有这些情况：<br />
+符号	作用<br />
+命令 &lt; 文件	将文件作为命令的标准输入<br />
+命令 &laquo; 分界符	从标准输入中读入，直到遇见“分界符”才停止<br />
+命令 &lt; 文件1 &gt; 文件2	将文件1作为命令的标准输入并将标准输出到文件2</p>
+<p>bash解释器还支持很多的特殊字符扩展：<br />
+字符		作用<br />
+(反斜杠)	转义后面单个字符<br />
+&lsquo;'(单引号)	转义所有的字符<br />
+&ldquo;&quot;(双引号)	变量依然生效<br />
+``(反引号)	执行命令语句</p>
+<p>alias命令用于设置“命令的别名”，格式为：“alias 别名=命令”。<br />
+unalias命令用于取消命令的别名，格式为：“unalias 别名”。</p>
+<p>如同前面所讲的——在Linux中所有的一切都是文件，命令文件也不例外。那当用户执行了一条”ls“命令后发生了什么事情？<br />
+步骤一:如果是以绝对/相对路径输入的命令则直接执行（如执行/bin/ls）。<br />
+步骤二:检查是否为alias别名命令。<br />
+步骤三:由bash判断其是“内部命令”还是“外部命令”。<br />
+内部命令：属于解释器内部的<br />
+外部命令：独立于解释器外的命令文件<br />
+步骤四：通过$PATH变量中定义的路径进行命令查找。<br />
+查看$PATH变量的方法:echo $PATH<br />
+/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin<br />
+如果您想知道某个命令是“内部命令”还是“外部命令”？执行执行“type 命令名字”，解释器就会告诉你</p>
+<p>在Linux系统中还有许多重要的环境变量，我们可以用 env 命令查看到它们。</p>
+<p>su 临时切换用户，退出后还是原账户</p>
+<p>export命令用于将局部变量提升为全局变量</p>
+<p>可以通过使用at命令或配置Crontab计划任务服务让系统自动按时工作，让日常工作更加的高效自动化，一劳永逸</p>
+<p>vim编辑器的命令模式中常用的快捷键<br />
+命令	作用<br />
+dd	删除(剪切)光标所在整行。<br />
+5dd	删除(剪切)从光标处开始的5行。<br />
+yy	复制光标所在整行。<br />
+5yy	复制从光标处开始的5行。<br />
+p	将之前删除（dd）或复制（yy）过的数据粘贴到光标后。<br />
+/字符串	在文本中从上至下搜索该字符串。<br />
+?字符串	在文本中从下至上搜索该字符串。<br />
+n	显示搜索命令定位到的下一个字符串。<br />
+N	显示搜索命令定位到的上一个字符串。<br />
+u	撤销上一步的操作</p>
+<p>nl带行号显示文档<br />
+head命令 显示文档开头<br />
+tail命令 显示文档结尾</p>
+<p>which 命令的作用是，在 PATH 变量指定的路径中搜索可执行文件的所在位置。它一般用来确认系统中是否安装了指定的软件。</p>
+<p>xargs用作替换工具，读取输入数据重新格式化后输出。<br />
+默认转单行输出<br />
+-n 多行输出 -n 3 三个单词一行<br />
+-d 自定义定界符 -d i 用i分割每行</p>
+<p>paste 命令<br />
+paste 命令的功能正好与 cut 相反。它会添加一个或多个文本列到文件中，而不是从文件中抽取文本列。<br />
+它通过读取多个文件，然后把每个文件中的字段整合成单个文本流，输入到标准输出。</p>
+<p>tr 命令<br />
+常被用来更改字符。我们可以把它看作是一种基于字符的查找和替换操作。换字是一种把字符从一个字母转换为另一个字母的过程。<br />
+tr 从标准输入中替换、缩减和/或删除字符，并将结果写到标准输出。<br />
+$tr a c<br />
+asdaa<br />
+csdcc<br />
+将输入的字符大写转换为小写，可以使用如下命令：<br />
+echo &lsquo;THIS IS SHIYANLOU!&rsquo; | tr &lsquo;A-Z&rsquo; &lsquo;a-z&rsquo;</p>
+<p>sort 命令<br />
+能够帮助我们对文本文件和 stdin 进行排序操作。通常，它会结合其他命令来生成所需要的输出。<br />
+-n 	基于字符串的长度来排序,使用此选项允许根据数字值排序，而不是字母值<br />
+-k 	指定排序关键字<br />
+-b 	默认情况下，对整行进行排序，从每行的第一个字符开始。这个选项导致 sort 程序忽略每行开头的空格，从第一个非空白字符开始排序<br />
+-m 	只合并多个输入文件<br />
+-r 	按相反顺序排序,结果按照降序排列，而不是升序<br />
+-t 	自定义分隔符，默认为制表符<br />
+列出/usr/share/目录下使用空间最多的前 10 个目录文件，可以使用如下命令：<br />
+du -s /usr/share/* | sort -nr | head -10</p>
+<p>uniq 命令经常和 sort 命令结合在一起使用。uniq 从标准输入或单个文件名参数接受数据有序列表，默认情况下，从数据列表中删除任何重复行。</p>
+<p>红帽RHEL7系统中网卡配置文件的前缀则为”ifcfg-eno“，例如”ifcfg-eno16777736″。<br />
+网卡的配置文件存放在“/etc/sysconfig/network-scripts”目录中。</p>
+<p>//xrandr设置屏幕分辨率<br />
+xrandr -s 0 设置回原来分辨率<br />
+-s 指定分辨率大小<br />
+-q 显示可用分辨率</p>
+<p>查看系统中所有可用的Shell解释器:</p>
+<h1 id="cat-etcshells">cat /etc/shells</h1>
+<p>查看当前的Shell解释器:</p>
+<h1 id="echo-shell">echo $SHELL</h1>
+<p>执行脚本有三种方法：<br />
+脚本文件路径:./Example.sh（需要有执行权限）<br />
+sh+脚本文件路径:sh Example.sh<br />
+source+脚本文件路径:source Example.sh</p>
+<p>shell脚本的参数<br />
+$0	当前执行Shell脚本的程序名。<br />
+$1-9,${10},${11}……	参数的位置变量。<br />
+$#	一共有多少个参数。<br />
+$*	所有位置变量的值。<br />
+$?	判断上一条命令是否执行成功，0为成功，非0为失败。</p>
+<p>测试语句<br />
+细分测试语句有:文件测试、逻辑测试、整数值比较、字符串比较。<br />
+文件测试:[ 操作符 文件或目录名]<br />
+操作符	作用<br />
+-d	测试是否为目录。<br />
+-e	测试文件或目录是否存在。<br />
+-f	判断是否为文件。<br />
+-r	测试当前用户是否有权限读取。<br />
+-w	测试当前用户是否有权限写入。<br />
+-x	测试当前用户是否有权限执行。<br />
+测试/etc/fstab是否为目录：<br />
+[root@linuxprobe ~]# [ -d /etc/fstab ]<br />
+显示上一条命令的返回值，非0则为失败，即不是目录：<br />
+[root@linuxprobe ~]# echo $?<br />
+1<br />
+测试/etc/fstab是否为文件：<br />
+[root@linuxprobe ~]# [ -f /etc/fstab ]<br />
+显示上一条命令的返回值为0，即fstab是文件：<br />
+[root@linuxprobe ~]# echo $?<br />
+0</p>
+<p>逻辑测试:[ 表达式1 ] 操作符 [ 表达式2 ]<br />
+操作符	作用<br />
+&amp;&amp;	逻辑的与，&ldquo;而且&quot;的意思。<br />
+||	逻辑的或，&ldquo;或者&quot;的意思。<br />
+!	逻辑的否。</p>
+<p>“与 ”的运用<br />
+符号&amp;&amp;代表逻辑上的”与“，当前面的命令执行成功才会执行后面的命令，判断/dev/cdrom设备是否存在，若存在则输出Exist：<br />
+[root@linuxprobe ~]# [ -e /dev/cdrom ] &amp;&amp; echo &ldquo;Exist&rdquo;<br />
+Exist<br />
+若当前登陆的用户不是root，则输出user，执行后结果为空：<br />
+[root@linuxprobe ~]# [ $USER != root ] &amp;&amp; echo &ldquo;user&rdquo;<br />
+非root用户则输出user，若是root则直接输出root：<br />
+[root@linuxprobe ~]# [ $USER != root ] &amp;&amp; echo &ldquo;user&rdquo; || echo &ldquo;root&rdquo;<br />
+root</p>
+<p>整数值比较:[ 整数1 操作符 整数2 ]<br />
+操作符	作用<br />
+-eq	判断是否等于<br />
+-ne	判断是否不等于<br />
+-gt	判断是否大于<br />
+-lt	判断是否小于<br />
+-le	判断是否等于或小于<br />
+-ge	判断是否大于或等于</p>
+<p>read命令<br />
+读入值到变量<br />
+-p 指定提示<br />
+-t 指定时间<br />
+#read -p &ldquo;input:&rdquo; a</p>
+<p>shell脚本</p>
+<p>选择<br />
+if [$a -gt 100]<br />
+then<br />
+else<br />
+if</p>
+<p>case 变量值 in<br />
+[模式1])<br />
+[模式2])<br />
+[模式3])<br />
+*)<br />
+esac</p>
+<p>循环<br />
+for 变量名 in 取值列表<br />
+do<br />
+done</p>
+<p>while<br />
+do<br />
+done</p>
+<p>计划任务<br />
+at &lt;时间&gt;	安排一次性任务<br />
+atq或at -l	查看任务列表<br />
+at -c 序号	预览任务与设置环境<br />
+atrm 序号	删除任务<br />
+一般用at命令创建计划任务有交互式与非交互式两种方法，先来看看交换式的方法，（输完成后敲击Ctrl+d来保存退出）<br />
+直接用echo语句将要执行的命令传送给at命令:<br />
+echo &ldquo;systemctl start httpd&rdquo; | at 23:30</p>
+<p>创建长期可循环的计划任务，则要用到cron服务啦，具体使用方法如下：<br />
+创建、编辑计划任务:crontab -e [-u 用户名]<br />
+查看计划任务:crontab -l [-u 用户名]<br />
+删除计划任务:crontab -r [-u 用户名]<br />
+其中在创建、编辑计划任务时有个固定的格式，请读者们一定要记住。</p>
+<p>crontab -e 分钟 小时 日期 月份 星期 命令</p>
+<p>字段	说明<br />
+分钟	取值为从0到59之间的整数<br />
+小时	取值为从0到23之间的任意整数<br />
+日期	取值为1到31之间的任意整数<br />
+月份	取值为1到12之间的任意整数<br />
+星期	取值为0到7之间的任意整数，其中0与7均为星期日<br />
+命令	要执行的命令或程序脚本</p>
+<p>将数据同步写入硬盘中的指令： sync <br />
+最正确的关机指令： shutdown <br />
+重新开机： reboot <br />
+关机啰： halt ，poweroff <br />
+halt 与 poweroff 也具有相同的功能</p>
+<p>主要常见的目录定义：<br />
+目录名称	应放置文件的内容<br />
+/boot		开机所需文件——内核,开机菜单及所需配置文件等<br />
+/dev		任何设备与接口都以文件形式存放在此目录<br />
+/etc		配置文件<br />
+/home		用户主目录<br />
+/bin		单用户维护模式下还能够被操作的命令<br />
+/lib		开机时用到的函数库及/bin与/sbin下面命令要调用的函数<br />
+/sbin		开机过程中需要的<br />
+/media		一般挂载或删除的设备<br />
+/opt		放置第三方的软件<br />
+/root		系统管理员的主文件夹<br />
+/srv		一些网络服务的数据目录<br />
+/tmp		任何人均可使用的“共享”临时目录<br />
+/proc		虚拟文件系统，例如系统内核，进程，外部设备及网络状态等<br />
+/usr/local	用户自行安装的软件<br />
+/usr/sbin	非系统开机时需要的软件/命令/脚本<br />
+/usr/share	帮助与说明文件，也可放置共享文件。<br />
+/var		主要存放经常变化的文件，如日志。<br />
+/lost+found	当文件系统发生错误时，将一些丢失的文件片段存放在这里</p>
+<p>常见的硬件命名如下：<br />
+硬件设备	文件名称<br />
+IDE设备		/dev/hd[a-d]<br />
+SCSI/SATA/U盘	/dev/sd[a-p]<br />
+软驱		/dev/fd[0-1]<br />
+打印机		/dev/lp[0-15]<br />
+光驱		/dev/cdrom<br />
+鼠标		/dev/mouse</p>
+<p>mount命令用于挂载文件系统，格式为：<br />
+“mount 文件系统 挂载目录”。<br />
+将光盘文件挂载:“mount /dev/cdrom /media/cdrom”。<br />
+参数	作用<br />
+-a	挂载所有在/etc/fstab中定义的文件系统<br />
+-t	指定文件系统的类型<br />
+想让开机自动挂载需要写到/etc/fstab文件中<br />
+填写格式如下：<br />
+设备文件 挂载目录 格式类型 权限选项 自检 优先级<br />
+设备文件：一般为设备的路径+名称，也可以写UUID值等。<br />
+挂载目录：指定要挂载到的目录，需挂载前创建好。<br />
+格式类型：即指定文件系统的格式，比如有ext3/ext4/xfs/iso9660/swap等。<br />
+权限选项：默认为defaults(rw,suid,dev,exec,auto,nouser,async)，可指定acl或quota等。<br />
+自检：若为1则开机后进行磁盘自检，0为不自检。<br />
+优先级：若“自检”为1，则可对多块硬盘进行优先级设置。</p>
+<p>umount命令用于撤销已经挂载的设备文件，格式为：“umount [挂载点/设备文件]”。</p>
+<p>fdisk命令用于管理磁盘分区，格式为：“fdisk [磁盘名称]”。<br />
+管理某硬盘的分区:“fdisk /dev/sda”<br />
+参数	作用<br />
+m	查看全部可用的参数<br />
+n	添加新的分区<br />
+d	删除某个分区信息<br />
+l	列出所有可用的分区类型<br />
+t	改变某个分区的类型<br />
+p	查看分区表信息<br />
+w	保存并退出<br />
+q	不保存直接退出</p>
+<p>ln命令能够让用户创建出两种不同类型的文件快捷方式<br />
+ln [选项] 目标<br />
+参数	作用<br />
+-s	创建&quot;软链接&rdquo;(默认是硬链接)<br />
+-f	强制创建文件或目录的链接<br />
+-i	覆盖前先询问<br />
+-v	显示创建链接的过程</p>
+<p>其实”root“只是个名字，真正让它成为“超级用户”的是UID值<br />
+UID（即User IDentification的缩写）：每个用户都有对应的UID值</p>
+<p>超级用户UID0:root用户默认为0。<br />
+系统用户UID1-999:系统中系统服务由不同用户运行，更加安全，默认被限制登陆系统。<br />
+普通用户UID1000~:即管理员创建的用于日常工作而不能管理系统的普通用户。</p>
+<p>帐户名称与UID保存在/etc/passwd文件中，而帐户密码则保存在/etc/shadow文件中。</p>
+<p>文件和文件夹的X权限不同作用<br />
+文件：可执行<br />
+文件夹：可进入</p>
+<p>SUID:让执行者临时拥有属主的权限（仅对拥有执行权限的二进制程序有效）<br />
+因为被给予了SGID权限，所以当用户执行了ps命令，实际有效用户组就是system啦</p>
+<p>chmod命令用于修改文件或目录的权限，格式为：<br />
+”chmod [参数] 权限 文件或目录名称”<br />
+-f 忽略错误信息<br />
+-c 全部显示信息<br />
+-v 显示细节<br />
+-R 递归变更子目录</p>
+<p>+s SGID权限<br />
+-g+s 给组加SGID权限<br />
+-u+s 给用户加SGID权限<br />
+这样他人在运行，或在此目录下建立文件会借用建立者权限（典型例子：password命令）<br />
++t 目录添加SBIT（粘滞位），只可管理自己的数据而不能删除他人文件，般老师希望学生可以将作业上传到某个特定目录——但为了避免某些小破坏份子，想限制删除其他人文件的话，那就要设置SBIT位了</p>
+<p>启动级别</p>
+<p>这部分好像因为systemd的流行已经过时了</p>
+<p>等级0表示：表示关机 　　<br />
+等级1表示：单用户模式 　　<br />
+等级2表示：无网络连接的多用户命令行模式 　　<br />
+等级3表示：有网络连接的多用户命令行模式 　　<br />
+等级4表示：不可用 　　<br />
+等级5表示：带图形界面的多用户模式 　　<br />
+等级6表示：重新启动</p>
+<p><strong>arping命令</strong> 是用于发送arp请求到一个相邻主机的工具，arping使用arp数据包，通过ping命令检查设备上的硬件地址。能够测试一个ip地址是否是在网络上已经被使用，并能够获取更多设备信息。功能类似于ping。</p>
+<p>rm<br />
+用于删除给定的文件和目录</p>
+<p>补充说明<br />
+rm 命令 可以删除一个目录中的一个或多个文件或目录，也可以将某个目录及其下属的所有文件及其子目录均删除掉。对于链接文件，只是删除整个链接文件，而原有文件保持不变。</p>
+<p>注意：使用rm命令要格外小心。因为一旦删除了一个文件，就无法再恢复它。所以，在删除文件之前，最好再看一下文件的内容，确定是否真要删除。rm命令可以用-i选项，这个选项在使用文件扩展名字符删除多个文件时特别有用。使用这个选项，系统会要求你逐一确定是否要删除。这时，必须输入y并按Enter键，才能删除文件。如果仅按Enter键或其他字符，文件不会被删除。</p>
+<p>语法<br />
+rm (选项)(参数)<br />
+选项<br />
+-d：直接把欲删除的目录的硬连接数据删除成0，删除该目录；<br />
+-f：强制删除文件或目录；<br />
+-i：删除已有文件或目录之前先询问用户；<br />
+-r或-R：递归处理，将指定目录下的所有文件与子目录一并处理；<br />
+&ndash;preserve-root：不对根目录进行递归操作；<br />
+-v：显示指令的详细执行过程。<br />
+参数<br />
+文件：指定被删除的文件列表，如果参数中含有目录，则必须加上-r或者-R选项。</p>
+<p>实例<br />
+交互式删除当前目录下的文件test和example</p>
+<p>rm -i test example<br />
+Remove test ?n（不删除文件test)<br />
+Remove example ?y（删除文件example)<br />
+删除当前目录下除隐含文件外的所有文件和子目录</p>
+<p>**rm -r ***</p>
+<p>应注意，这样做是非常危险的!</p>
+<p>rm 命令删除文件</p>
+<p>rm 文件1 文件2 &hellip;</p>
+<p>rm testfile.txt<br />
+rm 命令删除目录</p>
+<p>rm -r [目录名称]<br />
+-r 表示递归地删除目录下的所有文件和目录。<br />
+-f 表示强制删除</p>
+<p>rm -rf testdir<br />
+rm -r testdir<br />
+删除操作前有确认提示</p>
+<p>rm -i [文件/目录]</p>
+<p>rm -r -i testdir<br />
+rm 忽略不存在的文件或目录</p>
+<p>-f 选项（LCTT 译注：即 “force”）让此次操作强制执行，忽略错误提示</p>
+<p>rm -f [文件&hellip;]<br />
+仅在某些场景下确认删除</p>
+<p>选项 -I，可保证在删除超过 3 个文件时或递归删除时（LCTT 译注： 如删除目录）仅提示一次确认。</p>
+<p>rm -I file1 file2 file3</p>
+<h2 id="附件">附件</h2>
+<p><p class="md__image">
+  <img src="/../../../me/%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/ll%E5%91%BD%E4%BB%A4%E6%AF%8F%E5%88%97%E7%9A%84%E6%84%8F%E4%B9%89.jpg" alt="ll命令每列的意义"  />
+</p></p>
+
+  </article>
+</div>
+      
+<div class="grow"></div>
+<nav class="pagination-single">
+  
+    
+    <div class="grow"></div>
+    
+      <a href="https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/linus%E5%AE%9A%E4%B9%89linux/" title="Linus定义Linux" class="pagination-single__right">
+        <div class="pagination-single__left-title">Linus定义Linux</div>
+        <div class="pagination-single__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
+        </div>
+      </a>
+    
+  
+</nav>
+
+
+      
+    </article>
+    
+    <section id="list-side" class="r" data-dir="ltr">
+      
+        <div class="toc">
+  <h6 class="toc__label">目录</h6>
+  <div class="toc__body">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#附件">附件</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+      
+    </section>
+
+  </div>
+</div>
+
+<script>
+  'use strict';
+  
+  function wrap(el, wrapper) {
+    el.parentNode.insertBefore(wrapper, el);
+    wrapper.appendChild(el);
+  }
+
+  (function () {
+    var singleContentsElem = document.querySelector('.single__contents');
+    singleContentsElem ? 
+    singleContentsElem.querySelectorAll('pre > code').forEach(function(elem) {
+      var dataLang = elem.getAttribute('data-lang');
+      var dataLangWrapper = document.createElement('div');
+      var code = null;
+      var codeTitle = null;
+
+      if (dataLang && dataLang.includes(':')) {
+        code = dataLang.split(':')[0];
+        codeTitle = dataLang.split(':')[1];
+
+        dataLangWrapper.className = 'language-' + code;
+        dataLangWrapper.setAttribute('data-lang', codeTitle);
+
+        elem.className = 'language-' + code;
+        elem.setAttribute('data-lang', codeTitle);
+        elem.setAttribute('id', codeTitle);
+      }
+
+      if (!dataLang || codeTitle) {
+        wrap(elem.parentNode, dataLangWrapper);
+      }
+
+    }) : null;
+  })();
+  
+
+
+  
+  
+  var dollarCodeElem = document.querySelectorAll('div.language-\\$');
+  var gtCodeElem = document.querySelectorAll('div.language-\\>');
+  
+  dollarCodeElem ?
+  dollarCodeElem.forEach(function(elem) {
+    var lnts = elem.parentNode.parentNode ? elem.parentNode.parentNode.querySelectorAll('.lnt') : null;
+    lnts ? 
+    lnts.forEach(function(lnt) {
+      lnt.innerHTML = '$<br/>';
+    }) : null;
+  }) : null;
+
+  gtCodeElem ?
+  gtCodeElem.forEach(function(elem) {
+    var lnts = elem.parentNode.parentNode ? elem.parentNode.parentNode.querySelectorAll('.lnt') : null;
+    lnts ? 
+    lnts.forEach(function(lnt) {
+      lnt.innerHTML = '><br/>';
+    }) : null;
+  }) : null;
+  
+</script>
+
+
+
+
+<script defer src="/js/helper/getParents.min.js"></script>
+
+<script defer src="/js/helper/closest.min.js"></script>
+
+<script defer src="/js/helper/prev.min.js"></script>
+
+<script defer src="/js/helper/prop.min.js"></script>
+
+<script defer src="/js/helper/fadeinout.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    'use strict';
+    
+    
+    var tables = document.querySelectorAll('.single__contents > table');
+    for (let i = 0; i < tables.length; i++) {
+      var table = tables[i];
+      var wrapper = document.createElement('div');
+      wrapper.className = 'table-wrapper';
+      table.parentElement.replaceChild(wrapper, table);
+      wrapper.appendChild(table);
+    }
+    
+
+
+    
+    
+    
+    var lib = JSON.parse("null");
+
+    if (lib && lib.includes('mermaid')) {
+      var themeVariant = localStorage.getItem('theme') || 'light';
+
+      if (themeVariant === "dark") {
+        mermaid.initialize({ theme: 'dark' });
+      } else {
+        mermaid.initialize({ theme: 'default' });
+      }
+      
+      var mermaids = [];
+      [].push.apply(mermaids, document.getElementsByClassName('language-mermaid'));
+      mermaids.forEach(function(elem) {
+        var elemParentNode = elem.parentNode;
+
+        if (elemParentNode !== document.body) {
+          elemParentNode.parentNode.insertBefore(elem, elemParentNode);
+          elemParentNode.parentNode.removeChild(elemParentNode);
+        }
+
+        var newElemWrapper = document.createElement('div');
+        newElemWrapper.classList.add('mermaid');
+        newElemWrapper.innerHTML = elem.innerHTML;
+        elem.replaceWith(newElemWrapper);
+      });
+    }
+    
+    
+
+    
+    if (lib && lib.includes('katex')) {
+      var mathElements = document.getElementsByClassName('math');
+      var options = {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$", right: "$", display: false },
+          { left: "\\(", right: "\\)", display: false }
+        ],
+      };
+
+      renderMathInElement(document.querySelector('.single__contents'), options);
+    }
+    
+
+
+    
+    if (lib && lib.includes('flowchartjs')) {
+      
+      var options = JSON.parse("{\"arrow-end\":\"block\",\"element-color\":\"black\",\"fill\":\"white\",\"flowstate\":{\"approved\":{\"fill\":\"#58C4A3\",\"font-size\":12,\"no-text\":\"n/a\",\"yes-text\":\"APPROVED\"},\"current\":{\"fill\":\"yellow\",\"font-color\":\"red\",\"font-weight\":\"bold\"},\"future\":{\"fill\":\"#FFFF99\"},\"invalid\":{\"fill\":\"#444444\"},\"past\":{\"fill\":\"#CCCCCC\",\"font-size\":12},\"rejected\":{\"fill\":\"#C45879\",\"font-size\":12,\"no-text\":\"REJECTED\",\"yes-text\":\"n/a\"},\"request\":{\"fill\":\"blue\"}},\"font-color\":\"black\",\"font-size\":14,\"line-color\":\"black\",\"line-length\":50,\"line-width\":3,\"no-text\":\"no\",\"scale\":1,\"symbols\":{\"end\":{\"class\":\"end-element\"},\"start\":{\"element-color\":\"green\",\"fill\":\"yellow\",\"font-color\":\"red\"}},\"text-margin\":10,\"x\":0,\"y\":0,\"yes-text\":\"yes\"}");
+      var jsonContent = null;
+
+      var flowchartPrefix = "language-flowchart";
+      var index = 0;
+      Array.prototype.forEach.call(document.querySelectorAll("[class^=" + flowchartPrefix + "]"), function(x){
+          x.style.display = 'none'
+          x.parentNode.style.backgroundColor = "transparent"
+          jsonContent = x.innerText;
+
+          var node0 = document.createElement('div');
+          node0.id = 'flowchart' + index;
+          x.parentNode.insertBefore(node0, x);
+
+          var diagram = flowchart.parse(jsonContent);
+          diagram.drawSVG("flowchart"+index, options);
+
+          index +=1;
+      });      
+    }
+    
+
+
+    
+    if (lib && lib.includes('chart')) {
+      var borderColor = "#666";
+      var bgColor = "#ddd";
+      var borderWidth = 2;
+
+      Chart.defaults.global.elements.rectangle.borderWidth = borderWidth;
+      Chart.defaults.global.elements.rectangle.borderColor = borderColor;
+      Chart.defaults.global.elements.rectangle.backgroundColor = bgColor;
+
+      Chart.defaults.global.elements.line.borderWidth = borderWidth;
+      Chart.defaults.global.elements.line.borderColor = borderColor;
+      Chart.defaults.global.elements.line.backgroundColor = bgColor;
+
+      Chart.defaults.global.elements.point.borderWidth = borderWidth;
+      Chart.defaults.global.elements.point.borderColor = borderColor;
+      Chart.defaults.global.elements.point.backgroundColor = bgColor;
+
+      var chartPrefix = "language-chart";
+      var index = 0;
+      var jsonContent = null;
+
+      Array.prototype.forEach.call(document.querySelectorAll("[class^=" + chartPrefix + "]"), function (x) {
+        x.style.display = 'none'
+        x.parentNode.style.backgroundColor = "transparent"
+        jsonContent = x.innerText;
+        var node0 = document.createElement('canvas');
+        var source = null;
+        node0.height = 200;
+        node0.style.height = 200;
+        node0.id = 'myChart' + index;
+        source = JSON.parse(jsonContent);
+        x.parentNode.insertBefore(node0, x);
+        var ctx = document.getElementById('myChart' + index).getContext('2d');
+        var myChart = new Chart(ctx, source);
+        index += 1;
+      });            
+    }
+    
+
+
+    
+    if (lib && lib.includes('viz')) {
+      var vizPrefix = "language-viz-";
+      Array.prototype.forEach.call(document.querySelectorAll("[class^=" + vizPrefix + "]"), function (x) {
+        x.style.display = 'none'
+        x.parentNode.style.backgroundColor = "transparent"
+        var engine;
+        x.getAttribute("class").split(" ").forEach(function (cls) {
+          if (cls.startsWith(vizPrefix)) {
+            engine = cls.substr(vizPrefix.length);
+          }
+        });
+        var viz = new Viz();
+        viz.renderSVGElement(x.innerText, { engine: engine })
+          .then(function (element) {
+            element.style.width = "100%";
+            x.parentNode.insertBefore(element, x);
+          })
+      });
+    }
+    
+    
+  });
+</script>
+
+<script>
+  var listSide = document.getElementById('list-side');
+  var listMain = document.getElementById('list-main');
+  var singleMenu = document.getElementById('single-menu');
+  var switchElem = document.querySelector('.switch');
+  var wideViewAsDefault = JSON.parse("null");
+  
+  enquire.register("screen and (max-width:1280px)", {
+    match: function () {
+      if (wideViewAsDefault) {
+        singleMenu.className = 'l';  
+        listMain.className = 'mr';
+        listSide.className = 'hide';
+      } else {
+        singleMenu.className = 'l';
+        listMain.className = 'm';
+        listSide.className = 'r';
+      }
+    },
+    unmatch: function () {
+      if (wideViewAsDefault) {
+        singleMenu.className = 'l';
+        listMain.className = 'mr';
+        listSide.className = 'hide';
+      } else {
+        listSide.className = 'r';
+        listMain.className = 'm';
+        singleMenu.className = 'l';
+      }
+    },
+  }).register("screen and (max-width:960px)", {
+    match: function () {
+      singleMenu.className = 'l';
+      listMain.className = 'mr';
+      listSide.className = 'hide';
+      switchElem.className = 'hide';
+    },
+    unmatch: function () {
+      if (wideViewAsDefault) {
+        singleMenu.className = 'l';
+        listMain.className = 'mr';
+        listSide.className = 'hide';
+      } else {
+        singleMenu.className = 'l';
+        listMain.className = 'm';
+        listSide.className = 'r';
+      }
+      switchElem.className = 'switch';
+    },
+  }).register("screen and (max-width:600px)", {
+    match: function () {
+      listSide.className = 'hide';
+      listMain.className = 'lmr';
+      singleMenu.className = 'hide';
+      switchElem.className = 'hide';
+    },
+    unmatch: function () {
+      listSide.className = 'hide';
+      listMain.className = 'mr';
+      singleMenu.className = 'l';
+      switchElem.className = 'hide';
+    },
+  });
+</script>
+
+        
+<div class="bot">
+  <footer class="footer">
+    <div class="divider">
+      <div class="lmr">
+        
+          <p class="caption">
+            <a href="https://beian.miit.gov.cn/" target="_blank">冀ICP备18002899号</a>    ©2021, All Rights Reserved
+          </p>
+          
+        
+      </div>
+    </div>
+  </footer>
+</div>
+
+    </div>
+
+</body>
+
+</html>
