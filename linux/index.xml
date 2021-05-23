@@ -28,10 +28,10 @@
       <item>
         <title>docker容器</title>
         <link>https://shaochenfeng.com/linux/docker%E5%AE%B9%E5%99%A8/</link>
-        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        <pubDate>Mon, 27 Jan 2020 15:34:39 +0000</pubDate>
         
         <guid>https://shaochenfeng.com/linux/docker%E5%AE%B9%E5%99%A8/</guid>
-        <description>注意：本文写自19年7月，已经过时 安装 # CentOS sudo yum install -y yum-utils \ device-mapper-persistent-data \ lvm2 sudo yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo sudo yum install docker-ce docker-ce-cli containerd.io # Ubuntu sudo apt-get update sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ gnupg-agent \ software-properties-common curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository</description>
+        <description>安装 CentOS 系统要求 CentOS 7 或 8 参考官方安装教程 先卸载旧版本 1 2 3 4 5 6 7 8 sudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-engine 下面可以从3种安装方式中挑选安装 安装方</description>
       </item>
       
       <item>

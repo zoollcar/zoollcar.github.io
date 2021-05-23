@@ -82,10 +82,10 @@
       <item>
         <title>docker容器</title>
         <link>https://shaochenfeng.com/linux/docker%E5%AE%B9%E5%99%A8/</link>
-        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        <pubDate>Mon, 27 Jan 2020 15:34:39 +0000</pubDate>
         
         <guid>https://shaochenfeng.com/linux/docker%E5%AE%B9%E5%99%A8/</guid>
-        <description>注意：本文写自19年7月，已经过时 安装 # CentOS sudo yum install -y yum-utils \ device-mapper-persistent-data \ lvm2 sudo yum-config-manager \ --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo sudo yum install docker-ce docker-ce-cli containerd.io # Ubuntu sudo apt-get update sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ gnupg-agent \ software-properties-common curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository</description>
+        <description>安装 CentOS 系统要求 CentOS 7 或 8 参考官方安装教程 先卸载旧版本 1 2 3 4 5 6 7 8 sudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-engine 下面可以从3种安装方式中挑选安装 安装方</description>
       </item>
       
       <item>
@@ -158,6 +158,15 @@
         
         <guid>https://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%AF%B9centos-lvm%E9%80%BB%E8%BE%91%E5%88%86%E5%8C%BA%E7%9A%84%E6%89%A9%E5%AE%B9/</guid>
         <description>对centos LVM逻辑分区的扩容 首先扩展LVM分区 然后扩展逻辑卷: [root@pc ~]# lvdisplay ## 查看逻辑卷 [root@pc ~]# lvextend -l +100%FREE /dev/centos/root ## 将剩余百分百空间都添加到逻辑卷中 [root@pc ~]# lvdisplay ##</description>
+      </item>
+      
+      <item>
+        <title>源码安装方式 centos7 nginx php7.3</title>
+        <link>https://shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8Fcentos7_nginx_php7.3/</link>
+        <pubDate>Fri, 21 May 2021 21:21:28 +0000</pubDate>
+        
+        <guid>https://shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8Fcentos7_nginx_php7.3/</guid>
+        <description>1.源码安装nginx 这里列出了全部步骤，如果要了解详情，可以查看 源码安装nginx到指定目录 1 2 3 4 5 6 7 yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget yum install -y pcre-devel zlib-devel wget</description>
       </item>
       
       <item>
