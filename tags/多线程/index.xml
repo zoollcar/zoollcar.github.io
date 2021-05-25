@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>多线程 on 邵晨峰的博客</title>
-    <link>https://shaochenfeng.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
+    <link>shaochenfeng.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
     <description>Recent content in 多线程 on 邵晨峰的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&lt;a href=&#34;https://beian.miit.gov.cn/&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Fri, 21 May 2021 21:14:24 +0000</lastBuildDate>
     
-        <atom:link href="https://shaochenfeng.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="shaochenfeng.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>javaExecutor线程池案例</title>
-        <link>https://shaochenfeng.com/blog/javaexecutor%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%A1%88%E4%BE%8B/</link>
+        <link>shaochenfeng.com/blog/javaexecutor%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%A1%88%E4%BE%8B/</link>
         <pubDate>Fri, 21 May 2021 21:14:24 +0000</pubDate>
         
-        <guid>https://shaochenfeng.com/blog/javaexecutor%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%A1%88%E4%BE%8B/</guid>
+        <guid>shaochenfeng.com/blog/javaexecutor%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%A1%88%E4%BE%8B/</guid>
         <description>第一个例子：基础案例 自动控制线程的数量，且每个线程没有返回值，不能做最后的整合处理 第二个例子：进阶案例 固定线程的数量，每个线程有返回值，在左</description>
       </item>
       

@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>nginx on 邵晨峰的博客</title>
-    <link>https://shaochenfeng.com/tags/nginx/</link>
+    <link>shaochenfeng.com/tags/nginx/</link>
     <description>Recent content in nginx on 邵晨峰的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&lt;a href=&#34;https://beian.miit.gov.cn/&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Fri, 21 May 2021 21:21:28 +0000</lastBuildDate>
     
-        <atom:link href="https://shaochenfeng.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="shaochenfeng.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>源码安装方式 centos7 nginx php7.3</title>
-        <link>https://shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8Fcentos7_nginx_php7.3/</link>
+        <link>shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8Fcentos7_nginx_php7.3/</link>
         <pubDate>Fri, 21 May 2021 21:21:28 +0000</pubDate>
         
-        <guid>https://shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8Fcentos7_nginx_php7.3/</guid>
+        <guid>shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8Fcentos7_nginx_php7.3/</guid>
         <description>1.源码安装nginx 这里列出了全部步骤，如果要了解详情，可以查看 源码安装nginx到指定目录 1 2 3 4 5 6 7 yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget yum install -y pcre-devel zlib-devel wget</description>
       </item>
       
       <item>
         <title>初探用nginx Rtmp Module自建直播服务器</title>
-        <link>https://shaochenfeng.com/blog/%E5%88%9D%E6%8E%A2%E7%94%A8nginx-rtmp-module%E8%87%AA%E5%BB%BA%E7%9B%B4%E6%92%AD%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+        <link>shaochenfeng.com/blog/%E5%88%9D%E6%8E%A2%E7%94%A8nginx-rtmp-module%E8%87%AA%E5%BB%BA%E7%9B%B4%E6%92%AD%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
         <pubDate>Tue, 25 Feb 2020 22:11:24 +0800</pubDate>
         
-        <guid>https://shaochenfeng.com/blog/%E5%88%9D%E6%8E%A2%E7%94%A8nginx-rtmp-module%E8%87%AA%E5%BB%BA%E7%9B%B4%E6%92%AD%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+        <guid>shaochenfeng.com/blog/%E5%88%9D%E6%8E%A2%E7%94%A8nginx-rtmp-module%E8%87%AA%E5%BB%BA%E7%9B%B4%E6%92%AD%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
         <description>nginx Rtmp Module 是一个nginx插件，需要在在编译时和nginx一起编译安装，就可以利用nginx的转发能力进行直播了 下载源码 首先准备好源码和常用编译</description>
       </item>
       
       <item>
         <title>源码安装nginx到指定目录</title>
-        <link>https://shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85nginx%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95/</link>
+        <link>shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85nginx%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95/</link>
         <pubDate>Fri, 14 Feb 2020 16:30:41 +0800</pubDate>
         
-        <guid>https://shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85nginx%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95/</guid>
+        <guid>shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85nginx%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95/</guid>
         <description>&lt;h2 id=&#34;首先是全部步骤概括&#34;&gt;首先是全部步骤概括&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -78,30 +78,30 @@ vi /opt/nginx1.16/conf/nginx.conf &lt;span class=&#34;c1&#34;&gt;# 修改配置�
       
       <item>
         <title>Nginx配置ssl证书，支持https</title>
-        <link>https://shaochenfeng.com/blog/nginx%E9%85%8D%E7%BD%AEssl%E8%AF%81%E4%B9%A6%E6%94%AF%E6%8C%81htts/</link>
+        <link>shaochenfeng.com/blog/nginx%E9%85%8D%E7%BD%AEssl%E8%AF%81%E4%B9%A6%E6%94%AF%E6%8C%81htts/</link>
         <pubDate>Fri, 14 Feb 2020 10:19:59 +0800</pubDate>
         
-        <guid>https://shaochenfeng.com/blog/nginx%E9%85%8D%E7%BD%AEssl%E8%AF%81%E4%B9%A6%E6%94%AF%E6%8C%81htts/</guid>
+        <guid>shaochenfeng.com/blog/nginx%E9%85%8D%E7%BD%AEssl%E8%AF%81%E4%B9%A6%E6%94%AF%E6%8C%81htts/</guid>
         <description>&lt;p&gt;https是加密的http协议，现在以谷歌浏览器为首的很多浏览器开始将仅支持http的网站标识为不安全&lt;/p&gt;
 &lt;p&gt;所以全站https就成为了现代网站的标配，本文介绍ngnix如何配置ssl证书，以支持https&lt;/p&gt;</description>
       </item>
       
       <item>
         <title>Nginx端口转发（反向代理）</title>
-        <link>https://shaochenfeng.com/blog/nginx%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</link>
+        <link>shaochenfeng.com/blog/nginx%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</link>
         <pubDate>Tue, 11 Feb 2020 10:59:29 +0800</pubDate>
         
-        <guid>https://shaochenfeng.com/blog/nginx%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</guid>
+        <guid>shaochenfeng.com/blog/nginx%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</guid>
         <description>&lt;p&gt;有时我们会使用一些java或node应用，但又不想让他们直接监听80端口，这时就需要用到端口转发&lt;/p&gt;
 &lt;p&gt;本文中，我们介绍Nginx如何做端口转发，还有各种转发规则&lt;/p&gt;</description>
       </item>
       
       <item>
         <title>Centos8 Yum安装nginx并设置虚拟主机</title>
-        <link>https://shaochenfeng.com/blog/centos8yum%E5%AE%89%E8%A3%85nginx%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/</link>
+        <link>shaochenfeng.com/blog/centos8yum%E5%AE%89%E8%A3%85nginx%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/</link>
         <pubDate>Mon, 10 Feb 2020 15:33:23 +0800</pubDate>
         
-        <guid>https://shaochenfeng.com/blog/centos8yum%E5%AE%89%E8%A3%85nginx%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/</guid>
+        <guid>shaochenfeng.com/blog/centos8yum%E5%AE%89%E8%A3%85nginx%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/</guid>
         <description>&lt;p&gt;&lt;strong&gt;nginx&lt;/strong&gt;是最近非常火的web服务器，这次CentOS8也在yum官方源中新增了nginx 1.14&lt;/p&gt;
 &lt;p&gt;与&lt;strong&gt;Apache&lt;/strong&gt;相比可以承担更大的并发，并占用更少的内存&lt;/p&gt;</description>
       </item>

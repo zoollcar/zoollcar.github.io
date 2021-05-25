@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ssl on 邵晨峰的博客</title>
-    <link>https://shaochenfeng.com/tags/ssl/</link>
+    <link>shaochenfeng.com/tags/ssl/</link>
     <description>Recent content in ssl on 邵晨峰的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&lt;a href=&#34;https://beian.miit.gov.cn/&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Sun, 05 Jan 2020 22:02:41 +0800</lastBuildDate>
     
-        <atom:link href="https://shaochenfeng.com/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="shaochenfeng.com/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>使用acme.sh进行ssl申请和自动续约</title>
-        <link>https://shaochenfeng.com/blog/acme.sh/</link>
+        <link>shaochenfeng.com/blog/acme.sh/</link>
         <pubDate>Sun, 05 Jan 2020 22:02:41 +0800</pubDate>
         
-        <guid>https://shaochenfeng.com/blog/acme.sh/</guid>
+        <guid>shaochenfeng.com/blog/acme.sh/</guid>
         <description>&lt;p&gt;本文以demo.example.com为例，详细介绍了使用acme.sh进行ssl申请和自动续约的方法&lt;/p&gt;</description>
       </item>
       

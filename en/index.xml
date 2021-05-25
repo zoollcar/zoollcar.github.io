@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>邵晨峰的官网</title>
-    <link>https://shaochenfeng.com/en/</link>
+    <link>shaochenfeng.com/en/</link>
     <description>Recent content on 邵晨峰的官网</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://beian.miit.gov.cn/&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
     
-        <atom:link href="https://shaochenfeng.com/en/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="shaochenfeng.com/en/index.xml" rel="self" type="application/rss+xml" />
     
     
     
