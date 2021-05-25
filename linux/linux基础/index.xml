@@ -2,78 +2,78 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux基础 on 邵晨峰的博客</title>
-    <link>shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/</link>
+    <link>http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/</link>
     <description>Recent content in linux基础 on 邵晨峰的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&lt;a href=&#34;https://beian.miit.gov.cn/&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Tue, 28 Jan 2020 00:34:39 +0900</lastBuildDate>
     
-        <atom:link href="shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>0.debian</title>
-        <link>shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/debian%E7%B3%BB/</link>
+        <link>http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/debian%E7%B3%BB/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
         
-        <guid>shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/debian%E7%B3%BB/</guid>
+        <guid>http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/debian%E7%B3%BB/</guid>
         <description></description>
       </item>
       
       <item>
         <title>0.RHEL</title>
-        <link>shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/</link>
+        <link>http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
         
-        <guid>shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/</guid>
+        <guid>http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/</guid>
         <description>包括RHEL和CentOS等红帽系操作系统的特定功能</description>
       </item>
       
       <item>
         <title>1.基础命令</title>
-        <link>shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</link>
+        <link>http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
         
-        <guid>shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</guid>
+        <guid>http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</guid>
         <description>早期学习的笔记，所以比较乱 # 常用命令 ## echo &amp;quot;str&amp;quot;|shell变量 显示一串字符串或 shell 变量 ## linux 环境变量 * $SHELL shell的类型</description>
       </item>
       
       <item>
         <title>Linus定义Linux</title>
-        <link>shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/linus%E5%AE%9A%E4%B9%89linux/</link>
+        <link>http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/linus%E5%AE%9A%E4%B9%89linux/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
         
-        <guid>shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/linus%E5%AE%9A%E4%B9%89linux/</guid>
+        <guid>http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/linus%E5%AE%9A%E4%B9%89linux/</guid>
         <description>Linus 定义 Linux 英文：Linus Torvalds，翻译：开源中国 www.oschina.net/translate/linux-a-free-unix-386-kernel 本文是 Linus 写于 1991年10月10日 LINUX是什么？ LINUX是一个免费类unix</description>
       </item>
       
       <item>
         <title>systemd启动管理</title>
-        <link>shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/systemd%E5%90%AF%E5%8A%A8%E7%AE%A1%E7%90%86/</link>
+        <link>http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/systemd%E5%90%AF%E5%8A%A8%E7%AE%A1%E7%90%86/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
         
-        <guid>shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/systemd%E5%90%AF%E5%8A%A8%E7%AE%A1%E7%90%86/</guid>
+        <guid>http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/systemd%E5%90%AF%E5%8A%A8%E7%AE%A1%E7%90%86/</guid>
         <description>历史 linux操作系统经历了从Sysvinit，到Upstart再到Systemd的进化， 还有其他的启动管理程序，但是用的不多 Sysvinit 其中Sysv</description>
       </item>
       
       <item>
         <title>tar命令和各种压缩格式的压缩和解压</title>
-        <link>shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/tar%E5%91%BD%E4%BB%A4%E5%92%8C%E5%90%84%E7%A7%8D%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/</link>
+        <link>http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/tar%E5%91%BD%E4%BB%A4%E5%92%8C%E5%90%84%E7%A7%8D%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
         
-        <guid>shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/tar%E5%91%BD%E4%BB%A4%E5%92%8C%E5%90%84%E7%A7%8D%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/</guid>
+        <guid>http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/tar%E5%91%BD%E4%BB%A4%E5%92%8C%E5%90%84%E7%A7%8D%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/</guid>
         <description>tar Linux下的归档使用工具，用来打包和备份。 补充说明 tar命令 可以为linux的文件和目录创建档案。利用tar，可以为某一特定文件创建档案</description>
       </item>
       
       <item>
         <title>中文、时区、编码</title>
-        <link>shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/%E4%B8%AD%E6%96%87%E6%97%B6%E5%8C%BA%E7%BC%96%E7%A0%81/</link>
+        <link>http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/%E4%B8%AD%E6%96%87%E6%97%B6%E5%8C%BA%E7%BC%96%E7%A0%81/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
         
-        <guid>shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/%E4%B8%AD%E6%96%87%E6%97%B6%E5%8C%BA%E7%BC%96%E7%A0%81/</guid>
+        <guid>http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/%E4%B8%AD%E6%96%87%E6%97%B6%E5%8C%BA%E7%BC%96%E7%A0%81/</guid>
         <description>设置中国时区 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 设置系统语言 export LC_ALL=zh_CN.UTF-8</description>
       </item>
       

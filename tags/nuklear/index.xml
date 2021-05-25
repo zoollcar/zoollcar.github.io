@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>nuklear on 邵晨峰的博客</title>
-    <link>shaochenfeng.com/tags/nuklear/</link>
+    <link>http://shaochenfeng.com/tags/nuklear/</link>
     <description>Recent content in nuklear on 邵晨峰的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&lt;a href=&#34;https://beian.miit.gov.cn/&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Sun, 22 Jul 2018 22:05:32 +0800</lastBuildDate>
     
-        <atom:link href="shaochenfeng.com/tags/nuklear/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://shaochenfeng.com/tags/nuklear/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>nuklear的设计与源码分析</title>
-        <link>shaochenfeng.com/blog/nuklear%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</link>
+        <link>http://shaochenfeng.com/blog/nuklear%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</link>
         <pubDate>Sun, 22 Jul 2018 22:05:32 +0800</pubDate>
         
-        <guid>shaochenfeng.com/blog/nuklear%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</guid>
+        <guid>http://shaochenfeng.com/blog/nuklear%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</guid>
         <description>&lt;h2 id=&#34;更新于-2020年2月-源作者已不再维护请谨慎选择&#34;&gt;更新于 2020年2月 源作者已不再维护，请谨慎选择&lt;/h2&gt;
 &lt;p&gt;最近在逛Github时发现了一个单文件跨平台零依赖的图形库&lt;a href=&#34;https://github.com/vurtun/nuklear&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;nuklear&lt;/strong&gt;&lt;/a&gt;，这使我产生了兴趣，一个大约两万行的程序，实现了很不错的效果，更神奇的是它是零依赖的，这意味着可以运用到类似单片机等特殊环境，于是我果断Fork了它开始了学习之路&lt;a href=&#34;https://github.com/zoollcar/nuklear&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;zoollcar/nuklear&lt;/strong&gt;&lt;/a&gt;，下面我们分析下nuklear图形库的源代码&lt;/p&gt;</description>
       </item>
