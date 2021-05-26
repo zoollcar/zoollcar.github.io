@@ -3,31 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://shaochenfeng.com/updates/2019_may/</loc>
-    <lastmod>2020-01-28T00:10:51+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shaochenfeng.com/updates/2019_april/</loc>
-    <lastmod>2020-01-28T00:10:48+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shaochenfeng.com/updates/2019_march/</loc>
-    <lastmod>2020-01-28T00:10:42+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shaochenfeng.com/updates/2019_february/</loc>
-    <lastmod>2020-01-28T00:10:37+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shaochenfeng.com/updates/2019_january/</loc>
-    <lastmod>2020-01-28T00:10:09+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/debian%E7%B3%BB/</loc>
     <lastmod>2020-01-28T00:34:39+09:00</lastmod>
   </url>
@@ -100,6 +75,21 @@
   <url>
     <loc>http://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2020-01-28T00:34:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://shaochenfeng.com/</loc>
+    <lastmod>2021-05-26T00:05:02+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://shaochenfeng.com/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="http://shaochenfeng.com/"
+                />
   </url>
   
   <url>
@@ -425,26 +415,6 @@
   <url>
     <loc>http://shaochenfeng.com/tags/%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/</loc>
     <lastmod>2020-02-28T11:19:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shaochenfeng.com/updates/</loc>
-    <lastmod>2020-01-28T00:08:29+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shaochenfeng.com/</loc>
-    <lastmod>2020-01-26T04:15:05+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://shaochenfeng.com/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="http://shaochenfeng.com/"
-                />
   </url>
   
   <url>
