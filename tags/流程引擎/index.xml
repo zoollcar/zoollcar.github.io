@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>流程引擎 on 邵晨峰的博客</title>
+    <link>http://shaochenfeng.com/tags/%E6%B5%81%E7%A8%8B%E5%BC%95%E6%93%8E/</link>
+    <description>Recent content in 流程引擎 on 邵晨峰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&lt;a href=&#34;https://beian.miit.gov.cn/&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Fri, 28 May 2021 00:44:34 +0000</lastBuildDate>
+    
+        <atom:link href="http://shaochenfeng.com/tags/%E6%B5%81%E7%A8%8B%E5%BC%95%E6%93%8E/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Camunda 快速入门</title>
+        <link>http://shaochenfeng.com/blog/camunda-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</link>
+        <pubDate>Fri, 28 May 2021 00:44:34 +0000</pubDate>
+        
+        <guid>http://shaochenfeng.com/blog/camunda-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</guid>
+        <description>本文为Camunda官网快速入门部分的中文版本 原文地址： https://docs.camunda.org/get-started/quick-start/ 0.介绍 本教程将指导您使用Camunda BPM平台建模并实现您的第一个工作流程，其</description>
+      </item>
+      
+    
+  </channel>
+</rss>

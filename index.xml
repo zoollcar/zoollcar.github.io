@@ -116,6 +116,15 @@
       </item>
       
       <item>
+        <title>Camunda 快速入门</title>
+        <link>http://shaochenfeng.com/blog/camunda-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</link>
+        <pubDate>Fri, 28 May 2021 00:44:34 +0000</pubDate>
+        
+        <guid>http://shaochenfeng.com/blog/camunda-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</guid>
+        <description>本文为Camunda官网快速入门部分的中文版本 原文地址： https://docs.camunda.org/get-started/quick-start/ 0.介绍 本教程将指导您使用Camunda BPM平台建模并实现您的第一个工作流程，其</description>
+      </item>
+      
+      <item>
         <title>源码安装方式 centos7 nginx php7.3</title>
         <link>http://shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8Fcentos7_nginx_php7.3/</link>
         <pubDate>Fri, 21 May 2021 21:21:28 +0000</pubDate>
