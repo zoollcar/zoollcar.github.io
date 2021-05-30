@@ -7,12 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&lt;a href=&#34;https://beian.miit.gov.cn/&#34; target=&#34;_blank&#34;&gt;冀ICP备18002899号&lt;/a&gt;    &amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Fri, 28 May 2021 00:44:34 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 30 May 2021 11:10:22 +0000</lastBuildDate>
     
         <atom:link href="http://shaochenfeng.com/tags/activity/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>Camunda SpringBoot与进阶内容</title>
+        <link>http://shaochenfeng.com/blog/camunda-springboot%E4%B8%8E%E8%BF%9B%E9%98%B6%E5%86%85%E5%AE%B9/</link>
+        <pubDate>Sun, 30 May 2021 11:10:22 +0000</pubDate>
+        
+        <guid>http://shaochenfeng.com/blog/camunda-springboot%E4%B8%8E%E8%BF%9B%E9%98%B6%E5%86%85%E5%AE%B9/</guid>
+        <description>介绍 在开始之前，首先确保你已经完成了快速入门部分 （http://shaochenfeng.com/blog/camunda-快速入门/） 本章</description>
+      </item>
       
       <item>
         <title>Camunda 快速入门</title>
