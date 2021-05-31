@@ -351,7 +351,6 @@
 
 
   
-  
     var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var tocElem = document.querySelector('.toc');
     var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
@@ -1135,7 +1134,6 @@
 </script>
 
     
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -2353,46 +2351,22 @@ var _mtac = {};
     <p>nginx Rtmp Module 是一个nginx插件，需要在在编译时和nginx一起编译安装，就可以利用nginx的转发能力进行直播了</p>
 <h2 id="下载源码">下载源码</h2>
 <p>首先准备好源码和常用编译工具（gcc之类的）</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">mkdir /opt/git <span class="c1"># 这里我偷懒直接把源码下载到这了，大家自行找地方</span>
-<span class="nb">cd</span> /opt/git
-git clone https://github.com/arut/nginx-rtmp-module.git <span class="c1"># 下载 nginx-rtmp-module</span>
-wget http://nginx.org/download/nginx-1.17.7.tar.gz <span class="c1"># 下载nginx，这里用的最新测试版，推荐大家用稳定版</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mkdir /opt/git <span style="color:#09f;font-style:italic"># 这里我偷懒直接把源码下载到这了，大家自行找地方</span>
+<span style="color:#366">cd</span> /opt/git
+git clone https://github.com/arut/nginx-rtmp-module.git <span style="color:#09f;font-style:italic"># 下载 nginx-rtmp-module</span>
+wget http://nginx.org/download/nginx-1.17.7.tar.gz <span style="color:#09f;font-style:italic"># 下载nginx，这里用的最新测试版，推荐大家用稳定版</span>
 tar -zxvf nginx-1.17.7.tar.gz
-<span class="nb">cd</span> nginx-1.17.7/
-./configure --prefix<span class="o">=</span>/opt/nginx1.17 --add-module<span class="o">=</span>/opt/git/nginx-rtmp-module <span class="c1"># 这里是重点，添加了一个mod</span>
-make <span class="o">&amp;&amp;</span> make install <span class="c1"># 编译安装</span>
-<span class="nb">cd</span> /opt/nginx1.17/
-vim /opt/nginx1.17/conf/nginx.conf <span class="c1"># 开始配置</span>
-<span class="c1"># 全部注释或删除 /opt/nginx1.17/conf/nginx.conf 中的配置</span>
-</code></pre></td></tr></table>
-</div>
-</div><pre><code class="language-conf" data-lang="conf"># 在配置的最高层，可以是开头或结尾，添加下面的包含
+<span style="color:#366">cd</span> nginx-1.17.7/
+./configure --prefix<span style="color:#555">=</span>/opt/nginx1.17 --add-module<span style="color:#555">=</span>/opt/git/nginx-rtmp-module <span style="color:#09f;font-style:italic"># 这里是重点，添加了一个mod</span>
+make <span style="color:#555">&amp;&amp;</span> make install <span style="color:#09f;font-style:italic"># 编译安装</span>
+<span style="color:#366">cd</span> /opt/nginx1.17/
+vim /opt/nginx1.17/conf/nginx.conf <span style="color:#09f;font-style:italic"># 开始配置</span>
+<span style="color:#09f;font-style:italic"># 全部注释或删除 /opt/nginx1.17/conf/nginx.conf 中的配置</span>
+</code></pre></div><pre><code class="language-conf" data-lang="conf"># 在配置的最高层，可以是开头或结尾，添加下面的包含
 include rtmp.conf
 </code></pre><h2 id="编辑rtmp配置文件">编辑rtmp配置文件</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">vim /opt/nginx1.17/conf/rtmp.conf
-</code></pre></td></tr></table>
-</div>
-</div><p>添加如下配置</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vim /opt/nginx1.17/conf/rtmp.conf
+</code></pre></div><p>添加如下配置</p>
 <pre><code class="language-conf" data-lang="conf">rtmp {
     server {
         listen 8883;  # 我使用的自定义端口，而不是标准的1935
@@ -2444,21 +2418,11 @@ http {
     }
 }
 </code></pre><h2 id="开启防火墙">开启防火墙</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">firewall-cmd --add-port<span class="o">=</span>8883/tcp
-firewall-cmd --add-port<span class="o">=</span>8883/udp
-firewall-cmd --add-port<span class="o">=</span>8884/tcp
-firewall-cmd --add-port<span class="o">=</span>8884/udp
-</code></pre></td></tr></table>
-</div>
-</div><p>至此服务器搭建完成</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">firewall-cmd --add-port<span style="color:#555">=</span>8883/tcp
+firewall-cmd --add-port<span style="color:#555">=</span>8883/udp
+firewall-cmd --add-port<span style="color:#555">=</span>8884/tcp
+firewall-cmd --add-port<span style="color:#555">=</span>8884/udp
+</code></pre></div><p>至此服务器搭建完成</p>
 <h2 id="使用">使用</h2>
 <p>obs推流到<br />
 rtmp://【ip地址】:8883/live</p>

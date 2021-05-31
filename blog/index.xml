@@ -38,7 +38,7 @@
         <pubDate>Fri, 21 May 2021 21:21:28 +0000</pubDate>
         
         <guid>http://shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8Fcentos7_nginx_php7.3/</guid>
-        <description>1.源码安装nginx 这里列出了全部步骤，如果要了解详情，可以查看 源码安装nginx到指定目录 1 2 3 4 5 6 7 yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget yum install -y pcre-devel zlib-devel wget</description>
+        <description>1.源码安装nginx 这里列出了全部步骤，如果要了解详情，可以查看 源码安装nginx到指定目录 yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget yum install -y pcre-devel zlib-devel wget http://nginx.org/download/nginx-1.16.1.tar.gz # 下载源码包</description>
       </item>
       
       <item>
@@ -56,7 +56,7 @@
         <pubDate>Fri, 21 May 2021 21:09:27 +0000</pubDate>
         
         <guid>http://shaochenfeng.com/blog/java%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84listsetmap%E7%9A%84%E7%A7%8D%E7%A7%8D%E6%96%B9%E6%B3%95/</guid>
-        <description>数组或list的遍历 1 double[] nums = new double[n]; for遍历 1 2 3 4 for(int i=0;i&amp;lt;nums.length;i++) { result += nums[i]; } for-each遍历 1 2 3 4 for(double item : nums) { result += item; } lambda表达式 1 2 3 4 5 items.forEach(item-&amp;gt;{</description>
+        <description>数组或list的遍历 double[] nums = new double[n]; for遍历 for(int i=0;i&amp;lt;nums.length;i++) { result += nums[i]; } for-each遍历 for(double item : nums) { result += item; } lambda表达式 items.forEach(item-&amp;gt;{ if(&amp;#34;C&amp;#34;.equals(item)){ ​ System.out.println(item); } }); 直接引用函数 items.forEach(System.out::println); se</description>
       </item>
       
       <item>
@@ -65,7 +65,7 @@
         <pubDate>Fri, 21 May 2021 21:06:41 +0000</pubDate>
         
         <guid>http://shaochenfeng.com/blog/java%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%BB%E5%86%99%E9%81%8D%E5%8E%86/</guid>
-        <description>读取文本文件 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 import java.io.BufferedReader; import java.io.FileInputStream; import java.io.InputStreamReader; import java.util.HashMap; public class TxtFileRead</description>
+        <description>读取文本文件 import java.io.BufferedReader; import java.io.FileInputStream; import java.io.InputStreamReader; import java.util.HashMap; public class TxtFileRead { public static void main(String[] args) { readFile1(); System.out.println(&amp;#34;===================&amp;#34;); //readFile2(); //JDK 7及以上才可以使用 } public static void readFile1() { FileInputStream fis = null; InputStreamReader isr = null; BufferedReader br = null; try { fis = new FileInputStream(&amp;#34;c:/temp/abc.txt&amp;#34;); // 节点类 isr = new InputStreamReader(fis, &amp;#34;UTF-8&amp;#34;);</description>
       </item>
       
       <item>
@@ -86,7 +86,7 @@
         <pubDate>Thu, 20 May 2021 23:38:38 +0000</pubDate>
         
         <guid>http://shaochenfeng.com/blog/java-%E8%AF%BB%E5%86%99gbk%E7%BC%96%E7%A0%81%E7%9A%84%E6%96%87%E4%BB%B6/</guid>
-        <description>以GBK编码某个读写文件 读入: 1 2 3 BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(&amp;#34;a.txt&amp;#34;), Charset.forName(&amp;#34;GBK&amp;#34;))); String str = br.readLine(); br.close(); 写出: 1 2 3 4 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(&amp;#34;a.txt&amp;#34;), Charset.forName(&amp;#34;GBK&amp;#34;))); bw.write(&amp;#34;hello&amp;#34;); bw.flush(); bw.close(); 使用try-with-resource语法</description>
+        <description>以GBK编码某个读写文件 读入: BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(&amp;#34;a.txt&amp;#34;), Charset.forName(&amp;#34;GBK&amp;#34;))); String str = br.readLine(); br.close(); 写出: BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(&amp;#34;a.txt&amp;#34;), Charset.forName(&amp;#34;GBK&amp;#34;))); bw.write(&amp;#34;hello&amp;#34;); bw.flush(); bw.close(); 使用try-with-resource语法确保close</description>
       </item>
       
       <item>
@@ -113,7 +113,7 @@
         <pubDate>Sun, 08 Mar 2020 22:00:12 +0800</pubDate>
         
         <guid>http://shaochenfeng.com/blog/cento8%E5%AE%89%E8%A3%85szabbix%E7%9B%91%E6%8E%A7/</guid>
-        <description>安装中文支持 不然安装以后web界面不能设置为中文 1 2 dnf install langpacks-zh_CN # 在centos7中是 yum install kde-l10n-Chinese 下载源码 浏览器打开 https://www.zabbix.com/download_sources 下载最新的长期支持版，上传到服务器</description>
+        <description>安装中文支持 不然安装以后web界面不能设置为中文 dnf install langpacks-zh_CN # 在centos7中是 yum install kde-l10n-Chinese 下载源码 浏览器打开 https://www.zabbix.com/download_sources 下载最新的长期支持版，上传到服务器 在服</description>
       </item>
       
       <item>
@@ -201,41 +201,21 @@
         
         <guid>http://shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85nginx%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95/</guid>
         <description>&lt;h2 id=&#34;首先是全部步骤概括&#34;&gt;首先是全部步骤概括&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget
 yum install -y pcre-devel zlib-devel
-wget http://nginx.org/download/nginx-1.16.1.tar.gz &lt;span class=&#34;c1&#34;&gt;# 下载源码包&lt;/span&gt;
+wget http://nginx.org/download/nginx-1.16.1.tar.gz &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;# 下载源码包&lt;/span&gt;
 tar -zxvf nginx-1.16.1.tar.gz
-&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; nginx-1.16.1
-./configure --prefix&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/opt/nginx1.16 &lt;span class=&#34;c1&#34;&gt;# 这里指定安装目录&lt;/span&gt;
-make &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install
+&lt;span style=&#34;color:#366&#34;&gt;cd&lt;/span&gt; nginx-1.16.1
+./configure --prefix&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;/opt/nginx1.16 &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;# 这里指定安装目录&lt;/span&gt;
+make &lt;span style=&#34;color:#555&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install
 useradd www -s /bin/false
-vi /opt/nginx1.16/conf/nginx.conf &lt;span class=&#34;c1&#34;&gt;# 修改配置文件&lt;/span&gt;
-&lt;span class=&#34;c1&#34;&gt;# 第一行去掉前面井号并改为 user  www;&lt;/span&gt;
-/opt/nginx1.16/sbin/nginx &lt;span class=&#34;c1&#34;&gt;#启动nginx&lt;/span&gt;
-&lt;span class=&#34;c1&#34;&gt;#以下为可选&lt;/span&gt;
-/opt/nginx1.16/sbin/nginx -s stop  &lt;span class=&#34;c1&#34;&gt;#停止&lt;/span&gt;
-/opt/nginx1.16/sbin/nginx -s reload  &lt;span class=&#34;c1&#34;&gt;#重新载入配置&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
+vi /opt/nginx1.16/conf/nginx.conf &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;# 修改配置文件&lt;/span&gt;
+&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;# 第一行去掉前面井号并改为 user  www;&lt;/span&gt;
+/opt/nginx1.16/sbin/nginx &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;#启动nginx&lt;/span&gt;
+&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;#以下为可选&lt;/span&gt;
+/opt/nginx1.16/sbin/nginx -s stop  &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;#停止&lt;/span&gt;
+/opt/nginx1.16/sbin/nginx -s reload  &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;#重新载入配置&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
       </item>
       
       <item>
@@ -311,29 +291,13 @@ vi /opt/nginx1.16/conf/nginx.conf &lt;span class=&#34;c1&#34;&gt;# 修改配置�
         
         <guid>http://shaochenfeng.com/blog/2020%E5%B9%B4centos87%E6%9B%B4%E6%8D%A2yum%E6%BA%90%E4%B8%BA%E9%98%BF%E9%87%8C%E6%BA%90/</guid>
         <description>&lt;h2 id=&#34;1首先备份当前配置文件&#34;&gt;1.首先备份当前配置文件&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;2下载新的-centos-baserepo-到-etcyumreposd&#34;&gt;2.下载新的 CentOS-Base.repo 到 /etc/yum.repos.d&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;2下载新的-centos-baserepo-到-etcyumreposd&#34;&gt;2.下载新的 CentOS-Base.repo 到 /etc/yum.repos.d&lt;/h2&gt;
 &lt;p&gt;对于CentOS8&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-8.repo
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-8.repo
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
       </item>
       
       <item>

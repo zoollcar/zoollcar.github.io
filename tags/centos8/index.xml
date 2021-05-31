@@ -20,7 +20,7 @@
         <pubDate>Sun, 08 Mar 2020 22:00:12 +0800</pubDate>
         
         <guid>http://shaochenfeng.com/blog/cento8%E5%AE%89%E8%A3%85szabbix%E7%9B%91%E6%8E%A7/</guid>
-        <description>安装中文支持 不然安装以后web界面不能设置为中文 1 2 dnf install langpacks-zh_CN # 在centos7中是 yum install kde-l10n-Chinese 下载源码 浏览器打开 https://www.zabbix.com/download_sources 下载最新的长期支持版，上传到服务器</description>
+        <description>安装中文支持 不然安装以后web界面不能设置为中文 dnf install langpacks-zh_CN # 在centos7中是 yum install kde-l10n-Chinese 下载源码 浏览器打开 https://www.zabbix.com/download_sources 下载最新的长期支持版，上传到服务器 在服</description>
       </item>
       
       <item>

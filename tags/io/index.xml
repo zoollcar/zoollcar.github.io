@@ -20,7 +20,7 @@
         <pubDate>Fri, 21 May 2021 21:06:41 +0000</pubDate>
         
         <guid>http://shaochenfeng.com/blog/java%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%BB%E5%86%99%E9%81%8D%E5%8E%86/</guid>
-        <description>读取文本文件 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 import java.io.BufferedReader; import java.io.FileInputStream; import java.io.InputStreamReader; import java.util.HashMap; public class TxtFileRead</description>
+        <description>读取文本文件 import java.io.BufferedReader; import java.io.FileInputStream; import java.io.InputStreamReader; import java.util.HashMap; public class TxtFileRead { public static void main(String[] args) { readFile1(); System.out.println(&amp;#34;===================&amp;#34;); //readFile2(); //JDK 7及以上才可以使用 } public static void readFile1() { FileInputStream fis = null; InputStreamReader isr = null; BufferedReader br = null; try { fis = new FileInputStream(&amp;#34;c:/temp/abc.txt&amp;#34;); // 节点类 isr = new InputStreamReader(fis, &amp;#34;UTF-8&amp;#34;);</description>
       </item>
       
     

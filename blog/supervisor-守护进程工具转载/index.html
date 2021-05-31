@@ -351,7 +351,6 @@
 
 
   
-  
     var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var tocElem = document.querySelector('.toc');
     var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
@@ -1135,7 +1134,6 @@
 </script>
 
     
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -2377,31 +2375,16 @@ echo_supervisord_conf &gt; /etc/supervisor/supervisord.conf<br />
 [include]
 files = conf.d/*.conf
 </code></pre><p>b) 为你的程序创建一个.conf文件，放在目录&rdquo;/etc/supervisor/conf.d/&ldquo;下。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">[program:MGToastServer] ;程序名称，终端控制时需要的标识</span>
-<span class="na">command</span><span class="o">=</span><span class="s">dotnet MGToastServer.dll ; 运行程序的命令</span>
-<span class="na">directory</span><span class="o">=</span><span class="s">/root/文档/toastServer/ ; 命令执行的目录</span>
-<span class="na">autorestart</span><span class="o">=</span><span class="s">true ; 程序意外退出是否自动重启</span>
-<span class="na">stderr_logfile</span><span class="o">=</span><span class="s">/var/log/MGToastServer.err.log ; 错误日志文件</span>
-<span class="na">stdout_logfile</span><span class="o">=</span><span class="s">/var/log/MGToastServer.out.log ; 输出日志文件</span>
-<span class="na">environment</span><span class="o">=</span><span class="s">ASPNETCORE_ENVIRONMENT=Production ; 进程环境变量</span>
-<span class="na">user</span><span class="o">=</span><span class="s">root ; 进程执行的用户身份</span>
-<span class="na">stopsignal</span><span class="o">=</span><span class="s">INT</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>c) 运行supervisord，查看是否生效</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#309">[program:MGToastServer] ;程序名称，终端控制时需要的标识</span>
+<span style="color:#309">command</span><span style="color:#555">=</span><span style="color:#c30">dotnet MGToastServer.dll ; 运行程序的命令</span>
+<span style="color:#309">directory</span><span style="color:#555">=</span><span style="color:#c30">/root/文档/toastServer/ ; 命令执行的目录</span>
+<span style="color:#309">autorestart</span><span style="color:#555">=</span><span style="color:#c30">true ; 程序意外退出是否自动重启</span>
+<span style="color:#309">stderr_logfile</span><span style="color:#555">=</span><span style="color:#c30">/var/log/MGToastServer.err.log ; 错误日志文件</span>
+<span style="color:#309">stdout_logfile</span><span style="color:#555">=</span><span style="color:#c30">/var/log/MGToastServer.out.log ; 输出日志文件</span>
+<span style="color:#309">environment</span><span style="color:#555">=</span><span style="color:#c30">ASPNETCORE_ENVIRONMENT=Production ; 进程环境变量</span>
+<span style="color:#309">user</span><span style="color:#555">=</span><span style="color:#c30">root ; 进程执行的用户身份</span>
+<span style="color:#309">stopsignal</span><span style="color:#555">=</span><span style="color:#c30">INT</span>
+</code></pre></div><p>c) 运行supervisord，查看是否生效</p>
 <pre><code>supervisord -c /etc/supervisor/supervisord.conf
 ps -ef | grep MGToastServer
 </code></pre><blockquote>
@@ -2409,84 +2392,36 @@ ps -ef | grep MGToastServer
 </blockquote>
 <h2 id="4配置supervisor开机启动">4、配置Supervisor开机启动</h2>
 <p>a) 新建一个“supervisord.service”文件</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-service" data-lang="service"><span class="c"># dservice for systemd (CentOS 7.0+)</span>
-<span class="c"># by ET-CS (https://github.com/ET-CS)</span>
-<span class="k">[Unit]</span>
-<span class="na">Description</span><span class="o">=</span><span class="s">Supervisor daemon</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-service" data-lang="service"><span style="color:#09f;font-style:italic"># dservice for systemd (CentOS 7.0+)</span>
+<span style="color:#09f;font-style:italic"># by ET-CS (https://github.com/ET-CS)</span>
+<span style="color:#069;font-weight:bold">[Unit]</span>
+<span style="color:#309">Description</span><span style="color:#555">=</span><span style="color:#c30">Supervisor daemon</span>
 
-<span class="k">[Service]</span>
-<span class="na">Type</span><span class="o">=</span><span class="s">forking</span>
-<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/bin/supervisord -c /etc/supervisor/supervisord.conf</span>
-<span class="na">ExecStop</span><span class="o">=</span><span class="s">/usr/bin/supervisorctl shutdown</span>
-<span class="na">ExecReload</span><span class="o">=</span><span class="s">/usr/bin/supervisorctl reload</span>
-<span class="na">KillMode</span><span class="o">=</span><span class="s">process</span>
-<span class="na">Restart</span><span class="o">=</span><span class="s">on-failure</span>
-<span class="na">RestartSec</span><span class="o">=</span><span class="s">42s</span>
+<span style="color:#069;font-weight:bold">[Service]</span>
+<span style="color:#309">Type</span><span style="color:#555">=</span><span style="color:#c30">forking</span>
+<span style="color:#309">ExecStart</span><span style="color:#555">=</span><span style="color:#c30">/usr/bin/supervisord -c /etc/supervisor/supervisord.conf</span>
+<span style="color:#309">ExecStop</span><span style="color:#555">=</span><span style="color:#c30">/usr/bin/supervisorctl shutdown</span>
+<span style="color:#309">ExecReload</span><span style="color:#555">=</span><span style="color:#c30">/usr/bin/supervisorctl reload</span>
+<span style="color:#309">KillMode</span><span style="color:#555">=</span><span style="color:#c30">process</span>
+<span style="color:#309">Restart</span><span style="color:#555">=</span><span style="color:#c30">on-failure</span>
+<span style="color:#309">RestartSec</span><span style="color:#555">=</span><span style="color:#c30">42s</span>
 
-<span class="k">[Install]</span>
-<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>b) 将文件拷贝至&rdquo;/usr/lib/systemd/system/supervisord.service&quot;</p>
+<span style="color:#069;font-weight:bold">[Install]</span>
+<span style="color:#309">WantedBy</span><span style="color:#555">=</span><span style="color:#c30">multi-user.target</span>
+</code></pre></div><p>b) 将文件拷贝至&rdquo;/usr/lib/systemd/system/supervisord.service&quot;</p>
 <p>c) 执行命令</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">systemctl <span class="nb">enable</span> supervisord
-</code></pre></td></tr></table>
-</div>
-</div><p>d) 执行命令来验证是否为开机启动</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">systemctl is-enabled supervisord
-</code></pre></td></tr></table>
-</div>
-</div><p>配置完成啦.<br />
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">systemctl <span style="color:#366">enable</span> supervisord
+</code></pre></div><p>d) 执行命令来验证是否为开机启动</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">systemctl is-enabled supervisord
+</code></pre></div><p>配置完成啦.<br />
 常用的相关管理命令</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">supervisorctl restart &lt;application name&gt; <span class="p">;</span>重启指定应用
-supervisorctl stop &lt;application name&gt; <span class="p">;</span>停止指定应用
-supervisorctl start &lt;application name&gt; <span class="p">;</span>启动指定应用
-supervisorctl restart all <span class="p">;</span>重启所有应用
-supervisorctl stop all <span class="p">;</span>停止所有应用
-supervisorctl start all <span class="p">;</span>启动所有应用
-</code></pre></td></tr></table>
-</div>
-</div><p>来源：https://www.jianshu.com/p/39b476e808d8</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">supervisorctl restart &lt;application name&gt; ;重启指定应用
+supervisorctl stop &lt;application name&gt; ;停止指定应用
+supervisorctl start &lt;application name&gt; ;启动指定应用
+supervisorctl restart all ;重启所有应用
+supervisorctl stop all ;停止所有应用
+supervisorctl start all ;启动所有应用
+</code></pre></div><p>来源：https://www.jianshu.com/p/39b476e808d8</p>
   </article>
 </div>
       

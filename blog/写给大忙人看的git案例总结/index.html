@@ -351,7 +351,6 @@
 
 
   
-  
     var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var tocElem = document.querySelector('.toc');
     var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
@@ -1135,7 +1134,6 @@
 </script>
 
     
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -2362,215 +2360,81 @@ var _mtac = {};
 <p>删除仓库所有历史记录，仅保留当前文件</p>
 <p>修改前n次commit的提交信息</p>
 <h2 id="配置git用户名邮件">配置git用户名邮件</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git config --global user.name <span class="s2">&#34;Your Name&#34;</span>  
-git config --global user.email <span class="s2">&#34;email@example.com&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="单纯的下载一个仓库">单纯的下载一个仓库</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git config --global user.name <span style="color:#c30">&#34;Your Name&#34;</span>  
+git config --global user.email <span style="color:#c30">&#34;email@example.com&#34;</span>
+</code></pre></div><h2 id="单纯的下载一个仓库">单纯的下载一个仓库</h2>
 <p>最常用的方法</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git clone https://github.com/xxx/xxx.git
-</code></pre></td></tr></table>
-</div>
-</div><p>项目太大，想快点下载，不需要历史记录</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git clone --depth <span class="m">1</span> https://github.com/xxx/xxx.git
-</code></pre></td></tr></table>
-</div>
-</div><p>想快速下载非master分支</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git clone --depth <span class="m">1</span> https://github.com/xxx/xxx.git
-<span class="nb">cd</span> xxx
-git remote set-branches origin <span class="s1">&#39;remote_branch_name&#39;</span>
-git fetch --depth <span class="m">1</span> origin remote_branch_name
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://github.com/xxx/xxx.git
+</code></pre></div><p>项目太大，想快点下载，不需要历史记录</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone --depth <span style="color:#f60">1</span> https://github.com/xxx/xxx.git
+</code></pre></div><p>想快速下载非master分支</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone --depth <span style="color:#f60">1</span> https://github.com/xxx/xxx.git
+<span style="color:#366">cd</span> xxx
+git remote set-branches origin <span style="color:#c30">&#39;remote_branch_name&#39;</span>
+git fetch --depth <span style="color:#f60">1</span> origin remote_branch_name
 git checkout remote_branch_name
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="将远程仓库的更新拉到本地仓库不影响本地已有的提交">将远程仓库的更新拉到本地仓库（不影响本地已有的提交）</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git pull origin master
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="将本地修改上传到远程仓库">将本地修改上传到远程仓库</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git add .
-git commit -m <span class="s2">&#34;提交说明&#34;</span>
+</code></pre></div><h2 id="将远程仓库的更新拉到本地仓库不影响本地已有的提交">将远程仓库的更新拉到本地仓库（不影响本地已有的提交）</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git pull origin master
+</code></pre></div><h2 id="将本地修改上传到远程仓库">将本地修改上传到远程仓库</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git add .
+git commit -m <span style="color:#c30">&#34;提交说明&#34;</span>
 git push origin master
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="将本地更改上传到远程仓库并使本地远程一致">将本地更改上传到远程仓库，并使本地远程一致</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git add .
-git commit -m <span class="s2">&#34;提交说明&#34;</span>
+</code></pre></div><h2 id="将本地更改上传到远程仓库并使本地远程一致">将本地更改上传到远程仓库，并使本地远程一致</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git add .
+git commit -m <span style="color:#c30">&#34;提交说明&#34;</span>
 git pull origin master
 git push origin master
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="新建一个仓库并用本地代码初始化">新建一个仓库并用本地代码初始化</h2>
+</code></pre></div><h2 id="新建一个仓库并用本地代码初始化">新建一个仓库并用本地代码初始化</h2>
 <p>首先到github或其他git网站上创建一个新仓库，获得新仓库地址，类似于 <code>https://github.com/xxx/xxx.git</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git init
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git init
 git add -A
-git commit -m <span class="s2">&#34;初始化代码&#34;</span>
+git commit -m <span style="color:#c30">&#34;初始化代码&#34;</span>
 git remote add origin https://github.com/xxx/xxx.git
 git push -u origin master
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="我不想同步某些文件文件夹">我不想同步某些文件/文件夹</h2>
+</code></pre></div><h2 id="我不想同步某些文件文件夹">我不想同步某些文件/文件夹</h2>
 <p>在仓库的根目录下新建 <code>.gitignore</code> 文件<br />
 其中写上要忽略的内容，支持文件、文件夹、通配符</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">target/
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">target/
 .idea/
 *.log
 somefile.txt
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="从master创建临时分支作修改然后合并到主分支">从master创建临时分支作修改，然后合并到主分支</h2>
+</code></pre></div><h2 id="从master创建临时分支作修改然后合并到主分支">从master创建临时分支作修改，然后合并到主分支</h2>
 <ol>
 <li>创建临时分支</li>
 </ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git checkout master
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git checkout master
 git pull origin master
 git checkout -b tmp
-git push origin tmp <span class="c1"># 在远程也创建临时分支</span>
-git branch --set-upstream-to<span class="o">=</span>origin/tmp
+git push origin tmp <span style="color:#09f;font-style:italic"># 在远程也创建临时分支</span>
+git branch --set-upstream-to<span style="color:#555">=</span>origin/tmp
 git pull origin tmp
-</code></pre></td></tr></table>
-</div>
-</div><ol start="2">
+</code></pre></div><ol start="2">
 <li>用你喜欢的方式作修改代码，在此过程中可以提交代码</li>
 </ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git add .
-git commit -m <span class="s2">&#34;提交说明&#34;</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git add .
+git commit -m <span style="color:#c30">&#34;提交说明&#34;</span>
 git push origin tmp
-</code></pre></td></tr></table>
-</div>
-</div><ol start="3">
+</code></pre></div><ol start="3">
 <li>最后合并分支tmp到master，然后删除tmp</li>
 </ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git checkout master
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git checkout master
 git merge tmp
 git push origin master
 git branch -d tmp
 git push origin --delete tmp
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="删除仓库所有历史记录仅保留当前文件">删除仓库所有历史记录，仅保留当前文件</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git checkout --orphan lastest <span class="c1"># 从0新建分支</span>
-git add -A <span class="c1"># 添加所有当前文件到分支</span>
-git commit -m <span class="s2">&#34;init信息&#34;</span>
-git branch -D master <span class="c1"># 删除master分支</span>
-git branch -m master <span class="c1"># 重命名当前分支为master</span>
-git push -f origin master <span class="c1"># 强制提交到远程</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="修改前n次commit的提交信息">修改前n次commit的提交信息</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git rebase -i HEAD~n <span class="c1"># 这里查看最近n次commit提交信息</span>
-<span class="c1"># 然后进入编辑模式，将需要修改的commit那一行的pick修改为edit，保存退出</span>
-git commit --amend <span class="c1"># 这会进入上面修改对应的commit提交信息</span>
-git rebase --continue <span class="c1"># 回到正常状态</span>
-</code></pre></td></tr></table>
-</div>
-</div>
+</code></pre></div><h2 id="删除仓库所有历史记录仅保留当前文件">删除仓库所有历史记录，仅保留当前文件</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git checkout --orphan lastest <span style="color:#09f;font-style:italic"># 从0新建分支</span>
+git add -A <span style="color:#09f;font-style:italic"># 添加所有当前文件到分支</span>
+git commit -m <span style="color:#c30">&#34;init信息&#34;</span>
+git branch -D master <span style="color:#09f;font-style:italic"># 删除master分支</span>
+git branch -m master <span style="color:#09f;font-style:italic"># 重命名当前分支为master</span>
+git push -f origin master <span style="color:#09f;font-style:italic"># 强制提交到远程</span>
+</code></pre></div><h2 id="修改前n次commit的提交信息">修改前n次commit的提交信息</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git rebase -i HEAD~n <span style="color:#09f;font-style:italic"># 这里查看最近n次commit提交信息</span>
+<span style="color:#09f;font-style:italic"># 然后进入编辑模式，将需要修改的commit那一行的pick修改为edit，保存退出</span>
+git commit --amend <span style="color:#09f;font-style:italic"># 这会进入上面修改对应的commit提交信息</span>
+git rebase --continue <span style="color:#09f;font-style:italic"># 回到正常状态</span>
+</code></pre></div>
   </article>
 </div>
       

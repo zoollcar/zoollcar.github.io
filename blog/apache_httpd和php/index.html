@@ -351,7 +351,6 @@
 
 
   
-  
     var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var tocElem = document.querySelector('.toc');
     var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
@@ -1135,7 +1134,6 @@
 </script>
 
     
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -2357,90 +2355,35 @@ var _mtac = {};
 </ul>
 <h2 id="yum方式安装httpd和php">yum方式安装httpd和php</h2>
 <p>centos8</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">dnf install httpd
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">dnf install httpd
 dnf install php
-</code></pre></td></tr></table>
-</div>
-</div><p>默认是php7.2版本</p>
+</code></pre></div><p>默认是php7.2版本</p>
 <p>centos7</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">yum install httpd
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum install httpd
 yum install php
-</code></pre></td></tr></table>
-</div>
-</div><p>默认是php5.4版本</p>
+</code></pre></div><p>默认是php5.4版本</p>
 <p>这会自动为httpd安装php插件，并启用，使用OSO方式运行php，也就是php作为httpd的模块<br />
 默认为每个网站都配置了php的支持，直接就能可以使用</p>
 <h2 id="测试一下">测试一下</h2>
 <p>创建测试文件</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">echo</span> -e <span class="s2">&#34;&lt;?php\nphpinfo();\n?&gt;&#34;</span>&gt; /var/www/html/index.php
-<span class="nb">echo</span> -e <span class="s2">&#34;&lt;?php\nphpinfo();\n?&gt;&#34;</span>&gt; /usr/share/nginx/html/index.php
-</code></pre></td></tr></table>
-</div>
-</div><p>这样就可以通过 http://&lt;你的服务器ip&gt; 访问下</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#366">echo</span> -e <span style="color:#c30">&#34;&lt;?php\nphpinfo();\n?&gt;&#34;</span>&gt; /var/www/html/index.php
+<span style="color:#366">echo</span> -e <span style="color:#c30">&#34;&lt;?php\nphpinfo();\n?&gt;&#34;</span>&gt; /usr/share/nginx/html/index.php
+</code></pre></div><p>这样就可以通过 http://&lt;你的服务器ip&gt; 访问下</p>
 <h2 id="源码方式安装php73">源码方式安装php7.3</h2>
 <p>环境 centos8</p>
 <h3 id="1首先安装-httpd-和-httpd-devel">1.首先安装 httpd 和 httpd-devel</h3>
 <p>这里安装httpd-devel是为了使用apxs动态加载插件</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">dnf install httpd httpd-devel
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="2安装必要的依赖">2.安装必要的依赖</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">dnf install libxml2-devel openssl-devel libcurl libcurl-devel libjpeg-turbo-devel libpng-devel freetype-devel libzip-devel gcc make
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="3下载php源码包">3.下载php源码包</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">wget https://www.php.net/distributions/php-7.3.13.tar.xz
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="4解压编译安装">4.解压、编译、安装</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> php-7.3.13
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">dnf install httpd httpd-devel
+</code></pre></div><h3 id="2安装必要的依赖">2.安装必要的依赖</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">dnf install libxml2-devel openssl-devel libcurl libcurl-devel libjpeg-turbo-devel libpng-devel freetype-devel libzip-devel gcc make
+</code></pre></div><h3 id="3下载php源码包">3.下载php源码包</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">wget https://www.php.net/distributions/php-7.3.13.tar.xz
+</code></pre></div><h3 id="4解压编译安装">4.解压、编译、安装</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#366">cd</span> php-7.3.13
 tar xvf php-7.3.13.tar.xz
-./configure --prefix<span class="o">=</span>/opt/php7.3 --with-apxs2<span class="o">=</span>/usr/bin/apxs --with-config-file-path<span class="o">=</span>/opt/php7.3/usr --enable-mbstring --with-openssl --enable-ftp --with-gd --with-jpeg-dir<span class="o">=</span>/opt/php7.3/usr --with-png-dir<span class="o">=</span>/opt/php7.3/usr --with-mysqli<span class="o">=</span>mysqlnd --with-pdo-mysql<span class="o">=</span>mysqlnd --with-pear --enable-sockets --with-freetype-dir<span class="o">=</span>/opt/php7.3/usr --with-zlib --with-libxml-dir<span class="o">=</span>/opt/php7.3/usr --with-xmlrpc --enable-zip --enable-fpm --enable-xml --enable-sockets --with-gd --with-zlib --with-iconv --enable-zip --with-freetype-dir<span class="o">=</span>/opt/php7.3/usr/lib --enable-soap --enable-pcntl --enable-cli --with-curl --enable-bcmath --with-gettext
-make <span class="o">&amp;&amp;</span> make install
-</code></pre></td></tr></table>
-</div>
-</div><blockquote>
+./configure --prefix<span style="color:#555">=</span>/opt/php7.3 --with-apxs2<span style="color:#555">=</span>/usr/bin/apxs --with-config-file-path<span style="color:#555">=</span>/opt/php7.3/usr --enable-mbstring --with-openssl --enable-ftp --with-gd --with-jpeg-dir<span style="color:#555">=</span>/opt/php7.3/usr --with-png-dir<span style="color:#555">=</span>/opt/php7.3/usr --with-mysqli<span style="color:#555">=</span>mysqlnd --with-pdo-mysql<span style="color:#555">=</span>mysqlnd --with-pear --enable-sockets --with-freetype-dir<span style="color:#555">=</span>/opt/php7.3/usr --with-zlib --with-libxml-dir<span style="color:#555">=</span>/opt/php7.3/usr --with-xmlrpc --enable-zip --enable-fpm --enable-xml --enable-sockets --with-gd --with-zlib --with-iconv --enable-zip --with-freetype-dir<span style="color:#555">=</span>/opt/php7.3/usr/lib --enable-soap --enable-pcntl --enable-cli --with-curl --enable-bcmath --with-gettext
+make <span style="color:#555">&amp;&amp;</span> make install
+</code></pre></div><blockquote>
 <p>这里使用 <code>--prefix=/opt/php7.3</code> 安装在 /opt/php7.3 ，可以自定义安装位置</p>
 </blockquote>
 <blockquote>

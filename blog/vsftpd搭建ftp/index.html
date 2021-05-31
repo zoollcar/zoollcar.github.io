@@ -351,7 +351,6 @@
 
 
   
-  
     var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var tocElem = document.querySelector('.toc');
     var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
@@ -1134,7 +1133,6 @@
 </script>
 
     
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -2354,15 +2352,8 @@ var _mtac = {};
 <p>一种是<code>sftp</code>，是使用ssh作为通道传输文件，因为ssh是全程加密的，所以，以ssh作为通道传输ftp也就是安全的。这种方式优点是不再占用20、21端口，只使用22端口就可以完成全部任务，缺点是传送速度慢，尤其是大量小文件的速度极慢</p>
 <p>一种是<code>ftps</code>，是ftp协议使用ssl加密的版本，这种方式，使用的端口和ftp一样，只是建立连接后使用ssl加密传输文件，优点是可以独立控制用户密码，有各种高级功能，速度也很快，本文使用的vsftpd就是一个ftp服务器软件</p>
 <h2 id="安装vsftp非常简单">安装vsftp非常简单</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">yum install -y vsftpd
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="修改配置文件">修改配置文件</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum install -y vsftpd
+</code></pre></div><h2 id="修改配置文件">修改配置文件</h2>
 <p>参照下面常用参数，修改配置文件 <code>/etc/vsftpd/vsftpd.conf</code></p>
 <ul>
 <li>
@@ -2413,28 +2404,12 @@ userlist_deny ： 配置user_list为黑名单还是白名单</p>
 <p>简单来说，user_list是一个用户列表，根据userlist_enable和userlist_deny两个参数的不同，有不同的作用：</p>
 <p>如果 userlist_enable=NO 则user_list文件无效</p>
 <p>设置user_list为白名单</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">userlist_enable</span><span class="o">=</span><span class="s">YES</span>
-<span class="na">userlist_deny</span><span class="o">=</span><span class="s">NO</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>设置user_list为黑名单</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">userlist_enable</span><span class="o">=</span><span class="s">YES</span>
-<span class="na">userlist_deny</span><span class="o">=</span><span class="s">YES</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>超级黑名单 /etc/vsftpd/ftpusers</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#309">userlist_enable</span><span style="color:#555">=</span><span style="color:#c30">YES</span>
+<span style="color:#309">userlist_deny</span><span style="color:#555">=</span><span style="color:#c30">NO</span>
+</code></pre></div><p>设置user_list为黑名单</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#309">userlist_enable</span><span style="color:#555">=</span><span style="color:#c30">YES</span>
+<span style="color:#309">userlist_deny</span><span style="color:#555">=</span><span style="color:#c30">YES</span>
+</code></pre></div><p>超级黑名单 /etc/vsftpd/ftpusers</p>
 <h2 id="启动与停止">启动与停止</h2>
 <p>启动 systemctl start vsftpd<br />
 停止 systemctl stop vsftpd</p>

@@ -351,7 +351,6 @@
 
 
   
-  
     var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var tocElem = document.querySelector('.toc');
     var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
@@ -1129,7 +1128,6 @@
 </script>
 
     
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -2078,71 +2076,31 @@ CentOS 7 或 8</p>
 </blockquote>
 <p>参考<a href="https://docs.docker.com/engine/install/centos/" target="_blank">官方安装教程</a><br />
 先卸载旧版本</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">sudo yum remove docker <span class="se">\
-</span><span class="se"></span>                  docker-client <span class="se">\
-</span><span class="se"></span>                  docker-client-latest <span class="se">\
-</span><span class="se"></span>                  docker-common <span class="se">\
-</span><span class="se"></span>                  docker-latest <span class="se">\
-</span><span class="se"></span>                  docker-latest-logrotate <span class="se">\
-</span><span class="se"></span>                  docker-logrotate <span class="se">\
-</span><span class="se"></span>                  docker-engine
-</code></pre></td></tr></table>
-</div>
-</div><p>下面可以从3种安装方式中挑选安装</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum remove docker <span style="color:#c30;font-weight:bold">\
+</span><span style="color:#c30;font-weight:bold"></span>                  docker-client <span style="color:#c30;font-weight:bold">\
+</span><span style="color:#c30;font-weight:bold"></span>                  docker-client-latest <span style="color:#c30;font-weight:bold">\
+</span><span style="color:#c30;font-weight:bold"></span>                  docker-common <span style="color:#c30;font-weight:bold">\
+</span><span style="color:#c30;font-weight:bold"></span>                  docker-latest <span style="color:#c30;font-weight:bold">\
+</span><span style="color:#c30;font-weight:bold"></span>                  docker-latest-logrotate <span style="color:#c30;font-weight:bold">\
+</span><span style="color:#c30;font-weight:bold"></span>                  docker-logrotate <span style="color:#c30;font-weight:bold">\
+</span><span style="color:#c30;font-weight:bold"></span>                  docker-engine
+</code></pre></div><p>下面可以从3种安装方式中挑选安装</p>
 <h4 id="安装方式1使用docker-的存储库并从中安装以方便安装和升级任务这是官方建议的方法">安装方式1：使用Docker 的存储库‎‎并从中安装，以方便安装和升级任务。这是官方建议的方法。‎</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">sudo yum install -y yum-utils
-sudo yum-config-manager <span class="se">\
-</span><span class="se"></span>    --add-repo <span class="se">\
-</span><span class="se"></span>    https://download.docker.com/linux/centos/docker-ce.repo
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum install -y yum-utils
+sudo yum-config-manager <span style="color:#c30;font-weight:bold">\
+</span><span style="color:#c30;font-weight:bold"></span>    --add-repo <span style="color:#c30;font-weight:bold">\
+</span><span style="color:#c30;font-weight:bold"></span>    https://download.docker.com/linux/centos/docker-ce.repo
 sudo yum install docker-ce docker-ce-cli containerd.io
-</code></pre></td></tr></table>
-</div>
-</div><h4 id="安装方式2从rpm安装包安装">安装方式2：从<code>.rpm</code>安装包安装</h4>
+</code></pre></div><h4 id="安装方式2从rpm安装包安装">安装方式2：从<code>.rpm</code>安装包安装</h4>
 <p>打开下载链接 <a href="https://download.docker.com/linux/centos/">https://download.docker.com/linux/centos/</a><br />
 选择CentOS版本, 然后进入 <code>x86_64/stable/Packages/</code> , 下载 .rpm 文件</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">sudo yum install /path/to/package.rpm
-</code></pre></td></tr></table>
-</div>
-</div><p>如果想要升级docker版本，则下载新的rpm文件并安装即可，注意升级时应该使用 <code>yum upgrade</code> 代替 <code>yum install</code></p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum install /path/to/package.rpm
+</code></pre></div><p>如果想要升级docker版本，则下载新的rpm文件并安装即可，注意升级时应该使用 <code>yum upgrade</code> 代替 <code>yum install</code></p>
 <h4 id="安装方式3自动安装脚本">安装方式3：自动安装脚本</h4>
 <p>在 get.docker.com 、 test.docker.com 网站可以下载自动安装脚本，可以方便的在开发和测试环境中安装，不建议在生产环境中使用这个方式</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl -fsSL https://get.docker.com -o get-docker.sh
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="ubuntu">Ubuntu</h3>
+</code></pre></div><h3 id="ubuntu">Ubuntu</h3>
 <p>参考<a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank">官方安装教程</a></p>
 <blockquote>
 <p>系统要求<br />
@@ -2153,73 +2111,32 @@ Ubuntu Bionic 18.04 (LTS)<br />
 Ubuntu Xenial 16.04 (LTS)</p>
 </blockquote>
 <p>先卸载旧的版本</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get remove docker docker-engine docker.io containerd runc
-</code></pre></td></tr></table>
-</div>
-</div><p>下面可以从3种安装方式中挑选安装</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get remove docker docker-engine docker.io containerd runc
+</code></pre></div><p>下面可以从3种安装方式中挑选安装</p>
 <h4 id="安装方式1使用docker-的存储库并从中安装以方便安装和升级任务这是官方建议的方法-1">安装方式1：使用Docker 的存储库‎‎并从中安装，以方便安装和升级任务。这是官方建议的方法。‎</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get update
-sudo apt-get install <span class="se">\
-</span><span class="se"></span>    apt-transport-https <span class="se">\
-</span><span class="se"></span>    ca-certificates <span class="se">\
-</span><span class="se"></span>    curl <span class="se">\
-</span><span class="se"></span>    gnupg <span class="se">\
-</span><span class="se"></span>    lsb-release
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="p">|</span> sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-<span class="nb">echo</span> <span class="se">\
-</span><span class="se"></span>  <span class="s2">&#34;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-</span><span class="s2">  </span><span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> stable&#34;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get update
+sudo apt-get install <span style="color:#c30;font-weight:bold">\
+</span><span style="color:#c30;font-weight:bold"></span>    apt-transport-https <span style="color:#c30;font-weight:bold">\
+</span><span style="color:#c30;font-weight:bold"></span>    ca-certificates <span style="color:#c30;font-weight:bold">\
+</span><span style="color:#c30;font-weight:bold"></span>    curl <span style="color:#c30;font-weight:bold">\
+</span><span style="color:#c30;font-weight:bold"></span>    gnupg <span style="color:#c30;font-weight:bold">\
+</span><span style="color:#c30;font-weight:bold"></span>    lsb-release
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+<span style="color:#366">echo</span> <span style="color:#c30;font-weight:bold">\
+</span><span style="color:#c30;font-weight:bold"></span>  <span style="color:#c30">&#34;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+</span><span style="color:#c30">  </span><span style="color:#069;font-weight:bold">$(</span>lsb_release -cs<span style="color:#069;font-weight:bold">)</span><span style="color:#c30"> stable&#34;</span> | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
-</code></pre></td></tr></table>
-</div>
-</div><h4 id="安装方式2从deb安装包安装">安装方式2：从<code>.deb</code>安装包安装</h4>
+</code></pre></div><h4 id="安装方式2从deb安装包安装">安装方式2：从<code>.deb</code>安装包安装</h4>
 <p>打开下载链接 <a href="https://download.docker.com/linux/ubuntu/dists/">https://download.docker.com/linux/ubuntu/dists/</a><br />
 选择ubuntu版本, 然后进入 pool/stable/, 选择系统的CPU架构 amd64, armhf, or arm64, 下载 .deb 文件</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">sudo dpkg -i /path/to/package.deb
-</code></pre></td></tr></table>
-</div>
-</div><p>如果想要升级docker版本，则下载新的deb文件并安装即可</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dpkg -i /path/to/package.deb
+</code></pre></div><p>如果想要升级docker版本，则下载新的deb文件并安装即可</p>
 <h4 id="安装方式3自动安装脚本-1">安装方式3：自动安装脚本</h4>
 <p>在 get.docker.com 、 test.docker.com 网站可以下载自动安装脚本，可以方便的在开发和测试环境中安装，不建议在生产环境中使用这个方式</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl -fsSL https://get.docker.com -o get-docker.sh
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="安装完成后的后续操作">安装完成后的后续操作</h3>
+</code></pre></div><h3 id="安装完成后的后续操作">安装完成后的后续操作</h3>
 <p>后续建议参照 <a href="https://docs.docker.com/engine/install/linux-postinstall/">https://docs.docker.com/engine/install/linux-postinstall/</a> 执行linux安装docker的后续操作，这些操作可以增加docker的安全和易用性</p>
 <h2 id="docker命令">docker命令</h2>
 <pre><code>容器生命周期管理
@@ -2264,15 +2181,8 @@ sudo sh get-docker.sh
 info|version docker版本
 </code></pre><h2 id="卸载docker">卸载docker</h2>
 <p>卸载docker引擎，命令行工具</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get purge docker-ce docker-ce-cli containerd.io
-</code></pre></td></tr></table>
-</div>
-</div><p>删除镜像、容器、配置文件</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get purge docker-ce docker-ce-cli containerd.io
+</code></pre></div><p>删除镜像、容器、配置文件</p>
 <pre><code>sudo rm -rf /var/lib/docker
 sudo rm -rf /var/lib/containerd
 </code></pre><h2 id="demo用docker配置mysqlphpnginx">demo：用docker配置mysql、php、nginx</h2>

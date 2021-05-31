@@ -351,7 +351,6 @@
 
 
   
-  
     var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var tocElem = document.querySelector('.toc');
     var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
@@ -1135,7 +1134,6 @@
 </script>
 
     
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -2366,15 +2364,8 @@ var _mtac = {};
 </ul>
 <h2 id="新建配置文件">新建配置文件</h2>
 <p>注意要以conf为扩展名</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">vim /etc/httpd/conf.d/virtual.conf
-</code></pre></td></tr></table>
-</div>
-</div><p>内容为</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vim /etc/httpd/conf.d/virtual.conf
+</code></pre></div><p>内容为</p>
 <pre><code class="language-conf" data-lang="conf">&lt;VirtualHost *:80&gt;
         ServerName game.shaochenfeng.com
         DocumentRoot /var/www/game.shaochenfeng.com
@@ -2409,36 +2400,16 @@ var _mtac = {};
 <p>后面一部分 <code>&lt;Directory &quot;/var/www/game.shaochenfeng.com&quot;&gt;</code> 对网站目录进行设置</p>
 <p>保存并退出</p>
 <h2 id="创建虚拟主机的主目录和日志目录">创建虚拟主机的主目录和日志目录</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">mkdir /var/www/game.shaochenfeng.com
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mkdir /var/www/game.shaochenfeng.com
 mkdir /var/www/map.shaochenfeng.com
-<span class="c1">#将你的网站文件复制到上面对应的目录</span>
-chown apache:apache -R /var/www/game.shaochenfeng.com <span class="c1"># httpd运行在apache用户下，所以要给网站文件授予权限</span>
+<span style="color:#09f;font-style:italic">#将你的网站文件复制到上面对应的目录</span>
+chown apache:apache -R /var/www/game.shaochenfeng.com <span style="color:#09f;font-style:italic"># httpd运行在apache用户下，所以要给网站文件授予权限</span>
 chown apache:apache -R /var/www/map.shaochenfeng.com
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="启动并开机启动httpd">启动并开机启动httpd</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">systemctl <span class="nb">enable</span> httpd <span class="c1"># 设置httpd开机启动</span>
-systemctl start httpd <span class="c1"># 启动httpd</span>
-systemctl status httpd <span class="c1"># 查看httpd状态</span>
-</code></pre></td></tr></table>
-</div>
-</div>
+</code></pre></div><h2 id="启动并开机启动httpd">启动并开机启动httpd</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl <span style="color:#366">enable</span> httpd <span style="color:#09f;font-style:italic"># 设置httpd开机启动</span>
+systemctl start httpd <span style="color:#09f;font-style:italic"># 启动httpd</span>
+systemctl status httpd <span style="color:#09f;font-style:italic"># 查看httpd状态</span>
+</code></pre></div>
   </article>
 </div>
       

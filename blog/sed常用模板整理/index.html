@@ -351,7 +351,6 @@
 
 
   
-  
     var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var tocElem = document.querySelector('.toc');
     var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
@@ -1135,7 +1134,6 @@
 </script>
 
     
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -2353,108 +2351,38 @@ var _mtac = {};
     <p>sed可以按照指令或脚本编辑文本的linux工具，文本处理功能非常强大，本文总结一些工作中常用的sed模板，方便大家使用</p>
 <h2 id="替换">替换</h2>
 <h3 id="1-替换文件中所有的-aaa-到-bbb">1. 替换文件中所有的 aaa 到 bbb</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">sed -i <span class="s1">&#39;s/aaa/bbb/g&#39;</span> /path/to/file
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="2-找到文件的修改日期">2. 找到文件的修改日期</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">stat deploy <span class="p">|</span> sed -n <span class="s1">&#39;/^Modify.*/p&#39;</span> <span class="c1"># 找到</span>
-stat deploy <span class="p">|</span> sed -n <span class="s1">&#39;/^Modify.*/p&#39;</span> <span class="p">|</span> grep -Eo <span class="s2">&#34;....-..-.. ..:..:..&#34;</span> <span class="c1"># 提取出修改起义</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="2-找到-aaa-参数并设置为off">2. 找到 aaa 参数，并设置为off</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">sed -i <span class="s1">&#39;/^aaa/s/on/off/&#39;</span> /path/to/file
-</code></pre></td></tr></table>
-</div>
-</div><p>可以配合grep使用，完成自动设置参数</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">have_aaa</span><span class="o">=</span><span class="k">$(</span>grep aaa /path/to/file <span class="p">|</span> sed <span class="s1">&#39;/^#.*/d&#39;</span><span class="k">)</span> <span class="c1"># 寻找是否以存在aaa参数</span>
-<span class="k">if</span> <span class="o">[</span> ! -z <span class="nv">$have_aaa</span> <span class="o">]</span><span class="p">;</span><span class="k">then</span> <span class="c1"># 如果存在</span>
-    sed -i <span class="s1">&#39;/^aaa/s/on/off/&#39;</span> /path/to/file <span class="c1"># 则修改为off</span>
-<span class="k">else</span>  <span class="c1"># 如果不存在</span>
-    sed -i <span class="s1">&#39;/ccc/a aaa off&#39;</span> /path/to/file <span class="c1"># 则在ccc参数下新增 aaa off</span>
-    <span class="c1"># sed -i &#39;$a/aaa off&#39; /path/to/file  # 则在最后新增 aaa off</span>
-<span class="k">fi</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="滤掉所有注释行">滤掉所有注释行</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">cat /etc/my.cnf <span class="p">|</span> sed <span class="s1">&#39;/^#.*/d&#39;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="找到并删除">找到并删除</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sed -i <span style="color:#c30">&#39;s/aaa/bbb/g&#39;</span> /path/to/file
+</code></pre></div><h3 id="2-找到文件的修改日期">2. 找到文件的修改日期</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">stat deploy | sed -n <span style="color:#c30">&#39;/^Modify.*/p&#39;</span> <span style="color:#09f;font-style:italic"># 找到</span>
+stat deploy | sed -n <span style="color:#c30">&#39;/^Modify.*/p&#39;</span> | grep -Eo <span style="color:#c30">&#34;....-..-.. ..:..:..&#34;</span> <span style="color:#09f;font-style:italic"># 提取出修改起义</span>
+</code></pre></div><h3 id="2-找到-aaa-参数并设置为off">2. 找到 aaa 参数，并设置为off</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sed -i <span style="color:#c30">&#39;/^aaa/s/on/off/&#39;</span> /path/to/file
+</code></pre></div><p>可以配合grep使用，完成自动设置参数</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#033">have_aaa</span><span style="color:#555">=</span><span style="color:#069;font-weight:bold">$(</span>grep aaa /path/to/file | sed <span style="color:#c30">&#39;/^#.*/d&#39;</span><span style="color:#069;font-weight:bold">)</span> <span style="color:#09f;font-style:italic"># 寻找是否以存在aaa参数</span>
+<span style="color:#069;font-weight:bold">if</span> <span style="color:#555">[</span> ! -z <span style="color:#033">$have_aaa</span> <span style="color:#555">]</span>;<span style="color:#069;font-weight:bold">then</span> <span style="color:#09f;font-style:italic"># 如果存在</span>
+    sed -i <span style="color:#c30">&#39;/^aaa/s/on/off/&#39;</span> /path/to/file <span style="color:#09f;font-style:italic"># 则修改为off</span>
+<span style="color:#069;font-weight:bold">else</span>  <span style="color:#09f;font-style:italic"># 如果不存在</span>
+    sed -i <span style="color:#c30">&#39;/ccc/a aaa off&#39;</span> /path/to/file <span style="color:#09f;font-style:italic"># 则在ccc参数下新增 aaa off</span>
+    <span style="color:#09f;font-style:italic"># sed -i &#39;$a/aaa off&#39; /path/to/file  # 则在最后新增 aaa off</span>
+<span style="color:#069;font-weight:bold">fi</span>
+</code></pre></div><h2 id="滤掉所有注释行">滤掉所有注释行</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat /etc/my.cnf | sed <span style="color:#c30">&#39;/^#.*/d&#39;</span>
+</code></pre></div><h2 id="找到并删除">找到并删除</h2>
 <p>找到包含aaa的行并删除</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">sed -i <span class="s1">&#39;/aaa/d&#39;</span> /path/to/file
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="插入追加">插入追加</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sed -i <span style="color:#c30">&#39;/aaa/d&#39;</span> /path/to/file
+</code></pre></div><h2 id="插入追加">插入追加</h2>
 <ul>
 <li>a/ 在当前行下面插入;</li>
 <li>i/ 在当前行上面插入;</li>
 <li>c/ 把当前行改为新的;</li>
 </ul>
 <p>在ccc开头的行下面插入 something</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">sed -i <span class="s1">&#39;/^ccc/a something&#39;</span> /path/to/file
-</code></pre></td></tr></table>
-</div>
-</div><p>在ccc开头的行后追加 something</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">sed -i <span class="s1">&#39;/^ccc/s/$/something/&#39;</span> /path/to/file
-</code></pre></td></tr></table>
-</div>
-</div><p>在ccc后紧接着追加something</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">sed -i <span class="s1">&#39;s/ccc/&amp;something/&#39;</span> /path/to/file
-</code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sed -i <span style="color:#c30">&#39;/^ccc/a something&#39;</span> /path/to/file
+</code></pre></div><p>在ccc开头的行后追加 something</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sed -i <span style="color:#c30">&#39;/^ccc/s/$/something/&#39;</span> /path/to/file
+</code></pre></div><p>在ccc后紧接着追加something</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sed -i <span style="color:#c30">&#39;s/ccc/&amp;something/&#39;</span> /path/to/file
+</code></pre></div>
   </article>
 </div>
       

@@ -351,7 +351,6 @@
 
 
   
-  
     var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var tocElem = document.querySelector('.toc');
     var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
@@ -1135,7 +1134,6 @@
 </script>
 
     
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -2354,15 +2352,8 @@ var _mtac = {};
 <p>与<strong>Apache</strong>相比可以承担更大的并发，并占用更少的内存</p>
 <p>CentOS8使用了新一代的yum，使用dnf作为命令（原来的yum以dnf的软链接形式存在）</p>
 <h2 id="安装只需要一句">安装只需要一句</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">dnf install nginx -y
-</code></pre></td></tr></table>
-</div>
-</div><p>如果出错检查检查一下网络和yum源，<a href="/posts/2020%e5%b9%b4centos87%e6%9b%b4%e6%8d%a2yum%e6%ba%90%e4%b8%ba%e9%98%bf%e9%87%8c%e6%ba%90/">如何更换yum源到阿里源</a></p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dnf install nginx -y
+</code></pre></div><p>如果出错检查检查一下网络和yum源，<a href="/posts/2020%e5%b9%b4centos87%e6%9b%b4%e6%8d%a2yum%e6%ba%90%e4%b8%ba%e9%98%bf%e9%87%8c%e6%ba%90/">如何更换yum源到阿里源</a></p>
 <h2 id="下面设置两个虚拟主机">下面设置两个虚拟主机</h2>
 <p>虚拟主机可以让一个web服务器服务多个网站，每个网站可以有不同的设置，不同的语言，并且有独立的日志</p>
 <p>这里假设两个主机分别为</p>
@@ -2371,102 +2362,46 @@ var _mtac = {};
 <li>map.shaochenfeng.com</li>
 </ul>
 <p>首先编辑nginx的主配置文件，如果虚拟主机很多的话，应该写到多个配置文件中(<a href="/posts/%e6%9c%aa%e5%ae%8c%e6%88%90">如何？</a>)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">vim /etc/nginx/nginx.conf
-</code></pre></td></tr></table>
-</div>
-</div><p><p class="md__image">
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim /etc/nginx/nginx.conf
+</code></pre></div><p><p class="md__image">
   <img src="/me/Yum%e5%ae%89%e8%a3%85nginx%e5%b9%b6%e8%ae%be%e7%bd%ae%e8%99%9a%e6%8b%9f%e4%b8%bb%e6%9c%ba_Centos8_1.jpg" alt="默认网站"  />
 </p></p>
 <p>可以看到里面有个默认网站，不用管它，在红色箭头处插入两个网站的配置</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">server <span class="o">{</span>
-        listen       80<span class="p">;</span>
-        listen       <span class="o">[</span>::<span class="o">]</span>:80<span class="p">;</span>
-        access_log /usr/share/nginx/log/game.shaochenfeng.com<span class="p">;</span>
-        error_log /usr/share/nginx/log/game.shaochenfeng.com.err error<span class="p">;</span>
-        server_name  game.shaochenfeng.com<span class="p">;</span>
-        root         /usr/share/nginx/game.shaochenfeng.com<span class="p">;</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">server <span style="color:#555">{</span>
+        listen       80;
+        listen       <span style="color:#555">[</span>::<span style="color:#555">]</span>:80;
+        access_log /usr/share/nginx/log/game.shaochenfeng.com;
+        error_log /usr/share/nginx/log/game.shaochenfeng.com.err error;
+        server_name  game.shaochenfeng.com;
+        root         /usr/share/nginx/game.shaochenfeng.com;
 
-        location / <span class="o">{</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-server <span class="o">{</span>
-        listen       80<span class="p">;</span>
-        listen       <span class="o">[</span>::<span class="o">]</span>:80<span class="p">;</span>
-        access_log /usr/share/nginx/log/map.shaochenfeng.com<span class="p">;</span>
-        error_log /usr/share/nginx/log/map.shaochenfeng.com.err error<span class="p">;</span>
-        server_name  map.shaochenfeng.com<span class="p">;</span>
-        root         /usr/share/nginx/map.shaochenfeng.com<span class="p">;</span>
+        location / <span style="color:#555">{</span>
+        <span style="color:#555">}</span>
+    <span style="color:#555">}</span>
+server <span style="color:#555">{</span>
+        listen       80;
+        listen       <span style="color:#555">[</span>::<span style="color:#555">]</span>:80;
+        access_log /usr/share/nginx/log/map.shaochenfeng.com;
+        error_log /usr/share/nginx/log/map.shaochenfeng.com.err error;
+        server_name  map.shaochenfeng.com;
+        root         /usr/share/nginx/map.shaochenfeng.com;
 
-        location / <span class="o">{</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>保存并退出<br />
+        location / <span style="color:#555">{</span>
+        <span style="color:#555">}</span>
+    <span style="color:#555">}</span>
+</code></pre></div><p>保存并退出<br />
 下面创建虚拟主机的主目录和日志目录</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">mkdir /usr/share/nginx/game.shaochenfeng.com <span class="c1"># 创建虚拟主机的主目录和日志目录</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir /usr/share/nginx/game.shaochenfeng.com <span style="color:#09f;font-style:italic"># 创建虚拟主机的主目录和日志目录</span>
 mkdir /usr/share/nginx/map.shaochenfeng.com
-<span class="c1">#将你的网站文件复制到上面对应的目录</span>
+<span style="color:#09f;font-style:italic">#将你的网站文件复制到上面对应的目录</span>
 mkdir /usr/share/nginx/log
-chown nginx:nginx -R /usr/share/nginx/game.shaochenfeng.com <span class="c1"># nginx运行在nginx用户下，所以要给网站文件授予权限</span>
+chown nginx:nginx -R /usr/share/nginx/game.shaochenfeng.com <span style="color:#09f;font-style:italic"># nginx运行在nginx用户下，所以要给网站文件授予权限</span>
 chown nginx:nginx -R /usr/share/nginx/map.shaochenfeng.com
-</code></pre></td></tr></table>
-</div>
-</div><p>启动并开机启动nginx</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">systemctl <span class="nb">enable</span> nginx <span class="c1"># 设置nginx开机启动</span>
-systemctl start nginx <span class="c1"># 启动nginx</span>
-systemctl status nginx <span class="c1"># 查看nginx状态</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>这样，<br />
+</code></pre></div><p>启动并开机启动nginx</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl <span style="color:#366">enable</span> nginx <span style="color:#09f;font-style:italic"># 设置nginx开机启动</span>
+systemctl start nginx <span style="color:#09f;font-style:italic"># 启动nginx</span>
+systemctl status nginx <span style="color:#09f;font-style:italic"># 查看nginx状态</span>
+</code></pre></div><p>这样，<br />
 当访问game.shaochenfeng.com时就会得到/usr/share/nginx/game.shaochenfeng.com/index.html<br />
 当访问map.shaochenfeng.com时就会得到/usr/share/nginx/map.shaochenfeng.com/index.html</p>
   </article>

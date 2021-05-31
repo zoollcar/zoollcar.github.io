@@ -20,7 +20,7 @@
         <pubDate>Thu, 20 May 2021 23:38:38 +0000</pubDate>
         
         <guid>http://shaochenfeng.com/blog/java-%E8%AF%BB%E5%86%99gbk%E7%BC%96%E7%A0%81%E7%9A%84%E6%96%87%E4%BB%B6/</guid>
-        <description>以GBK编码某个读写文件 读入: 1 2 3 BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(&amp;#34;a.txt&amp;#34;), Charset.forName(&amp;#34;GBK&amp;#34;))); String str = br.readLine(); br.close(); 写出: 1 2 3 4 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(&amp;#34;a.txt&amp;#34;), Charset.forName(&amp;#34;GBK&amp;#34;))); bw.write(&amp;#34;hello&amp;#34;); bw.flush(); bw.close(); 使用try-with-resource语法</description>
+        <description>以GBK编码某个读写文件 读入: BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(&amp;#34;a.txt&amp;#34;), Charset.forName(&amp;#34;GBK&amp;#34;))); String str = br.readLine(); br.close(); 写出: BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(&amp;#34;a.txt&amp;#34;), Charset.forName(&amp;#34;GBK&amp;#34;))); bw.write(&amp;#34;hello&amp;#34;); bw.flush(); bw.close(); 使用try-with-resource语法确保close</description>
       </item>
       
     

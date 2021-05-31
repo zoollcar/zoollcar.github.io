@@ -351,7 +351,6 @@
 
 
   
-  
     var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var tocElem = document.querySelector('.toc');
     var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
@@ -1135,7 +1134,6 @@
 </script>
 
     
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -2354,110 +2352,37 @@ var _mtac = {};
 <p>CentOS8默认源安装的就是mysql8 跳过这一步，去第三步</p>
 <p>CentOS7默认安装MariaDB，安装mysql8就需要添加mysql官方yum源</p>
 <p>首先需要下载官方yum源</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">wget https://repo.mysql.com/mysql80-community-release-el7.rpm <span class="c1"># 仅CentOS7</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="2安装yum源">2.安装yum源</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">yum -y install mysql80-community-release-el7.rpm <span class="c1"># 仅CentOS7</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="3安装mysql服务器">3.安装mysql服务器</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">wget https://repo.mysql.com/mysql80-community-release-el7.rpm <span style="color:#09f;font-style:italic"># 仅CentOS7</span>
+</code></pre></div><h2 id="2安装yum源">2.安装yum源</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum -y install mysql80-community-release-el7.rpm <span style="color:#09f;font-style:italic"># 仅CentOS7</span>
+</code></pre></div><h2 id="3安装mysql服务器">3.安装mysql服务器</h2>
 <p>一切准备就绪，现在可以安装mysql服务器了</p>
 <p>对于CentOS8:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">dnf -y install mysql-server
-</code></pre></td></tr></table>
-</div>
-</div><p>对于CentOS7:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">yum -y install mysql-community-server
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="4-启动服务">4. 启动服务</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">dnf -y install mysql-server
+</code></pre></div><p>对于CentOS7:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum -y install mysql-community-server
+</code></pre></div><h2 id="4-启动服务">4. 启动服务</h2>
 <p>现在使用 systemctl 启动mysql守护进程</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">systemctl start mysqld
-</code></pre></td></tr></table>
-</div>
-</div><p>第一次启动mysql会初始化数据库，所以需要点时间</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">systemctl start mysqld
+</code></pre></div><p>第一次启动mysql会初始化数据库，所以需要点时间</p>
 <p><strong>对于CentOS8，从默认源安装mysql8没有密码，可以直接mysql进入使用</strong></p>
 <p>对于CentOS7,从官方源安装会生成默认密码，可以通过后面的步骤查看密码并修改</p>
 <h2 id="5-查看root密码">5. 查看root密码</h2>
 <p>初始化数据库的时候会为root设置一个默认密码，这个密码在log文件中可以找到</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">less /var/log/mysqld.log <span class="c1"># 查看日志查看密码</span>
-<span class="c1"># 会有一行 password is generated XXXXX</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>或者可以使用下面语句直接提取出密码</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">grep <span class="s2">&#34;password is generated&#34;</span> /var/log/mysqld.log <span class="p">|</span> awk <span class="s1">&#39;{print $NF}&#39;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>找到密码后可以用以下命令输入密码进入数据库</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysql</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">p</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>第一次进入数据库只能修改密码，不能做任何事</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">ALTER</span> <span class="k">USER</span> <span class="s1">&#39;root&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;new password&#39;</span><span class="p">;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>这里的新密码不能太简单，因为mysql默认对密码有复杂度要求</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">less /var/log/mysqld.log <span style="color:#09f;font-style:italic"># 查看日志查看密码</span>
+<span style="color:#09f;font-style:italic"># 会有一行 password is generated XXXXX</span>
+</code></pre></div><p>或者可以使用下面语句直接提取出密码</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">grep <span style="color:#c30">&#34;password is generated&#34;</span> /var/log/mysqld.log | awk <span style="color:#c30">&#39;{print $NF}&#39;</span>
+</code></pre></div><p>找到密码后可以用以下命令输入密码进入数据库</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">mysql <span style="color:#555">-</span>uroot <span style="color:#555">-</span>p
+</code></pre></div><p>第一次进入数据库只能修改密码，不能做任何事</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">mysql<span style="color:#555">&gt;</span> <span style="color:#069;font-weight:bold">ALTER</span> <span style="color:#069;font-weight:bold">USER</span> <span style="color:#c30">&#39;root&#39;</span><span style="color:#555">@</span><span style="color:#c30">&#39;localhost&#39;</span> IDENTIFIED <span style="color:#069;font-weight:bold">BY</span> <span style="color:#c30">&#39;new password&#39;</span>;
+</code></pre></div><p>这里的新密码不能太简单，因为mysql默认对密码有复杂度要求</p>
 <p>可以通过下面命令关闭复杂度要求</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">show</span> <span class="k">global</span> <span class="n">variables</span> <span class="k">like</span> <span class="s1">&#39;%validate_password%&#39;</span><span class="p">;</span>
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">set</span> <span class="k">global</span> <span class="n">validate_password</span><span class="p">.</span><span class="n">policy</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>       <span class="o">#</span> <span class="err">关闭密码复杂性策略</span>
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">set</span> <span class="k">global</span> <span class="n">validate_password</span><span class="p">.</span><span class="k">length</span><span class="o">=</span><span class="mi">4</span><span class="p">;</span>      <span class="o">#</span> <span class="err">设置密码最低长度为</span><span class="mi">4</span>
-</code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#069;font-weight:bold">show</span> <span style="color:#069;font-weight:bold">global</span> variables <span style="color:#069;font-weight:bold">like</span> <span style="color:#c30">&#39;%validate_password%&#39;</span>;
+mysql<span style="color:#555">&gt;</span> <span style="color:#069;font-weight:bold">set</span> <span style="color:#069;font-weight:bold">global</span> validate_password.policy<span style="color:#555">=</span><span style="color:#f60">0</span>;       <span style="color:#555">#</span> <span style="color:#a00;background-color:#faa">关闭密码复杂性策略</span>
+mysql<span style="color:#555">&gt;</span> <span style="color:#069;font-weight:bold">set</span> <span style="color:#069;font-weight:bold">global</span> validate_password.<span style="color:#069;font-weight:bold">length</span><span style="color:#555">=</span><span style="color:#f60">4</span>;      <span style="color:#555">#</span> <span style="color:#a00;background-color:#faa">设置密码最低长度为</span><span style="color:#f60">4</span>
+</code></pre></div>
   </article>
 </div>
       

@@ -31,7 +31,7 @@
         <pubDate>Mon, 27 Jan 2020 15:34:39 +0000</pubDate>
         
         <guid>http://shaochenfeng.com/linux/docker%E5%AE%B9%E5%99%A8/</guid>
-        <description>安装 CentOS 系统要求 CentOS 7 或 8 参考官方安装教程 先卸载旧版本 1 2 3 4 5 6 7 8 sudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-engine 下面可以从3种安装方式中挑选安装 安装方</description>
+        <description>安装 CentOS 系统要求 CentOS 7 或 8 参考官方安装教程 先卸载旧版本 sudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-engine 下面可以从3种安装方式中挑选安装 安装方式1：使用Doc</description>
       </item>
       
       <item>

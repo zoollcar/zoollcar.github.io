@@ -351,7 +351,6 @@
 
 
   
-  
     var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var tocElem = document.querySelector('.toc');
     var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
@@ -1115,7 +1114,7 @@
     "datePublished": "2020-02-14T16:30:41+08:00",
     "dateModified": "2020-02-28T11:19:00+08:00",
     "url" : "http://shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85nginx%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95/",
-    "description": "\u003ch2 id=\"首先是全部步骤概括\"\u003e首先是全部步骤概括\u003c/h2\u003e \u003cdiv class=\"highlight\"\u003e\u003cdiv class=\"chroma\"\u003e \u003ctable class=\"lntable\"\u003e\u003ctr\u003e\u003ctd class=\"lntd\"\u003e \u003cpre class=\"chroma\"\u003e\u003ccode\u003e\u003cspan class=\"lnt\"\u003e 1 \u003c/span\u003e\u003cspan class=\"lnt\"\u003e 2 \u003c/span\u003e\u003cspan class=\"lnt\"\u003e 3 \u003c/span\u003e\u003cspan class=\"lnt\"\u003e 4 \u003c/span\u003e\u003cspan class=\"lnt\"\u003e 5 \u003c/span\u003e\u003cspan class=\"lnt\"\u003e 6 \u003c/span\u003e\u003cspan class=\"lnt\"\u003e 7 \u003c/span\u003e\u003cspan class=\"lnt\"\u003e 8 \u003c/span\u003e\u003cspan class=\"lnt\"\u003e 9 \u003c/span\u003e\u003cspan class=\"lnt\"\u003e10 \u003c/span\u003e\u003cspan class=\"lnt\"\u003e11 \u003c/span\u003e\u003cspan class=\"lnt\"\u003e12 \u003c/span\u003e\u003cspan class=\"lnt\"\u003e13 \u003c/span\u003e\u003cspan class=\"lnt\"\u003e14 \u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/td\u003e \u003ctd class=\"lntd\"\u003e \u003cpre class=\"chroma\"\u003e\u003ccode class=\"language-bash\" data-lang=\"bash\"\u003eyum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget yum install -y pcre-devel zlib-devel wget …\u003c/code\u003e\u003c/pre\u003e\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\u003c/div\u003e\u003c/div\u003e",
+    "description": "\u003ch2 id=\"首先是全部步骤概括\"\u003e首先是全部步骤概括\u003c/h2\u003e \u003cdiv class=\"highlight\"\u003e\u003cpre style=\"background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4\"\u003e\u003ccode class=\"language-bash\" data-lang=\"bash\"\u003eyum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget yum install -y pcre-devel zlib-devel wget http://nginx.org/download/nginx-1.16.1.tar.gz \u003cspan style=\"color:#09f;font-style:italic\"\u003e# 下载源 …\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e",
     "keywords": ["nginx"],
     "image" : "http://shaochenfeng.com/me/nginx%E5%AE%89%E8%A3%85%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE.jpg",
     "author": {
@@ -1135,7 +1134,6 @@
 </script>
 
     
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -2351,118 +2349,47 @@ var _mtac = {};
   <article class="single__contents" data-dir="ltr">
     <h1 class="title" style="border-bottom: 1px solid currentColor">源码安装nginx到指定目录</h1>
     <h2 id="首先是全部步骤概括">首先是全部步骤概括</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget
 yum install -y pcre-devel zlib-devel
-wget http://nginx.org/download/nginx-1.16.1.tar.gz <span class="c1"># 下载源码包</span>
+wget http://nginx.org/download/nginx-1.16.1.tar.gz <span style="color:#09f;font-style:italic"># 下载源码包</span>
 tar -zxvf nginx-1.16.1.tar.gz
-<span class="nb">cd</span> nginx-1.16.1
-./configure --prefix<span class="o">=</span>/opt/nginx1.16 <span class="c1"># 这里指定安装目录</span>
-make <span class="o">&amp;&amp;</span> make install
+<span style="color:#366">cd</span> nginx-1.16.1
+./configure --prefix<span style="color:#555">=</span>/opt/nginx1.16 <span style="color:#09f;font-style:italic"># 这里指定安装目录</span>
+make <span style="color:#555">&amp;&amp;</span> make install
 useradd www -s /bin/false
-vi /opt/nginx1.16/conf/nginx.conf <span class="c1"># 修改配置文件</span>
-<span class="c1"># 第一行去掉前面井号并改为 user  www;</span>
-/opt/nginx1.16/sbin/nginx <span class="c1">#启动nginx</span>
-<span class="c1">#以下为可选</span>
-/opt/nginx1.16/sbin/nginx -s stop  <span class="c1">#停止</span>
-/opt/nginx1.16/sbin/nginx -s reload  <span class="c1">#重新载入配置</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="1安装编译器和依赖">1.安装编译器和依赖</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">yum install libaio ncurses gcc gcc-c++ cmake ncurses-devel wget
+vi /opt/nginx1.16/conf/nginx.conf <span style="color:#09f;font-style:italic"># 修改配置文件</span>
+<span style="color:#09f;font-style:italic"># 第一行去掉前面井号并改为 user  www;</span>
+/opt/nginx1.16/sbin/nginx <span style="color:#09f;font-style:italic">#启动nginx</span>
+<span style="color:#09f;font-style:italic">#以下为可选</span>
+/opt/nginx1.16/sbin/nginx -s stop  <span style="color:#09f;font-style:italic">#停止</span>
+/opt/nginx1.16/sbin/nginx -s reload  <span style="color:#09f;font-style:italic">#重新载入配置</span>
+</code></pre></div><h2 id="1安装编译器和依赖">1.安装编译器和依赖</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum install libaio ncurses gcc gcc-c++ cmake ncurses-devel wget
 yum install pcre-devel zlib-devel
-</code></pre></td></tr></table>
-</div>
-</div><p>这些依赖是编译nginx需要的，否则无法完成编译</p>
+</code></pre></div><p>这些依赖是编译nginx需要的，否则无法完成编译</p>
 <h2 id="2下载源码包并解压">2.下载源码包并解压</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">wget http://nginx.org/download/nginx-1.16.1.tar.gz <span class="c1"># 下载源码包</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">wget http://nginx.org/download/nginx-1.16.1.tar.gz <span style="color:#09f;font-style:italic"># 下载源码包</span>
 tar -zxvf nginx-1.16.1.tar.gz
-<span class="nb">cd</span> nginx-1.16.1
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="3编译安装">3.编译安装</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">./configure --prefix<span class="o">=</span>/opt/nginx1.16 <span class="c1"># 这里指定安装目录</span>
-make <span class="o">&amp;&amp;</span> make install
-</code></pre></td></tr></table>
-</div>
-</div><p>在编译之前可以制定安装目录，这样所有的数据、配置、程序都会放到这个目录下</p>
+<span style="color:#366">cd</span> nginx-1.16.1
+</code></pre></div><h2 id="3编译安装">3.编译安装</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./configure --prefix<span style="color:#555">=</span>/opt/nginx1.16 <span style="color:#09f;font-style:italic"># 这里指定安装目录</span>
+make <span style="color:#555">&amp;&amp;</span> make install
+</code></pre></div><p>在编译之前可以制定安装目录，这样所有的数据、配置、程序都会放到这个目录下</p>
 <p>也可以不指定，如下所示</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">./configure
-make <span class="o">&amp;&amp;</span> make install
-</code></pre></td></tr></table>
-</div>
-</div><p>这样会安装到默认位置</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./configure
+make <span style="color:#555">&amp;&amp;</span> make install
+</code></pre></div><p>这样会安装到默认位置</p>
 <h2 id="4添加nginx使用的用户">4.添加nginx使用的用户</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">useradd www -s /bin/false
-vi /opt/nginx1.16/conf/nginx.conf <span class="c1"># 修改配置文件</span>
-<span class="c1"># 第一行去掉前面井号并改为 user  www;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>nginx默认不使用root用户运行网站的脚本，而是使用nobody，因为一旦执行恶意脚本，后果很严重</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">useradd www -s /bin/false
+vi /opt/nginx1.16/conf/nginx.conf <span style="color:#09f;font-style:italic"># 修改配置文件</span>
+<span style="color:#09f;font-style:italic"># 第一行去掉前面井号并改为 user  www;</span>
+</code></pre></div><p>nginx默认不使用root用户运行网站的脚本，而是使用nobody，因为一旦执行恶意脚本，后果很严重</p>
 <p>但是nobidy的权限很小，我们通常会新建一个nginx用户或是www用户，当作nginx使用的用户</p>
 <h2 id="5启动和重启">5.启动和重启</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">/opt/nginx1.16/sbin/nginx <span class="c1">#启动nginx</span>
-/opt/nginx1.16/sbin/nginx -s stop  <span class="c1">#停止</span>
-/opt/nginx1.16/sbin/nginx -s reload  <span class="c1">#重新载入配置</span>
-</code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">/opt/nginx1.16/sbin/nginx <span style="color:#09f;font-style:italic">#启动nginx</span>
+/opt/nginx1.16/sbin/nginx -s stop  <span style="color:#09f;font-style:italic">#停止</span>
+/opt/nginx1.16/sbin/nginx -s reload  <span style="color:#09f;font-style:italic">#重新载入配置</span>
+</code></pre></div>
   </article>
 </div>
       

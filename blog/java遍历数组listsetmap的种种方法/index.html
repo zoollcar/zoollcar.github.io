@@ -351,7 +351,6 @@
 
 
   
-  
     var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var tocElem = document.querySelector('.toc');
     var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
@@ -1115,7 +1114,7 @@
     "datePublished": "2021-05-21T21:09:27Z",
     "dateModified": "2021-05-21T21:09:27Z",
     "url" : "http://shaochenfeng.com/blog/java%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84listsetmap%E7%9A%84%E7%A7%8D%E7%A7%8D%E6%96%B9%E6%B3%95/",
-    "description": "数组或list的遍历 1 double[] nums = new double[n]; for遍历 1 2 3 4 for(int i=0;i\u0026lt;nums.length;i++) { result += nums[i]; } for-each遍历 1 2 3 4 for(double item : nums) { result += …",
+    "description": "数组或list的遍历 double[] nums = new double[n]; for遍历 for(int i=0;i\u0026lt;nums.length;i++) { result += nums[i]; } for-each遍历 for(double item : nums) { result += item; } lambda …",
     "keywords": ["java"],
     "author": {
       "@type": "Person",
@@ -1134,7 +1133,6 @@
 </script>
 
     
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -2350,110 +2348,38 @@ var _mtac = {};
   <article class="single__contents" data-dir="ltr">
     <h1 class="title" style="border-bottom: 1px solid currentColor">Java遍历数组、List、Set、Map的种种方法</h1>
     <h2 id="数组或list的遍历">数组或list的遍历</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kt">double</span><span class="o">[]</span> <span class="n">nums</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="o">[</span><span class="n">n</span><span class="o">];</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="for遍历">for遍历</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span>
-<span class="o">{</span>
-	<span class="n">result</span> <span class="o">+=</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="for-each遍历">for-each遍历</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="k">for</span><span class="o">(</span><span class="kt">double</span> <span class="n">item</span> <span class="o">:</span> <span class="n">nums</span><span class="o">)</span>
-<span class="o">{</span>
-	<span class="n">result</span> <span class="o">+=</span> <span class="n">item</span><span class="o">;</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="lambda表达式">lambda表达式</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">items</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">item</span><span class="o">-&gt;{</span>
-  <span class="k">if</span><span class="o">(</span><span class="s">&#34;C&#34;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">item</span><span class="o">)){</span>
-<span class="err">​</span>    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
-  <span class="o">}</span>
-<span class="o">});</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="直接引用函数">直接引用函数</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">items</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="set集合的遍历">set集合的遍历</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">nums</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;();</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="for遍历-1">for遍历</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="err">​</span><span class="k">for</span><span class="o">(</span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span> <span class="n">i</span><span class="o">.</span><span class="na">hasNext</span><span class="o">();</span> <span class="o">)</span>
-<span class="err">​</span><span class="o">{</span>
-<span class="err">​</span>	<span class="n">result</span> <span class="o">+=</span> <span class="n">i</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
-<span class="err">​</span><span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="for-each遍历-1">for-each遍历</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="err">​</span><span class="k">for</span><span class="o">(</span><span class="kt">double</span> <span class="n">item</span> <span class="o">:</span> <span class="n">nums</span><span class="o">)</span>
-<span class="err">​</span><span class="o">{</span>
-<span class="err">​</span>	<span class="n">result</span> <span class="o">+=</span> <span class="n">item</span><span class="o">;</span>
-<span class="err">​</span><span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>或</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#078;font-weight:bold">double</span><span style="color:#555">[]</span> nums <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> <span style="color:#078;font-weight:bold">double</span><span style="color:#555">[</span>n<span style="color:#555">];</span>
+</code></pre></div><h3 id="for遍历">for遍历</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">for</span><span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span> i<span style="color:#555">=</span>0<span style="color:#555">;</span>i<span style="color:#555">&lt;</span>nums<span style="color:#555">.</span><span style="color:#309">length</span><span style="color:#555">;</span>i<span style="color:#555">++)</span>
+<span style="color:#555">{</span>
+	result <span style="color:#555">+=</span> nums<span style="color:#555">[</span>i<span style="color:#555">];</span>
+<span style="color:#555">}</span>
+</code></pre></div><h3 id="for-each遍历">for-each遍历</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">for</span><span style="color:#555">(</span><span style="color:#078;font-weight:bold">double</span> item <span style="color:#555">:</span> nums<span style="color:#555">)</span>
+<span style="color:#555">{</span>
+	result <span style="color:#555">+=</span> item<span style="color:#555">;</span>
+<span style="color:#555">}</span>
+</code></pre></div><h3 id="lambda表达式">lambda表达式</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">items<span style="color:#555">.</span><span style="color:#309">forEach</span><span style="color:#555">(</span>item<span style="color:#555">-&gt;{</span>
+  <span style="color:#069;font-weight:bold">if</span><span style="color:#555">(</span><span style="color:#c30">&#34;C&#34;</span><span style="color:#555">.</span><span style="color:#309">equals</span><span style="color:#555">(</span>item<span style="color:#555">)){</span>
+<span style="color:#a00;background-color:#faa">​</span>    System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>item<span style="color:#555">);</span>
+  <span style="color:#555">}</span>
+<span style="color:#555">});</span>
+</code></pre></div><h3 id="直接引用函数">直接引用函数</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">items<span style="color:#555">.</span><span style="color:#309">forEach</span><span style="color:#555">(</span>System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">::</span>println<span style="color:#555">);</span>
+</code></pre></div><h2 id="set集合的遍历">set集合的遍历</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">HashSet<span style="color:#555">&lt;</span>Double<span style="color:#555">&gt;</span> nums <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> HashSet<span style="color:#555">&lt;</span>Double<span style="color:#555">&gt;();</span>
+</code></pre></div><h3 id="for遍历-1">for遍历</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a00;background-color:#faa">​</span><span style="color:#069;font-weight:bold">for</span><span style="color:#555">(</span>Iterator<span style="color:#555">&lt;</span>Double<span style="color:#555">&gt;</span> i <span style="color:#555">=</span> nums<span style="color:#555">.</span><span style="color:#309">iterator</span><span style="color:#555">();</span> i<span style="color:#555">.</span><span style="color:#309">hasNext</span><span style="color:#555">();</span> <span style="color:#555">)</span>
+<span style="color:#a00;background-color:#faa">​</span><span style="color:#555">{</span>
+<span style="color:#a00;background-color:#faa">​</span>	result <span style="color:#555">+=</span> i<span style="color:#555">.</span><span style="color:#309">next</span><span style="color:#555">();</span>
+<span style="color:#a00;background-color:#faa">​</span><span style="color:#555">}</span>
+</code></pre></div><h3 id="for-each遍历-1">for-each遍历</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a00;background-color:#faa">​</span><span style="color:#069;font-weight:bold">for</span><span style="color:#555">(</span><span style="color:#078;font-weight:bold">double</span> item <span style="color:#555">:</span> nums<span style="color:#555">)</span>
+<span style="color:#a00;background-color:#faa">​</span><span style="color:#555">{</span>
+<span style="color:#a00;background-color:#faa">​</span>	result <span style="color:#555">+=</span> item<span style="color:#555">;</span>
+<span style="color:#a00;background-color:#faa">​</span><span style="color:#555">}</span>
+</code></pre></div><p>或</p>
 <pre><code>for(String i:hs)
 {
 	System.out.println(i);
@@ -2461,72 +2387,29 @@ var _mtac = {};
 </code></pre><h2 id="map的遍历">Map的遍历</h2>
 <h3 id="foreach">foreach</h3>
 <p>推荐方式</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="k">for</span> <span class="o">(</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">:</span> <span class="n">items</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
-  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Item : &#34;</span> <span class="o">+</span> <span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34; Count : &#34;</span> <span class="o">+</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>第二种</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="k">for</span> <span class="o">(</span><span class="n">Integer</span> <span class="n">in</span> <span class="o">:</span> <span class="n">map</span><span class="o">.</span><span class="na">keySet</span><span class="o">())</span> <span class="o">{</span>
-  <span class="c1">//map.keySet() 返回的是所有key的值
-</span><span class="c1"></span>  <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">in</span><span class="o">);</span> <span class="c1">//得到每个key多对用value的值
-</span><span class="c1"></span>  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">in</span> <span class="o">+</span> <span class="s">&#34;   &#34;</span> <span class="o">+</span> <span class="n">str</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>第三种</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">it</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">entrySet</span><span class="o">().</span><span class="na">iterator</span><span class="o">();</span>
-<span class="k">while</span> <span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
-   <span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">=</span> <span class="n">it</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
-   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;key= &#34;</span> <span class="o">+</span> <span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34; and value= &#34;</span> <span class="o">+</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="lambda表达式-1">lambda表达式</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">items</span><span class="o">.</span><span class="na">forEach</span><span class="o">((</span><span class="n">k</span><span class="o">,</span><span class="n">v</span><span class="o">)-&gt;{</span>
-  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Item : &#34;</span> <span class="o">+</span> <span class="n">k</span> <span class="o">+</span> <span class="s">&#34; Count : &#34;</span> <span class="o">+</span> <span class="n">v</span><span class="o">);</span>
-  <span class="k">if</span><span class="o">(</span><span class="s">&#34;E&#34;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">k</span><span class="o">)){</span>
-<span class="err">​</span>    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Hello E&#34;</span><span class="o">);</span>
-  <span class="o">}</span>
-<span class="o">});</span>
-</code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">for</span> <span style="color:#555">(</span>Map<span style="color:#555">.</span><span style="color:#309">Entry</span><span style="color:#555">&lt;</span>String<span style="color:#555">,</span> Integer<span style="color:#555">&gt;</span> entry <span style="color:#555">:</span> items<span style="color:#555">.</span><span style="color:#309">entrySet</span><span style="color:#555">())</span> <span style="color:#555">{</span>
+  System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#c30">&#34;Item : &#34;</span> <span style="color:#555">+</span> entry<span style="color:#555">.</span><span style="color:#309">getKey</span><span style="color:#555">()</span> <span style="color:#555">+</span> <span style="color:#c30">&#34; Count : &#34;</span> <span style="color:#555">+</span> entry<span style="color:#555">.</span><span style="color:#309">getValue</span><span style="color:#555">());</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>第二种</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">for</span> <span style="color:#555">(</span>Integer in <span style="color:#555">:</span> map<span style="color:#555">.</span><span style="color:#309">keySet</span><span style="color:#555">())</span> <span style="color:#555">{</span>
+  <span style="color:#09f;font-style:italic">//map.keySet() 返回的是所有key的值
+</span><span style="color:#09f;font-style:italic"></span>  String str <span style="color:#555">=</span> map<span style="color:#555">.</span><span style="color:#309">get</span><span style="color:#555">(</span>in<span style="color:#555">);</span> <span style="color:#09f;font-style:italic">//得到每个key多对用value的值
+</span><span style="color:#09f;font-style:italic"></span>  System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>in <span style="color:#555">+</span> <span style="color:#c30">&#34;   &#34;</span> <span style="color:#555">+</span> str<span style="color:#555">);</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>第三种</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Iterator<span style="color:#555">&lt;</span>Map<span style="color:#555">.</span><span style="color:#309">Entry</span><span style="color:#555">&lt;</span>Integer<span style="color:#555">,</span> String<span style="color:#555">&gt;&gt;</span> it <span style="color:#555">=</span> map<span style="color:#555">.</span><span style="color:#309">entrySet</span><span style="color:#555">().</span><span style="color:#309">iterator</span><span style="color:#555">();</span>
+<span style="color:#069;font-weight:bold">while</span> <span style="color:#555">(</span>it<span style="color:#555">.</span><span style="color:#309">hasNext</span><span style="color:#555">())</span> <span style="color:#555">{</span>
+   Map<span style="color:#555">.</span><span style="color:#309">Entry</span><span style="color:#555">&lt;</span>Integer<span style="color:#555">,</span> String<span style="color:#555">&gt;</span> entry <span style="color:#555">=</span> it<span style="color:#555">.</span><span style="color:#309">next</span><span style="color:#555">();</span>
+   System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#c30">&#34;key= &#34;</span> <span style="color:#555">+</span> entry<span style="color:#555">.</span><span style="color:#309">getKey</span><span style="color:#555">()</span> <span style="color:#555">+</span> <span style="color:#c30">&#34; and value= &#34;</span> <span style="color:#555">+</span> entry<span style="color:#555">.</span><span style="color:#309">getValue</span><span style="color:#555">());</span>
+<span style="color:#555">}</span>
+</code></pre></div><h3 id="lambda表达式-1">lambda表达式</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">items<span style="color:#555">.</span><span style="color:#309">forEach</span><span style="color:#555">((</span>k<span style="color:#555">,</span>v<span style="color:#555">)-&gt;{</span>
+  System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#c30">&#34;Item : &#34;</span> <span style="color:#555">+</span> k <span style="color:#555">+</span> <span style="color:#c30">&#34; Count : &#34;</span> <span style="color:#555">+</span> v<span style="color:#555">);</span>
+  <span style="color:#069;font-weight:bold">if</span><span style="color:#555">(</span><span style="color:#c30">&#34;E&#34;</span><span style="color:#555">.</span><span style="color:#309">equals</span><span style="color:#555">(</span>k<span style="color:#555">)){</span>
+<span style="color:#a00;background-color:#faa">​</span>    System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#c30">&#34;Hello E&#34;</span><span style="color:#555">);</span>
+  <span style="color:#555">}</span>
+<span style="color:#555">});</span>
+</code></pre></div>
   </article>
 </div>
       

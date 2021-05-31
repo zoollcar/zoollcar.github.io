@@ -351,7 +351,6 @@
 
 
   
-  
     var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var tocElem = document.querySelector('.toc');
     var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
@@ -1128,7 +1127,6 @@
 </script>
 
     
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -2704,7 +2702,7 @@ var _mtac = {};
   <div class="summary-card__content">
     <div class="summary-card__text p2">
       
-        以GBK编码某个读写文件 读入: 1 2 3 BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(&#34;a.txt&#34;), Charset.forName(&#34;GBK&#34;))); String str = br.readLine(); br.close(); 写出: 1 2 3 4 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(&#34;a.txt&#34;), Charset.forName(&#34;GBK&#34;))); bw.write(&#34;hello&#34;); bw.flush(); bw.close(); 使用try-with-resource语法
+        以GBK编码某个读写文件 读入: BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(&#34;a.txt&#34;), Charset.forName(&#34;GBK&#34;))); String str = br.readLine(); br.close(); 写出: BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(&#34;a.txt&#34;), Charset.forName(&#34;GBK&#34;))); bw.write(&#34;hello&#34;); bw.flush(); bw.close(); 使用try-with-resource语法确保close
       
     </div>
     

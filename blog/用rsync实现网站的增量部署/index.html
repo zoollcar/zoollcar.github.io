@@ -351,7 +351,6 @@
 
 
   
-  
     var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var tocElem = document.querySelector('.toc');
     var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
@@ -1135,7 +1134,6 @@
 </script>
 
     
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -2358,30 +2356,14 @@ web服务器root目录 /usr/share/nginx/game.shaochenfeng.com<br />
 <p>首先建议配置好本地到web服务器的ssh免密码登陆<a href="/">如何？</a>，不配置需要以后每次同步时输入密码</p>
 <h2 id="1在web服务器端安装rsync">1.在web服务器端安装rsync</h2>
 <p>直接yum或apt安装就可以，在服务器端和本地都安装</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">yum install rsync <span class="c1"># 红帽系</span>
-apt install rsync <span class="c1"># Debian系</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>为什么要在服务器也安装rsync呢？因为虽然是通过ssh建立链接，但rsync使用的是自己的传输规则，而不是scp</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum install rsync <span style="color:#09f;font-style:italic"># 红帽系</span>
+apt install rsync <span style="color:#09f;font-style:italic"># Debian系</span>
+</code></pre></div><p>为什么要在服务器也安装rsync呢？因为虽然是通过ssh建立链接，但rsync使用的是自己的传输规则，而不是scp</p>
 <h2 id="2向服务器推送">2.向服务器推送</h2>
 <p>在本地执行，同步 本地项目目录 到 web服务器root目录</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">rsync -avz --delete &lt;本地路径&gt; www@192.168.56.10:&lt;远程路径&gt;
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rsync -avz --delete &lt;本地路径&gt; www@192.168.56.10:&lt;远程路径&gt;
 rsync -avz --delete /git/game.shaochenfeng.com/public www@192.168.56.10:/usr/share/nginx/game.shaochenfeng.com
-</code></pre></td></tr></table>
-</div>
-</div><p>其中参数</p>
+</code></pre></div><p>其中参数</p>
 <ul>
 <li>-a 是递归传输并保持文件属性，在传输带有文件夹时使用，并保留文件的属性</li>
 <li>-v 显示传输过程</li>

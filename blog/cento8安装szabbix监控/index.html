@@ -351,7 +351,6 @@
 
 
   
-  
     var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var tocElem = document.querySelector('.toc');
     var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
@@ -1115,7 +1114,7 @@
     "datePublished": "2020-03-08T22:00:12+08:00",
     "dateModified": "2020-03-08T22:19:00+08:00",
     "url" : "http://shaochenfeng.com/blog/cento8%E5%AE%89%E8%A3%85szabbix%E7%9B%91%E6%8E%A7/",
-    "description": "安装中文支持 不然安装以后web界面不能设置为中文 1 2 dnf install langpacks-zh_CN # 在centos7中是 yum install kde-l10n-Chinese 下载源码 浏览器打开 https://www.zabbix.com/download_sources 下载最新的长期支持版，上传到服务器",
+    "description": "安装中文支持 不然安装以后web界面不能设置为中文 dnf install langpacks-zh_CN # 在centos7中是 yum install kde-l10n-Chinese 下载源码 浏览器打开 https://www.zabbix.com/download_sources 下载最新的长期支持版，上传到服务器 在服",
     "keywords": ["CentOS8","zabbix"],
     "image" : "http://shaochenfeng.com/me/zabbix.jpg",
     "author": {
@@ -1135,7 +1134,6 @@
 </script>
 
     
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -2352,79 +2350,33 @@ var _mtac = {};
     <h1 class="title" style="border-bottom: 1px solid currentColor">Centos8安装zabbix监控，源码方式</h1>
     <h2 id="安装中文支持">安装中文支持</h2>
 <p>不然安装以后web界面不能设置为中文</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">dnf install langpacks-zh_CN
-<span class="c1"># 在centos7中是 yum install kde-l10n-Chinese</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="下载源码">下载源码</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">dnf install langpacks-zh_CN
+<span style="color:#09f;font-style:italic"># 在centos7中是 yum install kde-l10n-Chinese</span>
+</code></pre></div><h2 id="下载源码">下载源码</h2>
 <p>浏览器打开 <a href="https://www.zabbix.com/download_sources">https://www.zabbix.com/download_sources</a></p>
 <p>下载最新的长期支持版，上传到服务器</p>
 <p>在服务器解压</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">tar -zxvf zabbix-4.4.4.tar.gz
-<span class="nb">cd</span> zabbix-4.4.4/
-<span class="c1"># 增加zabbix使用的组和用户</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">tar -zxvf zabbix-4.4.4.tar.gz
+<span style="color:#366">cd</span> zabbix-4.4.4/
+<span style="color:#09f;font-style:italic"># 增加zabbix使用的组和用户</span>
 groupadd --system zabbix
-useradd --system -g zabbix -d /usr/lib/zabbix -s /sbin/nologin -c <span class="s2">&#34;Zabbix Monitoring System&#34;</span> zabbix
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="配置数据库">配置数据库</h2>
+useradd --system -g zabbix -d /usr/lib/zabbix -s /sbin/nologin -c <span style="color:#c30">&#34;Zabbix Monitoring System&#34;</span> zabbix
+</code></pre></div><h2 id="配置数据库">配置数据库</h2>
 <p>需要先安装数据库，mysql5.7及以上，没有安装的可以看这篇文章 <a href="https://www.shaochenfeng.com/zh/blog/yum%E5%AE%89%E8%A3%85mysql8%E6%9F%A5%E7%9C%8B%E9%BB%98%E8%AE%A4root%E5%AF%86%E7%A0%81/" target="_blank">yum安装mysql8</a></p>
 <p>然后配置zabbix的数据库和用户权限</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysql</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">p</span>
-<span class="o">#</span> <span class="err">输入登陆密码</span>
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">create</span> <span class="k">database</span> <span class="n">zabbix</span> <span class="nb">character</span> <span class="k">set</span> <span class="n">utf8</span> <span class="k">collate</span> <span class="n">utf8_bin</span><span class="p">;</span>
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">grant</span> <span class="k">all</span> <span class="k">privileges</span> <span class="k">on</span> <span class="n">zabbix</span><span class="p">.</span><span class="o">*</span> <span class="k">to</span> <span class="n">zabbix</span><span class="o">@</span><span class="n">localhost</span> <span class="n">identified</span> <span class="k">by</span> <span class="s1">&#39;123&#39;</span><span class="p">;</span>
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="n">quit</span><span class="p">;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>导入zabbix数据库</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">mysql  -uzabbix -p123 zabbix &lt; database/mysql/schema.sql
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">mysql <span style="color:#555">-</span>uroot <span style="color:#555">-</span>p
+<span style="color:#555">#</span> <span style="color:#a00;background-color:#faa">输入登陆密码</span>
+mysql<span style="color:#555">&gt;</span> <span style="color:#069;font-weight:bold">create</span> <span style="color:#069;font-weight:bold">database</span> zabbix <span style="color:#366">character</span> <span style="color:#069;font-weight:bold">set</span> utf8 <span style="color:#069;font-weight:bold">collate</span> utf8_bin;
+mysql<span style="color:#555">&gt;</span> <span style="color:#069;font-weight:bold">grant</span> <span style="color:#069;font-weight:bold">all</span> <span style="color:#069;font-weight:bold">privileges</span> <span style="color:#069;font-weight:bold">on</span> zabbix.<span style="color:#555">*</span> <span style="color:#069;font-weight:bold">to</span> zabbix<span style="color:#555">@</span>localhost identified <span style="color:#069;font-weight:bold">by</span> <span style="color:#c30">&#39;123&#39;</span>;
+mysql<span style="color:#555">&gt;</span> quit;
+</code></pre></div><p>导入zabbix数据库</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mysql  -uzabbix -p123 zabbix &lt; database/mysql/schema.sql
 mysql  -uzabbix -p123 zabbix &lt; database/mysql/images.sql
 mysql  -uzabbix -p123 zabbix &lt; database/mysql/data.sql
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="编译zabbix">编译zabbix</h2>
+</code></pre></div><h2 id="编译zabbix">编译zabbix</h2>
 <p>首先安装编译要用到的工具，除了下面标出的还需要常规编译经常用到的 gcc 等，报错的时候缺啥补啥即可</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">dnf -y install net-snmp-devel libevent-devel libxml2-devel libcurl-devel pcre-devel
-</code></pre></td></tr></table>
-</div>
-</div><p><strong>编译安装</strong></p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">dnf -y install net-snmp-devel libevent-devel libxml2-devel libcurl-devel pcre-devel
+</code></pre></div><p><strong>编译安装</strong></p>
 <pre><code>./configure --enable-server --enable-agent --with-mysql=/usr/local/mysql/bin/mysql_config --enable-ipv6 --with-net-snmp --with-libcurl --with-libxml2 --prefix=/opt/zabbix4.0
 # 最后一个选项，我安装到了 /opt/zabbix4.0 目录下，你可以选择自己喜欢的目录
 

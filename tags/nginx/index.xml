@@ -20,7 +20,7 @@
         <pubDate>Fri, 21 May 2021 21:21:28 +0000</pubDate>
         
         <guid>http://shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8Fcentos7_nginx_php7.3/</guid>
-        <description>1.源码安装nginx 这里列出了全部步骤，如果要了解详情，可以查看 源码安装nginx到指定目录 1 2 3 4 5 6 7 yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget yum install -y pcre-devel zlib-devel wget</description>
+        <description>1.源码安装nginx 这里列出了全部步骤，如果要了解详情，可以查看 源码安装nginx到指定目录 yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget yum install -y pcre-devel zlib-devel wget http://nginx.org/download/nginx-1.16.1.tar.gz # 下载源码包</description>
       </item>
       
       <item>
@@ -39,41 +39,21 @@
         
         <guid>http://shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85nginx%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95/</guid>
         <description>&lt;h2 id=&#34;首先是全部步骤概括&#34;&gt;首先是全部步骤概括&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget
 yum install -y pcre-devel zlib-devel
-wget http://nginx.org/download/nginx-1.16.1.tar.gz &lt;span class=&#34;c1&#34;&gt;# 下载源码包&lt;/span&gt;
+wget http://nginx.org/download/nginx-1.16.1.tar.gz &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;# 下载源码包&lt;/span&gt;
 tar -zxvf nginx-1.16.1.tar.gz
-&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; nginx-1.16.1
-./configure --prefix&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/opt/nginx1.16 &lt;span class=&#34;c1&#34;&gt;# 这里指定安装目录&lt;/span&gt;
-make &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install
+&lt;span style=&#34;color:#366&#34;&gt;cd&lt;/span&gt; nginx-1.16.1
+./configure --prefix&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;/opt/nginx1.16 &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;# 这里指定安装目录&lt;/span&gt;
+make &lt;span style=&#34;color:#555&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install
 useradd www -s /bin/false
-vi /opt/nginx1.16/conf/nginx.conf &lt;span class=&#34;c1&#34;&gt;# 修改配置文件&lt;/span&gt;
-&lt;span class=&#34;c1&#34;&gt;# 第一行去掉前面井号并改为 user  www;&lt;/span&gt;
-/opt/nginx1.16/sbin/nginx &lt;span class=&#34;c1&#34;&gt;#启动nginx&lt;/span&gt;
-&lt;span class=&#34;c1&#34;&gt;#以下为可选&lt;/span&gt;
-/opt/nginx1.16/sbin/nginx -s stop  &lt;span class=&#34;c1&#34;&gt;#停止&lt;/span&gt;
-/opt/nginx1.16/sbin/nginx -s reload  &lt;span class=&#34;c1&#34;&gt;#重新载入配置&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
+vi /opt/nginx1.16/conf/nginx.conf &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;# 修改配置文件&lt;/span&gt;
+&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;# 第一行去掉前面井号并改为 user  www;&lt;/span&gt;
+/opt/nginx1.16/sbin/nginx &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;#启动nginx&lt;/span&gt;
+&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;#以下为可选&lt;/span&gt;
+/opt/nginx1.16/sbin/nginx -s stop  &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;#停止&lt;/span&gt;
+/opt/nginx1.16/sbin/nginx -s reload  &lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;#重新载入配置&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
       </item>
       
       <item>

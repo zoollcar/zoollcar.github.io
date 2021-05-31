@@ -351,7 +351,6 @@
 
 
   
-  
     var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var tocElem = document.querySelector('.toc');
     var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
@@ -1128,7 +1127,6 @@
 </script>
 
     
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -2704,7 +2702,7 @@ var _mtac = {};
   <div class="summary-card__content">
     <div class="summary-card__text p2">
       
-        1.源码安装nginx 这里列出了全部步骤，如果要了解详情，可以查看 源码安装nginx到指定目录 1 2 3 4 5 6 7 yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget yum install -y pcre-devel zlib-devel wget
+        1.源码安装nginx 这里列出了全部步骤，如果要了解详情，可以查看 源码安装nginx到指定目录 yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget yum install -y pcre-devel zlib-devel wget http://nginx.org/download/nginx-1.16.1.tar.gz # 下载源码包
       
     </div>
     
@@ -2769,41 +2767,21 @@ var _mtac = {};
     <div class="summary-card__text p2">
       
         <h2 id="首先是全部步骤概括">首先是全部步骤概括</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget
 yum install -y pcre-devel zlib-devel
-wget http://nginx.org/download/nginx-1.16.1.tar.gz <span class="c1"># 下载源码包</span>
+wget http://nginx.org/download/nginx-1.16.1.tar.gz <span style="color:#09f;font-style:italic"># 下载源码包</span>
 tar -zxvf nginx-1.16.1.tar.gz
-<span class="nb">cd</span> nginx-1.16.1
-./configure --prefix<span class="o">=</span>/opt/nginx1.16 <span class="c1"># 这里指定安装目录</span>
-make <span class="o">&amp;&amp;</span> make install
+<span style="color:#366">cd</span> nginx-1.16.1
+./configure --prefix<span style="color:#555">=</span>/opt/nginx1.16 <span style="color:#09f;font-style:italic"># 这里指定安装目录</span>
+make <span style="color:#555">&amp;&amp;</span> make install
 useradd www -s /bin/false
-vi /opt/nginx1.16/conf/nginx.conf <span class="c1"># 修改配置文件</span>
-<span class="c1"># 第一行去掉前面井号并改为 user  www;</span>
-/opt/nginx1.16/sbin/nginx <span class="c1">#启动nginx</span>
-<span class="c1">#以下为可选</span>
-/opt/nginx1.16/sbin/nginx -s stop  <span class="c1">#停止</span>
-/opt/nginx1.16/sbin/nginx -s reload  <span class="c1">#重新载入配置</span>
-</code></pre></td></tr></table>
-</div>
-</div>
+vi /opt/nginx1.16/conf/nginx.conf <span style="color:#09f;font-style:italic"># 修改配置文件</span>
+<span style="color:#09f;font-style:italic"># 第一行去掉前面井号并改为 user  www;</span>
+/opt/nginx1.16/sbin/nginx <span style="color:#09f;font-style:italic">#启动nginx</span>
+<span style="color:#09f;font-style:italic">#以下为可选</span>
+/opt/nginx1.16/sbin/nginx -s stop  <span style="color:#09f;font-style:italic">#停止</span>
+/opt/nginx1.16/sbin/nginx -s reload  <span style="color:#09f;font-style:italic">#重新载入配置</span>
+</code></pre></div>
       
     </div>
     

@@ -351,7 +351,6 @@
 
 
   
-  
     var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var tocElem = document.querySelector('.toc');
     var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
@@ -1135,7 +1134,6 @@
 </script>
 
     
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -2370,260 +2368,125 @@ var _mtac = {};
 <h2 id="创建-camunda-spring-boot-项目">创建 Camunda Spring Boot 项目</h2>
 <p>首先打开你喜欢的 IDE，新建一个空的Maven项目，本次的案例是“贷款审批”，所以项目名命名为<code>loan-approval-spring-boot</code>，groupId为<code>org.example</code></p>
 <p>也可以使用命令行创建</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">mvn archetype:generate -DgroupId<span class="o">=</span>org.example -DartifactId<span class="o">=</span>loan-approval-spring-boot -Dversion<span class="o">=</span>1.0-SNAPSHOT -DarchetypeArtifactId<span class="o">=</span>maven-archetype-quickstart -DinactiveMode<span class="o">=</span><span class="nb">false</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="配置maven依赖">配置Maven依赖</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn archetype:generate -DgroupId<span style="color:#555">=</span>org.example -DartifactId<span style="color:#555">=</span>loan-approval-spring-boot -Dversion<span style="color:#555">=</span>1.0-SNAPSHOT -DarchetypeArtifactId<span style="color:#555">=</span>maven-archetype-quickstart -DinactiveMode<span style="color:#555">=</span><span style="color:#366">false</span>
+</code></pre></div><h3 id="配置maven依赖">配置Maven依赖</h3>
 <p>接下来添加 Maven 依赖，Maven依赖需要添加到项目根目录下的 <code>pom.xml</code> 文件中。我们需要将 Spring Boot 依赖添加到 “dependency management” 中，然后将 Camunda Spring Boot Starter 添加为依赖，这将提供 Camunda 流程引擎和自带的 WebApp ；为简单起见，数据库使用嵌入式H2数据库；最后添加 <code>spring-boot-maven-plugin</code> ，它会将Spring Boot项目打包在一起。最终完成后效果如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-<span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span>
-         <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
-         <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#099">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#309;font-weight:bold">&lt;project</span> <span style="color:#309">xmlns=</span><span style="color:#c30">&#34;http://maven.apache.org/POM/4.0.0&#34;</span>
+         <span style="color:#309">xmlns:xsi=</span><span style="color:#c30">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+         <span style="color:#309">xsi:schemaLocation=</span><span style="color:#c30">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span style="color:#309;font-weight:bold">&gt;</span>
+    <span style="color:#309;font-weight:bold">&lt;modelVersion&gt;</span>4.0.0<span style="color:#309;font-weight:bold">&lt;/modelVersion&gt;</span>
 
-    <span class="nt">&lt;groupId&gt;</span>org.example<span class="nt">&lt;/groupId&gt;</span>
-    <span class="nt">&lt;artifactId&gt;</span>loan-approval-spring-boot<span class="nt">&lt;/artifactId&gt;</span>
-    <span class="nt">&lt;version&gt;</span>1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+    <span style="color:#309;font-weight:bold">&lt;groupId&gt;</span>org.example<span style="color:#309;font-weight:bold">&lt;/groupId&gt;</span>
+    <span style="color:#309;font-weight:bold">&lt;artifactId&gt;</span>loan-approval-spring-boot<span style="color:#309;font-weight:bold">&lt;/artifactId&gt;</span>
+    <span style="color:#309;font-weight:bold">&lt;version&gt;</span>1.0-SNAPSHOT<span style="color:#309;font-weight:bold">&lt;/version&gt;</span>
 
-    <span class="nt">&lt;properties&gt;</span>
-        <span class="nt">&lt;camunda.spring-boot.version&gt;</span>7.15.0<span class="nt">&lt;/camunda.spring-boot.version&gt;</span>
-        <span class="nt">&lt;spring-boot.version&gt;</span>2.4.4<span class="nt">&lt;/spring-boot.version&gt;</span>
-        <span class="nt">&lt;maven.compiler.source&gt;</span>1.8<span class="nt">&lt;/maven.compiler.source&gt;</span>
-        <span class="nt">&lt;maven.compiler.target&gt;</span>1.8<span class="nt">&lt;/maven.compiler.target&gt;</span>
-    <span class="nt">&lt;/properties&gt;</span>
+    <span style="color:#309;font-weight:bold">&lt;properties&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;camunda.spring-boot.version&gt;</span>7.15.0<span style="color:#309;font-weight:bold">&lt;/camunda.spring-boot.version&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;spring-boot.version&gt;</span>2.4.4<span style="color:#309;font-weight:bold">&lt;/spring-boot.version&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;maven.compiler.source&gt;</span>1.8<span style="color:#309;font-weight:bold">&lt;/maven.compiler.source&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;maven.compiler.target&gt;</span>1.8<span style="color:#309;font-weight:bold">&lt;/maven.compiler.target&gt;</span>
+    <span style="color:#309;font-weight:bold">&lt;/properties&gt;</span>
 
-    <span class="nt">&lt;dependencyManagement&gt;</span>
-        <span class="nt">&lt;dependencies&gt;</span>
-            <span class="nt">&lt;dependency&gt;</span>
-                <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-                <span class="nt">&lt;artifactId&gt;</span>spring-boot-dependencies<span class="nt">&lt;/artifactId&gt;</span>
-                <span class="nt">&lt;version&gt;</span>${spring-boot.version}<span class="nt">&lt;/version&gt;</span>
-                <span class="nt">&lt;type&gt;</span>pom<span class="nt">&lt;/type&gt;</span>
-                <span class="nt">&lt;scope&gt;</span>import<span class="nt">&lt;/scope&gt;</span>
-            <span class="nt">&lt;/dependency&gt;</span>
-        <span class="nt">&lt;/dependencies&gt;</span>
-    <span class="nt">&lt;/dependencyManagement&gt;</span>
+    <span style="color:#309;font-weight:bold">&lt;dependencyManagement&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;dependencies&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;dependency&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#309;font-weight:bold">&lt;/groupId&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;artifactId&gt;</span>spring-boot-dependencies<span style="color:#309;font-weight:bold">&lt;/artifactId&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;version&gt;</span>${spring-boot.version}<span style="color:#309;font-weight:bold">&lt;/version&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;type&gt;</span>pom<span style="color:#309;font-weight:bold">&lt;/type&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;scope&gt;</span>import<span style="color:#309;font-weight:bold">&lt;/scope&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;/dependency&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;/dependencies&gt;</span>
+    <span style="color:#309;font-weight:bold">&lt;/dependencyManagement&gt;</span>
 
-    <span class="nt">&lt;dependencies&gt;</span>
-        <span class="nt">&lt;dependency&gt;</span>
-            <span class="nt">&lt;groupId&gt;</span>org.camunda.bpm.springboot<span class="nt">&lt;/groupId&gt;</span>
-            <span class="nt">&lt;artifactId&gt;</span>camunda-bpm-spring-boot-starter-webapp<span class="nt">&lt;/artifactId&gt;</span>
-            <span class="nt">&lt;version&gt;</span>${camunda.spring-boot.version}<span class="nt">&lt;/version&gt;</span>
-        <span class="nt">&lt;/dependency&gt;</span>
-        <span class="nt">&lt;dependency&gt;</span>
-            <span class="nt">&lt;groupId&gt;</span>com.h2database<span class="nt">&lt;/groupId&gt;</span>
-            <span class="nt">&lt;artifactId&gt;</span>h2<span class="nt">&lt;/artifactId&gt;</span>
-        <span class="nt">&lt;/dependency&gt;</span>
-        <span class="nt">&lt;dependency&gt;</span>
-            <span class="nt">&lt;groupId&gt;</span>com.sun.xml.bind<span class="nt">&lt;/groupId&gt;</span>
-            <span class="nt">&lt;artifactId&gt;</span>jaxb-impl<span class="nt">&lt;/artifactId&gt;</span>
-            <span class="nt">&lt;version&gt;</span>2.2.3<span class="nt">&lt;/version&gt;</span>
-        <span class="nt">&lt;/dependency&gt;</span>
-    <span class="nt">&lt;/dependencies&gt;</span>
+    <span style="color:#309;font-weight:bold">&lt;dependencies&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;dependency&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;groupId&gt;</span>org.camunda.bpm.springboot<span style="color:#309;font-weight:bold">&lt;/groupId&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;artifactId&gt;</span>camunda-bpm-spring-boot-starter-webapp<span style="color:#309;font-weight:bold">&lt;/artifactId&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;version&gt;</span>${camunda.spring-boot.version}<span style="color:#309;font-weight:bold">&lt;/version&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;/dependency&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;dependency&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;groupId&gt;</span>com.h2database<span style="color:#309;font-weight:bold">&lt;/groupId&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;artifactId&gt;</span>h2<span style="color:#309;font-weight:bold">&lt;/artifactId&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;/dependency&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;dependency&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;groupId&gt;</span>com.sun.xml.bind<span style="color:#309;font-weight:bold">&lt;/groupId&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;artifactId&gt;</span>jaxb-impl<span style="color:#309;font-weight:bold">&lt;/artifactId&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;version&gt;</span>2.2.3<span style="color:#309;font-weight:bold">&lt;/version&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;/dependency&gt;</span>
+    <span style="color:#309;font-weight:bold">&lt;/dependencies&gt;</span>
 
-    <span class="nt">&lt;build&gt;</span>
-        <span class="nt">&lt;plugins&gt;</span>
-            <span class="nt">&lt;plugin&gt;</span>
-                <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-                <span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
-                <span class="nt">&lt;version&gt;</span>${spring-boot.version}<span class="nt">&lt;/version&gt;</span>
-                <span class="nt">&lt;configuration&gt;</span>
-                    <span class="nt">&lt;layout&gt;</span>ZIP<span class="nt">&lt;/layout&gt;</span>
-                <span class="nt">&lt;/configuration&gt;</span>
-                <span class="nt">&lt;executions&gt;</span>
-                    <span class="nt">&lt;execution&gt;</span>
-                        <span class="nt">&lt;goals&gt;</span>
-                            <span class="nt">&lt;goal&gt;</span>repackage<span class="nt">&lt;/goal&gt;</span>
-                        <span class="nt">&lt;/goals&gt;</span>
-                    <span class="nt">&lt;/execution&gt;</span>
-                <span class="nt">&lt;/executions&gt;</span>
-            <span class="nt">&lt;/plugin&gt;</span>
-        <span class="nt">&lt;/plugins&gt;</span>
-    <span class="nt">&lt;/build&gt;</span>
+    <span style="color:#309;font-weight:bold">&lt;build&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;plugins&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;plugin&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#309;font-weight:bold">&lt;/groupId&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span style="color:#309;font-weight:bold">&lt;/artifactId&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;version&gt;</span>${spring-boot.version}<span style="color:#309;font-weight:bold">&lt;/version&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;configuration&gt;</span>
+                    <span style="color:#309;font-weight:bold">&lt;layout&gt;</span>ZIP<span style="color:#309;font-weight:bold">&lt;/layout&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;/configuration&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;executions&gt;</span>
+                    <span style="color:#309;font-weight:bold">&lt;execution&gt;</span>
+                        <span style="color:#309;font-weight:bold">&lt;goals&gt;</span>
+                            <span style="color:#309;font-weight:bold">&lt;goal&gt;</span>repackage<span style="color:#309;font-weight:bold">&lt;/goal&gt;</span>
+                        <span style="color:#309;font-weight:bold">&lt;/goals&gt;</span>
+                    <span style="color:#309;font-weight:bold">&lt;/execution&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;/executions&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;/plugin&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;/plugins&gt;</span>
+    <span style="color:#309;font-weight:bold">&lt;/build&gt;</span>
 
-<span class="nt">&lt;/project&gt;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="为项目添加主类">为项目添加主类</h3>
+<span style="color:#309;font-weight:bold">&lt;/project&gt;</span>
+</code></pre></div><h3 id="为项目添加主类">为项目添加主类</h3>
 <p>接下来，我们将为应用添加可以运行的主类，在 <code>src/main/java</code> 下新建一个类，类名为<code>WebappExampleProcessApplication</code>，包名为 <code>org.example.loanapproval</code></p>
 <blockquote>
 <p>如果使用命名行创建项目，会存在一个自带的<code>App.java</code>主类 ，这个不需要，删除即可</p>
 </blockquote>
 <p>Spring Boot的主类需要添加 <code>@SpringBootApplication</code> 注解，最后完成的效果如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">org.example.loanapproval</span><span class="o">;</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">package</span> <span style="color:#0cf;font-weight:bold">org.example.loanapproval</span><span style="color:#555">;</span>
 
-<span class="kn">import</span> <span class="nn">org.springframework.boot.SpringApplication</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.boot.autoconfigure.SpringBootApplication</span><span class="o">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">org.springframework.boot.SpringApplication</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">org.springframework.boot.autoconfigure.SpringBootApplication</span><span style="color:#555">;</span>
 
-<span class="nd">@SpringBootApplication</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WebappExampleProcessApplication</span> <span class="o">{</span>
+<span style="color:#99f">@SpringBootApplication</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">WebappExampleProcessApplication</span> <span style="color:#555">{</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">WebappExampleProcessApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><blockquote>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span><span style="color:#555">(</span>String<span style="color:#555">...</span> args<span style="color:#555">)</span> <span style="color:#555">{</span>
+        SpringApplication<span style="color:#555">.</span><span style="color:#309">run</span><span style="color:#555">(</span>WebappExampleProcessApplication<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">,</span> args<span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><blockquote>
 <p>到此第一部分结束，如果想直接获取到现在为止的进度，可以下载<a href="https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn/repository/archive/Step-1.zip" target="_blank">zip包</a>，或者使用如下命令</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
 git checkout -f Step-1
-</code></pre></td></tr></table>
-</div>
-</div></blockquote>
+</code></pre></div></blockquote>
 <h3 id="配置项目">配置项目</h3>
 <p>Camunda Spring Boot 自带了最佳实践配置，这些配置会在启动时自动启用，如果要覆盖部分配置，可以在 resources 中新增 <code>application.yaml</code> 或<code>application.properties</code>，默认配置的具体内容可以查看 <a href="https://docs.camunda.org/manual/latest/user-guide/spring-boot-integration/configuration/#camunda-engine-properties" target="_blank">https://docs.camunda.org/manual/latest/user-guide/spring-boot-integration/configuration/#camunda-engine-properties</a></p>
 <h4 id="自定义管理员账户">自定义管理员账户</h4>
 <p>让我们在 <code>src/main/resources</code> 下创建 <code>application.yaml</code>文件，输入如下内容：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">camunda.bpm</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">admin-user</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">demo</span><span class="w">
-</span><span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">demo</span><span class="w">
-</span><span class="w">    </span><span class="nt">firstName</span><span class="p">:</span><span class="w"> </span><span class="l">Demo</span><span class="w">
-</span><span class="w">  </span><span class="nt">filter</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">create</span><span class="p">:</span><span class="w"> </span><span class="l">All tasks</span><span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div><p>以上配置将使用 demo 作为管理员用户名密码，在<code>Tasklist</code>中添加 <code>All tasks</code> 过滤器</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#309;font-weight:bold">camunda.bpm</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">admin-user</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">id</span>:<span style="color:#bbb"> </span>demo<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">password</span>:<span style="color:#bbb"> </span>demo<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">firstName</span>:<span style="color:#bbb"> </span>Demo<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">filter</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">create</span>:<span style="color:#bbb"> </span>All tasks<span style="color:#bbb">
+</span></code></pre></div><p>以上配置将使用 demo 作为管理员用户名密码，在<code>Tasklist</code>中添加 <code>All tasks</code> 过滤器</p>
 <h3 id="编译运行">编译运行</h3>
 <p>IDE通常有工具可以直接编译运行，使用工具运行即可</p>
 <p>也可以使用命令行运行：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">mvn package
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn package
 java -jar target/loan-approval-spring-boot-1.0-SNAPSHOT.jar
-</code></pre></td></tr></table>
-</div>
-</div><p>运行后打开浏览器访问：<a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a> ，会自动打开登录界面，可以使用 demo/demo 登录，然后打开 Tasklist，可以看到 “All tasks”也被创建出来了。</p>
+</code></pre></div><p>运行后打开浏览器访问：<a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a> ，会自动打开登录界面，可以使用 demo/demo 登录，然后打开 Tasklist，可以看到 “All tasks”也被创建出来了。</p>
 <p><p class="md__image">
   <img src="http://img.shaochenfeng.com/20210529112410.png" alt="image-20210529112402835"  />
 </p></p>
 <blockquote>
 <p>到此第二部分结束，如果想直接获取到现在为止的进度，可以下载<a href="https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn/repository/archive/Step-2.zip" target="_blank">zip包</a>，或者使用如下命令</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
 git checkout -f Step-2
-</code></pre></td></tr></table>
-</div>
-</div></blockquote>
+</code></pre></div></blockquote>
 <h2 id="部署bpmn20流程">部署BPMN2.0流程</h2>
 <p>在本章中，我们将要为刚才的Spring Boot项目部署流程，并使用监听器，在流程部署时发起流程</p>
 <h3 id="编辑流程">编辑流程</h3>
@@ -2647,191 +2510,94 @@ git checkout -f Step-2
 </blockquote>
 <h3 id="为项目启用流程支持">为项目启用流程支持</h3>
 <p>现在我们在 Camunda Spring Boot 项目中添加 <code>@EnableProcessApplication</code> 注解，这会提供更多可配置项，以及启用更多流程相关注解。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">org.example.loanapproval</span><span class="o">;</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">package</span> <span style="color:#0cf;font-weight:bold">org.example.loanapproval</span><span style="color:#555">;</span>
 
-<span class="kn">import</span> <span class="nn">org.camunda.bpm.spring.boot.starter.annotation.EnableProcessApplication</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.boot.SpringApplication</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.springframework.boot.autoconfigure.SpringBootApplication</span><span class="o">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">org.camunda.bpm.spring.boot.starter.annotation.EnableProcessApplication</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">org.springframework.boot.SpringApplication</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">org.springframework.boot.autoconfigure.SpringBootApplication</span><span style="color:#555">;</span>
 
-<span class="nd">@SpringBootApplication</span>
-<span class="nd">@EnableProcessApplication</span> <span class="c1">// 新增
-</span><span class="c1"></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">WebappExampleProcessApplication</span> <span class="o">{</span>
+<span style="color:#99f">@SpringBootApplication</span>
+<span style="color:#99f">@EnableProcessApplication</span> <span style="color:#09f;font-style:italic">// 新增
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">WebappExampleProcessApplication</span> <span style="color:#555">{</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">WebappExampleProcessApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>添加完注解后，需要新建 Camunda 配置文件——<code>src/main/resources/META-INF/processes.xml</code>，<code>META-INF</code>文件夹可能不存在，需要新建后，在其中增加<code>processes.xml</code>，这个文件暂时留空，但对于 Camunda 来说却是必要的。</p>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span><span style="color:#555">(</span>String<span style="color:#555">...</span> args<span style="color:#555">)</span> <span style="color:#555">{</span>
+        SpringApplication<span style="color:#555">.</span><span style="color:#309">run</span><span style="color:#555">(</span>WebappExampleProcessApplication<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">,</span> args<span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>添加完注解后，需要新建 Camunda 配置文件——<code>src/main/resources/META-INF/processes.xml</code>，<code>META-INF</code>文件夹可能不存在，需要新建后，在其中增加<code>processes.xml</code>，这个文件暂时留空，但对于 Camunda 来说却是必要的。</p>
 <p><p class="md__image">
   <img src="http://img.shaochenfeng.com/20210529180648.png" alt="image-20210529180648434"  />
 </p></p>
 <h3 id="流程部署时发起流程测试">流程部署时发起流程测试</h3>
 <p>下一步是一项测试，我们希望在流程部署完成后发起一次流程，需要用到事件监听注解<code>@EventListener</code>，监听的类型为 <code>PostDeployEvent</code> （流程部署），修改后的 <code>WebappExampleProcessApplication</code> 如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@SpringBootApplication</span>
-<span class="nd">@EnableProcessApplication</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WebappExampleProcessApplication</span> <span class="o">{</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#99f">@SpringBootApplication</span>
+<span style="color:#99f">@EnableProcessApplication</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">WebappExampleProcessApplication</span> <span style="color:#555">{</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">WebappExampleProcessApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
-    <span class="o">}</span>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span><span style="color:#555">(</span>String<span style="color:#555">...</span> args<span style="color:#555">)</span> <span style="color:#555">{</span>
+        SpringApplication<span style="color:#555">.</span><span style="color:#309">run</span><span style="color:#555">(</span>WebappExampleProcessApplication<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">,</span> args<span style="color:#555">);</span>
+    <span style="color:#555">}</span>
 
-    <span class="c1">// &gt;&gt;新增
-</span><span class="c1"></span>    <span class="nd">@Autowired</span>
-    <span class="kd">private</span> <span class="n">RuntimeService</span> <span class="n">runtimeService</span><span class="o">;</span>
+    <span style="color:#09f;font-style:italic">// &gt;&gt;新增
+</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#99f">@Autowired</span>
+    <span style="color:#069;font-weight:bold">private</span> RuntimeService runtimeService<span style="color:#555">;</span>
 
-    <span class="nd">@EventListener</span>
-    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">processPostDeploy</span><span class="o">(</span><span class="n">PostDeployEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">runtimeService</span><span class="o">.</span><span class="na">startProcessInstanceByKey</span><span class="o">(</span><span class="s">&#34;loanApproval&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-    <span class="c1">// &lt;&lt;
-</span><span class="c1"></span><span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>修改后，我们再次重启项目，浏览器中打开 <a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a>  ，点击 Tasklist 进入，可以看到新创建的流程实例人工任务</p>
+    <span style="color:#99f">@EventListener</span>
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">processPostDeploy</span><span style="color:#555">(</span>PostDeployEvent event<span style="color:#555">)</span> <span style="color:#555">{</span>
+        runtimeService<span style="color:#555">.</span><span style="color:#309">startProcessInstanceByKey</span><span style="color:#555">(</span><span style="color:#c30">&#34;loanApproval&#34;</span><span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+    <span style="color:#09f;font-style:italic">// &lt;&lt;
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">}</span>
+</code></pre></div><p>修改后，我们再次重启项目，浏览器中打开 <a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a>  ，点击 Tasklist 进入，可以看到新创建的流程实例人工任务</p>
 <p><p class="md__image">
   <img src="http://img.shaochenfeng.com/20210529180604.png" alt="image-20210529180604050"  />
 </p></p>
 <blockquote>
 <p>到此第三部分结束，如果想直接获取到现在为止的进度，可以下载<a href="https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn/repository/archive/Step-3.zip" target="_blank">zip包</a>，或者使用如下命令</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
 git checkout -f Step-3
-</code></pre></td></tr></table>
-</div>
-</div></blockquote>
+</code></pre></div></blockquote>
 <h2 id="添加自定义表单">添加自定义表单</h2>
 <p><a href="/blog/camunda-%e5%bf%ab%e9%80%9f%e5%85%a5%e9%97%a8" target="_blank">快速入门</a>中，我们通过form选项卡添加过表单，通过变量名和变量类型简单的生成了自带表单，本章我们将使用自定义html嵌入的方式，让表单具有更大的灵活性。</p>
 <h3 id="添加申请表单">添加申请表单</h3>
 <p>我们需要将自定义表单放入Spring Boot静态资源文件夹，在 <code>resources</code> 中新建目录<code>static/forms</code>，然后新建申请表单，内容如下，命名为 <code>loan-approval.html</code>，保存到 <code>resources/static/forms</code> 目录</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;loanApproval&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group&#34;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;lenderId&#34;</span><span class="p">&gt;</span>贷款人<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span>
-               <span class="na">cam-variable-type</span><span class="o">=</span><span class="s">&#34;String&#34;</span>
-               <span class="na">cam-variable-name</span><span class="o">=</span><span class="s">&#34;lenderId&#34;</span>
-               <span class="na">name</span><span class="o">=</span><span class="s">&#34;lenderId&#34;</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group&#34;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;amount&#34;</span><span class="p">&gt;</span>金额<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span>
-               <span class="na">cam-variable-type</span><span class="o">=</span><span class="s">&#34;Double&#34;</span>
-               <span class="na">cam-variable-name</span><span class="o">=</span><span class="s">&#34;amount&#34;</span>
-               <span class="na">name</span><span class="o">=</span><span class="s">&#34;amount&#34;</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>打开 Camunda Modeler ，点击 “发起贷款申请” 节点，在右侧属性菜单选择Forms，写入 <code>embedded:app:forms/loan-approval.html</code> 这意味着表单将以嵌入式的方式添加进 Tasklist 中</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">form</span> <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;loanApproval&#34;</span>&gt;
+    &lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;form-group&#34;</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">for</span><span style="color:#555">=</span><span style="color:#c30">&#34;lenderId&#34;</span>&gt;贷款人&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;form-control&#34;</span>
+               <span style="color:#309">cam-variable-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;String&#34;</span>
+               <span style="color:#309">cam-variable-name</span><span style="color:#555">=</span><span style="color:#c30">&#34;lenderId&#34;</span>
+               <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;lenderId&#34;</span> /&gt;
+    &lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+    &lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;form-group&#34;</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">for</span><span style="color:#555">=</span><span style="color:#c30">&#34;amount&#34;</span>&gt;金额&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;form-control&#34;</span>
+               <span style="color:#309">cam-variable-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;Double&#34;</span>
+               <span style="color:#309">cam-variable-name</span><span style="color:#555">=</span><span style="color:#c30">&#34;amount&#34;</span>
+               <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;amount&#34;</span> /&gt;
+    &lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">form</span>&gt;
+</code></pre></div><p>打开 Camunda Modeler ，点击 “发起贷款申请” 节点，在右侧属性菜单选择Forms，写入 <code>embedded:app:forms/loan-approval.html</code> 这意味着表单将以嵌入式的方式添加进 Tasklist 中</p>
 <h3 id="添加检查申请单节点表单">添加“检查申请单”节点表单</h3>
 <p>同样的，我们新建 <code>loan-auth.html</code> 到 <code>resources/static/forms</code> 目录，内容如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;loanAuth&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group&#34;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;lenderId&#34;</span><span class="p">&gt;</span>贷款人<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span>
-               <span class="na">cam-variable-type</span><span class="o">=</span><span class="s">&#34;String&#34;</span>
-               <span class="na">cam-variable-name</span><span class="o">=</span><span class="s">&#34;lenderId&#34;</span>
-               <span class="na">name</span><span class="o">=</span><span class="s">&#34;lenderId&#34;</span>
-               <span class="na">readonly</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group&#34;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;amount&#34;</span><span class="p">&gt;</span>金额<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span>
-               <span class="na">cam-variable-type</span><span class="o">=</span><span class="s">&#34;Double&#34;</span>
-               <span class="na">cam-variable-name</span><span class="o">=</span><span class="s">&#34;amount&#34;</span>
-               <span class="na">name</span><span class="o">=</span><span class="s">&#34;amount&#34;</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>打开 Camunda Modeler ，点击 “检查申请单” 节点，在右侧属性菜单选择Forms，写入 <code>embedded:app:forms/loan-auth.html</code></p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">form</span> <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;loanAuth&#34;</span>&gt;
+    &lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;form-group&#34;</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">for</span><span style="color:#555">=</span><span style="color:#c30">&#34;lenderId&#34;</span>&gt;贷款人&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;form-control&#34;</span>
+               <span style="color:#309">cam-variable-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;String&#34;</span>
+               <span style="color:#309">cam-variable-name</span><span style="color:#555">=</span><span style="color:#c30">&#34;lenderId&#34;</span>
+               <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;lenderId&#34;</span>
+               <span style="color:#309">readonly</span><span style="color:#555">=</span><span style="color:#c30">&#34;true&#34;</span> /&gt;
+    &lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+    &lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;form-group&#34;</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">for</span><span style="color:#555">=</span><span style="color:#c30">&#34;amount&#34;</span>&gt;金额&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;form-control&#34;</span>
+               <span style="color:#309">cam-variable-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;Double&#34;</span>
+               <span style="color:#309">cam-variable-name</span><span style="color:#555">=</span><span style="color:#c30">&#34;amount&#34;</span>
+               <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;amount&#34;</span> /&gt;
+    &lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">form</span>&gt;
+</code></pre></div><p>打开 Camunda Modeler ，点击 “检查申请单” 节点，在右侧属性菜单选择Forms，写入 <code>embedded:app:forms/loan-auth.html</code></p>
 <h3 id="测试一下">测试一下</h3>
 <p>重新编译并运行项目，浏览器中打开 <a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a>  ，点击 Tasklist 进入，点击右上角 <code>Start Process</code>，可以看到表单已经嵌入到 Tasklist 中了，发起流程后，任务列表中可以看到审核界面的表单</p>
 <p><p class="md__image">
@@ -2842,17 +2608,9 @@ git checkout -f Step-3
 </p></p>
 <blockquote>
 <p>到此第四部分结束，如果想直接获取到现在为止的进度，可以下载<a href="https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn/repository/archive/Step-4.zip" target="_blank">zip包</a>，或者使用如下命令</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
 git checkout -f Step-4
-</code></pre></td></tr></table>
-</div>
-</div></blockquote>
+</code></pre></div></blockquote>
 <h2 id="在流程中调用-java-class">在流程中调用 JAVA Class</h2>
 <p>在本章中我们将学到如何使用流程的 <code>Service task（服务任务）</code> 中调用JAVA类。</p>
 <h3 id="将-service-task-添加到流程中">将 Service Task 添加到流程中</h3>
@@ -2866,43 +2624,22 @@ git checkout -f Step-4
 </p></p>
 <h3 id="实现-javadelegate-类">实现 JavaDelegate 类</h3>
 <p>现在我们需要添加 Service Task 可以调用的实现类，将类添加到 <code>org.example.loanapproval</code> 包下，命名为 <code>OfferLoan</code>，这里我们希望打印贷款人信息到日志，具体代码如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">org.example.loanapproval</span><span class="o">;</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">package</span> <span style="color:#0cf;font-weight:bold">org.example.loanapproval</span><span style="color:#555">;</span>
 
-<span class="kn">import</span> <span class="nn">java.util.logging.Logger</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.camunda.bpm.engine.delegate.DelegateExecution</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.camunda.bpm.engine.delegate.JavaDelegate</span><span class="o">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.logging.Logger</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">org.camunda.bpm.engine.delegate.DelegateExecution</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">org.camunda.bpm.engine.delegate.JavaDelegate</span><span style="color:#555">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OfferLoan</span> <span class="kd">implements</span> <span class="n">JavaDelegate</span> <span class="o">{</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">OfferLoan</span> <span style="color:#069;font-weight:bold">implements</span> JavaDelegate <span style="color:#555">{</span>
 
-    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">LOGGER</span> <span class="o">=</span> <span class="n">Logger</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="s">&#34;LOAN-REQUESTS&#34;</span><span class="o">);</span>
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#069;font-weight:bold">final</span> <span style="color:#069;font-weight:bold">static</span> Logger LOGGER <span style="color:#555">=</span> Logger<span style="color:#555">.</span><span style="color:#309">getLogger</span><span style="color:#555">(</span><span style="color:#c30">&#34;LOAN-REQUESTS&#34;</span><span style="color:#555">);</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">execute</span><span class="o">(</span><span class="n">DelegateExecution</span> <span class="n">execution</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">LOGGER</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;offer &#34;</span> <span class="o">+</span> <span class="n">execution</span><span class="o">.</span><span class="na">getVariable</span><span class="o">(</span><span class="s">&#34;lenderId&#34;</span><span class="o">)</span> <span class="o">+</span> <span class="s">&#34; loans&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="配置-service-task">配置 Service Task</h3>
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">execute</span><span style="color:#555">(</span>DelegateExecution execution<span style="color:#555">)</span> <span style="color:#555">{</span>
+        LOGGER<span style="color:#555">.</span><span style="color:#309">info</span><span style="color:#555">(</span><span style="color:#c30">&#34;offer &#34;</span> <span style="color:#555">+</span> execution<span style="color:#555">.</span><span style="color:#309">getVariable</span><span style="color:#555">(</span><span style="color:#c30">&#34;lenderId&#34;</span><span style="color:#555">)</span> <span style="color:#555">+</span> <span style="color:#c30">&#34; loans&#34;</span><span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><h3 id="配置-service-task">配置 Service Task</h3>
 <p>回到 Camunda Modeler ，选择“发放贷款”节点，在右侧的属性面板中，选择 <code>Implementation</code>为 <code>Java Class</code> ，Java Class 为我们刚才创建的类 <code>org.example.loanapproval.OfferLoan</code></p>
 <p><p class="md__image">
   <img src="http://img.shaochenfeng.com/20210530100558.png" alt="image-20210530100557989"  />
@@ -2921,17 +2658,9 @@ git checkout -f Step-4
 <pre><code>INFO 3156 --- [nio-8080-exec-6] LOAN-REQUESTS    : offer 张三 loans
 </code></pre><blockquote>
 <p>到此第五部分结束，如果想直接获取到现在为止的进度，可以下载<a href="https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn/repository/archive/Step-5.zip" target="_blank">zip包</a>，或者使用如下命令</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
 git checkout -f Step-5
-</code></pre></td></tr></table>
-</div>
-</div></blockquote>
+</code></pre></div></blockquote>
 <h2 id="在-java-中调用-dmn-决策">在 JAVA 中调用 DMN 决策</h2>
 <p>在本章中，我们将会学到创建一个DMN决策并部署到流程引擎中，以及在JAVA里调用测试我们的DMN。</p>
 <p>我们使用BMI健康状况作为案例，BMI是身高体重的比值，通常用于判断人的胖瘦程度。</p>
@@ -2969,118 +2698,56 @@ git checkout -f Step-5
 <p>编辑完成后，点击工具栏“save”按钮，将流程保存到项目的 <code>src/main/resources</code>目录下。</p>
 <blockquote>
 <p>到此第六部分结束，如果想直接获取到现在为止的进度，可以下载<a href="https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn/repository/archive/Step-6.zip" target="_blank">zip包</a>，或者使用如下命令</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
 git checkout -f Step-6
-</code></pre></td></tr></table>
-</div>
-</div></blockquote>
+</code></pre></div></blockquote>
 <h3 id="在java中调用dmn决策表">在JAVA中调用DMN决策表</h3>
 <p>我们将在决策表部署完成后调用测试，因此如下修改主类：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">org.example.loanapproval</span><span class="o">;</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">package</span> <span style="color:#0cf;font-weight:bold">org.example.loanapproval</span><span style="color:#555">;</span>
 
-<span class="c1">//import ...
-</span><span class="c1"></span>
-<span class="kn">import</span> <span class="nn">java.util.logging.Level</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.logging.Logger</span><span class="o">;</span>
+<span style="color:#09f;font-style:italic">//import ...
+</span><span style="color:#09f;font-style:italic"></span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.logging.Level</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.logging.Logger</span><span style="color:#555">;</span>
 
-<span class="nd">@SpringBootApplication</span>
-<span class="nd">@EnableProcessApplication</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WebappExampleProcessApplication</span> <span class="o">{</span>
+<span style="color:#99f">@SpringBootApplication</span>
+<span style="color:#99f">@EnableProcessApplication</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">WebappExampleProcessApplication</span> <span style="color:#555">{</span>
 	
-    <span class="c1">// 增加logger用于打印决策后的结果
-</span><span class="c1"></span>    <span class="kd">protected</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">LOGGER</span> <span class="o">=</span> <span class="n">Logger</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">WebappExampleProcessApplication</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+    <span style="color:#09f;font-style:italic">// 增加logger用于打印决策后的结果
+</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#069;font-weight:bold">protected</span> <span style="color:#069;font-weight:bold">final</span> <span style="color:#069;font-weight:bold">static</span> Logger LOGGER <span style="color:#555">=</span> Logger<span style="color:#555">.</span><span style="color:#309">getLogger</span><span style="color:#555">(</span>WebappExampleProcessApplication<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">.</span><span style="color:#309">getName</span><span style="color:#555">());</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">WebappExampleProcessApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
-    <span class="o">}</span>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span><span style="color:#555">(</span>String<span style="color:#555">...</span> args<span style="color:#555">)</span> <span style="color:#555">{</span>
+        SpringApplication<span style="color:#555">.</span><span style="color:#309">run</span><span style="color:#555">(</span>WebappExampleProcessApplication<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">,</span> args<span style="color:#555">);</span>
+    <span style="color:#555">}</span>
 
-    <span class="nd">@Autowired</span>
-    <span class="kd">private</span> <span class="n">RuntimeService</span> <span class="n">runtimeService</span><span class="o">;</span>
+    <span style="color:#99f">@Autowired</span>
+    <span style="color:#069;font-weight:bold">private</span> RuntimeService runtimeService<span style="color:#555">;</span>
 
-    <span class="nd">@EventListener</span>
-    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">processPostDeploy</span><span class="o">(</span><span class="n">PostDeployEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">runtimeService</span><span class="o">.</span><span class="na">startProcessInstanceByKey</span><span class="o">(</span><span class="s">&#34;loan-approval&#34;</span><span class="o">);</span>
+    <span style="color:#99f">@EventListener</span>
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">processPostDeploy</span><span style="color:#555">(</span>PostDeployEvent event<span style="color:#555">)</span> <span style="color:#555">{</span>
+        runtimeService<span style="color:#555">.</span><span style="color:#309">startProcessInstanceByKey</span><span style="color:#555">(</span><span style="color:#c30">&#34;loan-approval&#34;</span><span style="color:#555">);</span>
 		
-        <span class="c1">// &gt;&gt;&gt;&gt; 新增
-</span><span class="c1"></span>        <span class="n">DecisionService</span> <span class="n">decisionService</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="na">getProcessEngine</span><span class="o">().</span><span class="na">getDecisionService</span><span class="o">();</span>
-		<span class="c1">// 输入参数
-</span><span class="c1"></span>        <span class="n">VariableMap</span> <span class="n">variables</span> <span class="o">=</span> <span class="n">Variables</span><span class="o">.</span><span class="na">createVariables</span><span class="o">()</span>
-                <span class="o">.</span><span class="na">putValue</span><span class="o">(</span><span class="s">&#34;bmi&#34;</span><span class="o">,</span> <span class="n">20</span><span class="o">.</span><span class="na">0</span><span class="o">);</span>
-		<span class="c1">// 调用决策
-</span><span class="c1"></span>        <span class="n">DmnDecisionTableResult</span> <span class="n">dmnDecisionTableResult</span> <span class="o">=</span> <span class="n">decisionService</span>
-                <span class="o">.</span><span class="na">evaluateDecisionTableByKey</span><span class="o">(</span><span class="s">&#34;bpm-classification&#34;</span><span class="o">,</span> <span class="n">variables</span><span class="o">);</span>
-        <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">dmnDecisionTableResult</span><span class="o">.</span><span class="na">getSingleEntry</span><span class="o">();</span>
-		<span class="c1">// 打印结果
-</span><span class="c1"></span>        <span class="n">LOGGER</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="n">Level</span><span class="o">.</span><span class="na">INFO</span><span class="o">,</span> <span class="s">&#34;\n\nBMI Classification result is : {0}\n\n&#34;</span><span class="o">,</span> <span class="n">result</span><span class="o">);</span>
-        <span class="c1">// &lt;&lt;&lt;&lt;
-</span><span class="c1"></span>    <span class="o">}</span>
-<span class="o">}</span>
+        <span style="color:#09f;font-style:italic">// &gt;&gt;&gt;&gt; 新增
+</span><span style="color:#09f;font-style:italic"></span>        DecisionService decisionService <span style="color:#555">=</span> event<span style="color:#555">.</span><span style="color:#309">getProcessEngine</span><span style="color:#555">().</span><span style="color:#309">getDecisionService</span><span style="color:#555">();</span>
+		<span style="color:#09f;font-style:italic">// 输入参数
+</span><span style="color:#09f;font-style:italic"></span>        VariableMap variables <span style="color:#555">=</span> Variables<span style="color:#555">.</span><span style="color:#309">createVariables</span><span style="color:#555">()</span>
+                <span style="color:#555">.</span><span style="color:#309">putValue</span><span style="color:#555">(</span><span style="color:#c30">&#34;bmi&#34;</span><span style="color:#555">,</span> 20<span style="color:#555">.</span><span style="color:#309">0</span><span style="color:#555">);</span>
+		<span style="color:#09f;font-style:italic">// 调用决策
+</span><span style="color:#09f;font-style:italic"></span>        DmnDecisionTableResult dmnDecisionTableResult <span style="color:#555">=</span> decisionService
+                <span style="color:#555">.</span><span style="color:#309">evaluateDecisionTableByKey</span><span style="color:#555">(</span><span style="color:#c30">&#34;bpm-classification&#34;</span><span style="color:#555">,</span> variables<span style="color:#555">);</span>
+        String result <span style="color:#555">=</span> dmnDecisionTableResult<span style="color:#555">.</span><span style="color:#309">getSingleEntry</span><span style="color:#555">();</span>
+		<span style="color:#09f;font-style:italic">// 打印结果
+</span><span style="color:#09f;font-style:italic"></span>        LOGGER<span style="color:#555">.</span><span style="color:#309">log</span><span style="color:#555">(</span>Level<span style="color:#555">.</span><span style="color:#309">INFO</span><span style="color:#555">,</span> <span style="color:#c30">&#34;\n\nBMI Classification result is : {0}\n\n&#34;</span><span style="color:#555">,</span> result<span style="color:#555">);</span>
+        <span style="color:#09f;font-style:italic">// &lt;&lt;&lt;&lt;
+</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
 
-</code></pre></td></tr></table>
-</div>
-</div><blockquote>
+</code></pre></div><blockquote>
 <p>到此第七部分结束，如果想直接获取到现在为止的进度，可以下载<a href="https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn/repository/archive/Step-7zip" target="_blank">zip包</a>，或者使用如下命令</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
 git checkout -f Step-7
-</code></pre></td></tr></table>
-</div>
-</div></blockquote>
+</code></pre></div></blockquote>
 <h3 id="测试一下-2">测试一下</h3>
 <p>编译项目并重新运行，查看 Spring Boot 输出，如果看到：</p>
 <pre><code>BMI Classification result is : 正常
@@ -3124,106 +2791,53 @@ git checkout -f Step-7
 <h3 id="在java中执行">在JAVA中执行</h3>
 <p>执行DRG决策图的方法就是执行它的最后一个节点，因为DRG的节点之间具有依赖关系，在执行最后一个节点前会执行它所以来的决策</p>
 <p>所以新增的代码与执行DMN一样，修改后的主类如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// ...
-</span><span class="c1"></span><span class="nd">@SpringBootApplication</span>
-<span class="nd">@EnableProcessApplication</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WebappExampleProcessApplication</span> <span class="o">{</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#09f;font-style:italic">// ...
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#99f">@SpringBootApplication</span>
+<span style="color:#99f">@EnableProcessApplication</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">WebappExampleProcessApplication</span> <span style="color:#555">{</span>
 
-    <span class="kd">protected</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">LOGGER</span> <span class="o">=</span> <span class="n">Logger</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">WebappExampleProcessApplication</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+    <span style="color:#069;font-weight:bold">protected</span> <span style="color:#069;font-weight:bold">final</span> <span style="color:#069;font-weight:bold">static</span> Logger LOGGER <span style="color:#555">=</span> Logger<span style="color:#555">.</span><span style="color:#309">getLogger</span><span style="color:#555">(</span>WebappExampleProcessApplication<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">.</span><span style="color:#309">getName</span><span style="color:#555">());</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">WebappExampleProcessApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
-    <span class="o">}</span>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span><span style="color:#555">(</span>String<span style="color:#555">...</span> args<span style="color:#555">)</span> <span style="color:#555">{</span>
+        SpringApplication<span style="color:#555">.</span><span style="color:#309">run</span><span style="color:#555">(</span>WebappExampleProcessApplication<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">,</span> args<span style="color:#555">);</span>
+    <span style="color:#555">}</span>
 
-    <span class="nd">@Autowired</span>
-    <span class="kd">private</span> <span class="n">RuntimeService</span> <span class="n">runtimeService</span><span class="o">;</span>
+    <span style="color:#99f">@Autowired</span>
+    <span style="color:#069;font-weight:bold">private</span> RuntimeService runtimeService<span style="color:#555">;</span>
 
-    <span class="nd">@EventListener</span>
-    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">processPostDeploy</span><span class="o">(</span><span class="n">PostDeployEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">runtimeService</span><span class="o">.</span><span class="na">startProcessInstanceByKey</span><span class="o">(</span><span class="s">&#34;loan-approval&#34;</span><span class="o">);</span>
+    <span style="color:#99f">@EventListener</span>
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">processPostDeploy</span><span style="color:#555">(</span>PostDeployEvent event<span style="color:#555">)</span> <span style="color:#555">{</span>
+        runtimeService<span style="color:#555">.</span><span style="color:#309">startProcessInstanceByKey</span><span style="color:#555">(</span><span style="color:#c30">&#34;loan-approval&#34;</span><span style="color:#555">);</span>
 
-        <span class="n">DecisionService</span> <span class="n">decisionService</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="na">getProcessEngine</span><span class="o">().</span><span class="na">getDecisionService</span><span class="o">();</span>
+        DecisionService decisionService <span style="color:#555">=</span> event<span style="color:#555">.</span><span style="color:#309">getProcessEngine</span><span style="color:#555">().</span><span style="color:#309">getDecisionService</span><span style="color:#555">();</span>
 
-        <span class="n">VariableMap</span> <span class="n">variables</span> <span class="o">=</span> <span class="n">Variables</span><span class="o">.</span><span class="na">createVariables</span><span class="o">()</span>
-                <span class="o">.</span><span class="na">putValue</span><span class="o">(</span><span class="s">&#34;bmi&#34;</span><span class="o">,</span> <span class="n">20</span><span class="o">.</span><span class="na">0</span><span class="o">);</span>
+        VariableMap variables <span style="color:#555">=</span> Variables<span style="color:#555">.</span><span style="color:#309">createVariables</span><span style="color:#555">()</span>
+                <span style="color:#555">.</span><span style="color:#309">putValue</span><span style="color:#555">(</span><span style="color:#c30">&#34;bmi&#34;</span><span style="color:#555">,</span> 20<span style="color:#555">.</span><span style="color:#309">0</span><span style="color:#555">);</span>
 
-        <span class="n">DmnDecisionTableResult</span> <span class="n">dmnDecisionTableResult</span> <span class="o">=</span> <span class="n">decisionService</span>
-                <span class="o">.</span><span class="na">evaluateDecisionTableByKey</span><span class="o">(</span><span class="s">&#34;bmi-classification&#34;</span><span class="o">,</span> <span class="n">variables</span><span class="o">);</span>
-        <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">dmnDecisionTableResult</span><span class="o">.</span><span class="na">getSingleEntry</span><span class="o">();</span>
+        DmnDecisionTableResult dmnDecisionTableResult <span style="color:#555">=</span> decisionService
+                <span style="color:#555">.</span><span style="color:#309">evaluateDecisionTableByKey</span><span style="color:#555">(</span><span style="color:#c30">&#34;bmi-classification&#34;</span><span style="color:#555">,</span> variables<span style="color:#555">);</span>
+        String result <span style="color:#555">=</span> dmnDecisionTableResult<span style="color:#555">.</span><span style="color:#309">getSingleEntry</span><span style="color:#555">();</span>
 
-        <span class="n">LOGGER</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="n">Level</span><span class="o">.</span><span class="na">INFO</span><span class="o">,</span> <span class="s">&#34;\n\nBMI Classification result is : {0}\n\n&#34;</span><span class="o">,</span> <span class="n">result</span><span class="o">);</span>
+        LOGGER<span style="color:#555">.</span><span style="color:#309">log</span><span style="color:#555">(</span>Level<span style="color:#555">.</span><span style="color:#309">INFO</span><span style="color:#555">,</span> <span style="color:#c30">&#34;\n\nBMI Classification result is : {0}\n\n&#34;</span><span style="color:#555">,</span> result<span style="color:#555">);</span>
 		
-        <span class="c1">// &gt;&gt;&gt;&gt; 新增
-</span><span class="c1"></span>        <span class="n">DmnDecisionTableResult</span> <span class="n">suggestionResult</span> <span class="o">=</span> <span class="n">decisionService</span>
-                <span class="o">.</span><span class="na">evaluateDecisionTableByKey</span><span class="o">(</span><span class="s">&#34;bmi-suggestion&#34;</span><span class="o">,</span> <span class="n">variables</span><span class="o">);</span>
-        <span class="n">String</span> <span class="n">suggestion</span> <span class="o">=</span> <span class="n">suggestionResult</span><span class="o">.</span><span class="na">getSingleEntry</span><span class="o">();</span>
+        <span style="color:#09f;font-style:italic">// &gt;&gt;&gt;&gt; 新增
+</span><span style="color:#09f;font-style:italic"></span>        DmnDecisionTableResult suggestionResult <span style="color:#555">=</span> decisionService
+                <span style="color:#555">.</span><span style="color:#309">evaluateDecisionTableByKey</span><span style="color:#555">(</span><span style="color:#c30">&#34;bmi-suggestion&#34;</span><span style="color:#555">,</span> variables<span style="color:#555">);</span>
+        String suggestion <span style="color:#555">=</span> suggestionResult<span style="color:#555">.</span><span style="color:#309">getSingleEntry</span><span style="color:#555">();</span>
 
-        <span class="n">LOGGER</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="n">Level</span><span class="o">.</span><span class="na">INFO</span><span class="o">,</span> <span class="s">&#34;\n\nBMI Classification suggestion is : {0}\n\n&#34;</span><span class="o">,</span> <span class="n">suggestion</span><span class="o">);</span>
-        <span class="c1">// &lt;&lt;&lt;&lt;
-</span><span class="c1"></span>    <span class="o">}</span>
-<span class="o">}</span>
+        LOGGER<span style="color:#555">.</span><span style="color:#309">log</span><span style="color:#555">(</span>Level<span style="color:#555">.</span><span style="color:#309">INFO</span><span style="color:#555">,</span> <span style="color:#c30">&#34;\n\nBMI Classification suggestion is : {0}\n\n&#34;</span><span style="color:#555">,</span> suggestion<span style="color:#555">);</span>
+        <span style="color:#09f;font-style:italic">// &lt;&lt;&lt;&lt;
+</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
 
-</code></pre></td></tr></table>
-</div>
-</div><p>重新编译并运行，可以看到 Spring Boot 输出：</p>
+</code></pre></div><p>重新编译并运行，可以看到 Spring Boot 输出：</p>
 <pre><code>BMI Classification suggestion is : 没建议
 </code></pre><p>表示执行成功</p>
 <blockquote>
 <p>到此第八部分结束，如果想直接获取到现在为止的进度，可以下载<a href="https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn/repository/archive/Step-8.zip" target="_blank">zip包</a>，或者使用如下命令</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
 git checkout -f Step-8
-</code></pre></td></tr></table>
-</div>
-</div></blockquote>
+</code></pre></div></blockquote>
 <blockquote>
 <p>恭喜：你已经完成了快速入门的全部内容，想要继续学习，请前往<a href="https://docs.camunda.org/manual/latest/" target="_blank">Camunda 文档</a>.</p>
 <p>也可以关注我的博客 <a href="/" target="_blank">http://shaochenfeng.com</a>，后续也会继续推出更多Camunda文档翻译或教程</p>

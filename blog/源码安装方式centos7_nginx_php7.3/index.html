@@ -351,7 +351,6 @@
 
 
   
-  
     var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var tocElem = document.querySelector('.toc');
     var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
@@ -1115,7 +1114,7 @@
     "datePublished": "2021-05-21T21:21:28Z",
     "dateModified": "2021-05-21T21:21:29Z",
     "url" : "http://shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8Fcentos7_nginx_php7.3/",
-    "description": "1.源码安装nginx 这里列出了全部步骤，如果要了解详情，可以查看 源码安装nginx到指定目录 1 2 3 4 5 6 7 yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget yum install -y pcre-devel zlib-devel …",
+    "description": "1.源码安装nginx 这里列出了全部步骤，如果要了解详情，可以查看 源码安装nginx到指定目录 yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget yum install -y pcre-devel zlib-devel wget …",
     "keywords": ["nginx","php"],
     "author": {
       "@type": "Person",
@@ -1134,7 +1133,6 @@
 </script>
 
     
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -2351,37 +2349,17 @@ var _mtac = {};
     <h1 class="title" style="border-bottom: 1px solid currentColor">源码安装方式 centos7 nginx php7.3</h1>
     <h3 id="1源码安装nginx">1.源码安装nginx</h3>
 <p>这里列出了全部步骤，如果要了解详情，可以查看 <a href="https://www.shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85nginx%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95/" target="_blank">源码安装nginx到指定目录</a></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget
 yum install -y pcre-devel zlib-devel
-wget http://nginx.org/download/nginx-1.16.1.tar.gz <span class="c1"># 下载源码包</span>
+wget http://nginx.org/download/nginx-1.16.1.tar.gz <span style="color:#09f;font-style:italic"># 下载源码包</span>
 tar -zxvf nginx-1.16.1.tar.gz
-<span class="nb">cd</span> nginx-1.16.1
-./configure --prefix<span class="o">=</span>/opt/nginx1.16 <span class="c1"># 这里指定安装目录</span>
-make <span class="o">&amp;&amp;</span> make install
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="2下载php源码包">2.下载php源码包</h3>
+<span style="color:#366">cd</span> nginx-1.16.1
+./configure --prefix<span style="color:#555">=</span>/opt/nginx1.16 <span style="color:#09f;font-style:italic"># 这里指定安装目录</span>
+make <span style="color:#555">&amp;&amp;</span> make install
+</code></pre></div><h3 id="2下载php源码包">2.下载php源码包</h3>
 <p>前往 <a href="https://www.php.net/distributions">https://www.php.net/distributions</a> 下载最新的php源码包</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">wget https://www.php.net/distributions/php-7.3.13.tar.xz
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="3解压编译安装">3.解压、编译、安装</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">wget https://www.php.net/distributions/php-7.3.13.tar.xz
+</code></pre></div><h3 id="3解压编译安装">3.解压、编译、安装</h3>
 <pre><code>yum install -y libxml2-devel openssl-devel libcurl-devel libjpeg-turbo-devel libpng-devel freetype-devel libzip-devel
 tar xvf php-7.3.13.tar.xz
 cd php-7.3.13
@@ -2389,34 +2367,15 @@ cd php-7.3.13
 make &amp;&amp; make install
 </code></pre><p>这里使用 <code>--prefix=/opt/php7.3</code> 指定安装在 /opt/php7.3 ，可以自定义安装位置</p>
 <h3 id="4复制php配置文件并启动php-fpm">4.复制php配置文件并启动php-fpm</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">cp 源码包目录/php.ini-development /opt/php7.3/php.ini
-<span class="nb">cd</span> /opt/php7.3/etc
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cp 源码包目录/php.ini-development /opt/php7.3/php.ini
+<span style="color:#366">cd</span> /opt/php7.3/etc
 cp php-fpm.conf.default php-fpm.conf
 cp php-fpm.d/www.conf.default php-fpm.d/www.conf
 ../sbin/php-fpm -t
-../sbin/php-fpm <span class="c1"># 启动php-fpm</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="5编辑nginx配置文件使访问php文件的请求发送到php-fpm">5.编辑nginx配置文件，使访问php文件的请求发送到php-fpm</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">vi /opt/nginx1.16/conf/nginx.conf
-</code></pre></td></tr></table>
-</div>
-</div><p>在server中增加</p>
+../sbin/php-fpm <span style="color:#09f;font-style:italic"># 启动php-fpm</span>
+</code></pre></div><h3 id="5编辑nginx配置文件使访问php文件的请求发送到php-fpm">5.编辑nginx配置文件，使访问php文件的请求发送到php-fpm</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vi /opt/nginx1.16/conf/nginx.conf
+</code></pre></div><p>在server中增加</p>
 <pre><code class="language-conf" data-lang="conf">location ~ \.php$ {
     #root           html;
     fastcgi_pass   127.0.0.1:9000; # 或 unix:/var/run/php5-fpm.sock; 具体看php-fpm.d/www.conf中的配置
@@ -2428,15 +2387,8 @@ cp php-fpm.d/www.conf.default php-fpm.d/www.conf
 </code></pre><p>启动nginx <code>/opt/nginx1.16/sbin/nginx</code></p>
 <p>关闭nginx <code>/opt/nginx1.16/sbin/nginx -s stop</code></p>
 <h3 id="测试">测试</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">echo</span> <span class="s2">&#34;&lt;?php phpinfo(); ?&gt;&#34;</span> &gt; /opt/nginx1.16/html/test.php
-</code></pre></td></tr></table>
-</div>
-</div><p>浏览器访问 <code>127.0.0.1/test.php</code> 看到php信息成功</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#366">echo</span> <span style="color:#c30">&#34;&lt;?php phpinfo(); ?&gt;&#34;</span> &gt; /opt/nginx1.16/html/test.php
+</code></pre></div><p>浏览器访问 <code>127.0.0.1/test.php</code> 看到php信息成功</p>
 
   </article>
 </div>

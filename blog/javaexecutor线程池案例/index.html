@@ -351,7 +351,6 @@
 
 
   
-  
     var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var tocElem = document.querySelector('.toc');
     var tableOfContentsElem = tocElem ? tocElem.querySelector('#TableOfContents') : null;
@@ -1134,7 +1133,6 @@
 </script>
 
     
-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -2354,366 +2352,172 @@ var _mtac = {};
 第二个例子：进阶案例 固定线程的数量，每个线程有返回值，在左右线程结束后，将返回值累加</p>
 </blockquote>
 <h2 id="基础案例">基础案例</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.concurrent.Executors</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.concurrent.ThreadPoolExecutor</span><span class="o">;</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.concurrent.Executors</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.concurrent.ThreadPoolExecutor</span><span style="color:#555">;</span>
 
-<span class="cm">/**
-</span><span class="cm"> * 执行服务器
-</span><span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Server</span> <span class="o">{</span>
+<span style="color:#09f;font-style:italic">/**
+</span><span style="color:#09f;font-style:italic"> * 执行服务器
+</span><span style="color:#09f;font-style:italic"> */</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Server</span> <span style="color:#555">{</span>
 	
-	<span class="c1">//线程池
-</span><span class="c1"></span>	<span class="kd">private</span> <span class="n">ThreadPoolExecutor</span> <span class="n">executor</span><span class="o">;</span>
+	<span style="color:#09f;font-style:italic">//线程池
+</span><span style="color:#09f;font-style:italic"></span>	<span style="color:#069;font-weight:bold">private</span> ThreadPoolExecutor executor<span style="color:#555">;</span>
 	
-	<span class="kd">public</span> <span class="nf">Server</span><span class="o">(){</span>
-		<span class="c1">// 构造时 新建一个进程池
-</span><span class="c1"></span>		<span class="n">executor</span><span class="o">=(</span><span class="n">ThreadPoolExecutor</span><span class="o">)</span><span class="n">Executors</span><span class="o">.</span><span class="na">newCachedThreadPool</span><span class="o">();</span>
-		<span class="c1">//executor=(ThreadPoolExecutor)Executors.newFixedThreadPool(5);
-</span><span class="c1"></span>	<span class="o">}</span>
+	<span style="color:#069;font-weight:bold">public</span> <span style="color:#c0f">Server</span><span style="color:#555">(){</span>
+		<span style="color:#09f;font-style:italic">// 构造时 新建一个进程池
+</span><span style="color:#09f;font-style:italic"></span>		executor<span style="color:#555">=(</span>ThreadPoolExecutor<span style="color:#555">)</span>Executors<span style="color:#555">.</span><span style="color:#309">newCachedThreadPool</span><span style="color:#555">();</span>
+		<span style="color:#09f;font-style:italic">//executor=(ThreadPoolExecutor)Executors.newFixedThreadPool(5);
+</span><span style="color:#09f;font-style:italic"></span>	<span style="color:#555">}</span>
 	
-	<span class="c1">//向线程池提交任务
-</span><span class="c1"></span>	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">submitTask</span><span class="o">(</span><span class="n">Task</span> <span class="n">task</span><span class="o">){</span>
-		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Server: A new task has arrived\n&#34;</span><span class="o">);</span>
+	<span style="color:#09f;font-style:italic">//向线程池提交任务
+</span><span style="color:#09f;font-style:italic"></span>	<span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">submitTask</span><span style="color:#555">(</span>Task task<span style="color:#555">){</span>
+		System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">printf</span><span style="color:#555">(</span><span style="color:#c30">&#34;Server: A new task has arrived\n&#34;</span><span style="color:#555">);</span>
 
-		<span class="c1">// 重点： 执行任务
-</span><span class="c1"></span>		<span class="n">executor</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="n">task</span><span class="o">);</span> <span class="c1">//执行  无返回值
-</span><span class="c1"></span>		
-		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Server: Pool Size: %d\n&#34;</span><span class="o">,</span><span class="n">executor</span><span class="o">.</span><span class="na">getPoolSize</span><span class="o">());</span>
-		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Server: Active Count: %d\n&#34;</span><span class="o">,</span><span class="n">executor</span><span class="o">.</span><span class="na">getActiveCount</span><span class="o">());</span>
-		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Server: Completed Tasks: %d\n&#34;</span><span class="o">,</span><span class="n">executor</span><span class="o">.</span><span class="na">getCompletedTaskCount</span><span class="o">());</span>
-	<span class="o">}</span>
+		<span style="color:#09f;font-style:italic">// 重点： 执行任务
+</span><span style="color:#09f;font-style:italic"></span>		executor<span style="color:#555">.</span><span style="color:#309">execute</span><span style="color:#555">(</span>task<span style="color:#555">);</span> <span style="color:#09f;font-style:italic">//执行  无返回值
+</span><span style="color:#09f;font-style:italic"></span>		
+		System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">printf</span><span style="color:#555">(</span><span style="color:#c30">&#34;Server: Pool Size: %d\n&#34;</span><span style="color:#555">,</span>executor<span style="color:#555">.</span><span style="color:#309">getPoolSize</span><span style="color:#555">());</span>
+		System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">printf</span><span style="color:#555">(</span><span style="color:#c30">&#34;Server: Active Count: %d\n&#34;</span><span style="color:#555">,</span>executor<span style="color:#555">.</span><span style="color:#309">getActiveCount</span><span style="color:#555">());</span>
+		System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">printf</span><span style="color:#555">(</span><span style="color:#c30">&#34;Server: Completed Tasks: %d\n&#34;</span><span style="color:#555">,</span>executor<span style="color:#555">.</span><span style="color:#309">getCompletedTaskCount</span><span style="color:#555">());</span>
+	<span style="color:#555">}</span>
 
-	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">endServer</span><span class="o">()</span> <span class="o">{</span>
-		<span class="n">executor</span><span class="o">.</span><span class="na">shutdown</span><span class="o">();</span>
-	<span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.concurrent.TimeUnit</span><span class="o">;</span>
-<span class="cm">/**
-</span><span class="cm"> * 这里继承了 Runnable 接口，需要实现 void run 函数，这就是要执行的函数了
-</span><span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Task</span> <span class="kd">implements</span> <span class="n">Runnable</span> <span class="o">{</span>
+	<span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">endServer</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+		executor<span style="color:#555">.</span><span style="color:#309">shutdown</span><span style="color:#555">();</span>
+	<span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.Date</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.concurrent.TimeUnit</span><span style="color:#555">;</span>
+<span style="color:#09f;font-style:italic">/**
+</span><span style="color:#09f;font-style:italic"> * 这里继承了 Runnable 接口，需要实现 void run 函数，这就是要执行的函数了
+</span><span style="color:#09f;font-style:italic"> */</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Task</span> <span style="color:#069;font-weight:bold">implements</span> Runnable <span style="color:#555">{</span>
 
-	<span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+	<span style="color:#069;font-weight:bold">private</span> String name<span style="color:#555">;</span>
 	
-	<span class="kd">public</span> <span class="nf">Task</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">){</span>
-		<span class="k">this</span><span class="o">.</span><span class="na">name</span><span class="o">=</span><span class="n">name</span><span class="o">;</span>
-	<span class="o">}</span>
+	<span style="color:#069;font-weight:bold">public</span> <span style="color:#c0f">Task</span><span style="color:#555">(</span>String name<span style="color:#555">){</span>
+		<span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">name</span><span style="color:#555">=</span>name<span style="color:#555">;</span>
+	<span style="color:#555">}</span>
 	
-	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
-		<span class="k">try</span> <span class="o">{</span>
-			<span class="n">Long</span> <span class="n">duration</span><span class="o">=(</span><span class="kt">long</span><span class="o">)(</span><span class="n">Math</span><span class="o">.</span><span class="na">random</span><span class="o">()*</span><span class="n">1000</span><span class="o">);</span>
-			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;%s:修改文本 Task %s: Doing a task during %d seconds\n&#34;</span><span class="o">,</span><span class="n">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getName</span><span class="o">(),</span><span class="n">name</span><span class="o">,</span><span class="n">duration</span><span class="o">);</span>
-			<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">duration</span><span class="o">);</span>			
-		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-			<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-		<span class="o">}</span>
+	<span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+		<span style="color:#069;font-weight:bold">try</span> <span style="color:#555">{</span>
+			Long duration<span style="color:#555">=(</span><span style="color:#078;font-weight:bold">long</span><span style="color:#555">)(</span>Math<span style="color:#555">.</span><span style="color:#309">random</span><span style="color:#555">()*</span>1000<span style="color:#555">);</span>
+			System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">printf</span><span style="color:#555">(</span><span style="color:#c30">&#34;%s:修改文本 Task %s: Doing a task during %d seconds\n&#34;</span><span style="color:#555">,</span>Thread<span style="color:#555">.</span><span style="color:#309">currentThread</span><span style="color:#555">().</span><span style="color:#309">getName</span><span style="color:#555">(),</span>name<span style="color:#555">,</span>duration<span style="color:#555">);</span>
+			Thread<span style="color:#555">.</span><span style="color:#309">sleep</span><span style="color:#555">(</span>duration<span style="color:#555">);</span>			
+		<span style="color:#555">}</span> <span style="color:#069;font-weight:bold">catch</span> <span style="color:#555">(</span>InterruptedException e<span style="color:#555">)</span> <span style="color:#555">{</span>
+			e<span style="color:#555">.</span><span style="color:#309">printStackTrace</span><span style="color:#555">();</span>
+		<span style="color:#555">}</span>
 		
-		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;%s: Task %s: Finished on: %s\n&#34;</span><span class="o">,</span><span class="n">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getName</span><span class="o">(),</span><span class="n">name</span><span class="o">,</span><span class="k">new</span> <span class="n">Date</span><span class="o">());</span>
-	<span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
-	<span class="c1">// 这个例子 由框架自动控制线程的数量，且每个线程没有返回值
-</span><span class="c1"></span>	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="o">{</span>
-		<span class="c1">// 创建一个执行服务器（进程池）
-</span><span class="c1"></span>		<span class="n">Server</span> <span class="n">server</span><span class="o">=</span><span class="k">new</span> <span class="n">Server</span><span class="o">();</span>
+		System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">printf</span><span style="color:#555">(</span><span style="color:#c30">&#34;%s: Task %s: Finished on: %s\n&#34;</span><span style="color:#555">,</span>Thread<span style="color:#555">.</span><span style="color:#309">currentThread</span><span style="color:#555">().</span><span style="color:#309">getName</span><span style="color:#555">(),</span>name<span style="color:#555">,</span><span style="color:#069;font-weight:bold">new</span> Date<span style="color:#555">());</span>
+	<span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">Main</span> <span style="color:#555">{</span>
+	<span style="color:#09f;font-style:italic">// 这个例子 由框架自动控制线程的数量，且每个线程没有返回值
+</span><span style="color:#09f;font-style:italic"></span>	<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span><span style="color:#555">(</span>String<span style="color:#555">[]</span> args<span style="color:#555">)</span> <span style="color:#069;font-weight:bold">throws</span> InterruptedException <span style="color:#555">{</span>
+		<span style="color:#09f;font-style:italic">// 创建一个执行服务器（进程池）
+</span><span style="color:#09f;font-style:italic"></span>		Server server<span style="color:#555">=</span><span style="color:#069;font-weight:bold">new</span> Server<span style="color:#555">();</span>
 		
-		<span class="c1">// 创建100个任务，并发给执行器，等待完成
-</span><span class="c1"></span>		<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">100</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
-			<span class="n">Task</span> <span class="n">task</span><span class="o">=</span><span class="k">new</span> <span class="n">Task</span><span class="o">(</span><span class="s">&#34;Task &#34;</span><span class="o">+</span><span class="n">i</span><span class="o">);</span>
-			<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">10</span><span class="o">);</span>
-			<span class="c1">// 提交到服务器执行
-</span><span class="c1"></span>			<span class="n">server</span><span class="o">.</span><span class="na">submitTask</span><span class="o">(</span><span class="n">task</span><span class="o">);</span>
-		<span class="o">}</span>		
-		<span class="n">server</span><span class="o">.</span><span class="na">endServer</span><span class="o">();</span>
-	<span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="进阶案例">进阶案例</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.concurrent.ExecutionException</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.concurrent.Executors</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.concurrent.Future</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.concurrent.ThreadPoolExecutor</span><span class="o">;</span>
+		<span style="color:#09f;font-style:italic">// 创建100个任务，并发给执行器，等待完成
+</span><span style="color:#09f;font-style:italic"></span>		<span style="color:#069;font-weight:bold">for</span> <span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span> i<span style="color:#555">=</span>0<span style="color:#555">;</span> i<span style="color:#555">&lt;</span>100<span style="color:#555">;</span> i<span style="color:#555">++){</span>
+			Task task<span style="color:#555">=</span><span style="color:#069;font-weight:bold">new</span> Task<span style="color:#555">(</span><span style="color:#c30">&#34;Task &#34;</span><span style="color:#555">+</span>i<span style="color:#555">);</span>
+			Thread<span style="color:#555">.</span><span style="color:#309">sleep</span><span style="color:#555">(</span>10<span style="color:#555">);</span>
+			<span style="color:#09f;font-style:italic">// 提交到服务器执行
+</span><span style="color:#09f;font-style:italic"></span>			server<span style="color:#555">.</span><span style="color:#309">submitTask</span><span style="color:#555">(</span>task<span style="color:#555">);</span>
+		<span style="color:#555">}</span>		
+		server<span style="color:#555">.</span><span style="color:#309">endServer</span><span style="color:#555">();</span>
+	<span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><h2 id="进阶案例">进阶案例</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.ArrayList</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.List</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.concurrent.ExecutionException</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.concurrent.Executors</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.concurrent.Future</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.concurrent.ThreadPoolExecutor</span><span style="color:#555">;</span>
 
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SumTest</span> <span class="o">{</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">SumTest</span> <span style="color:#555">{</span>
 
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+	<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span><span style="color:#555">(</span>String<span style="color:#555">[]</span> args<span style="color:#555">)</span> <span style="color:#555">{</span>
 		
-		<span class="c1">// 新建线程池
-</span><span class="c1"></span>		<span class="c1">// 这里通过参数控制只能有4个线程，通常是CPU核心数或2倍
-</span><span class="c1"></span>		<span class="n">ThreadPoolExecutor</span> <span class="n">executor</span><span class="o">=(</span><span class="n">ThreadPoolExecutor</span><span class="o">)</span><span class="n">Executors</span><span class="o">.</span><span class="na">newFixedThreadPool</span><span class="o">(</span><span class="n">4</span><span class="o">);</span>
+		<span style="color:#09f;font-style:italic">// 新建线程池
+</span><span style="color:#09f;font-style:italic"></span>		<span style="color:#09f;font-style:italic">// 这里通过参数控制只能有4个线程，通常是CPU核心数或2倍
+</span><span style="color:#09f;font-style:italic"></span>		ThreadPoolExecutor executor<span style="color:#555">=(</span>ThreadPoolExecutor<span style="color:#555">)</span>Executors<span style="color:#555">.</span><span style="color:#309">newFixedThreadPool</span><span style="color:#555">(</span>4<span style="color:#555">);</span>
 		
-		<span class="c1">// 用来接收线程返回的结果
-</span><span class="c1"></span>		<span class="c1">// Future是用来接受返回值的
-</span><span class="c1"></span>		<span class="n">List</span><span class="o">&lt;</span><span class="n">Future</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="n">resultList</span><span class="o">=</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+		<span style="color:#09f;font-style:italic">// 用来接收线程返回的结果
+</span><span style="color:#09f;font-style:italic"></span>		<span style="color:#09f;font-style:italic">// Future是用来接受返回值的
+</span><span style="color:#09f;font-style:italic"></span>		List<span style="color:#555">&lt;</span>Future<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;&gt;</span> resultList<span style="color:#555">=</span><span style="color:#069;font-weight:bold">new</span> ArrayList<span style="color:#555">&lt;&gt;();</span>
 
-		<span class="c1">//统计1-1000总和，分成10个任务计算，提交任务
-</span><span class="c1"></span>		<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">10</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
-			<span class="n">SumTask</span> <span class="n">calculator</span><span class="o">=</span><span class="k">new</span> <span class="n">SumTask</span><span class="o">(</span><span class="n">i</span><span class="o">*</span><span class="n">100</span><span class="o">+</span><span class="n">1</span><span class="o">,</span> <span class="o">(</span><span class="n">i</span><span class="o">+</span><span class="n">1</span><span class="o">)*</span><span class="n">100</span><span class="o">);</span>
-			<span class="c1">// 提交任务
-</span><span class="c1"></span>			<span class="n">Future</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">result</span><span class="o">=</span><span class="n">executor</span><span class="o">.</span><span class="na">submit</span><span class="o">(</span><span class="n">calculator</span><span class="o">);</span>
-			<span class="c1">// 将结果放到数组中，这里还没结果，放进来的是引用
-</span><span class="c1"></span>			<span class="n">resultList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>
-		<span class="o">}</span>
+		<span style="color:#09f;font-style:italic">//统计1-1000总和，分成10个任务计算，提交任务
+</span><span style="color:#09f;font-style:italic"></span>		<span style="color:#069;font-weight:bold">for</span> <span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span> i<span style="color:#555">=</span>0<span style="color:#555">;</span> i<span style="color:#555">&lt;</span>10<span style="color:#555">;</span> i<span style="color:#555">++){</span>
+			SumTask calculator<span style="color:#555">=</span><span style="color:#069;font-weight:bold">new</span> SumTask<span style="color:#555">(</span>i<span style="color:#555">*</span>100<span style="color:#555">+</span>1<span style="color:#555">,</span> <span style="color:#555">(</span>i<span style="color:#555">+</span>1<span style="color:#555">)*</span>100<span style="color:#555">);</span>
+			<span style="color:#09f;font-style:italic">// 提交任务
+</span><span style="color:#09f;font-style:italic"></span>			Future<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</span> result<span style="color:#555">=</span>executor<span style="color:#555">.</span><span style="color:#309">submit</span><span style="color:#555">(</span>calculator<span style="color:#555">);</span>
+			<span style="color:#09f;font-style:italic">// 将结果放到数组中，这里还没结果，放进来的是引用
+</span><span style="color:#09f;font-style:italic"></span>			resultList<span style="color:#555">.</span><span style="color:#309">add</span><span style="color:#555">(</span>result<span style="color:#555">);</span>
+		<span style="color:#555">}</span>
 		
-		<span class="c1">// 每隔50毫秒，轮询等待10个任务结束
-</span><span class="c1"></span>		<span class="k">do</span> <span class="o">{</span>
-			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Main: 已经完成多少个任务: %d\n&#34;</span><span class="o">,</span><span class="n">executor</span><span class="o">.</span><span class="na">getCompletedTaskCount</span><span class="o">());</span>
-			<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">resultList</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-				<span class="n">Future</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">result</span><span class="o">=</span><span class="n">resultList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-				<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Main: Task %d: %s\n&#34;</span><span class="o">,</span><span class="n">i</span><span class="o">,</span><span class="n">result</span><span class="o">.</span><span class="na">isDone</span><span class="o">());</span>
-			<span class="o">}</span>
-			<span class="k">try</span> <span class="o">{</span>
-				<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">50</span><span class="o">);</span>
-			<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-				<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-			<span class="o">}</span>
-		<span class="o">}</span> <span class="k">while</span> <span class="o">(</span><span class="n">executor</span><span class="o">.</span><span class="na">getCompletedTaskCount</span><span class="o">()&lt;</span><span class="n">resultList</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
+		<span style="color:#09f;font-style:italic">// 每隔50毫秒，轮询等待10个任务结束
+</span><span style="color:#09f;font-style:italic"></span>		<span style="color:#069;font-weight:bold">do</span> <span style="color:#555">{</span>
+			System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">printf</span><span style="color:#555">(</span><span style="color:#c30">&#34;Main: 已经完成多少个任务: %d\n&#34;</span><span style="color:#555">,</span>executor<span style="color:#555">.</span><span style="color:#309">getCompletedTaskCount</span><span style="color:#555">());</span>
+			<span style="color:#069;font-weight:bold">for</span> <span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span> i<span style="color:#555">=</span>0<span style="color:#555">;</span> i<span style="color:#555">&lt;</span>resultList<span style="color:#555">.</span><span style="color:#309">size</span><span style="color:#555">();</span> i<span style="color:#555">++)</span> <span style="color:#555">{</span>
+				Future<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</span> result<span style="color:#555">=</span>resultList<span style="color:#555">.</span><span style="color:#309">get</span><span style="color:#555">(</span>i<span style="color:#555">);</span>
+				System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">printf</span><span style="color:#555">(</span><span style="color:#c30">&#34;Main: Task %d: %s\n&#34;</span><span style="color:#555">,</span>i<span style="color:#555">,</span>result<span style="color:#555">.</span><span style="color:#309">isDone</span><span style="color:#555">());</span>
+			<span style="color:#555">}</span>
+			<span style="color:#069;font-weight:bold">try</span> <span style="color:#555">{</span>
+				Thread<span style="color:#555">.</span><span style="color:#309">sleep</span><span style="color:#555">(</span>50<span style="color:#555">);</span>
+			<span style="color:#555">}</span> <span style="color:#069;font-weight:bold">catch</span> <span style="color:#555">(</span>InterruptedException e<span style="color:#555">)</span> <span style="color:#555">{</span>
+				e<span style="color:#555">.</span><span style="color:#309">printStackTrace</span><span style="color:#555">();</span>
+			<span style="color:#555">}</span>
+		<span style="color:#555">}</span> <span style="color:#069;font-weight:bold">while</span> <span style="color:#555">(</span>executor<span style="color:#555">.</span><span style="color:#309">getCompletedTaskCount</span><span style="color:#555">()&lt;</span>resultList<span style="color:#555">.</span><span style="color:#309">size</span><span style="color:#555">());</span>
 		
-		<span class="c1">// 所有任务都已经结束了，综合计算结果		
-</span><span class="c1"></span>		<span class="kt">int</span> <span class="n">total</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
-		<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">resultList</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-			<span class="n">Future</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">result</span><span class="o">=</span><span class="n">resultList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-			<span class="n">Integer</span> <span class="n">sum</span><span class="o">=</span><span class="kc">null</span><span class="o">;</span>
-			<span class="k">try</span> <span class="o">{</span>
-				<span class="n">sum</span><span class="o">=</span><span class="n">result</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
-				<span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">sum</span><span class="o">;</span>
-			<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-				<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-			<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ExecutionException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-				<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-			<span class="o">}</span>
-		<span class="o">}</span>
-		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;1-1000的总和:&#34;</span> <span class="o">+</span> <span class="n">total</span><span class="o">);</span>
+		<span style="color:#09f;font-style:italic">// 所有任务都已经结束了，综合计算结果		
+</span><span style="color:#09f;font-style:italic"></span>		<span style="color:#078;font-weight:bold">int</span> total <span style="color:#555">=</span> 0<span style="color:#555">;</span>
+		<span style="color:#069;font-weight:bold">for</span> <span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span> i<span style="color:#555">=</span>0<span style="color:#555">;</span> i<span style="color:#555">&lt;</span>resultList<span style="color:#555">.</span><span style="color:#309">size</span><span style="color:#555">();</span> i<span style="color:#555">++)</span> <span style="color:#555">{</span>
+			Future<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</span> result<span style="color:#555">=</span>resultList<span style="color:#555">.</span><span style="color:#309">get</span><span style="color:#555">(</span>i<span style="color:#555">);</span>
+			Integer sum<span style="color:#555">=</span><span style="color:#069;font-weight:bold">null</span><span style="color:#555">;</span>
+			<span style="color:#069;font-weight:bold">try</span> <span style="color:#555">{</span>
+				sum<span style="color:#555">=</span>result<span style="color:#555">.</span><span style="color:#309">get</span><span style="color:#555">();</span>
+				total <span style="color:#555">=</span> total <span style="color:#555">+</span> sum<span style="color:#555">;</span>
+			<span style="color:#555">}</span> <span style="color:#069;font-weight:bold">catch</span> <span style="color:#555">(</span>InterruptedException e<span style="color:#555">)</span> <span style="color:#555">{</span>
+				e<span style="color:#555">.</span><span style="color:#309">printStackTrace</span><span style="color:#555">();</span>
+			<span style="color:#555">}</span> <span style="color:#069;font-weight:bold">catch</span> <span style="color:#555">(</span>ExecutionException e<span style="color:#555">)</span> <span style="color:#555">{</span>
+				e<span style="color:#555">.</span><span style="color:#309">printStackTrace</span><span style="color:#555">();</span>
+			<span style="color:#555">}</span>
+		<span style="color:#555">}</span>
+		System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">printf</span><span style="color:#555">(</span><span style="color:#c30">&#34;1-1000的总和:&#34;</span> <span style="color:#555">+</span> total<span style="color:#555">);</span>
 		
-		<span class="c1">// 关闭线程池
-</span><span class="c1"></span>		<span class="n">executor</span><span class="o">.</span><span class="na">shutdown</span><span class="o">();</span>
-	<span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.Random</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.concurrent.Callable</span><span class="o">;</span>
+		<span style="color:#09f;font-style:italic">// 关闭线程池
+</span><span style="color:#09f;font-style:italic"></span>		executor<span style="color:#555">.</span><span style="color:#309">shutdown</span><span style="color:#555">();</span>
+	<span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.Random</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.concurrent.Callable</span><span style="color:#555">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SumTask</span> <span class="kd">implements</span> <span class="n">Callable</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="o">{</span>
-	<span class="c1">//定义每个线程计算的区间
-</span><span class="c1"></span>	<span class="kd">private</span> <span class="kt">int</span> <span class="n">startNumber</span><span class="o">;</span>
-	<span class="kd">private</span> <span class="kt">int</span> <span class="n">endNumber</span><span class="o">;</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">SumTask</span> <span style="color:#069;font-weight:bold">implements</span> Callable<span style="color:#555">&lt;</span>Integer<span style="color:#555">&gt;</span> <span style="color:#555">{</span>
+	<span style="color:#09f;font-style:italic">//定义每个线程计算的区间
+</span><span style="color:#09f;font-style:italic"></span>	<span style="color:#069;font-weight:bold">private</span> <span style="color:#078;font-weight:bold">int</span> startNumber<span style="color:#555">;</span>
+	<span style="color:#069;font-weight:bold">private</span> <span style="color:#078;font-weight:bold">int</span> endNumber<span style="color:#555">;</span>
 	
-	<span class="kd">public</span> <span class="nf">SumTask</span><span class="o">(</span><span class="kt">int</span> <span class="n">startNumber</span><span class="o">,</span> <span class="kt">int</span> <span class="n">endNumber</span><span class="o">){</span>
-		<span class="k">this</span><span class="o">.</span><span class="na">startNumber</span><span class="o">=</span><span class="n">startNumber</span><span class="o">;</span>
-		<span class="k">this</span><span class="o">.</span><span class="na">endNumber</span><span class="o">=</span><span class="n">endNumber</span><span class="o">;</span>
-	<span class="o">}</span>
+	<span style="color:#069;font-weight:bold">public</span> <span style="color:#c0f">SumTask</span><span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span> startNumber<span style="color:#555">,</span> <span style="color:#078;font-weight:bold">int</span> endNumber<span style="color:#555">){</span>
+		<span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">startNumber</span><span style="color:#555">=</span>startNumber<span style="color:#555">;</span>
+		<span style="color:#069;font-weight:bold">this</span><span style="color:#555">.</span><span style="color:#309">endNumber</span><span style="color:#555">=</span>endNumber<span style="color:#555">;</span>
+	<span style="color:#555">}</span>
 	
-	<span class="nd">@Override</span>
-	<span class="kd">public</span> <span class="n">Integer</span> <span class="nf">call</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-		<span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
-		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">startNumber</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="n">endNumber</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
-		<span class="o">{</span>
-			<span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">i</span><span class="o">;</span>
-		<span class="o">}</span>
+	<span style="color:#99f">@Override</span>
+	<span style="color:#069;font-weight:bold">public</span> Integer <span style="color:#c0f">call</span><span style="color:#555">()</span> <span style="color:#069;font-weight:bold">throws</span> Exception <span style="color:#555">{</span>
+		<span style="color:#078;font-weight:bold">int</span> sum <span style="color:#555">=</span> 0<span style="color:#555">;</span>
+		<span style="color:#069;font-weight:bold">for</span><span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span> i<span style="color:#555">=</span>startNumber<span style="color:#555">;</span> i<span style="color:#555">&lt;=</span>endNumber<span style="color:#555">;</span> i<span style="color:#555">++)</span>
+		<span style="color:#555">{</span>
+			sum <span style="color:#555">=</span> sum <span style="color:#555">+</span> i<span style="color:#555">;</span>
+		<span style="color:#555">}</span>
 		
-		<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="k">new</span> <span class="n">Random</span><span class="o">().</span><span class="na">nextInt</span><span class="o">(</span><span class="n">1000</span><span class="o">));</span>
+		Thread<span style="color:#555">.</span><span style="color:#309">sleep</span><span style="color:#555">(</span><span style="color:#069;font-weight:bold">new</span> Random<span style="color:#555">().</span><span style="color:#309">nextInt</span><span style="color:#555">(</span>1000<span style="color:#555">));</span>
 		
-		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;%s: %d\n&#34;</span><span class="o">,</span><span class="n">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getName</span><span class="o">(),</span><span class="n">sum</span><span class="o">);</span>
-		<span class="k">return</span> <span class="n">sum</span><span class="o">;</span>
-	<span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div>
+		System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">printf</span><span style="color:#555">(</span><span style="color:#c30">&#34;%s: %d\n&#34;</span><span style="color:#555">,</span>Thread<span style="color:#555">.</span><span style="color:#309">currentThread</span><span style="color:#555">().</span><span style="color:#309">getName</span><span style="color:#555">(),</span>sum<span style="color:#555">);</span>
+		<span style="color:#069;font-weight:bold">return</span> sum<span style="color:#555">;</span>
+	<span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div>
   </article>
 </div>
       

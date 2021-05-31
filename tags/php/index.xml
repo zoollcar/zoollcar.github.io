@@ -20,7 +20,7 @@
         <pubDate>Fri, 21 May 2021 21:21:28 +0000</pubDate>
         
         <guid>http://shaochenfeng.com/blog/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8Fcentos7_nginx_php7.3/</guid>
-        <description>1.源码安装nginx 这里列出了全部步骤，如果要了解详情，可以查看 源码安装nginx到指定目录 1 2 3 4 5 6 7 yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget yum install -y pcre-devel zlib-devel wget</description>
+        <description>1.源码安装nginx 这里列出了全部步骤，如果要了解详情，可以查看 源码安装nginx到指定目录 yum install -y libaio ncurses gcc gcc-c++ cmake ncurses-devel wget yum install -y pcre-devel zlib-devel wget http://nginx.org/download/nginx-1.16.1.tar.gz # 下载源码包</description>
       </item>
       
       <item>
