@@ -16,11 +16,137 @@
       
       <item>
         <title>快速入门介绍</title>
-        <link>http://shaochenfeng.com/camunda/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/</link>
+        <link>http://shaochenfeng.com/camunda/1.%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/</link>
         <pubDate>Fri, 28 May 2021 00:44:34 +0000</pubDate>
         
-        <guid>http://shaochenfeng.com/camunda/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/</guid>
+        <guid>http://shaochenfeng.com/camunda/1.%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/</guid>
         <description>本文为Camunda官网快速入门部分的中文版本 原文地址： https://docs.camunda.org/get-started/quick-start/ （英文） 本教程将指导您使用Camunda BPM平台建模并实现您的第一个工作流程，其</description>
+      </item>
+      
+      <item>
+        <title>下载和安装</title>
+        <link>http://shaochenfeng.com/camunda/2.%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85/</link>
+        <pubDate>Fri, 28 May 2021 00:44:34 +0000</pubDate>
+        
+        <guid>http://shaochenfeng.com/camunda/2.%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85/</guid>
+        <description>前期准备 确保你具有 JAVA1.8以上的JRE或JDK，并可以在命令行使用 在命令行中运行以下命令，检查你的java版本 java -version 可以在 Camunda</description>
+      </item>
+      
+      <item>
+        <title>编辑流程</title>
+        <link>http://shaochenfeng.com/camunda/3.%E7%BC%96%E8%BE%91%E6%B5%81%E7%A8%8B/</link>
+        <pubDate>Fri, 28 May 2021 00:44:34 +0000</pubDate>
+        
+        <guid>http://shaochenfeng.com/camunda/3.%E7%BC%96%E8%BE%91%E6%B5%81%E7%A8%8B/</guid>
+        <description>本章中，我们将会使用Camunda Modeler创建第一个BPMN 2.0流程，并执行一些自动任务 首先，打开Camunda Modeler 新建BPMN流程 点</description>
+      </item>
+      
+      <item>
+        <title>用java或NodeJS实现外部任务</title>
+        <link>http://shaochenfeng.com/camunda/4.%E7%94%A8java%E6%88%96nodejs%E5%AE%9E%E7%8E%B0%E5%A4%96%E9%83%A8%E4%BB%BB%E5%8A%A1/</link>
+        <pubDate>Fri, 28 May 2021 00:44:34 +0000</pubDate>
+        
+        <guid>http://shaochenfeng.com/camunda/4.%E7%94%A8java%E6%88%96nodejs%E5%AE%9E%E7%8E%B0%E5%A4%96%E9%83%A8%E4%BB%BB%E5%8A%A1/</guid>
+        <description>在完成上面流程的编辑后，现在实现“刷卡付款”的业务逻辑 Camunda 可以使多种语言实现业务逻辑，本文将演示java和nodejs两种方式，你可以任意选择</description>
+      </item>
+      
+      <item>
+        <title>部署流程</title>
+        <link>http://shaochenfeng.com/camunda/5.%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B/</link>
+        <pubDate>Fri, 28 May 2021 00:44:34 +0000</pubDate>
+        
+        <guid>http://shaochenfeng.com/camunda/5.%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B/</guid>
+        <description>下面我们将部署流程到流程引擎，然后发起流程，检查流程是否发起成功 使用 Camunda Modeler 部署流程 点击工具栏中的部署按钮可以将当前流程部署到流程引擎，点击部署</description>
+      </item>
+      
+      <item>
+        <title>添加人工任务</title>
+        <link>http://shaochenfeng.com/camunda/6.%E6%B7%BB%E5%8A%A0%E4%BA%BA%E5%B7%A5%E4%BB%BB%E5%8A%A1/</link>
+        <pubDate>Fri, 28 May 2021 00:44:34 +0000</pubDate>
+        
+        <guid>http://shaochenfeng.com/camunda/6.%E6%B7%BB%E5%8A%A0%E4%BA%BA%E5%B7%A5%E4%BB%BB%E5%8A%A1/</guid>
+        <description>在本章中，我们会将人工任务添加进流程中，让人参与到 BPMN 2.0 流程中来。 添加人工任务节点 首先打开 Camunda Modeler ，在左侧选择任务节点（圆角矩形），将它拖入“付款</description>
+      </item>
+      
+      <item>
+        <title>添加网关</title>
+        <link>http://shaochenfeng.com/camunda/7.%E6%B7%BB%E5%8A%A0%E7%BD%91%E5%85%B3/</link>
+        <pubDate>Fri, 28 May 2021 00:44:34 +0000</pubDate>
+        
+        <guid>http://shaochenfeng.com/camunda/7.%E6%B7%BB%E5%8A%A0%E7%BD%91%E5%85%B3/</guid>
+        <description>本章中，我们将使用排他网关(Exclusive Gateways)，为流程添加分支，仅在金额足够大的时候进行人工审核 添加两个网关 首先打开 Camunda Modeler ，</description>
+      </item>
+      
+      <item>
+        <title>决策自动化</title>
+        <link>http://shaochenfeng.com/camunda/8.%E5%86%B3%E7%AD%96%E8%87%AA%E5%8A%A8%E5%8C%96/</link>
+        <pubDate>Fri, 28 May 2021 00:44:34 +0000</pubDate>
+        
+        <guid>http://shaochenfeng.com/camunda/8.%E5%86%B3%E7%AD%96%E8%87%AA%E5%8A%A8%E5%8C%96/</guid>
+        <description>在本章中，我们将使用DMN为流程添加一个业务规则 将业务规则添加到流程中 打开 Camunda Modeler，点击 “批准付款”，在右面的扳手菜单中，将类型改为</description>
+      </item>
+      
+      <item>
+        <title>SpringBoot集成与进阶介绍</title>
+        <link>http://shaochenfeng.com/camunda/9.springboot%E9%9B%86%E6%88%90%E4%B8%8E%E8%BF%9B%E9%98%B6%E5%86%85%E5%AE%B9%E4%BB%8B%E7%BB%8D/</link>
+        <pubDate>Sun, 30 May 2021 11:10:22 +0000</pubDate>
+        
+        <guid>http://shaochenfeng.com/camunda/9.springboot%E9%9B%86%E6%88%90%E4%B8%8E%E8%BF%9B%E9%98%B6%E5%86%85%E5%AE%B9%E4%BB%8B%E7%BB%8D/</guid>
+        <description>从本章开始我们将继续完成 Camunda 官网上的其他入门部分，你将学到： Spring Boot部分： 创建 Camunda Spring Boot 项目 配置项目 使用“自动部署”功能部署流程 自定义HTML表</description>
+      </item>
+      
+      <item>
+        <title>创建Spring Boot项目</title>
+        <link>http://shaochenfeng.com/camunda/10.%E5%88%9B%E5%BB%BA-camunda-spring-boot-%E9%A1%B9%E7%9B%AE/</link>
+        <pubDate>Sun, 30 May 2021 11:10:22 +0000</pubDate>
+        
+        <guid>http://shaochenfeng.com/camunda/10.%E5%88%9B%E5%BB%BA-camunda-spring-boot-%E9%A1%B9%E7%9B%AE/</guid>
+        <description>首先打开你喜欢的 IDE，新建一个空的Maven项目，本次的案例是“贷款审批”，所以项目名命名为loan-approval-spring-bo</description>
+      </item>
+      
+      <item>
+        <title>部署BPMN2.0流程</title>
+        <link>http://shaochenfeng.com/camunda/11.%E9%83%A8%E7%BD%B2bpmn2.0%E6%B5%81%E7%A8%8B/</link>
+        <pubDate>Sun, 30 May 2021 11:10:22 +0000</pubDate>
+        
+        <guid>http://shaochenfeng.com/camunda/11.%E9%83%A8%E7%BD%B2bpmn2.0%E6%B5%81%E7%A8%8B/</guid>
+        <description>在本章中，我们将要为刚才的Spring Boot项目部署流程，并使用监听器，在流程部署时发起流程 编辑流程 下载并打开 Camunda Modeler，编辑只包含</description>
+      </item>
+      
+      <item>
+        <title>添加自定义表单</title>
+        <link>http://shaochenfeng.com/camunda/12.%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A1%A8%E5%8D%95/</link>
+        <pubDate>Sun, 30 May 2021 11:10:22 +0000</pubDate>
+        
+        <guid>http://shaochenfeng.com/camunda/12.%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A1%A8%E5%8D%95/</guid>
+        <description>快速入门中，我们通过form选项卡添加过表单，通过变量名和变量类型简单的生成了自带表单，本章我们将使用自定义html嵌入的方式，让表单具有更</description>
+      </item>
+      
+      <item>
+        <title>在流程中调用 JAVA Class</title>
+        <link>http://shaochenfeng.com/camunda/13.%E5%9C%A8%E6%B5%81%E7%A8%8B%E4%B8%AD%E8%B0%83%E7%94%A8-java-class/</link>
+        <pubDate>Sun, 30 May 2021 11:10:22 +0000</pubDate>
+        
+        <guid>http://shaochenfeng.com/camunda/13.%E5%9C%A8%E6%B5%81%E7%A8%8B%E4%B8%AD%E8%B0%83%E7%94%A8-java-class/</guid>
+        <description>在本章中我们将学到如何使用流程的 Service task（服务任务） 中调用JAVA类。 将 Service Task 添加到流程中 打开 Camunda Modeler ，在左侧工具架中选择 Task（矩形），拖动</description>
+      </item>
+      
+      <item>
+        <title>在 JAVA 中调用 DMN 决策</title>
+        <link>http://shaochenfeng.com/camunda/14.%E5%9C%A8-java-%E4%B8%AD%E8%B0%83%E7%94%A8-dmn-%E5%86%B3%E7%AD%96/</link>
+        <pubDate>Sun, 30 May 2021 11:10:22 +0000</pubDate>
+        
+        <guid>http://shaochenfeng.com/camunda/14.%E5%9C%A8-java-%E4%B8%AD%E8%B0%83%E7%94%A8-dmn-%E5%86%B3%E7%AD%96/</guid>
+        <description>在本章中，我们将会学到创建一个DMN决策并部署到流程引擎中，以及在JAVA里调用测试我们的DMN。 我们使用BMI健康状况作为案例，BMI是身</description>
+      </item>
+      
+      <item>
+        <title>DMN决策表与DRG决策图</title>
+        <link>http://shaochenfeng.com/camunda/15.dmn%E5%86%B3%E7%AD%96%E8%A1%A8%E4%B8%8Edrg%E5%86%B3%E7%AD%96%E5%9B%BE/</link>
+        <pubDate>Sun, 30 May 2021 11:10:22 +0000</pubDate>
+        
+        <guid>http://shaochenfeng.com/camunda/15.dmn%E5%86%B3%E7%AD%96%E8%A1%A8%E4%B8%8Edrg%E5%86%B3%E7%AD%96%E5%9B%BE/</guid>
+        <description>这一章，我们将创建新的DMN决策表，并将两个DMN决策表组成一张DRG决策图，最后通过JAVA调用，获得两个决策表协同得到的结果。 DMN与D</description>
       </item>
       
       <item>
@@ -29,15 +155,6 @@
         <pubDate>Sun, 30 May 2021 11:10:22 +0000</pubDate>
         
         <guid>http://shaochenfeng.com/blog/camunda-springboot%E4%B8%8E%E8%BF%9B%E9%98%B6%E5%86%85%E5%AE%B9/</guid>
-        <description>介绍 在开始之前，首先确保你已经完成了快速入门部分 （http://shaochenfeng.com/blog/camunda-快速入门/） 本章</description>
-      </item>
-      
-      <item>
-        <title>Camunda SpringBoot与进阶内容</title>
-        <link>http://shaochenfeng.com/camunda/camunda-springboot%E4%B8%8E%E8%BF%9B%E9%98%B6%E5%86%85%E5%AE%B9/</link>
-        <pubDate>Sun, 30 May 2021 11:10:22 +0000</pubDate>
-        
-        <guid>http://shaochenfeng.com/camunda/camunda-springboot%E4%B8%8E%E8%BF%9B%E9%98%B6%E5%86%85%E5%AE%B9/</guid>
         <description>介绍 在开始之前，首先确保你已经完成了快速入门部分 （http://shaochenfeng.com/blog/camunda-快速入门/） 本章</description>
       </item>
       
