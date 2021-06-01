@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MongoDB – 邵晨峰的博客</title>
+    <title>Camunda SpringBoot与进阶内容 – 邵晨峰的博客</title>
     
 
 
@@ -51,7 +51,7 @@
     
     var baseurl = JSON.parse("\"http://shaochenfeng.com\"");
     
-    var permalink = JSON.parse("\"http://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/\"");
+    var permalink = JSON.parse("\"http://shaochenfeng.com/camunda/camunda-springboot%E4%B8%8E%E8%BF%9B%E9%98%B6%E5%86%85%E5%AE%B9/\"");
 
     
     var toggleSidebarElem = document.getElementById("toggle-sidebar");
@@ -1096,21 +1096,21 @@
 <link rel="stylesheet" href="/css/main.min.css">
 
 
-    <meta name="description" content="MongoDB" />
+    <meta name="description" content="" />
 <meta name="keywords" content="">
-<meta name="created" content="2020-01-28T00:34:39&#43;0900">
-<meta name="modified" content="2020-01-28T00:34:39&#43;0900">
-
+<meta name="created" content="2021-05-30T11:10:22&#43;0000">
+<meta name="modified" content="2021-05-30T11:10:24&#43;0000">
+<meta name="author" content="邵晨峰">
 
 <meta property="og:site_name" content="邵晨峰的博客">
-<meta property="og:title" content="MongoDB">
-<meta property="og:url" content="http://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/">
+<meta property="og:title" content="Camunda SpringBoot与进阶内容">
+<meta property="og:url" content="http://shaochenfeng.com/camunda/camunda-springboot%E4%B8%8E%E8%BF%9B%E9%98%B6%E5%86%85%E5%AE%B9/">
 <meta property="og:type" content="article">
-
+<meta property="og:image" content="http://img.shaochenfeng.com/20210528085209.jpg">
 <meta name="generator" content="Hugo 0.81.0" />
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<link rel="canonical" href="http://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/">
+<link rel="canonical" href="http://shaochenfeng.com/camunda/camunda-springboot%E4%B8%8E%E8%BF%9B%E9%98%B6%E5%86%85%E5%AE%B9/">
 <link rel="manifest" href="/manifest.json">
 
   <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
@@ -1134,11 +1134,17 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "headline": "MongoDB",
-    "datePublished": "2020-01-28T00:34:39+09:00",
-    "dateModified": "2020-01-28T00:34:39+09:00",
-    "url" : "http://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/",
-    "description": "MongoDB",
+    "headline": "Camunda SpringBoot与进阶内容",
+    "datePublished": "2021-05-30T11:10:22Z",
+    "dateModified": "2021-05-30T11:10:24Z",
+    "url" : "http://shaochenfeng.com/camunda/camunda-springboot%E4%B8%8E%E8%BF%9B%E9%98%B6%E5%86%85%E5%AE%B9/",
+    "description": "介绍 在开始之前，首先确保你已经完成了快速入门部分 （http://shaochenfeng.com/blog/camunda-快速入门/） 本章",
+    "keywords": ["activity","流程引擎"],
+    "image" : "http://img.shaochenfeng.com/20210528085209.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "邵晨峰"
+    },
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http://shaochenfeng.com"
@@ -1219,7 +1225,7 @@ var _mtac = {};
   <h6 class="menu__label">
     
     
-      MongoDB
+      Camunda SpringBoot与进阶内容
     
   </h6>
   <ul>
@@ -1242,8 +1248,8 @@ var _mtac = {};
   
   
   <li class="">
-    <a href="http://shaochenfeng.com/linux/ansible%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/"
-      class="menu__title ">ansible自动化运维</a>
+    <a href="http://shaochenfeng.com/camunda/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/"
+      class="menu__title ">快速入门介绍</a>
   </li>
   
 
@@ -1264,210 +1270,10 @@ var _mtac = {};
   
   
   
-  <li class="">
-    <a href="http://shaochenfeng.com/linux/docker%E5%AE%B9%E5%99%A8/"
-      class="menu__title ">docker容器</a>
+  <li class="active">
+    <a href="http://shaochenfeng.com/camunda/camunda-springboot%E4%B8%8E%E8%BF%9B%E9%98%B6%E5%86%85%E5%AE%B9/"
+      class="menu__title active">Camunda SpringBoot与进阶内容</a>
   </li>
-  
-
-    
-      
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  <li class="menu__title--collapse " data-depth="0" data-permalink="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/">
-    <span class="menu__title--icon right">
-      
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
-      
-    </span>
-    <span class="menu__title--collapse-text">
-      linux基础
-    </span>
-  </li>
-  <ul class="menu__list " data-data=/linux%E5%9F%BA%E7%A1%80/ data-link=http://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/>
-    
-      
-        
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  <li class="menu__title--collapse " data-depth="1" data-permalink="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/debian%E7%B3%BB/">
-    <span class="menu__title--icon right">
-      
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
-      
-    </span>
-    <span class="menu__title--collapse-text">
-      0.debian
-    </span>
-  </li>
-  <ul class="menu__list " data-data=/debian%E7%B3%BB/ data-link=http://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/>
-    
-  </ul>
-  
-
-      
-    
-      
-        
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  <li class="menu__title--collapse " data-depth="1" data-permalink="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/">
-    <span class="menu__title--icon right">
-      
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
-      
-    </span>
-    <span class="menu__title--collapse-text">
-      0.RHEL
-    </span>
-  </li>
-  <ul class="menu__list " data-data=/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/ data-link=http://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/>
-    
-      
-        
-        
-        <li>
-          <a href="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/yum/" class="menu__title " data-depth="1">yum</a>
-        </li>
-      
-    
-      
-        
-        
-        <li>
-          <a href="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%85%B3%E9%97%ADselinux/" class="menu__title " data-depth="1">关闭SELinux</a>
-        </li>
-      
-    
-      
-        
-        
-        <li>
-          <a href="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%AF%B9centos-lvm%E9%80%BB%E8%BE%91%E5%88%86%E5%8C%BA%E7%9A%84%E6%89%A9%E5%AE%B9/" class="menu__title " data-depth="1">对centos LVM逻辑分区的扩容</a>
-        </li>
-      
-    
-  </ul>
-  
-
-      
-    
-      
-        
-        
-        <li>
-          <a href="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" class="menu__title " data-depth="0">1.基础命令</a>
-        </li>
-      
-    
-      
-        
-        
-        <li>
-          <a href="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/linus%E5%AE%9A%E4%B9%89linux/" class="menu__title " data-depth="0">Linus定义Linux</a>
-        </li>
-      
-    
-      
-        
-        
-        <li>
-          <a href="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/systemd%E5%90%AF%E5%8A%A8%E7%AE%A1%E7%90%86/" class="menu__title " data-depth="0">systemd启动管理</a>
-        </li>
-      
-    
-      
-        
-        
-        <li>
-          <a href="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/tar%E5%91%BD%E4%BB%A4%E5%92%8C%E5%90%84%E7%A7%8D%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/" class="menu__title " data-depth="0">tar命令和各种压缩格式的压缩和解压</a>
-        </li>
-      
-    
-      
-        
-        
-        <li>
-          <a href="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/%E4%B8%AD%E6%96%87%E6%97%B6%E5%8C%BA%E7%BC%96%E7%A0%81/" class="menu__title " data-depth="0">中文、时区、编码</a>
-        </li>
-      
-    
-  </ul>
-  
-
-    
-      
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  <li class="menu__title--collapse active" data-depth="0" data-permalink="http://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-    <span class="menu__title--icon down">
-      
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
-      
-    </span>
-    <span class="menu__title--collapse-text">
-      数据库
-    </span>
-  </li>
-  <ul class="menu__list active" data-data=/%E6%95%B0%E6%8D%AE%E5%BA%93/ data-link=http://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/>
-    
-      
-        
-        
-        <li>
-          <a href="http://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/" class="menu__title active" data-depth="0">MongoDB</a>
-        </li>
-      
-    
-  </ul>
   
 
     
@@ -1561,7 +1367,7 @@ var _mtac = {};
           <span id="navMenuMobile" class="hide">
   <button id="navCollapseBtn" class="navbar__dropdown--title" aria-label="Section Menu" data-dir="ltr">
     
-      linux
+      camunda
     
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
   </button>
@@ -1581,16 +1387,16 @@ var _mtac = {};
   
   
   
-  <li class="navbar__menu--mobile-item active">
-    <a href="/linux" class="active">linux运维</a>
+  <li class="navbar__menu--mobile-item ">
+    <a href="/linux" class="">linux运维</a>
   </li>
 
   
   
   
   
-  <li class="navbar__menu--mobile-item ">
-    <a href="/camunda" class="">camunda流程引擎</a>
+  <li class="navbar__menu--mobile-item active">
+    <a href="/camunda" class="active">camunda流程引擎</a>
   </li>
 
   </ul>
@@ -1611,7 +1417,7 @@ var _mtac = {};
   
   
   
-  <li class="navbar__menu--item active">
+  <li class="navbar__menu--item ">
     <a href="/linux" data-bgimg="false">linux运维</a>
   </li>
 
@@ -1619,7 +1425,7 @@ var _mtac = {};
   
   
   
-  <li class="navbar__menu--item ">
+  <li class="navbar__menu--item active">
     <a href="/camunda" data-bgimg="false">camunda流程引擎</a>
   </li>
 
@@ -1788,9 +1594,6 @@ var _mtac = {};
     
     
   
-    
-    
-  
   <li >
     
       <a href="http://shaochenfeng.com/" class="capitalize">主页</a>
@@ -1800,21 +1603,14 @@ var _mtac = {};
   
   <li >
     
-      <a href="http://shaochenfeng.com/linux/" class="capitalize">Linux运维</a>
-    
-  </li>
-  
-  
-  <li >
-    
-      <a href="http://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="capitalize">数据库</a>
+      <a href="http://shaochenfeng.com/camunda/" class="capitalize">Camunda流程引擎</a>
     
   </li>
   
   
   <li  class="is-active" >
     
-      <span>MongoDB</span>
+      <span>Camunda SpringBoot与进阶内容</span>
     
   </li>
   
@@ -1862,8 +1658,8 @@ var _mtac = {};
   
   
   <li class="">
-    <a href="http://shaochenfeng.com/linux/ansible%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/"
-      class="menu__title ">ansible自动化运维</a>
+    <a href="http://shaochenfeng.com/camunda/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/"
+      class="menu__title ">快速入门介绍</a>
   </li>
   
 
@@ -1884,210 +1680,10 @@ var _mtac = {};
   
   
   
-  <li class="">
-    <a href="http://shaochenfeng.com/linux/docker%E5%AE%B9%E5%99%A8/"
-      class="menu__title ">docker容器</a>
+  <li class="active">
+    <a href="http://shaochenfeng.com/camunda/camunda-springboot%E4%B8%8E%E8%BF%9B%E9%98%B6%E5%86%85%E5%AE%B9/"
+      class="menu__title active">Camunda SpringBoot与进阶内容</a>
   </li>
-  
-
-    
-      
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  <li class="menu__title--collapse " data-depth="0" data-permalink="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/">
-    <span class="menu__title--icon right">
-      
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
-      
-    </span>
-    <span class="menu__title--collapse-text">
-      linux基础
-    </span>
-  </li>
-  <ul class="menu__list " data-data=/linux%E5%9F%BA%E7%A1%80/ data-link=http://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/>
-    
-      
-        
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  <li class="menu__title--collapse " data-depth="1" data-permalink="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/debian%E7%B3%BB/">
-    <span class="menu__title--icon right">
-      
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
-      
-    </span>
-    <span class="menu__title--collapse-text">
-      0.debian
-    </span>
-  </li>
-  <ul class="menu__list " data-data=/debian%E7%B3%BB/ data-link=http://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/>
-    
-  </ul>
-  
-
-      
-    
-      
-        
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  <li class="menu__title--collapse " data-depth="1" data-permalink="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/">
-    <span class="menu__title--icon right">
-      
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
-      
-    </span>
-    <span class="menu__title--collapse-text">
-      0.RHEL
-    </span>
-  </li>
-  <ul class="menu__list " data-data=/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/ data-link=http://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/>
-    
-      
-        
-        
-        <li>
-          <a href="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/yum/" class="menu__title " data-depth="1">yum</a>
-        </li>
-      
-    
-      
-        
-        
-        <li>
-          <a href="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%85%B3%E9%97%ADselinux/" class="menu__title " data-depth="1">关闭SELinux</a>
-        </li>
-      
-    
-      
-        
-        
-        <li>
-          <a href="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/rhel%E7%BA%A2%E5%B8%BD%E7%B3%BB/%E5%AF%B9centos-lvm%E9%80%BB%E8%BE%91%E5%88%86%E5%8C%BA%E7%9A%84%E6%89%A9%E5%AE%B9/" class="menu__title " data-depth="1">对centos LVM逻辑分区的扩容</a>
-        </li>
-      
-    
-  </ul>
-  
-
-      
-    
-      
-        
-        
-        <li>
-          <a href="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/1.%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" class="menu__title " data-depth="0">1.基础命令</a>
-        </li>
-      
-    
-      
-        
-        
-        <li>
-          <a href="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/linus%E5%AE%9A%E4%B9%89linux/" class="menu__title " data-depth="0">Linus定义Linux</a>
-        </li>
-      
-    
-      
-        
-        
-        <li>
-          <a href="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/systemd%E5%90%AF%E5%8A%A8%E7%AE%A1%E7%90%86/" class="menu__title " data-depth="0">systemd启动管理</a>
-        </li>
-      
-    
-      
-        
-        
-        <li>
-          <a href="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/tar%E5%91%BD%E4%BB%A4%E5%92%8C%E5%90%84%E7%A7%8D%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/" class="menu__title " data-depth="0">tar命令和各种压缩格式的压缩和解压</a>
-        </li>
-      
-    
-      
-        
-        
-        <li>
-          <a href="http://shaochenfeng.com/linux/linux%E5%9F%BA%E7%A1%80/%E4%B8%AD%E6%96%87%E6%97%B6%E5%8C%BA%E7%BC%96%E7%A0%81/" class="menu__title " data-depth="0">中文、时区、编码</a>
-        </li>
-      
-    
-  </ul>
-  
-
-    
-      
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  <li class="menu__title--collapse active" data-depth="0" data-permalink="http://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-    <span class="menu__title--icon down">
-      
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
-      
-    </span>
-    <span class="menu__title--collapse-text">
-      数据库
-    </span>
-  </li>
-  <ul class="menu__list active" data-data=/%E6%95%B0%E6%8D%AE%E5%BA%93/ data-link=http://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/>
-    
-      
-        
-        
-        <li>
-          <a href="http://shaochenfeng.com/linux/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb/" class="menu__title active" data-depth="0">MongoDB</a>
-        </li>
-      
-    
-  </ul>
   
 
     
@@ -2102,78 +1698,521 @@ var _mtac = {};
       <div class="single" data-display="block">
   
   <article class="single__contents" data-dir="ltr">
-    <h1 class="title" style="border-bottom: 1px solid currentColor">MongoDB</h1>
-    <p>MongoDB是一种Nosql数据库，基于文档的数据库，是Nosql中最接近sql数据库的，使用类似json的数据格式，以文档的方式管理数据库</p>
-<p>这里使用的Ubuntu为例</p>
-<h2 id="安装">安装</h2>
-<p>sudo apt-get install mongodb<br />
-启动并开机启动<br />
-sudo systemctl start mongodb<br />
-sudo service mongodb start</p>
-<h2 id="sql与mongodb对比">sql与MongoDB对比</h2>
-<table>
-<thead>
-<tr>
-<th>SQL术语/概念</th>
-<th>MongoDB术语/概念</th>
-<th>解释/说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>database</td>
-<td>database</td>
-<td>数据库</td>
-</tr>
-<tr>
-<td>table</td>
-<td>collection</td>
-<td>数据库表/集合</td>
-</tr>
-<tr>
-<td>row</td>
-<td>document</td>
-<td>数据记录行/文档</td>
-</tr>
-<tr>
-<td>column</td>
-<td>field</td>
-<td>数据字段/域</td>
-</tr>
-<tr>
-<td>index</td>
-<td>index</td>
-<td>索引</td>
-</tr>
-<tr>
-<td>table</td>
-<td>joins</td>
-<td>表连接,MongoDB不支持</td>
-</tr>
-<tr>
-<td>primary key</td>
-<td>primary key</td>
-<td>主键,MongoDB自动将_id字段设置为主键</td>
-</tr>
-</tbody>
-</table>
-<p>mongo：MongoDB的shell命令模式</p>
-<h2 id="数据库操作">数据库操作</h2>
-<p>show dbs:显示数据库列表<br />
-show collections：显示当前数据库中的集合<br />
-show users：显示所有用户<br />
-use yourDB：切换当前数据库至yourDB<br />
-db.help() ：显示数据库操作命令<br />
-db.yourCollection.help() ：显示集合操作命令，yourCollection是集合名</p>
-<p>MongoDB不用新建数据库，<em>使用</em>一个数据库就会新建它</p>
-<p>插入数据<br />
-insert和save是一样的，插入一条数据<br />
-db.student.insert({_id:1, sname: &lsquo;zhangsan&rsquo;, sage: 20})<br />
-db.student.save({_id:1, sname: &lsquo;zhangsan&rsquo;, sage: 22})</p>
+    <h1 class="title" style="border-bottom: 1px solid currentColor">Camunda SpringBoot与进阶内容</h1>
+    <h2 id="介绍">介绍</h2>
+<p>在开始之前，首先确保你已经完成了<a href="/blog/camunda-%e5%bf%ab%e9%80%9f%e5%85%a5%e9%97%a8/" target="_blank">快速入门部分</a> （<a href="/blog/camunda-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" target="_blank">http://shaochenfeng.com/blog/camunda-快速入门/</a>）</p>
+<p>本章我们将继续完成 Camunda 官网上的其他入门部分，你将学到：</p>
+<p>Spring Boot部分：</p>
+<ol>
+<li>创建 Camunda Spring Boot 项目</li>
+<li>配置项目</li>
+<li>使用“自动部署”功能部署流程</li>
+<li>自定义HTML表格</li>
+<li>在流程中调用 JAVA Class</li>
+</ol>
+<p>DMN部分：</p>
+<ol>
+<li>在JAVA端调用DMN决策</li>
+<li>从DMN决策表与DRG决策图</li>
+</ol>
+<p>本教程对应官方教程中 Spring Boot 、DMN 、 JAVA Process Application 三章的内容，用一个例子串联起来，让我们开始吧！</p>
+<h2 id="创建-camunda-spring-boot-项目">创建 Camunda Spring Boot 项目</h2>
+<p>首先打开你喜欢的 IDE，新建一个空的Maven项目，本次的案例是“贷款审批”，所以项目名命名为<code>loan-approval-spring-boot</code>，groupId为<code>org.example</code></p>
+<p>也可以使用命令行创建</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn archetype:generate -DgroupId<span style="color:#555">=</span>org.example -DartifactId<span style="color:#555">=</span>loan-approval-spring-boot -Dversion<span style="color:#555">=</span>1.0-SNAPSHOT -DarchetypeArtifactId<span style="color:#555">=</span>maven-archetype-quickstart -DinactiveMode<span style="color:#555">=</span><span style="color:#366">false</span>
+</code></pre></div><h3 id="配置maven依赖">配置Maven依赖</h3>
+<p>接下来添加 Maven 依赖，Maven依赖需要添加到项目根目录下的 <code>pom.xml</code> 文件中。我们需要将 Spring Boot 依赖添加到 “dependency management” 中，然后将 Camunda Spring Boot Starter 添加为依赖，这将提供 Camunda 流程引擎和自带的 WebApp ；为简单起见，数据库使用嵌入式H2数据库；最后添加 <code>spring-boot-maven-plugin</code> ，它会将Spring Boot项目打包在一起。最终完成后效果如下：</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#099">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#309;font-weight:bold">&lt;project</span> <span style="color:#309">xmlns=</span><span style="color:#c30">&#34;http://maven.apache.org/POM/4.0.0&#34;</span>
+         <span style="color:#309">xmlns:xsi=</span><span style="color:#c30">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+         <span style="color:#309">xsi:schemaLocation=</span><span style="color:#c30">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span style="color:#309;font-weight:bold">&gt;</span>
+    <span style="color:#309;font-weight:bold">&lt;modelVersion&gt;</span>4.0.0<span style="color:#309;font-weight:bold">&lt;/modelVersion&gt;</span>
+
+    <span style="color:#309;font-weight:bold">&lt;groupId&gt;</span>org.example<span style="color:#309;font-weight:bold">&lt;/groupId&gt;</span>
+    <span style="color:#309;font-weight:bold">&lt;artifactId&gt;</span>loan-approval-spring-boot<span style="color:#309;font-weight:bold">&lt;/artifactId&gt;</span>
+    <span style="color:#309;font-weight:bold">&lt;version&gt;</span>1.0-SNAPSHOT<span style="color:#309;font-weight:bold">&lt;/version&gt;</span>
+
+    <span style="color:#309;font-weight:bold">&lt;properties&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;camunda.spring-boot.version&gt;</span>7.15.0<span style="color:#309;font-weight:bold">&lt;/camunda.spring-boot.version&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;spring-boot.version&gt;</span>2.4.4<span style="color:#309;font-weight:bold">&lt;/spring-boot.version&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;maven.compiler.source&gt;</span>1.8<span style="color:#309;font-weight:bold">&lt;/maven.compiler.source&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;maven.compiler.target&gt;</span>1.8<span style="color:#309;font-weight:bold">&lt;/maven.compiler.target&gt;</span>
+    <span style="color:#309;font-weight:bold">&lt;/properties&gt;</span>
+
+    <span style="color:#309;font-weight:bold">&lt;dependencyManagement&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;dependencies&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;dependency&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#309;font-weight:bold">&lt;/groupId&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;artifactId&gt;</span>spring-boot-dependencies<span style="color:#309;font-weight:bold">&lt;/artifactId&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;version&gt;</span>${spring-boot.version}<span style="color:#309;font-weight:bold">&lt;/version&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;type&gt;</span>pom<span style="color:#309;font-weight:bold">&lt;/type&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;scope&gt;</span>import<span style="color:#309;font-weight:bold">&lt;/scope&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;/dependency&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;/dependencies&gt;</span>
+    <span style="color:#309;font-weight:bold">&lt;/dependencyManagement&gt;</span>
+
+    <span style="color:#309;font-weight:bold">&lt;dependencies&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;dependency&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;groupId&gt;</span>org.camunda.bpm.springboot<span style="color:#309;font-weight:bold">&lt;/groupId&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;artifactId&gt;</span>camunda-bpm-spring-boot-starter-webapp<span style="color:#309;font-weight:bold">&lt;/artifactId&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;version&gt;</span>${camunda.spring-boot.version}<span style="color:#309;font-weight:bold">&lt;/version&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;/dependency&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;dependency&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;groupId&gt;</span>com.h2database<span style="color:#309;font-weight:bold">&lt;/groupId&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;artifactId&gt;</span>h2<span style="color:#309;font-weight:bold">&lt;/artifactId&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;/dependency&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;dependency&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;groupId&gt;</span>com.sun.xml.bind<span style="color:#309;font-weight:bold">&lt;/groupId&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;artifactId&gt;</span>jaxb-impl<span style="color:#309;font-weight:bold">&lt;/artifactId&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;version&gt;</span>2.2.3<span style="color:#309;font-weight:bold">&lt;/version&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;/dependency&gt;</span>
+    <span style="color:#309;font-weight:bold">&lt;/dependencies&gt;</span>
+
+    <span style="color:#309;font-weight:bold">&lt;build&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;plugins&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;plugin&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#309;font-weight:bold">&lt;/groupId&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span style="color:#309;font-weight:bold">&lt;/artifactId&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;version&gt;</span>${spring-boot.version}<span style="color:#309;font-weight:bold">&lt;/version&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;configuration&gt;</span>
+                    <span style="color:#309;font-weight:bold">&lt;layout&gt;</span>ZIP<span style="color:#309;font-weight:bold">&lt;/layout&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;/configuration&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;executions&gt;</span>
+                    <span style="color:#309;font-weight:bold">&lt;execution&gt;</span>
+                        <span style="color:#309;font-weight:bold">&lt;goals&gt;</span>
+                            <span style="color:#309;font-weight:bold">&lt;goal&gt;</span>repackage<span style="color:#309;font-weight:bold">&lt;/goal&gt;</span>
+                        <span style="color:#309;font-weight:bold">&lt;/goals&gt;</span>
+                    <span style="color:#309;font-weight:bold">&lt;/execution&gt;</span>
+                <span style="color:#309;font-weight:bold">&lt;/executions&gt;</span>
+            <span style="color:#309;font-weight:bold">&lt;/plugin&gt;</span>
+        <span style="color:#309;font-weight:bold">&lt;/plugins&gt;</span>
+    <span style="color:#309;font-weight:bold">&lt;/build&gt;</span>
+
+<span style="color:#309;font-weight:bold">&lt;/project&gt;</span>
+</code></pre></div><h3 id="为项目添加主类">为项目添加主类</h3>
+<p>接下来，我们将为应用添加可以运行的主类，在 <code>src/main/java</code> 下新建一个类，类名为<code>WebappExampleProcessApplication</code>，包名为 <code>org.example.loanapproval</code></p>
+<blockquote>
+<p>如果使用命名行创建项目，会存在一个自带的<code>App.java</code>主类 ，这个不需要，删除即可</p>
+</blockquote>
+<p>Spring Boot的主类需要添加 <code>@SpringBootApplication</code> 注解，最后完成的效果如下：</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">package</span> <span style="color:#0cf;font-weight:bold">org.example.loanapproval</span><span style="color:#555">;</span>
+
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">org.springframework.boot.SpringApplication</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">org.springframework.boot.autoconfigure.SpringBootApplication</span><span style="color:#555">;</span>
+
+<span style="color:#99f">@SpringBootApplication</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">WebappExampleProcessApplication</span> <span style="color:#555">{</span>
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span><span style="color:#555">(</span>String<span style="color:#555">...</span> args<span style="color:#555">)</span> <span style="color:#555">{</span>
+        SpringApplication<span style="color:#555">.</span><span style="color:#309">run</span><span style="color:#555">(</span>WebappExampleProcessApplication<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">,</span> args<span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><blockquote>
+<p>到此第一部分结束，如果想直接获取到现在为止的进度，可以下载<a href="https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn/repository/archive/Step-1.zip" target="_blank">zip包</a>，或者使用如下命令</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
+git checkout -f Step-1
+</code></pre></div></blockquote>
+<h3 id="配置项目">配置项目</h3>
+<p>Camunda Spring Boot 自带了最佳实践配置，这些配置会在启动时自动启用，如果要覆盖部分配置，可以在 resources 中新增 <code>application.yaml</code> 或<code>application.properties</code>，默认配置的具体内容可以查看 <a href="https://docs.camunda.org/manual/latest/user-guide/spring-boot-integration/configuration/#camunda-engine-properties" target="_blank">https://docs.camunda.org/manual/latest/user-guide/spring-boot-integration/configuration/#camunda-engine-properties</a></p>
+<h4 id="自定义管理员账户">自定义管理员账户</h4>
+<p>让我们在 <code>src/main/resources</code> 下创建 <code>application.yaml</code>文件，输入如下内容：</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#309;font-weight:bold">camunda.bpm</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">admin-user</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">id</span>:<span style="color:#bbb"> </span>demo<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">password</span>:<span style="color:#bbb"> </span>demo<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">firstName</span>:<span style="color:#bbb"> </span>Demo<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">filter</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">create</span>:<span style="color:#bbb"> </span>All tasks<span style="color:#bbb">
+</span></code></pre></div><p>以上配置将使用 demo 作为管理员用户名密码，在<code>Tasklist</code>中添加 <code>All tasks</code> 过滤器</p>
+<h3 id="编译运行">编译运行</h3>
+<p>IDE通常有工具可以直接编译运行，使用工具运行即可</p>
+<p>也可以使用命令行运行：</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn package
+java -jar target/loan-approval-spring-boot-1.0-SNAPSHOT.jar
+</code></pre></div><p>运行后打开浏览器访问：<a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a> ，会自动打开登录界面，可以使用 demo/demo 登录，然后打开 Tasklist，可以看到 “All tasks”也被创建出来了。</p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210529112410.png" alt="image-20210529112402835"  />
+</p></p>
+<blockquote>
+<p>到此第二部分结束，如果想直接获取到现在为止的进度，可以下载<a href="https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn/repository/archive/Step-2.zip" target="_blank">zip包</a>，或者使用如下命令</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
+git checkout -f Step-2
+</code></pre></div></blockquote>
+<h2 id="部署bpmn20流程">部署BPMN2.0流程</h2>
+<p>在本章中，我们将要为刚才的Spring Boot项目部署流程，并使用监听器，在流程部署时发起流程</p>
+<h3 id="编辑流程">编辑流程</h3>
+<p>下载并打开 Camunda Modeler，编辑只包含一个人工节点的简单流程</p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210529114736.png" alt="image-20210529114736508"  />
+</p></p>
+<p>点击空白处，编辑流程id为 <code>loan-approval</code> ，Name 为 <code>Loan approval</code></p>
+<blockquote>
+<p>如果你对流程编辑不熟悉，可以阅读快速入门中的<a href="/blog/camunda-%e5%bf%ab%e9%80%9f%e5%85%a5%e9%97%a8/#2%e7%bc%96%e8%be%91%e6%b5%81%e7%a8%8b" target="_blank">编辑流程部分</a></p>
+</blockquote>
+<p>流程编辑完成后，保存流程模型到项目的 <code>src/main/resources</code> 文件夹中，命名为 <code>loan-approval.bpmn</code>，然后重新编译运行项目。</p>
+<p>浏览器中打开 <a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a> ，点击 cockpit 可以看到流程已经部署到流程引擎中了</p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210529172210.png" alt="image-20210529172207409"  />
+</p></p>
+<blockquote>
+<p>如果遇到报错：</p>
+<p>src-resolve: 无法将名称 &lsquo;XXXX&rsquo; 解析为 &lsquo;element declaration&rsquo; 组件。</p>
+<p>请检查项目路径是否有中文，这里要求路径不能包含中文。</p>
+</blockquote>
+<h3 id="为项目启用流程支持">为项目启用流程支持</h3>
+<p>现在我们在 Camunda Spring Boot 项目中添加 <code>@EnableProcessApplication</code> 注解，这会提供更多可配置项，以及启用更多流程相关注解。</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">package</span> <span style="color:#0cf;font-weight:bold">org.example.loanapproval</span><span style="color:#555">;</span>
+
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">org.camunda.bpm.spring.boot.starter.annotation.EnableProcessApplication</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">org.springframework.boot.SpringApplication</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">org.springframework.boot.autoconfigure.SpringBootApplication</span><span style="color:#555">;</span>
+
+<span style="color:#99f">@SpringBootApplication</span>
+<span style="color:#99f">@EnableProcessApplication</span> <span style="color:#09f;font-style:italic">// 新增
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">WebappExampleProcessApplication</span> <span style="color:#555">{</span>
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span><span style="color:#555">(</span>String<span style="color:#555">...</span> args<span style="color:#555">)</span> <span style="color:#555">{</span>
+        SpringApplication<span style="color:#555">.</span><span style="color:#309">run</span><span style="color:#555">(</span>WebappExampleProcessApplication<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">,</span> args<span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>添加完注解后，需要新建 Camunda 配置文件——<code>src/main/resources/META-INF/processes.xml</code>，<code>META-INF</code>文件夹可能不存在，需要新建后，在其中增加<code>processes.xml</code>，这个文件暂时留空，但对于 Camunda 来说却是必要的。</p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210529180648.png" alt="image-20210529180648434"  />
+</p></p>
+<h3 id="流程部署时发起流程测试">流程部署时发起流程测试</h3>
+<p>下一步是一项测试，我们希望在流程部署完成后发起一次流程，需要用到事件监听注解<code>@EventListener</code>，监听的类型为 <code>PostDeployEvent</code> （流程部署），修改后的 <code>WebappExampleProcessApplication</code> 如下：</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#99f">@SpringBootApplication</span>
+<span style="color:#99f">@EnableProcessApplication</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">WebappExampleProcessApplication</span> <span style="color:#555">{</span>
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span><span style="color:#555">(</span>String<span style="color:#555">...</span> args<span style="color:#555">)</span> <span style="color:#555">{</span>
+        SpringApplication<span style="color:#555">.</span><span style="color:#309">run</span><span style="color:#555">(</span>WebappExampleProcessApplication<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">,</span> args<span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#09f;font-style:italic">// &gt;&gt;新增
+</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#99f">@Autowired</span>
+    <span style="color:#069;font-weight:bold">private</span> RuntimeService runtimeService<span style="color:#555">;</span>
+
+    <span style="color:#99f">@EventListener</span>
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">processPostDeploy</span><span style="color:#555">(</span>PostDeployEvent event<span style="color:#555">)</span> <span style="color:#555">{</span>
+        runtimeService<span style="color:#555">.</span><span style="color:#309">startProcessInstanceByKey</span><span style="color:#555">(</span><span style="color:#c30">&#34;loanApproval&#34;</span><span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+    <span style="color:#09f;font-style:italic">// &lt;&lt;
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">}</span>
+</code></pre></div><p>修改后，我们再次重启项目，浏览器中打开 <a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a>  ，点击 Tasklist 进入，可以看到新创建的流程实例人工任务</p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210529180604.png" alt="image-20210529180604050"  />
+</p></p>
+<blockquote>
+<p>到此第三部分结束，如果想直接获取到现在为止的进度，可以下载<a href="https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn/repository/archive/Step-3.zip" target="_blank">zip包</a>，或者使用如下命令</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
+git checkout -f Step-3
+</code></pre></div></blockquote>
+<h2 id="添加自定义表单">添加自定义表单</h2>
+<p><a href="/blog/camunda-%e5%bf%ab%e9%80%9f%e5%85%a5%e9%97%a8" target="_blank">快速入门</a>中，我们通过form选项卡添加过表单，通过变量名和变量类型简单的生成了自带表单，本章我们将使用自定义html嵌入的方式，让表单具有更大的灵活性。</p>
+<h3 id="添加申请表单">添加申请表单</h3>
+<p>我们需要将自定义表单放入Spring Boot静态资源文件夹，在 <code>resources</code> 中新建目录<code>static/forms</code>，然后新建申请表单，内容如下，命名为 <code>loan-approval.html</code>，保存到 <code>resources/static/forms</code> 目录</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">form</span> <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;loanApproval&#34;</span>&gt;
+    &lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;form-group&#34;</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">for</span><span style="color:#555">=</span><span style="color:#c30">&#34;lenderId&#34;</span>&gt;贷款人&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;form-control&#34;</span>
+               <span style="color:#309">cam-variable-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;String&#34;</span>
+               <span style="color:#309">cam-variable-name</span><span style="color:#555">=</span><span style="color:#c30">&#34;lenderId&#34;</span>
+               <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;lenderId&#34;</span> /&gt;
+    &lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+    &lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;form-group&#34;</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">for</span><span style="color:#555">=</span><span style="color:#c30">&#34;amount&#34;</span>&gt;金额&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;form-control&#34;</span>
+               <span style="color:#309">cam-variable-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;Double&#34;</span>
+               <span style="color:#309">cam-variable-name</span><span style="color:#555">=</span><span style="color:#c30">&#34;amount&#34;</span>
+               <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;amount&#34;</span> /&gt;
+    &lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">form</span>&gt;
+</code></pre></div><p>打开 Camunda Modeler ，点击 “发起贷款申请” 节点，在右侧属性菜单选择Forms，写入 <code>embedded:app:forms/loan-approval.html</code> 这意味着表单将以嵌入式的方式添加进 Tasklist 中</p>
+<h3 id="添加检查申请单节点表单">添加“检查申请单”节点表单</h3>
+<p>同样的，我们新建 <code>loan-auth.html</code> 到 <code>resources/static/forms</code> 目录，内容如下：</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">form</span> <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;loanAuth&#34;</span>&gt;
+    &lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;form-group&#34;</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">for</span><span style="color:#555">=</span><span style="color:#c30">&#34;lenderId&#34;</span>&gt;贷款人&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;form-control&#34;</span>
+               <span style="color:#309">cam-variable-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;String&#34;</span>
+               <span style="color:#309">cam-variable-name</span><span style="color:#555">=</span><span style="color:#c30">&#34;lenderId&#34;</span>
+               <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;lenderId&#34;</span>
+               <span style="color:#309">readonly</span><span style="color:#555">=</span><span style="color:#c30">&#34;true&#34;</span> /&gt;
+    &lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+    &lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;form-group&#34;</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">for</span><span style="color:#555">=</span><span style="color:#c30">&#34;amount&#34;</span>&gt;金额&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;form-control&#34;</span>
+               <span style="color:#309">cam-variable-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;Double&#34;</span>
+               <span style="color:#309">cam-variable-name</span><span style="color:#555">=</span><span style="color:#c30">&#34;amount&#34;</span>
+               <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;amount&#34;</span> /&gt;
+    &lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">form</span>&gt;
+</code></pre></div><p>打开 Camunda Modeler ，点击 “检查申请单” 节点，在右侧属性菜单选择Forms，写入 <code>embedded:app:forms/loan-auth.html</code></p>
+<h3 id="测试一下">测试一下</h3>
+<p>重新编译并运行项目，浏览器中打开 <a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a>  ，点击 Tasklist 进入，点击右上角 <code>Start Process</code>，可以看到表单已经嵌入到 Tasklist 中了，发起流程后，任务列表中可以看到审核界面的表单</p>
+<p><p class="md__image">
+  <img src="/C:%5CUsers%5Czoollcar%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210529191213757.png" alt="image-20210529191211238"  />
+</p></p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210529191244.png" alt="image-20210529191244743"  />
+</p></p>
+<blockquote>
+<p>到此第四部分结束，如果想直接获取到现在为止的进度，可以下载<a href="https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn/repository/archive/Step-4.zip" target="_blank">zip包</a>，或者使用如下命令</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
+git checkout -f Step-4
+</code></pre></div></blockquote>
+<h2 id="在流程中调用-java-class">在流程中调用 JAVA Class</h2>
+<p>在本章中我们将学到如何使用流程的 <code>Service task（服务任务）</code> 中调用JAVA类。</p>
+<h3 id="将-service-task-添加到流程中">将 Service Task 添加到流程中</h3>
+<p>打开 Camunda Modeler ，在左侧工具架中选择 Task（矩形），拖动到“检查申请单”后面，双击命名为“发放贷款”</p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210530095501.png" alt="image-20210530095026791"  />
+</p></p>
+<p>点击新创建的节点，点击右侧弹出的扳手按钮，将类型修改为 Service Task。</p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210530095509.png" alt="image-20210530095147567"  />
+</p></p>
+<h3 id="实现-javadelegate-类">实现 JavaDelegate 类</h3>
+<p>现在我们需要添加 Service Task 可以调用的实现类，将类添加到 <code>org.example.loanapproval</code> 包下，命名为 <code>OfferLoan</code>，这里我们希望打印贷款人信息到日志，具体代码如下：</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">package</span> <span style="color:#0cf;font-weight:bold">org.example.loanapproval</span><span style="color:#555">;</span>
+
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.logging.Logger</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">org.camunda.bpm.engine.delegate.DelegateExecution</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">org.camunda.bpm.engine.delegate.JavaDelegate</span><span style="color:#555">;</span>
+
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">OfferLoan</span> <span style="color:#069;font-weight:bold">implements</span> JavaDelegate <span style="color:#555">{</span>
+
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#069;font-weight:bold">final</span> <span style="color:#069;font-weight:bold">static</span> Logger LOGGER <span style="color:#555">=</span> Logger<span style="color:#555">.</span><span style="color:#309">getLogger</span><span style="color:#555">(</span><span style="color:#c30">&#34;LOAN-REQUESTS&#34;</span><span style="color:#555">);</span>
+
+    <span style="color:#99f">@Override</span>
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">execute</span><span style="color:#555">(</span>DelegateExecution execution<span style="color:#555">)</span> <span style="color:#555">{</span>
+        LOGGER<span style="color:#555">.</span><span style="color:#309">info</span><span style="color:#555">(</span><span style="color:#c30">&#34;offer &#34;</span> <span style="color:#555">+</span> execution<span style="color:#555">.</span><span style="color:#309">getVariable</span><span style="color:#555">(</span><span style="color:#c30">&#34;lenderId&#34;</span><span style="color:#555">)</span> <span style="color:#555">+</span> <span style="color:#c30">&#34; loans&#34;</span><span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+</code></pre></div><h3 id="配置-service-task">配置 Service Task</h3>
+<p>回到 Camunda Modeler ，选择“发放贷款”节点，在右侧的属性面板中，选择 <code>Implementation</code>为 <code>Java Class</code> ，Java Class 为我们刚才创建的类 <code>org.example.loanapproval.OfferLoan</code></p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210530100558.png" alt="image-20210530100557989"  />
+</p></p>
+<p>保存流程</p>
+<h3 id="测试一下-1">测试一下</h3>
+<p>重新编译并运行项目，浏览器中打开 <a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a>  ，点击 Tasklist 进入，点击右上角 <code>Start Process</code>，启动一个新流程</p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210530100856.png" alt="image-20210530100856310"  />
+</p></p>
+<p>刷新页面，完成人工任务</p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210530101045.png" alt="image-20210530101045803"  />
+</p></p>
+<p>检查 Spring Boot 程序控制台输出，可以看到贷款人信息已经被打印出来了</p>
+<pre><code>INFO 3156 --- [nio-8080-exec-6] LOAN-REQUESTS    : offer 张三 loans
+</code></pre><blockquote>
+<p>到此第五部分结束，如果想直接获取到现在为止的进度，可以下载<a href="https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn/repository/archive/Step-5.zip" target="_blank">zip包</a>，或者使用如下命令</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
+git checkout -f Step-5
+</code></pre></div></blockquote>
+<h2 id="在-java-中调用-dmn-决策">在 JAVA 中调用 DMN 决策</h2>
+<p>在本章中，我们将会学到创建一个DMN决策并部署到流程引擎中，以及在JAVA里调用测试我们的DMN。</p>
+<p>我们使用BMI健康状况作为案例，BMI是身高体重的比值，通常用于判断人的胖瘦程度。</p>
+<h3 id="创建新的-dmn">创建新的 DMN</h3>
+<p>启动  Camunda Modeler，点击工具栏最左侧的新建按钮，新建一个 DMN</p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210530102641.png" alt="image-20210530102641913"  />
+</p></p>
+<h3 id="配置dmn决策">配置DMN决策</h3>
+<p>点击画布上默认的DMN决策表，修改在右侧的属性面板中的<code>id</code>为 <code>bmi-classification</code>，<code>Name</code>为 <code>BMI Classification</code></p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210530123738.png" alt="image-20210530123738150"  />
+</p></p>
+<p>下一步，点击左上角的表格按钮，进入决策编辑界面</p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210530124215.png" alt="image-20210530124215208"  />
+</p></p>
+<p>双击 input 区域，<em>input</em>修改为<code>BMI</code>，<em>Expression</em>修改为<code>bmi</code>，<em>Type</em>选择<code>douoble</code></p>
+<p>同样的，双击output区域，<em>output</em>修改为 <code>result</code>，<em>Output Name</em>修改为<code>result</code>，<em>Type</em>选择<code>string</code></p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210530124706.png" alt="image-20210530124706490"  />
+</p></p>
+<p>点击表格左侧的蓝色加号，添加BMI分类规则，最终效果如下：</p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210530124813.png" alt="image-20210530124813693"  />
+</p></p>
+<p>确保顶部<a href="https://docs.camunda.org/manual/latest/reference/dmn11/decision-table/hit-policy/" target="_blank"><strong>Hit Policy</strong>（命中策略）</a>为“UNIQUE（唯一）”，在“唯一”模式下，只有所有规则都是互斥的，一个输入只能匹配一种规则。</p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210530161531.png" alt="image-20210530161531665"  />
+</p></p>
+<blockquote>
+<p>默认的规则就是“唯一”，这条规则可以自动匹配，不需要更改。</p>
+</blockquote>
+<h3 id="保存决策表">保存决策表</h3>
+<p>编辑完成后，点击工具栏“save”按钮，将流程保存到项目的 <code>src/main/resources</code>目录下。</p>
+<blockquote>
+<p>到此第六部分结束，如果想直接获取到现在为止的进度，可以下载<a href="https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn/repository/archive/Step-6.zip" target="_blank">zip包</a>，或者使用如下命令</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
+git checkout -f Step-6
+</code></pre></div></blockquote>
+<h3 id="在java中调用dmn决策表">在JAVA中调用DMN决策表</h3>
+<p>我们将在决策表部署完成后调用测试，因此如下修改主类：</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">package</span> <span style="color:#0cf;font-weight:bold">org.example.loanapproval</span><span style="color:#555">;</span>
+
+<span style="color:#09f;font-style:italic">//import ...
+</span><span style="color:#09f;font-style:italic"></span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.logging.Level</span><span style="color:#555">;</span>
+<span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.logging.Logger</span><span style="color:#555">;</span>
+
+<span style="color:#99f">@SpringBootApplication</span>
+<span style="color:#99f">@EnableProcessApplication</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">WebappExampleProcessApplication</span> <span style="color:#555">{</span>
+	
+    <span style="color:#09f;font-style:italic">// 增加logger用于打印决策后的结果
+</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#069;font-weight:bold">protected</span> <span style="color:#069;font-weight:bold">final</span> <span style="color:#069;font-weight:bold">static</span> Logger LOGGER <span style="color:#555">=</span> Logger<span style="color:#555">.</span><span style="color:#309">getLogger</span><span style="color:#555">(</span>WebappExampleProcessApplication<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">.</span><span style="color:#309">getName</span><span style="color:#555">());</span>
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span><span style="color:#555">(</span>String<span style="color:#555">...</span> args<span style="color:#555">)</span> <span style="color:#555">{</span>
+        SpringApplication<span style="color:#555">.</span><span style="color:#309">run</span><span style="color:#555">(</span>WebappExampleProcessApplication<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">,</span> args<span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#99f">@Autowired</span>
+    <span style="color:#069;font-weight:bold">private</span> RuntimeService runtimeService<span style="color:#555">;</span>
+
+    <span style="color:#99f">@EventListener</span>
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">processPostDeploy</span><span style="color:#555">(</span>PostDeployEvent event<span style="color:#555">)</span> <span style="color:#555">{</span>
+        runtimeService<span style="color:#555">.</span><span style="color:#309">startProcessInstanceByKey</span><span style="color:#555">(</span><span style="color:#c30">&#34;loan-approval&#34;</span><span style="color:#555">);</span>
+		
+        <span style="color:#09f;font-style:italic">// &gt;&gt;&gt;&gt; 新增
+</span><span style="color:#09f;font-style:italic"></span>        DecisionService decisionService <span style="color:#555">=</span> event<span style="color:#555">.</span><span style="color:#309">getProcessEngine</span><span style="color:#555">().</span><span style="color:#309">getDecisionService</span><span style="color:#555">();</span>
+		<span style="color:#09f;font-style:italic">// 输入参数
+</span><span style="color:#09f;font-style:italic"></span>        VariableMap variables <span style="color:#555">=</span> Variables<span style="color:#555">.</span><span style="color:#309">createVariables</span><span style="color:#555">()</span>
+                <span style="color:#555">.</span><span style="color:#309">putValue</span><span style="color:#555">(</span><span style="color:#c30">&#34;bmi&#34;</span><span style="color:#555">,</span> 20<span style="color:#555">.</span><span style="color:#309">0</span><span style="color:#555">);</span>
+		<span style="color:#09f;font-style:italic">// 调用决策
+</span><span style="color:#09f;font-style:italic"></span>        DmnDecisionTableResult dmnDecisionTableResult <span style="color:#555">=</span> decisionService
+                <span style="color:#555">.</span><span style="color:#309">evaluateDecisionTableByKey</span><span style="color:#555">(</span><span style="color:#c30">&#34;bpm-classification&#34;</span><span style="color:#555">,</span> variables<span style="color:#555">);</span>
+        String result <span style="color:#555">=</span> dmnDecisionTableResult<span style="color:#555">.</span><span style="color:#309">getSingleEntry</span><span style="color:#555">();</span>
+		<span style="color:#09f;font-style:italic">// 打印结果
+</span><span style="color:#09f;font-style:italic"></span>        LOGGER<span style="color:#555">.</span><span style="color:#309">log</span><span style="color:#555">(</span>Level<span style="color:#555">.</span><span style="color:#309">INFO</span><span style="color:#555">,</span> <span style="color:#c30">&#34;\n\nBMI Classification result is : {0}\n\n&#34;</span><span style="color:#555">,</span> result<span style="color:#555">);</span>
+        <span style="color:#09f;font-style:italic">// &lt;&lt;&lt;&lt;
+</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+
+</code></pre></div><blockquote>
+<p>到此第七部分结束，如果想直接获取到现在为止的进度，可以下载<a href="https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn/repository/archive/Step-7zip" target="_blank">zip包</a>，或者使用如下命令</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
+git checkout -f Step-7
+</code></pre></div></blockquote>
+<h3 id="测试一下-2">测试一下</h3>
+<p>编译项目并重新运行，查看 Spring Boot 输出，如果看到：</p>
+<pre><code>BMI Classification result is : 正常
+</code></pre><p>表示执行成功了</p>
+<p>用浏览器打开 <a href="http://localhost:8080/camunda/app/cockpit/" target="_blank">http://localhost:8080/camunda/app/cockpit/</a> 使用 demo/demo 登录，打开 Decision Definitions，可以找到刚才的流程实例，可以看到判定结果</p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210530180030.png" alt="image-20210530180030428"  />
+</p></p>
+<h2 id="从dmn决策表与drg决策图">从DMN决策表与DRG决策图</h2>
+<p>这一章，我们将创建新的DMN决策表，并将两个DMN决策表组成一张DRG决策图，最后通过JAVA调用，获得两个决策表协同得到的结果。</p>
+<blockquote>
+<p>DMN与DRG：</p>
+<p>DMN本质上就是一组输入输出的对应关系，体现的是一个简单决策，不应该过于复杂，对于需要多次决策才能得到答案的复杂决策，可以将多个简单的DMN连接起来，组成DRG决策图。</p>
+</blockquote>
+<blockquote>
+<p>DRG与DRD</p>
+<p>DRD是使用可视化的方式显示和编辑DRG的方式，因为Camunda Modeler是可视化的，所以在Camunda Modeler中显示未DRD</p>
+</blockquote>
+<h3 id="配置drd决策图">配置DRD决策图</h3>
+<p>点击左上角的 Edit DRD 切换到 DRD编辑界面</p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210530182724.png" alt="image-20210530182650448"  />
+</p></p>
+<p>就像编辑流程一样，点击空白处，修改DRD的id为 <code>bmi-health</code> ，Name为 <code>BMI Health</code></p>
+<h3 id="创建新的dmn决策到drd">创建新的DMN决策到DRD</h3>
+<p>现在可以创建一个新的决策了，我们希望在评估完BMI类型后给出建议，则拖动左侧正方形到画布，双击修改名称为 <code>BMI Suggestion</code>，切换类型为 Decision Table，最后修改id为 <code>bmi-suggestion</code></p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210530183511.png" alt="image-20210530183511220"  />
+</p></p>
+<p>点击 “BMI Classification” 节点，选择弹出的连线，连接到新的“BMI Suggestion”节点，这表示，新节点<a href="https://docs.camunda.org/manual/latest/reference/dmn11/drg/#required-decisions" target="_blank">依赖于</a>“BMI Classification”</p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210530184112.png" alt="image-20210530184112199"  />
+</p></p>
+<h3 id="编辑bmi-suggestion决策">编辑“BMI Suggestion”决策</h3>
+<p>点击 “BMI Suggestion” 节点左上角的表格按钮，进入编辑界面，输入内容如下：</p>
+<p>“Input”为<code>result</code> ，“Expression”为 <code>result</code></p>
+<p>“Output”为<code>suggestion</code> ，“Expression”为 <code>suggestion</code></p>
+<p><p class="md__image">
+  <img src="http://img.shaochenfeng.com/20210530185323.png" alt="image-20210530185323584"  />
+</p></p>
+<h3 id="在java中执行">在JAVA中执行</h3>
+<p>执行DRG决策图的方法就是执行它的最后一个节点，因为DRG的节点之间具有依赖关系，在执行最后一个节点前会执行它所以来的决策</p>
+<p>所以新增的代码与执行DMN一样，修改后的主类如下：</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#09f;font-style:italic">// ...
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#99f">@SpringBootApplication</span>
+<span style="color:#99f">@EnableProcessApplication</span>
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">WebappExampleProcessApplication</span> <span style="color:#555">{</span>
+
+    <span style="color:#069;font-weight:bold">protected</span> <span style="color:#069;font-weight:bold">final</span> <span style="color:#069;font-weight:bold">static</span> Logger LOGGER <span style="color:#555">=</span> Logger<span style="color:#555">.</span><span style="color:#309">getLogger</span><span style="color:#555">(</span>WebappExampleProcessApplication<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">.</span><span style="color:#309">getName</span><span style="color:#555">());</span>
+
+    <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span><span style="color:#555">(</span>String<span style="color:#555">...</span> args<span style="color:#555">)</span> <span style="color:#555">{</span>
+        SpringApplication<span style="color:#555">.</span><span style="color:#309">run</span><span style="color:#555">(</span>WebappExampleProcessApplication<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">,</span> args<span style="color:#555">);</span>
+    <span style="color:#555">}</span>
+
+    <span style="color:#99f">@Autowired</span>
+    <span style="color:#069;font-weight:bold">private</span> RuntimeService runtimeService<span style="color:#555">;</span>
+
+    <span style="color:#99f">@EventListener</span>
+    <span style="color:#069;font-weight:bold">private</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">processPostDeploy</span><span style="color:#555">(</span>PostDeployEvent event<span style="color:#555">)</span> <span style="color:#555">{</span>
+        runtimeService<span style="color:#555">.</span><span style="color:#309">startProcessInstanceByKey</span><span style="color:#555">(</span><span style="color:#c30">&#34;loan-approval&#34;</span><span style="color:#555">);</span>
+
+        DecisionService decisionService <span style="color:#555">=</span> event<span style="color:#555">.</span><span style="color:#309">getProcessEngine</span><span style="color:#555">().</span><span style="color:#309">getDecisionService</span><span style="color:#555">();</span>
+
+        VariableMap variables <span style="color:#555">=</span> Variables<span style="color:#555">.</span><span style="color:#309">createVariables</span><span style="color:#555">()</span>
+                <span style="color:#555">.</span><span style="color:#309">putValue</span><span style="color:#555">(</span><span style="color:#c30">&#34;bmi&#34;</span><span style="color:#555">,</span> 20<span style="color:#555">.</span><span style="color:#309">0</span><span style="color:#555">);</span>
+
+        DmnDecisionTableResult dmnDecisionTableResult <span style="color:#555">=</span> decisionService
+                <span style="color:#555">.</span><span style="color:#309">evaluateDecisionTableByKey</span><span style="color:#555">(</span><span style="color:#c30">&#34;bmi-classification&#34;</span><span style="color:#555">,</span> variables<span style="color:#555">);</span>
+        String result <span style="color:#555">=</span> dmnDecisionTableResult<span style="color:#555">.</span><span style="color:#309">getSingleEntry</span><span style="color:#555">();</span>
+
+        LOGGER<span style="color:#555">.</span><span style="color:#309">log</span><span style="color:#555">(</span>Level<span style="color:#555">.</span><span style="color:#309">INFO</span><span style="color:#555">,</span> <span style="color:#c30">&#34;\n\nBMI Classification result is : {0}\n\n&#34;</span><span style="color:#555">,</span> result<span style="color:#555">);</span>
+		
+        <span style="color:#09f;font-style:italic">// &gt;&gt;&gt;&gt; 新增
+</span><span style="color:#09f;font-style:italic"></span>        DmnDecisionTableResult suggestionResult <span style="color:#555">=</span> decisionService
+                <span style="color:#555">.</span><span style="color:#309">evaluateDecisionTableByKey</span><span style="color:#555">(</span><span style="color:#c30">&#34;bmi-suggestion&#34;</span><span style="color:#555">,</span> variables<span style="color:#555">);</span>
+        String suggestion <span style="color:#555">=</span> suggestionResult<span style="color:#555">.</span><span style="color:#309">getSingleEntry</span><span style="color:#555">();</span>
+
+        LOGGER<span style="color:#555">.</span><span style="color:#309">log</span><span style="color:#555">(</span>Level<span style="color:#555">.</span><span style="color:#309">INFO</span><span style="color:#555">,</span> <span style="color:#c30">&#34;\n\nBMI Classification suggestion is : {0}\n\n&#34;</span><span style="color:#555">,</span> suggestion<span style="color:#555">);</span>
+        <span style="color:#09f;font-style:italic">// &lt;&lt;&lt;&lt;
+</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#555">}</span>
+<span style="color:#555">}</span>
+
+</code></pre></div><p>重新编译并运行，可以看到 Spring Boot 输出：</p>
+<pre><code>BMI Classification suggestion is : 没建议
+</code></pre><p>表示执行成功</p>
+<blockquote>
+<p>到此第八部分结束，如果想直接获取到现在为止的进度，可以下载<a href="https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn/repository/archive/Step-8.zip" target="_blank">zip包</a>，或者使用如下命令</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://gitee.com/zoollcar/camunda-get-started-spring-boot-and-dmn.git
+git checkout -f Step-8
+</code></pre></div></blockquote>
+<blockquote>
+<p>恭喜：你已经完成了快速入门的全部内容，想要继续学习，请前往<a href="https://docs.camunda.org/manual/latest/" target="_blank">Camunda 文档</a>.</p>
+<p>也可以关注我的博客 <a href="/" target="_blank">http://shaochenfeng.com</a>，后续也会继续推出更多Camunda文档翻译或教程</p>
+</blockquote>
 
   </article>
 </div>
       
+<div class="grow"></div>
+<nav class="pagination-single">
+  
+    
+      <a href="http://shaochenfeng.com/camunda/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/" title="快速入门介绍" class="pagination-single__left">
+        <div class="pagination-single__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
+        </div>
+        <div class="pagination-single__right-title">快速入门介绍</div>
+      </a>
+    
+    <div class="grow"></div>
+    
+  
+</nav>
+
 
       
     </article>
@@ -2185,9 +2224,13 @@ db.student.save({_id:1, sname: &lsquo;zhangsan&rsquo;, sage: 22})</p>
   <div class="toc__body">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#安装">安装</a></li>
-    <li><a href="#sql与mongodb对比">sql与MongoDB对比</a></li>
-    <li><a href="#数据库操作">数据库操作</a></li>
+    <li><a href="#介绍">介绍</a></li>
+    <li><a href="#创建-camunda-spring-boot-项目">创建 Camunda Spring Boot 项目</a></li>
+    <li><a href="#部署bpmn20流程">部署BPMN2.0流程</a></li>
+    <li><a href="#添加自定义表单">添加自定义表单</a></li>
+    <li><a href="#在流程中调用-java-class">在流程中调用 JAVA Class</a></li>
+    <li><a href="#在-java-中调用-dmn-决策">在 JAVA 中调用 DMN 决策</a></li>
+    <li><a href="#从dmn决策表与drg决策图">从DMN决策表与DRG决策图</a></li>
   </ul>
 </nav>
   </div>

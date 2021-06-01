@@ -23,6 +23,27 @@
 
 <script>
   "use strict";
+  
+  
+  var targetProtocol = "http:"; 
+  if (window.location.protocol != targetProtocol)
+    window.location.href = targetProtocol + window.location.href.substring(window.location.protocol.length);
+
+  
+  function baiduSearch(event) {
+    var evt = window.event || event;
+        if (evt.keyCode == 13) {
+          console.log(event)
+          var val = document.getElementById("search").value
+          if(!val){
+                  alert('搜索内容为空，请输入');
+                  return false;
+          }else{
+            val = val + " site:shaochenfeng.com"
+            window.open("https://www.baidu.com/s?ie=utf-8&wd=" + val);
+          }
+        }
+  }
 
   window.onload = function() {
     
@@ -613,7 +634,7 @@
       var descDiv = document.createElement('div');
       descDiv.setAttribute('class', 'search-result__item--desc');
       if (obj.description) {
-        descDiv.innerHTML = obj.description;
+        descDiv.innerHTML = obj.description.substring(0, 80);
       } else if (obj.content) {
         descDiv.innerHTML = obj.content.substring(0, 80);
       }
@@ -806,7 +827,10 @@
         results.forEach(function (result) {
           var item = document.createElement('a');
           item.setAttribute('href', result.uri);
-          item.innerHTML = '<div class="mobile-search__item"><div class="mobile-search__item--title">📄 ' + result.title + '</div><div class="mobile-search__item--desc">' + (result.description ? result.description : result.content) + '</div></div>';
+          item.innerHTML = '<div class="mobile-search__item"><div class="mobile-search__item--title">📄 ' +
+             result.title + '</div><div class="mobile-search__item--desc">' + 
+               (result.description ? result.description.substring(0,40) : result.content.substring(0,40)) +
+                '</div></div>';
           content.appendChild(item);
         });
       } else {
@@ -1135,6 +1159,7 @@
 
     
 <script>
+
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
@@ -2153,7 +2178,7 @@ var _mtac = {};
   
   
   <li class="navbar__menu--mobile-item ">
-    <a href="/java-web" class="">java杂谈</a>
+    <a href="/camunda" class="">camunda流程引擎</a>
   </li>
 
   </ul>
@@ -2183,7 +2208,7 @@ var _mtac = {};
   
   
   <li class="navbar__menu--item ">
-    <a href="/java-web" data-bgimg="false">java杂谈</a>
+    <a href="/camunda" data-bgimg="false">camunda流程引擎</a>
   </li>
 
           </ul>
@@ -2196,7 +2221,7 @@ var _mtac = {};
   <span class="icon">
     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
   </span>
-  <input id="search" aria-label="Site Search" class="input" type="text" autocomplete="no" placeholder="搜索">
+  <input id="search" aria-label="Site Search" class="input" type="text" autocomplete="no" onkeydown="baiduSearch(event);" placeholder="搜索">
   <div id="search-results" class="dropdown">
     <div id="search-menu" class="dropdown-menu">
     </div>
@@ -2651,7 +2676,7 @@ npm install -D open
 </p></p>
 <p>点击 Send 发送请求</p>
 <p>如果能看到成功的返回结果，则流程发起成功</p>
-<h2 id="添加人工任务">添加人工任务</h2>
+<h2 id="5添加人工任务">5.添加人工任务</h2>
 <p>在本章中，我们会将人工任务添加进流程中，让人参与到 BPMN 2.0 流程中来。</p>
 <h3 id="添加人工任务节点">添加人工任务节点</h3>
 <p>首先打开 Camunda Modeler ，在左侧选择任务节点（圆角矩形），将它拖入“付款请求”和“刷卡付款”之间，重命名为“批准付款”</p>
@@ -2728,7 +2753,7 @@ npm install -D open
 <p>到此第三部分结束，如果想直接获取到现在为止的进度，可以使用如下命令</p>
 <p>git checkout -f Step-3</p>
 </blockquote>
-<h2 id="添加网关">添加网关</h2>
+<h2 id="6添加网关">6.添加网关</h2>
 <p>本章中，我们将使用<strong>排他网关</strong>(<em>Exclusive Gateways</em>)，为流程添加分支，仅在金额足够大的时候进行人工审核</p>
 <h3 id="添加两个网关">添加两个网关</h3>
 <p>首先打开 Camunda Modeler ，在左侧的工具架中找到网关（菱形），将它拖动到“付款请求”和“刷卡付款”之间，将“批准付款”向下移动再添加一个网关，调整流程，最后看起来类似这样：</p>
@@ -2770,7 +2795,7 @@ npm install -D open
 <p>到此第四部分结束，如果想直接获取到现在为止的进度，可以使用如下命令</p>
 <p>git checkout -f Step-4</p>
 </blockquote>
-<h2 id="决策自动化">决策自动化</h2>
+<h2 id="7决策自动化">7.决策自动化</h2>
 <p>在本章中，我们将使用DMN为流程添加一个业务规则</p>
 <h3 id="将业务规则添加到流程中">将业务规则添加到流程中</h3>
 <p>打开 Camunda Modeler，点击 “批准付款”，在右面的扳手菜单中，将类型改为“<strong>Business Rule Task</strong> ”（业务规则任务）</p>
@@ -2890,9 +2915,9 @@ npm install -D open
     <li><a href="#2编辑流程">2.编辑流程</a></li>
     <li><a href="#3用java或nodejs实现外部任务">3.用java或NodeJS实现外部任务</a></li>
     <li><a href="#4部署流程">4.部署流程</a></li>
-    <li><a href="#添加人工任务">添加人工任务</a></li>
-    <li><a href="#添加网关">添加网关</a></li>
-    <li><a href="#决策自动化">决策自动化</a></li>
+    <li><a href="#5添加人工任务">5.添加人工任务</a></li>
+    <li><a href="#6添加网关">6.添加网关</a></li>
+    <li><a href="#7决策自动化">7.决策自动化</a></li>
   </ul>
 </nav>
   </div>
