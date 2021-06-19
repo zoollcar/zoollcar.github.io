@@ -2186,7 +2186,7 @@ var _mtac = {};
   
   
   <li class="navbar__menu--mobile-item ">
-    <a href="/camunda-cn" class="">camunda中文站</a>
+    <a href="http://camunda-cn.shaochenfeng.com/" class="">camunda中文站</a>
   </li>
 
   </ul>
@@ -2224,7 +2224,7 @@ var _mtac = {};
   
   
   <li class="navbar__menu--item ">
-    <a href="/camunda-cn" data-bgimg="false">camunda中文站</a>
+    <a href="http://camunda-cn.shaochenfeng.com/" data-bgimg="false">camunda中文站</a>
   </li>
 
           </ul>
@@ -2926,14 +2926,64 @@ npm install -D open
   <div class="toc__body">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#0介绍">0.介绍</a></li>
-    <li><a href="#1下载和安装">1.下载和安装</a></li>
-    <li><a href="#2编辑流程">2.编辑流程</a></li>
-    <li><a href="#3用java或nodejs实现外部任务">3.用java或NodeJS实现外部任务</a></li>
-    <li><a href="#4部署流程">4.部署流程</a></li>
-    <li><a href="#5添加人工任务">5.添加人工任务</a></li>
-    <li><a href="#6添加网关">6.添加网关</a></li>
-    <li><a href="#7决策自动化">7.决策自动化</a></li>
+    <li>
+      <ul>
+        <li><a href="#0介绍">0.介绍</a></li>
+        <li><a href="#1下载和安装">1.下载和安装</a>
+          <ul>
+            <li><a href="#前期准备">前期准备</a></li>
+            <li><a href="#camunda-platform-camunda-bpm平台">Camunda Platform （Camunda BPM平台）</a></li>
+            <li><a href="#camunda-modeler用于编辑流程图及其他模型">Camunda Modeler（用于编辑流程图及其他模型）</a></li>
+          </ul>
+        </li>
+        <li><a href="#2编辑流程">2.编辑流程</a>
+          <ul>
+            <li><a href="#新建bpmn流程">新建BPMN流程</a></li>
+            <li><a href="#编辑一个简单的流程">编辑一个简单的流程</a></li>
+            <li><a href="#配置刷卡付款节点">配置“刷卡付款”节点</a></li>
+            <li><a href="#配置流程参数">配置流程参数</a></li>
+          </ul>
+        </li>
+        <li><a href="#3用java或nodejs实现外部任务">3.用java或NodeJS实现外部任务</a>
+          <ul>
+            <li><a href="#a使用java">a)使用JAVA</a></li>
+            <li><a href="#b使用nodejs">b)使用NodeJS</a></li>
+          </ul>
+        </li>
+        <li><a href="#4部署流程">4.部署流程</a>
+          <ul>
+            <li><a href="#使用-camunda-modeler-部署流程">使用 Camunda Modeler 部署流程</a></li>
+            <li><a href="#使用cockpit查看部署结果">使用Cockpit查看部署结果</a></li>
+            <li><a href="#创建流程实例发起流程">创建流程实例（发起流程）</a></li>
+          </ul>
+        </li>
+        <li><a href="#5添加人工任务">5.添加人工任务</a>
+          <ul>
+            <li><a href="#添加人工任务节点">添加人工任务节点</a></li>
+            <li><a href="#配置人工任务">配置人工任务</a></li>
+            <li><a href="#部署流程">部署流程</a></li>
+            <li><a href="#测试一下">测试一下</a></li>
+          </ul>
+        </li>
+        <li><a href="#6添加网关">6.添加网关</a>
+          <ul>
+            <li><a href="#添加两个网关">添加两个网关</a></li>
+            <li><a href="#配置网关">配置网关</a></li>
+            <li><a href="#部署流程-1">部署流程</a></li>
+            <li><a href="#测试一下-1">测试一下</a></li>
+          </ul>
+        </li>
+        <li><a href="#7决策自动化">7.决策自动化</a>
+          <ul>
+            <li><a href="#将业务规则添加到流程中">将业务规则添加到流程中</a></li>
+            <li><a href="#使用-amunda-modeler-创建dmn表">使用 amunda Modeler 创建DMN表</a></li>
+            <li><a href="#编辑dmn表">编辑DMN表</a></li>
+            <li><a href="#部署dmn表">部署DMN表</a></li>
+            <li><a href="#测试一下-2">测试一下</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>

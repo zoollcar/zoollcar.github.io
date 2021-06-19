@@ -2186,7 +2186,7 @@ var _mtac = {};
   
   
   <li class="navbar__menu--mobile-item ">
-    <a href="/camunda-cn" class="">camunda中文站</a>
+    <a href="http://camunda-cn.shaochenfeng.com/" class="">camunda中文站</a>
   </li>
 
   </ul>
@@ -2224,7 +2224,7 @@ var _mtac = {};
   
   
   <li class="navbar__menu--item ">
-    <a href="/camunda-cn" data-bgimg="false">camunda中文站</a>
+    <a href="http://camunda-cn.shaochenfeng.com/" data-bgimg="false">camunda中文站</a>
   </li>
 
           </ul>
@@ -2472,9 +2472,22 @@ make <span style="color:#555">&amp;&amp;</span> make install
   <div class="toc__body">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#yum方式安装httpd和php">yum方式安装httpd和php</a></li>
-    <li><a href="#测试一下">测试一下</a></li>
-    <li><a href="#源码方式安装php73">源码方式安装php7.3</a></li>
+    <li>
+      <ul>
+        <li><a href="#yum方式安装httpd和php">yum方式安装httpd和php</a></li>
+        <li><a href="#测试一下">测试一下</a></li>
+        <li><a href="#源码方式安装php73">源码方式安装php7.3</a>
+          <ul>
+            <li><a href="#1首先安装-httpd-和-httpd-devel">1.首先安装 httpd 和 httpd-devel</a></li>
+            <li><a href="#2安装必要的依赖">2.安装必要的依赖</a></li>
+            <li><a href="#3下载php源码包">3.下载php源码包</a></li>
+            <li><a href="#4解压编译安装">4.解压、编译、安装</a></li>
+            <li><a href="#5复制配置文件">5.复制配置文件</a></li>
+            <li><a href="#6配置httpd使用php">6.配置httpd使用php</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
